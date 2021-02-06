@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karma:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+html {
+    height: 100vh;
+}
+
+body {
+    min-height: 100vh;
+}
+
+html {
+    scroll-padding-top: 100px;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+.courgette_font {
+    font-family: 'Courgette', cursive;
+}
+
+.pt_serif_font {
+    font-family: 'PT Serif', serif;
+}
+
+.nav_button_font {
+    font-family: 'Abril Fatface', cursive;
+}
+
+.ibm_plex_font {
+    font-family: 'IBM Plex Serif', serif;
+}
+
+.karma {
+    font-family: 'Karma', serif;
+}
+
+.dancing_font {
+    font-family: 'Dancing Script', cursive;
+}
+
+.baskerville_font {
+    font-family: 'Libre Baskerville', serif;
+}
+
+.bg_cello {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("/img/bg_cello_3.jpg");
+    background-attachment: fixed;
+    height: 85vh;
+    position: relative;
+}
+
+.bg_cello_contact {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("/img/bg_cello_3.jpg");
+    background-attachment: fixed;
+    position: relative;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.jumbo_title_position {
+    color: white;
+    top: 50%;
+    left: 50%;
+    margin: auto;
+    position: absolute;
+    width: 90%;
+    transform: translate(-50%, -50%);
+}
+
+.jumbo_title_1 {
+    font-size: 5rem;
+}
+
+menu {
+    position: sticky;
+    top: 0px;
+    opacity: 0.90;
+    box-shadow: 1px 1px 1px rgb(235, 231, 231);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.my_min_height {
+    min-height: calc(100vh - 164px);
+}
+
+.my_min_height_contact {
+    min-height: calc(100vh - 305px);
+}
+
+.placeholder_contact::placeholder {
+    color: white;
+}
+
+.my_margin_left {
+    margin-left: 100px;
+}
+
+
+/* MEDIA QUERIES INTERFACE USER AND ADMIN*/
+
+@media (min-width: 870px) {
+    #menu_responsive_user {
+        display: none;
+    }
+    #menu_responsive_admin {
+        display: none;
+    }
+}
+
+@media (max-width: 1537px) {
+    .mq_username_fs {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 1222px) {
+    .mq_li_fs {
+        font-size: 14px;
+    }
+    .mq_icon_size {
+        width: 26px;
+        height: auto;
+    }
+}
+
+@media (max-width: 1050px) {
+    .mq_username_fs {
+        display: none;
+    }
+}
+
+@media (max-width: 870px) {
+    #menu_desktop {
+        display: none;
+    }
+    .mq_username_fs {
+        display: flex;
+    }
+    .mq_li_fs {
+        font-size: 35px;
+    }
+}
+
+
+/* MEDIA QUERIES WELCOME PAGE */
+
+
+/* MEDIA QUERIES WELCOME PAGE */
+
+
+/* MEDIA QUERIES WELCOME PAGE */
+
+
+/* MEDIA QUERIES WELCOME PAGE */
+
+@media (max-width: 1560px) {
+    .jumbo_title_1 {
+        font-size: 4rem;
+    }
+    .jumbo_title_2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 1250px) {
+    .bg_cello {
+        height: 75vh;
+    }
+    .jumbo_title_1 {
+        font-size: 3.7rem;
+    }
+    .jumbo_title_2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 1160px) {
+    .bg_cello {
+        height: 55vh;
+    }
+    .jumbo_title_1 {
+        font-size: 3rem;
+    }
+    .jumbo_title_2 {
+        font-size: 1.2rem;
+    }
+    .mq_jumbo_btn a {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .ytb_vid {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 940px) {
+    .bg_cello {
+        height: 55vh;
+    }
+    .jumbo_title_1 {
+        font-size: 2rem;
+    }
+    .jumbo_title_2 {
+        font-size: 0.9rem;
+    }
+    .mq_jumbo_btn a {
+        font-size: 1rem;
+    }
+    .jumbo_title_position {
+        top: 55%;
+    }
+}
+
+@media (max-width: 640px) {
+    .jumbo_title_1 {
+        font-size: 1.7rem;
+    }
+    .jumbo_title_2 {
+        font-size: 0.7rem;
+    }
+    .mq_jumbo_btn a {
+        font-size: 0.8rem;
+    }
+    .mq_nav_padding {
+        padding: 1.8rem;
+    }
+    .mq_gray_menu {
+        display: none;
+    }
+}
+
+@media (max-width: 531px) {
+    .jumbo_title_1 {
+        font-size: 1.4rem;
+    }
+    .jumbo_title_2 {
+        font-size: 0.7rem;
+    }
+    .mq_jumbo_btn a {
+        font-size: 0.7rem;
+        padding: 6px;
+    }
+    .bg_cello {
+        height: 45vh;
+    }
+    .jumbo_title_position {
+        top: 60%;
+    }
+}
+
+@media (max-width: 437px) {
+    .jumbo_title_1 {
+        font-size: 1.1rem;
+    }
+    .jumbo_title_2 {
+        font-size: 0.5rem;
+    }
+    .mq_jumbo_btn a {
+        font-size: 0.6rem;
+        padding: 6px;
+    }
+    .mq_nav_padding {
+        padding: 0.5rem;
+    }
+    .bg_cello {
+        height: 40vh;
+    }
+    .jumbo_title_position {
+        top: 55%;
+    }
+}
+
+@media (max-width: 393px) {
+    .jumbo_title_1 {
+        font-size: 1.26rem;
+    }
+    .jumbo_title_2 {
+        font-size: 0.65rem;
+    }
+    .mq_jumbo_btn a {
+        font-size: 0.7rem;
+        padding: 6px;
+    }
+    .mq_nav_padding {
+        padding: 0.5rem;
+    }
+    .bg_cello {
+        height: 35vh;
+    }
+    .jumbo_title_position {
+        top: 55%;
+    }
+}
+
+@media (max-width: 350px) {
+    .jumbo_title_1 {
+        font-size: 1rem;
+    }
+    .jumbo_title_2 {
+        font-size: 0.5rem;
+    }
+    .mq_jumbo_btn a {
+        font-size: 0.54rem;
+        padding: 6px;
+    }
+    .mq_nav_padding {
+        padding: 0.5rem;
+    }
+    .bg_cello {
+        height: 35vh;
+    }
+    .jumbo_title_position {
+        top: 55%;
+    }
+}
+
+
+/* MEDIA QUERIES ORDERS USER */
+
+@media (min-width: 796px) {
+    #orders_phone_resp {
+        display: none;
+    }
+}
+
+@media (max-width: 795px) {
+    #orders_desktop_resp {
+        display: none;
+    }
+}
