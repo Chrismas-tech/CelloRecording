@@ -135,7 +135,7 @@ class AdminController extends Controller
         /*Pour le mail*/
         $email_user = User::find($user_id)->email;
         $admin_name = Admin::find(1)->name;
-        $url_redirection = "http://cellorecording.test:8080/conversation";
+        $url_redirection = "http://cellorecording.ml/conversation";
 
         /*On envoie un mail à l'utilisateur*/
         Mail::to($email_user)->send(new Messages($admin_name, $notifications->nb_notif,$url_redirection));
