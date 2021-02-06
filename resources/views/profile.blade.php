@@ -253,7 +253,7 @@
                     $('#error').addClass("hidden");
 
                     setTimeout(() => {
-                        window.location.replace("http://cellorecording.test:8080/profile");
+                        window.location.replace("http://cellorecording.ml/profile");
                     }, 1000);
 
                 } else {
