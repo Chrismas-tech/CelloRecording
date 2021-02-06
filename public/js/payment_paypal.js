@@ -26,7 +26,7 @@ paypal.Button.render({
         return actions.payment.create({
 
             redirect_urls: {
-                return_url: 'http://cellorecording.test:8080/execute_payment/'
+                return_url: 'http://cellorecording.ml/execute_payment/'
             },
 
             transactions: [{

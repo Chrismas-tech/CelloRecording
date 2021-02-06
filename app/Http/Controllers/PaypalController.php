@@ -73,7 +73,7 @@ class PaypalController extends Controller
 
                 return view('payment_success');
             } else {
-                return view('page_error')->with('message', 'The payment has been approved, but there is a problem about the amount paid :( Please contact the administrator through the conversations section !');
+                return view('page_error')->with('message', 'The payment has been approved, but there is a problem about the amount paid :( Please contact the administrator through the conversation section !');
             }
         }
     }
