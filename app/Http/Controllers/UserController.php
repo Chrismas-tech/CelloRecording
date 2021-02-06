@@ -108,7 +108,7 @@ class UserController extends Controller
 
         $email_user = User::find($user_id)->email;
         $user_name = User::find($user_id)->name;
-        $url_redirection = 'http://cellorecording.test:8080/conversation_with_user/'.$user_id;
+        $url_redirection = 'http://cellorecording.ml/conversation_with_user/'.$user_id;
 
         /*On envoie un mail à l'admin*/
         
