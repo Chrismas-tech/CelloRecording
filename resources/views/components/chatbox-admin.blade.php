@@ -1,4 +1,4 @@
-<div class="p-6 overflow-auto border border-gray-200 shadow" id="scroll_down" style="height:450px">
+<div class="p-4 overflow-auto border border-gray-200 shadow" id="scroll_down" style="height:400px">
     @foreach ($messages as $message)
 
         <div class="mb-8">
