@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
 
-    <div class="p-0 sm:p-12">
+    <div class="p-0 sm:p-6">
         <div class="max-w-5xl mx-auto">
             <div class="overflow-hidden bg-white shadow-sm">
 
-                <div class="flex justify-center mt-8 mb-8">
+                <div class="flex justify-center mt-4 mb-4">
                     <a href="{{ route('dashboard') }}" class="px-4 py-2 text-white bg-gray-800 rounded">Back to your
                         Dashboard</a>
                 </div>
