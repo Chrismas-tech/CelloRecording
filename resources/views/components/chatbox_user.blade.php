@@ -1,7 +1,7 @@
 <div class="p-4 overflow-auto border border-gray-200 shadow" id="scroll_down" style="height:400px;">
 
     @if ($messages->isEmpty())
-        <div class="">
+        <div>
             <p class="text-xl courgette_font">Describe your project and ask me any questions here :</p>
             <div class="mt-5">
 
@@ -32,6 +32,7 @@
     @foreach ($messages as $message)
 
         <div class="mb-8">
+
             @if ($message->from == 'Christophe Luciani')
                 <div class="flex justify-start">
                     <div class="flex">
@@ -42,22 +43,23 @@
                     </div>
                 </div>
 
-                <div class="flex justify-start">
-                    <div class="">
+                <div class="flex justify-start text-xs sm:text-sm md:text-md lg:text-lg">
+                    <div>
                         @if ($message->type === 'automatic_message')
-                            <p class="px-1 py-1 sm:px-2 sm:py-3 mb-1 text-white bg-gray-500 rounded">You have declined the last offer
+                            <p class="px-1 py-1 mb-1 text-white bg-gray-400 rounded">You have declined the last offer
                                 made
                                 by Christophe Luciani
                             </p>
                         @elseif ($message->type === 'download_file')
 
                             <a href="{{ route('download_music_file_user', [$message->id,$message->user_id]) }}"
-                                class="px-1 py-1 sm:px-2 mb-1 flex underline items-center text-white bg-red-400 rounded"><img
-                                    src="{{ asset('img/download_icon.png') }}" class="w-10 h-10 mr-3"
+                                class="px-1 py-1 mb-1 flex underline items-center text-white bg-red-400 rounded">
+                                <img
+                                    src="{{ asset('img/download_icon.png') }}" class="w-6 h-6 md:w-10 md:h-10 mr-3 "
                                     alt="">{{ $message->content }}
                             </a>
                         @else
-                            <p class="px-1 py-1 sm:px-2 sm:py-3 mb-1 text-white bg-green-500 rounded">{{ $message->content }}
+                            <p class="px-1 py-1 mb-1 text-white bg-green-500 rounded">{{ $message->content }}
                             </p>
                         @endif
                     </div>
@@ -72,23 +74,24 @@
                     </div>
                 </div>
 
-                <div class="flex justify-end">
+                <div class="flex justify-end text-xs sm:text-sm md:text-md lg:text-lg">
                     <div>
                         @if ($message->type === 'automatic_message')
-                            <p class="px-1 py-1 sm:px-2 sm:py-3 mb-1 text-white bg-gray-500 rounded">You have declined the last offer
+                            <p class="px-1 py-1 mb-1 text-white bg-gray-400 rounded">You have declined the last offer
                                 made
                                 by Christophe Luciani
                             </p>
                         @elseif ($message->type === 'download_file')
 
                             <a href="{{ route('download_music_file_user', [$message->id]) }}"
-                                class="px-1 py-1 sm:px-2 mb-1 flex underline items-center text-white bg-red-400 rounded"><img
-                                    src="{{ asset('img/download_icon.png') }}" class="w-10 h-10 mr-3 hidden sm:block"
+                                class="px-1 py-1 mb-1 flex underline items-center text-white bg-red-400 rounded">
+                                <img
+                                    src="{{ asset('img/download_icon.png') }}" class="w-6 h-6 md:w-10 md:h-10 mr-3"
                                     alt="">{{ $message->content }}
                             </a>
 
                         @else
-                            <p class="px-1 py-1 sm:px-2 sm:py-3 mb-1 text-white bg-purple-500 rounded">{{ $message->content }}
+                            <p class="px-1 py-1 mb-1 text-white bg-purple-500 rounded">{{ $message->content }}
                             </p>
                         @endif
                     </div>

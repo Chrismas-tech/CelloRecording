@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
 
-    <div class="py-6">
+    <div class="sm:py-6">
         <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
 
-                <div class="flex justify-center mt-4 mb-4">
+                <div class="flex justify-center bg-yellow-200 pt-4 pb-4">
                     <a href="/list_conversation_admin" class="px-4 py-2 text-white bg-gray-800 rounded">Back to the
                         Conversations list</a>
                 </div>
