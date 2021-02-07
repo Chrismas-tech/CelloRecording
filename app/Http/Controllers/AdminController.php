@@ -22,6 +22,27 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
+    public function __construct() {
+        $this->middleware('admin', ['except' => 'page_admin']);
+    }
+
+    public function connection_admin() {
+        return view('dashboard_admin');
+    }
+
+    public function page_admin()
+    {
+        return view('admin.admin_connection');
+    }
+
+    public function page_admin_logout(Request $request)
+    {
+        /*On détruit les variables de Session*/
+        $request->session()->forget('admin_name');
+        $request->session()->forget('admin_password');
+        return redirect('/');
+    }
+    
     public function page_dashboard()
     {
         $nb_users = count(User::all());

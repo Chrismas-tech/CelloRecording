@@ -1,10 +1,10 @@
 @php
 /*User*/
-$active ="border-indigo-500";
-$not_active ="border-indigo-200";
+$active = 'border-indigo-500';
+$not_active = 'border-indigo-200';
 /*Admin*/
-$active_admin ="border-green-500";
-$not_active_admin ="border-green-200";
+$active_admin = 'border-green-500';
+$not_active_admin = 'border-green-200';
 @endphp
 
 <div>
@@ -39,7 +39,8 @@ $not_active_admin ="border-green-200";
                     </div>
                 </li>
             </a>
-            <a href="{{ route('quotes_received') }}" class="hover:text-purple-600 hover:border-b-2 hover:border-indigo-500">
+            <a href="{{ route('quotes_received') }}"
+                class="hover:text-purple-600 hover:border-b-2 hover:border-indigo-500">
                 <li
                     class="mq_li_fs relative p-5 md:mr-8  border-b-2 hover:border-indigo-500 {{ Route::currentRouteName() == 'quotes_received' ? $active : $not_active }}">
                     Your Quotes
@@ -109,7 +110,8 @@ $not_active_admin ="border-green-200";
                         <img src="{{ asset('img/messages_icon.png') }}" alt="" class="w-7 mq_icon_size">
                         @if (App\Http\Controllers\AdminController::notifications() > 0)
                             <div class="flex items-center justify-center text-black">
-                                <p class="text-sm font-bold">({{ App\Http\Controllers\AdminController::notifications() }})
+                                <p class="text-sm font-bold">
+                                    ({{ App\Http\Controllers\AdminController::notifications() }})
                                 </p>
                             </div>
                         @endif
@@ -134,7 +136,7 @@ $not_active_admin ="border-green-200";
             </a>
 
 
-            <a href="{{ route('orders_admin') }}" class="hover:text-purple-600">
+            <a href="{{ route('orders_admin') }}" class="hover:text-green-600">
                 <li
                     class="mq_li_fs relative p-5 md:mr-8  border-b-2 hover:border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'orders_admin' ? $active_admin : $not_active_admin }}">
                     My Orders
@@ -151,6 +153,20 @@ $not_active_admin ="border-green-200";
                     </div>
                 </li>
             </a>
+
+            <a href="{{ route('admin_logout') }}" class="hover:text-green-600">
+                @csrf
+                <li
+                    class="mq_li_fs relative p-5 md:mr-8 border-green-200 border-b-2 hover:border-b-2 hover:border-green-500">
+                    <button type="submit" class="text-xl focus:outline-none">Logout</button>
+                    <div class="absolute bottom-0 right-0 flex items-center">
+                        <img src="{{ asset('img/shutdown.png') }}" alt="" class="w-7 mq_icon_size">
+
+                    </div>
+                </li>
+            </a>
+
+
         @endauth
     </ul>
 </div>
