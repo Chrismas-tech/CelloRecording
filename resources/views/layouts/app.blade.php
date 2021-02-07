@@ -25,6 +25,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
 
+        <link rel="icon" href="http://example.com/favicon.png">
 </head>
 
 <body class="bg-gray-100">

@@ -615,7 +615,7 @@
             $.ajax({
 
                 type: "GET",
-                url: "http://cellorecording.test:8080/date_minuteur",
+                url: "http://cellorecording.ml/date_minuteur",
                 data: {
                     nb_days: $nb_days,
                     order_created_at: $order_created_at,
