@@ -138,7 +138,7 @@ class AdminController extends Controller
         $url_redirection = "http://cellorecording.ml/conversation";
 
         /*On envoie un mail à l'utilisateur*/
-        Mail::to($email_user)->send(new Messages($admin_name, $notifications->nb_notif,$url_redirection));
+        Mail::to($email_user)->send(new Messages($admin_name, $notifications->nb_notif, $url_redirection));
 
         return redirect()->back();
     }
@@ -166,7 +166,7 @@ class AdminController extends Controller
         $url_redirection = "http://cellorecording.ml/quotes_received";
 
         /*On envoie un mail à l'utilisateur*/
-        Mail::to($email_user)->send(new MailQuote($admin_name,$user_name,$datas, $url_redirection));
+        Mail::to($email_user)->send(new MailQuote($admin_name, $user_name, $datas, $url_redirection));
 
         return redirect('dashboard_admin')->with('quotesent', 'The quote has been successfully sent to the client !');
     }
@@ -218,7 +218,13 @@ class AdminController extends Controller
     {
         $deliveries_order = Delivery::where('order_id', $order_id)->get();
         $order = Order::where('id', $order_id)->first();
-        return view('admin.order_view_admin', compact('order', 'deliveries_order'));
+
+        /* On calcule le temps du minuteur en jours, heures, minutes, secondes*/
+        $date_created_at = $order->created_at;
+        $nb_days = $order->nb_days;
+        $minuteur_result = DateChangeController::date_minuteur($date_created_at, $nb_days);
+
+        return view('admin.order_view_admin', compact('order', 'deliveries_order', 'minuteur_result'));
     }
 
     public function download_music_file_admin($message_id, $user_id)

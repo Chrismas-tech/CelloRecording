@@ -22,7 +22,15 @@
 
             <div class="mr-10">
 
-                <div id="minuteur_result" class="mt-5 mb-5">
+                <div id="minuteur_result" class="flex text-3xl mt-5 mb-5">
+                    <p class="bg-red-400 text-white rounded px-2 py-1 mr-5">Remaining Time :
+                    </p>
+                    <p class="bg-white border-gray-400 border rounded px-2 py-1 mr-5">
+                        <span id="day">{{ $minuteur_result[0] }}</span> days
+                        <span id="hour">{{ $minuteur_result[1] }}</span> hours
+                        <span id="min">{{ $minuteur_result[2] }}</span> minutes
+                        <span id="sec">{{ $minuteur_result[3] }}</span> secondes
+                    </p>
                 </div>
                 <div>
                     @csrf
@@ -31,7 +39,8 @@
                 </div>
 
                 <div class="mt-8 mb-8">
-                    <p class="text-4xl dancing_font">Summary of the order #{{ $order->id }} by {{ $order->user->name }}</p>
+                    <p class="text-4xl dancing_font">Summary of the order #{{ $order->id }} by {{ $order->user->name }}
+                    </p>
                     <p class="text-sm text-gray-500">Upload the work done and send it to the client</p>
                 </div>
             </div>
@@ -91,7 +100,8 @@
                     </div>
                     <div class="mb-6">
                         <input type="number" disabled max="1000" min="1" name="price"
-                            class="w-full p-2 border-gray-400 rounded min-h-8 max-h-20" value="{{ $order->price / 100 }}">
+                            class="w-full p-2 border-gray-400 rounded min-h-8 max-h-20"
+                            value="{{ $order->price / 100 }}">
                         @error('price')
                             <div class="flex flex-row">
                                 <p class="mt-1 text-white">{{ $message }}</p>
@@ -188,7 +198,8 @@
                 </div>
 
                 <div class="mt-8 mb-8">
-                    <p class="text-4xl dancing_font">Summary of the order #{{ $order->id }} by {{ $order->user->name }}</p>
+                    <p class="text-4xl dancing_font">Summary of the order #{{ $order->id }} by
+                        {{ $order->user->name }}</p>
                     <p class="text-sm text-gray-500">Re-Upload the work done and send it to the client</p>
                 </div>
             </div>
@@ -248,7 +259,8 @@
                     </div>
                     <div class="mb-6">
                         <input type="number" disabled max="1000" min="1" name="price"
-                            class="w-full p-2 border-gray-400 rounded min-h-8 max-h-20" value="{{ $order->price / 100 }}">
+                            class="w-full p-2 border-gray-400 rounded min-h-8 max-h-20"
+                            value="{{ $order->price / 100 }}">
                         @error('price')
                             <div class="flex flex-row">
                                 <p class="mt-1 text-white">{{ $message }}</p>
@@ -373,7 +385,8 @@
                 </div>
 
                 <div class="mt-8 mb-8">
-                    <p class="text-4xl dancing_font">Summary of the order #{{ $order->id }} by {{ $order->user->name }}</p>
+                    <p class="text-4xl dancing_font">Summary of the order #{{ $order->id }} by
+                        {{ $order->user->name }}</p>
                     <p class="text-sm text-gray-500">Re-Upload the work done and send it to the client</p>
                 </div>
             </div>
@@ -433,7 +446,8 @@
                     </div>
                     <div class="mb-6">
                         <input type="number" disabled max="1000" min="1" name="price"
-                            class="w-full p-2 border-gray-400 rounded min-h-8 max-h-20" value="{{ $order->price / 100 }}">
+                            class="w-full p-2 border-gray-400 rounded min-h-8 max-h-20"
+                            value="{{ $order->price / 100 }}">
                         @error('price')
                             <div class="flex flex-row">
                                 <p class="mt-1 text-white">{{ $message }}</p>
@@ -483,7 +497,7 @@
                         <div class="border-b border-gray-500">
                             <h1 class="text-6xl text-gray-500">Order re-delivered</h1>
                         </div>
-                        @else 
+                    @else
                         <div class="border-b border-gray-500">
                             <h1 class="text-6xl text-gray-500">Order delivered</h1>
                         </div>
@@ -496,14 +510,15 @@
         <div class="mx-auto max-w-7xl pb-12">
 
             <div class="mr-10">
-                    <div>
+                <div>
                     @csrf
                     <input id="order_created_at" hidden type="text" value="{{ $order->created_at }}">
                     <input id="nb_days" hidden type="text" value="{{ $order->nb_days }}">
                 </div>
 
                 <div class="mb-8">
-                    <p class="text-4xl dancing_font">Summary of the order #{{ $order->id }} by {{ $order->user->name }}</p>
+                    <p class="text-4xl dancing_font">Summary of the order #{{ $order->id }} by
+                        {{ $order->user->name }}</p>
                     <p class="text-sm text-gray-500">Re-Upload the work done and send it to the client</p>
                 </div>
             </div>
@@ -563,7 +578,8 @@
                     </div>
                     <div class="mb-6">
                         <input type="number" disabled max="1000" min="1" name="price"
-                            class="w-full p-2 border-gray-400 rounded min-h-8 max-h-20" value="{{ $order->price / 100 }}">
+                            class="w-full p-2 border-gray-400 rounded min-h-8 max-h-20"
+                            value="{{ $order->price / 100 }}">
                         @error('price')
                             <div class="flex flex-row">
                                 <p class="mt-1 text-white">{{ $message }}</p>
@@ -604,108 +620,108 @@
     @endif
 
     <script>
+        /* On convertit les chiffres texte en number */
+
+        $sec = parseInt(($('#sec').html()));
+        $min = parseInt(($('#min').html()));
+        $hour = parseInt(($('#hour').html()));
+        $day = parseInt(($('#day').html()));
+
+        setInterval(() => {
+            $sec -= 1;
+
+            /* Si le compteur secondes < 0 */
+            // secondes -> 59
+            // minutes - 1
+
+            if ($sec < 0) {
+                $sec = 59;
+                $min -= 1;
+            }
+
+            if ($min < 0) {
+                $min = 59;
+                $hour -= 1;
+            }
+
+            if ($hour < 0) {
+                $hour = 23;
+                $day -= 1;
+            }
+
+            $('#sec').html($sec);
+            $('#min').html($min);
+            $('#hour').html($hour);
+            $('#hour').html($hour);
+            $('#day').html($day);
+
+            if ($day < 0) {
+                $('#minuteur_result').empty();
+                $('#minuteur_result').append('<p class="bg-red-500 text-white rounded px-2 py-1 mr-5">Attention ! Le délai de livraison a été dépassé !</p>');
+
+            }
+
+        }, 1000);
+
+
+        if ($('#sec').html($sec) < 0) {
+            console.log('yolo');
+            $sec = 59;
+        }
+
+
         $(document).ready(function() {
 
-            console.log('ready')
+            $('form').ajaxForm({
 
-            $nb_days = $('#nb_days').val();
-            $order_created_at = $('#order_created_at').val();
-            $_token = $('input[name=_token]').val();
+                beforeSend: function() {
+                    $('#progress_bar_visible').removeClass("hidden");
+                    $progress_bar = $('.progress_bar')
+                    $percent = $('.percent')
+                    $task = $('.task')
 
-            $.ajax({
+                    $percent_begin = '0%';
+                    $progress_bar.width($percent_begin);
+                    $percent.html($percent_begin);
+                },
 
-                type: "GET",
-                url: "http://cellorecording.ml/date_minuteur",
-                data: {
-                    nb_days: $nb_days,
-                    order_created_at: $order_created_at,
-                    _token: $_token,
+                uploadProgress: function(event, position, total, percentComplete) {
+                    $percent_complete = percentComplete + '%';
+                    $progress_bar.width($percent_complete);
+                    $percent.html($percent_complete);
                 },
 
                 success: function(res) {
-                    console.log(res);
-                    $('#minuteur_result').html(
-                        '<p class="text-3xl"><span class="bg-red-400 text-white rounded px-2 py-1 mr-5">Remaining Time : </span><span class="bg-white border-gray-400 border rounded px-2 py-1 mr-5">' +
-                        res[0] + ' days ' + res[1] + ' hours ' + res[2] + ' min ' + res[
-                            3] + ' secondes</p></span>')
-                },
+
+                    if (res === "Files have been successfully uploaded !") {
+                        console.log(res);
+                        console.log('success')
+                        $('#success').html(res)
+                        $('#success').removeClass("hidden");
+                        $('#error').addClass("hidden");
+
+                        setTimeout(() => {
+                            window.location.replace(
+                                "http://cellorecording.test:8080/orders_admin");
+                        }, 1000);
+
+                    } else {
+                        console.log(res);
+                        console.log('error')
+                        $('#progress_bar_visible').addClass("hidden");
+                        $('#error').html(res)
+                        $('#error').removeClass("hidden");
+                    }
+                }
             })
 
-            /*
-                        setInterval(function() {
-
-                            $.ajax({
-
-                                type: "GET",
-                                url: "http://cellorecording.test:8080/date_minuteur",
-                                data: {
-                                    nb_days: $nb_days,
-                                    order_created_at: $order_created_at,
-                                    _token: $_token,
-                                },
-
-                                success: function(res) {
-                                    //  console.log(res);
-                                    $('#minuteur_result').html(
-                                        '<p class="text-3xl"><span class="bg-red-400 text-white rounded px-2 py-1 mr-5">Remaining Time : </span><span class="bg-white border-gray-400 border rounded px-2 py-1 mr-5">' +
-                                        res[0] + ' days ' + res[1] + ' hours ' + res[2] + ' min ' + res[
-                                            3] + ' secondes</p></span>')
-                                },
-                            })
-
-                        }, 1000);
-            */
-
+            $('#checked').change(function() {
+                $('#remove_checked').remove()
+                $image =
+                    "<img src='{{ asset('img/checked.png') }}' id='remove_checked' class='w-8 h-8 ml-5' alt=''> ";
+                $('#checked').append($image);
+            })
         });
-
-        $('form').ajaxForm({
-
-            beforeSend: function() {
-                $('#progress_bar_visible').removeClass("hidden");
-                $progress_bar = $('.progress_bar')
-                $percent = $('.percent')
-                $task = $('.task')
-
-                $percent_begin = '0%';
-                $progress_bar.width($percent_begin);
-                $percent.html($percent_begin);
-            },
-
-            uploadProgress: function(event, position, total, percentComplete) {
-                $percent_complete = percentComplete + '%';
-                $progress_bar.width($percent_complete);
-                $percent.html($percent_complete);
-            },
-
-            success: function(res) {
-
-                if (res === "Files have been successfully uploaded !") {
-                    console.log(res);
-                    console.log('success')
-                    $('#success').html(res)
-                    $('#success').removeClass("hidden");
-                    $('#error').addClass("hidden");
-
-                    setTimeout(() => {
-                        window.location.replace("http://cellorecording.test:8080/orders_admin");
-                    }, 1000);
-
-                } else {
-                    console.log(res);
-                    console.log('error')
-                    $('#progress_bar_visible').addClass("hidden");
-                    $('#error').html(res)
-                    $('#error').removeClass("hidden");
-                }
-            }
-        })
-
-
-        $('#checked').change(function() {
-            $('#remove_checked').remove()
-            $image = "<img src='{{ asset('img/checked.png') }}' id='remove_checked' class='w-8 h-8 ml-5' alt=''> ";
-            $('#checked').append($image);
-        })
 
     </script>
 @endsection

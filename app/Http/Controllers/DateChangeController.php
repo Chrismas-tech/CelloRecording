@@ -27,53 +27,47 @@ class DateChangeController extends Controller
     }
 
 
-    public static function date_minuteur(Request $request)
+    public static function date_minuteur($date_created_at, $nb_days)
     {
         /*Créer un compteur de temps pour la livraison*/
         /*Step 1 - On formatte les deux dates en Y-m-d */
         /*Step 2 - On fait la différence pour avoir un interval de temps en secondes */
 
-        if ($request->ajax()) {
+        $date_delivery = new DateTime($date_created_at);
+        $date_delivery = date_add($date_delivery, date_interval_create_from_date_string($nb_days . ' days'));
+        $date_delivery_formated = date_format($date_delivery, "Y-m-d H:i:s");
 
-            $date_created_at = $request->get('order_created_at');
-            $nb_days = $request->get('nb_days');
+        $currentDateTime = date('Y-m-d H:i:s');
 
-            $date_delivery = new DateTime($date_created_at);
-            $date_delivery = date_add($date_delivery, date_interval_create_from_date_string($nb_days . ' days'));
-            $date_delivery_formated = date_format($date_delivery, "Y-m-d H:i:s");
+        $diff_seconds = strtotime($date_delivery_formated) - strtotime($currentDateTime);
 
-            $currentDateTime = date('Y-m-d H:i:s');
+        /*Conversion secondes en jours, heures, minutes, secondes*/
+        /*Conversion secondes en jours, heures, minutes, secondes*/
+        /*Conversion secondes en jours, heures, minutes, secondes*/
+        /*Conversion secondes en jours, heures, minutes, secondes*/
+        /*Conversion secondes en jours, heures, minutes, secondes*/
 
-            $diff_seconds = strtotime($date_delivery_formated) - strtotime($currentDateTime);
+        /*Nombre de minutes exactes dans $diff_seconds*/
+        $min_total = floor($diff_seconds / 60);
 
-            /*Conversion secondes en jours, heures, minutes, secondes*/
-            /*Conversion secondes en jours, heures, minutes, secondes*/
-            /*Conversion secondes en jours, heures, minutes, secondes*/
-            /*Conversion secondes en jours, heures, minutes, secondes*/
-            /*Conversion secondes en jours, heures, minutes, secondes*/
+        /*secondes au compteur*/
+        $seconds = $diff_seconds - (60 * $min_total);
 
-            /*Nombre de minutes exactes dans $diff_seconds*/
-            $min_total = floor($diff_seconds / 60);
+        /*Nombre d'heures exactes dans $diff_seconds*/
+        $hours_total = floor($min_total / 60);
 
-            /*secondes au compteur*/
-            $seconds = $diff_seconds - (60 * $min_total);
+        /*minutes au compteur*/
+        $min = $min_total - (60 * $hours_total);
 
-            /*Nombre d'heures exactes dans $diff_seconds*/
-            $hours_total = floor($min_total / 60);
+        /*Nombre de jours exacts dans $diff_seconds*/
+        $days = floor($hours_total / 24);
 
-            /*minutes au compteur*/
-            $min = $min_total - (60 * $hours_total);
+        /*heures au compteur*/
+        $hours = $hours_total - (24 * $days);
 
-            /*Nombre de jours exacts dans $diff_seconds*/
-            $days = floor($hours_total / 24);
+        $result = [$days, $hours, $min, $seconds];
 
-            /*heures au compteur*/
-            $hours = $hours_total - (24 * $days);
-
-            $result = [$days, $hours, $min, $seconds];
-
-            return  $result;
-        }
+        return  $result;
     }
 
     public static function date_delivered_on($date_created_at)
