@@ -45,19 +45,19 @@
                 <div class="flex justify-start">
                     <div class="">
                         @if ($message->type === 'automatic_message')
-                            <p class="px-1 py-1 sm:px-2 smp:py-3 mb-1 text-white bg-gray-400 rounded">You have declined the last offer
+                            <p class="px-1 py-1 sm:px-2 sm:py-3 mb-1 text-white bg-gray-500 rounded">You have declined the last offer
                                 made
                                 by Christophe Luciani
                             </p>
                         @elseif ($message->type === 'download_file')
 
                             <a href="{{ route('download_music_file_user', [$message->id,$message->user_id]) }}"
-                                class="px-1 py-1 sm:px-2 smp:py-3 mb-1 text-xs sm:text-sm flex underline items-center text-white bg-red-400 rounded"><img
+                                class="px-1 py-1 sm:px-2 mb-1 flex underline items-center text-white bg-red-400 rounded"><img
                                     src="{{ asset('img/download_icon.png') }}" class="w-10 h-10 mr-3"
                                     alt="">{{ $message->content }}
                             </a>
                         @else
-                            <p class="px-1 py-1 sm:px-2 sm:py-3 md:text-lg mb-1 text-white bg-green-500 rounded">{{ $message->content }}
+                            <p class="px-1 py-1 sm:px-2 sm:py-3 mb-1 text-white bg-green-500 rounded">{{ $message->content }}
                             </p>
                         @endif
                     </div>
@@ -75,20 +75,20 @@
                 <div class="flex justify-end">
                     <div>
                         @if ($message->type === 'automatic_message')
-                            <p class="px-1 py-1 sm:px-2 sm:py-3 mb-1 text-white bg-gray-400 rounded">You have declined the last offer
+                            <p class="px-1 py-1 sm:px-2 sm:py-3 mb-1 text-white bg-gray-500 rounded">You have declined the last offer
                                 made
                                 by Christophe Luciani
                             </p>
                         @elseif ($message->type === 'download_file')
 
                             <a href="{{ route('download_music_file_user', [$message->id]) }}"
-                                class="px-1 py-1 sm:px-2 sm:py-3 mb-1 flex underline items-center text-white bg-red-400 rounded"><img
+                                class="px-1 py-1 sm:px-2 mb-1 flex underline items-center text-white bg-red-400 rounded"><img
                                     src="{{ asset('img/download_icon.png') }}" class="w-10 h-10 mr-3 hidden sm:block"
                                     alt="">{{ $message->content }}
                             </a>
 
                         @else
-                            <p class="px-1 py-1 sm:px-2 sm:py-3 mb-1 md:text-lg text-white bg-purple-500 rounded">{{ $message->content }}
+                            <p class="px-1 py-1 sm:px-2 sm:py-3 mb-1 text-white bg-purple-500 rounded">{{ $message->content }}
                             </p>
                         @endif
                     </div>

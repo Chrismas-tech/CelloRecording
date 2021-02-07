@@ -22,7 +22,7 @@
                         </p>
                     @elseif ($message->type === 'download_file')
                         <a href="{{ route('download_music_file_admin', [$message->id, $message->user_id]) }}"
-                            class="px-1 py-1 sm:px-2 sm:py-3 mb-1 flex underline items-center text-white bg-red-400 rounded"><img
+                            class="px-1 py-1 sm:px-2 mb-1 flex underline items-center text-white bg-red-400 rounded"><img
                                 src="{{ asset('img/download_icon.png') }}" class="w-10 h-10 mr-3"
                                 alt="">{{ $message->content }}
                         </a>

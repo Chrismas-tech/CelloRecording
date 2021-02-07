@@ -163,7 +163,7 @@ class AdminController extends Controller
         $user_name = User::find($request->user_id)->name;
         $admin_name = Admin::find(1)->name;
 
-        $url_redirection = "http://cellorecording.test:8080/quotes_received";
+        $url_redirection = "http://cellorecording.ml/quotes_received";
 
         /*On envoie un mail à l'utilisateur*/
         Mail::to($email_user)->send(new MailQuote($admin_name,$user_name,$datas, $url_redirection));
