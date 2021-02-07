@@ -143,7 +143,7 @@
 
                                 <td
                                     class="{{ $class }} bg-white border p-4 courgette_font align-middle text-center text-sm md:text-md lg:text-xl">
-                                    {{ \App\Http\Controllers\DatechangeController::date_due_on_buyer($order->created_at, $order->nb_days) }}
+                                    {{ \App\Http\Controllers\DateChangeController::date_due_on_buyer($order->created_at, $order->nb_days) }}
                                 </td>
 
                                 <td
