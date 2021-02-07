@@ -55,12 +55,12 @@
                     </div>
                 </button>
             </div>
-            <div id="hamburger" class=" text-2xl hidden text-center text-indigo-500 bg-white rounded list-none">
+            <div id="hamburger" class="sm:text-sm xl:text-2xl hidden text-center text-indigo-500 bg-white rounded list-none">
                 <x-nav_hamburger_user></x-nav_hamburger_user>
             </div>
         </div>
     @else
-        <div id="menu_responsive_admin" class="text-2xl text-center">
+        <div id="menu_responsive_admin" class="sm:text-sm xl:text-2xl text-center">
             <x-nav_hamburger_admin></x-nav_hamburger_admin>
         </div>
     @endauth
