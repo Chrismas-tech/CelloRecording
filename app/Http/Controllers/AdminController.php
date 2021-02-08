@@ -198,29 +198,7 @@ class AdminController extends Controller
         return $nb_quote;
     }
 
-    public function page_paypal_payment(Request $request, $quote_id, $price)
-    {
-        $user_id = auth()->user()->id;
-        $quote = Quote::where('user_id', $user_id)->where('id', $quote_id)->where('price', $price)->first();
 
-        if (!$quote) {
-
-            return view('page_error');
-        } else {
-
-            /* Variable de session pour conserver l'ID de la "quote" */
-
-            if (($request->session()->has('quote_ready_payment'))) {
-
-                $request->session()->forget('quote_ready_payment');
-                $request->session()->push('quote_ready_payment', $quote->id);
-            } else {
-                $request->session()->push('quote_ready_payment', $quote->id);
-            }
-
-            return view('admin.paypal_payment', compact('quote'));
-        }
-    }
 
 
     public static function order_notifications()

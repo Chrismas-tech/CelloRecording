@@ -117,7 +117,7 @@ Route::get('/download_music_file_admin/{message_id}/{user_id}', [AdminController
 Route::get('/download_delivery_file/{file_id}', [AdminController::class, 'download_delivery_file'])->name('download_delivery_file');
 
 /*PAYPAL-PAGE*/ 
-Route::post('/page_paypal_payment/{quote_id}/{price}', [AdminController::class, 'page_paypal_payment'])->name('page_paypal_payment');
+Route::post('/page_paypal_payment/{quote_id}/{price}', [UserController::class, 'page_paypal_payment'])->name('page_paypal_payment');
 
 Route::get('/execute_payment', [PaypalController::class, 'execute_payment'])->name('execute_payment');
 

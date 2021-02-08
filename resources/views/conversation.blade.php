@@ -5,7 +5,7 @@
         <div class="max-w-5xl mx-auto">
             <div class="overflow-hidden bg-white shadow-sm">
 
-                <div class="flex justify-center bg-yellow-200 pt-4 pb-4">
+                <div class="flex justify-center bg-green-200 pt-4 pb-4">
                     <a href="{{ route('dashboard') }}" class="px-4 py-2 text-white bg-gray-800 rounded">Back to your
                         Dashboard</a>
                 </div>
