@@ -32,26 +32,26 @@
     <main class=" my_min_height_administration text-center">
         <div class="connection_position">
             <div class="">
-                <h1 class="karma mb-6 text-3xl">Administration Connection</h1>
+                <h1 class="dancing_font mb-6 text-6xl">Administration Connection</h1>
                 <form action="{{ route('connection_admin') }}" method="POST">
                     @csrf
                     <div>
-                        <input type="text" name="name" class="rounded w-full mb-3" placeholder="Name">
+                        <input type="text" name="name" class="rounded w-full text-3xl mb-3" placeholder="Name">
                     </div>
                     <div>
-                        <input type="password" name="password" class="rounded  w-full mb-3" placeholder="Password">
+                        <input type="password" name="password" class="rounded text-3xl w-full mb-3" placeholder="Password">
                     </div>
                     @if (Session::has('error'))
                         <div class="bg-red-500 text-white mb-3 text-md px-1 py-1 rounded">{{ Session::get('error') }}
                         </div>
                     @endif
                     @error('name')
-                        <div class="bg-red-500 text-white mb-3 text-md px-1 py-1 rounded">{{ $message }}</div>
+                        <div class="bg-red-500 text-white mb-3 text-xl px-1 py-1 rounded">{{ $message }}</div>
                     @enderror
                     @error('password')
-                        <div class="bg-red-500 text-white mb-3 text-md px-1 py-1 rounded">{{ $message }}</div>
+                        <div class="bg-red-500 text-white mb-3 text-xl px-1 py-1 rounded">{{ $message }}</div>
                     @enderror
-                    <button type="submit" class="px-4 py-2 text-white bg-gray-800 rounded text-xl">Connect</button>
+                    <button type="submit" class="px-4 mt-2 py-2 text-white bg-gray-800 rounded text-xl">Connect</button>
                 </form>
             </div>
         </div>

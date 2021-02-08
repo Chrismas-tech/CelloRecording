@@ -64,4 +64,15 @@ $not_active_admin ="border-green-200";
             </div>
         </li>
     </a>
+    <a href="{{ route('admin_logout') }}" class="hover:text-green-600">
+        @csrf
+        <li
+            class=" relative p-5 md:mr-8 border-green-200 border-b-2 hover:border-b-2 hover:border-green-500">
+            <button type="submit" class=" focus:outline-none">Logout</button>
+            <div class="absolute bottom-3 right-3 flex items-center">
+                <img src="{{ asset('img/shutdown.png') }}" alt="" class="w-12">
+
+            </div>
+        </li>
+    </a>
 </div>
