@@ -67,7 +67,7 @@ form {
     position: relative;
 }
 
-::-webkit-scrollbar {
+ ::-webkit-scrollbar {
     display: none;
 }
 
@@ -150,7 +150,7 @@ input[type="file"] {
         font-size: 14px;
     }
     .mq_icon_size {
-        width: 26px;
+        width: 24px;
         height: auto;
     }
 }
@@ -367,5 +367,63 @@ input[type="file"] {
 @media (max-width: 795px) {
     #orders_desktop_resp {
         display: none;
+    }
+}
+
+
+/* MEDIA QUERIES PAYMENT_PAGE USER */
+
+@media (max-width: 1243px) {
+    .mq_font_size_Order_payment_text {
+        font-size: 28px;
+    }
+    .mq_payment_page_font_size_titles {
+        font-size: 20px;
+    }
+    .mq_payment_page_font_size_description {
+        font-size: 16px;
+    }
+    .mq_text_price {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1021px) {
+    .mq_price_details_block {
+        margin: 0;
+        margin-top: 20px;
+    }
+    .mq_titlePCR_plus_description {
+        margin: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+    .img_cello_payment {
+        width: 200px;
+        height: auto;
+    }
+    .mq_order_payment_width {
+        width: 100%;
+        padding: 0;
+    }
+    .mq_img_div_center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 546px) {
+    .mq_font_size_Order_payment_text {
+        font-size: 18px;
+    }
+    .mq_payment_page_font_size_titles {
+        font-size: 12px;
+    }
+    .mq_payment_page_font_size_description {
+        font-size: 10px;
+    }
+    .mq_text_price {
+        font-size: 13px;
     }
 }

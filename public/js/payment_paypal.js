@@ -12,10 +12,11 @@ paypal.Button.render({
     // Customize button (optional)
     locale: 'en_US',
     style: {
-        size: 'large',
+        size: 'medium',
         color: 'gold',
         shape: 'pill',
-        label: 'paypal'
+        label: 'paypal',
+        responsive: 'Dynamic'
     },
 
     // Enable Pay Now checkout flow (optional)

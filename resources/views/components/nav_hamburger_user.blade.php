@@ -58,7 +58,7 @@ $not_active ="border-indigo-200";
             Your Quotes
             <div class="absolute flex items-center bottom-1 right-0">
 
-                <img src="{{ asset('img/quotes_icon.png') }}" alt="" class="w-12">
+                <img src="{{ asset('img/quotes_icon.png') }}" alt="" class="w-9">
                 @if (App\Http\Controllers\UserController::quotes_notifications() > 0)
                     <div class="flex items-center justify-center text-black">
                         <p class="text-sm font-bold">({{ App\Http\Controllers\UserController::quotes_notifications() }})
