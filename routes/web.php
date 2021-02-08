@@ -75,20 +75,24 @@ Route::post('/change_password', [ChangePasswordController::class, 'change_passwo
 /*ADMIN*/
 /*ADMIN*/
 
+/* CONNECTION ADMIN*/
+
 Route::get('/admin', [AdminController::class, 'page_admin'])->name('admin');
-
 Route::get('/admin_logout', [AdminController::class, 'page_admin_logout'])->name('admin_logout');
-
-Route::get('/dashboard_admin', [AdminController::class, 'page_dashboard'])->name('dashboard_admin');
 Route::post('/connection_admin', [AdminController::class, 'connection_admin'])->name('connection_admin');
 
+/* SIDE ADMIN */
+
+Route::get('/dashboard_admin', [AdminController::class, 'page_dashboard'])->name('dashboard_admin');
 Route::get('/quotes_sent', [AdminController::class, 'page_quotes_sent'])->name('quotes_sent');
 Route::get('/list_conversation_admin', [AdminController::class, 'page_list_conversation_admin'])->name('list_conversation_admin');
 Route::get('/quote_form/{user_id}', [AdminController::class, 'page_quote_form'])->name('quote_form');
 Route::post('/send_quote_client', [AdminController::class, 'send_quote_client'])->name('send_quote_client');
 Route::get('/orders_admin', [AdminController::class, 'page_orders_admin'])->name('orders_admin');
 Route::get('/order_view_admin/{order_id}', [AdminController::class, 'page_order_view_admin'])->name('order_view_admin');
-;
+Route::post('/new_conversation_admin/{user_id}', [AdminController::class, 'new_conversation_admin'])->name('new_conversation_admin');
+Route::get('/conversation_with_user/{user_id}', [AdminController::class, 'conversation_with_user'])->name('conversation_with_user');
+
 
 /*UPLOAD MUSIC*/ 
 Route::post('/upload_music_user', [UploadfileController::class, 'upload_music_user'])->name('upload_music_user');
@@ -101,8 +105,7 @@ Route::post('/upload_delivery', [UploadfileController::class, 'upload_delivery']
 Route::get('/date_minuteur', [DateChangeController::class, 'date_minuteur'])->name('date_minuteur');
 
 
-Route::post('/new_conversation_admin/{user_id}', [AdminController::class, 'new_conversation_admin'])->name('new_conversation_admin');
-Route::get('/conversation_with_user/{user_id}', [AdminController::class, 'conversation_with_user'])->name('conversation_with_user');
+
 
 Route::post('/uploadphoto', [UploadfileController::class, 'uploadphoto'])->name('uploadphoto');
 
@@ -116,6 +119,16 @@ Route::get('/download_music_file_admin/{message_id}/{user_id}', [AdminController
 /*GET MUSIC-FILE DELIVERY*/
 Route::get('/download_delivery_file/{file_id}', [AdminController::class, 'download_delivery_file'])->name('download_delivery_file');
 
+/*PAYPAL-PAGE*/ 
+Route::post('/page_paypal_payment/{quote_id}/{price}', [AdminController::class, 'page_paypal_payment'])->name('page_paypal_payment');
+
+Route::get('/execute_payment', [PaypalController::class, 'execute_payment'])->name('execute_payment');
+
+/* PAGE ERROR*/
+Route::get('/not_authorized', function () {
+    return view('not_authorized');
+});
+
 /* BAC A SABLE */
 
 Route::get('/bac-a-sable', function () {
@@ -128,8 +141,5 @@ Route::get('/bac-a-sable-2', function () {
     return view('bac-a-sable.bac-a-sable-2');
 });
 
-/*PAYPAL-PAGE*/ 
-Route::post('/page_paypal_payment/{quote_id}/{price}', [AdminController::class, 'page_paypal_payment'])->name('page_paypal_payment');
 
-Route::get('/execute_payment', [PaypalController::class, 'execute_payment'])->name('execute_payment');
 

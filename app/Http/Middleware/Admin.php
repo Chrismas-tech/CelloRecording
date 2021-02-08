@@ -54,7 +54,7 @@ class Admin
                 return $next($request);
             } else {
                 /*Sinon on ne donne pas l'accès*/
-                return response('You are not authorised to access this page');
+                return redirect('not_authorized');
             }
         }
     }

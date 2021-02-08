@@ -104,6 +104,10 @@ input[type="file"] {
     min-height: calc(100vh - 305px);
 }
 
+.my_min_height_error {
+    min-height: calc(100vh - 94px);
+}
+
 .placeholder_contact::placeholder {
     color: white;
 }
