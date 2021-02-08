@@ -17,7 +17,8 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        /* Si on se trouve sur la page Admin-Connexion*/
+        /* Si on se trouve sur la page Admin-Connexion */
+
         /* On vérifie les inputs, on les compare avec la BDD, si ils sont correct on créé 2 variables de session */
 
         if ($request->name || $request->password) {
@@ -50,7 +51,8 @@ class Admin
             /*Si on ne se trouve pas sur une page de connexion*/ 
             /* Si les variables Session existent déjà on renvoie vers la page voulu*/
 
-            if ($request->session()->get('admin_name') || $request->session()->get('admin_password')) {
+            if ($request->session()->get('admin_name') && $request->session()->get('admin_password')) {
+
                 return $next($request);
             } else {
                 /*Sinon on ne donne pas l'accès*/

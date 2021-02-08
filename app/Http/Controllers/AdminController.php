@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Storage;
 class AdminController extends Controller
 {
     public function __construct() {
-        $this->middleware('admin');
+        $this->middleware('admin',['except' => 'page_admin']);
     }
 
     public function connection_admin() {

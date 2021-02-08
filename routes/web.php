@@ -32,6 +32,11 @@ Route::get('/', function () {
 
 require __DIR__.'/auth.php';
 
+/* PAGE ERROR*/
+Route::get('/not_authorized', function () {
+    return view('not_authorized');
+});
+
 /*CONTACT-FORM*/
 Route::get('/contact', [UserController::class, 'page_contact'])->name('contact');
 Route::post('/send_contact_email', [UserController::class, 'page_send_contact_email'])->name('send_contact_email');
@@ -69,6 +74,14 @@ Route::patch('/update_delivery', [UserController::class, 'update_delivery'])->na
 /*CHANGE PASSWORD*/
 Route::post('/change_password', [ChangePasswordController::class, 'change_password'])->name('change_password');
 
+/* UPLOAD PHOTO*/
+Route::post('/uploadphoto', [UploadfileController::class, 'uploadphoto'])->name('uploadphoto');
+
+/*UPLOAD MUSIC*/ 
+Route::post('/upload_music_user', [UploadfileController::class, 'upload_music_user'])->name('upload_music_user');
+
+Route::post('/upload_music_admin/{user_id}', [UploadfileController::class, 'upload_music_admin'])->name('upload_music_admin');
+Route::post('/upload_delivery', [UploadfileController::class, 'upload_delivery'])->name('upload_delivery');
 
 /*ADMIN*/
 /*ADMIN*/
@@ -93,28 +106,12 @@ Route::get('/order_view_admin/{order_id}', [AdminController::class, 'page_order_
 Route::post('/new_conversation_admin/{user_id}', [AdminController::class, 'new_conversation_admin'])->name('new_conversation_admin');
 Route::get('/conversation_with_user/{user_id}', [AdminController::class, 'conversation_with_user'])->name('conversation_with_user');
 
-
-/*UPLOAD MUSIC*/ 
-Route::post('/upload_music_user', [UploadfileController::class, 'upload_music_user'])->name('upload_music_user');
-
-Route::post('/upload_music_admin/{user_id}', [UploadfileController::class, 'upload_music_admin'])->name('upload_music_admin');
-Route::post('/upload_delivery', [UploadfileController::class, 'upload_delivery'])->name('upload_delivery');
-
-
 /* ADMIN-MINUTEUR */ 
 Route::get('/date_minuteur', [DateChangeController::class, 'date_minuteur'])->name('date_minuteur');
-
-
-
-
-Route::post('/uploadphoto', [UploadfileController::class, 'uploadphoto'])->name('uploadphoto');
-
-
 
 /*GET MUSIC-FILE CONVERSATION*/
 Route::get('/download_music_file_user/{message_id}', [UserController::class, 'download_music_file_user'])->name('download_music_file_user');
 Route::get('/download_music_file_admin/{message_id}/{user_id}', [AdminController::class, 'download_music_file_admin'])->name('download_music_file_admin');
-
 
 /*GET MUSIC-FILE DELIVERY*/
 Route::get('/download_delivery_file/{file_id}', [AdminController::class, 'download_delivery_file'])->name('download_delivery_file');
@@ -123,11 +120,6 @@ Route::get('/download_delivery_file/{file_id}', [AdminController::class, 'downlo
 Route::post('/page_paypal_payment/{quote_id}/{price}', [AdminController::class, 'page_paypal_payment'])->name('page_paypal_payment');
 
 Route::get('/execute_payment', [PaypalController::class, 'execute_payment'])->name('execute_payment');
-
-/* PAGE ERROR*/
-Route::get('/not_authorized', function () {
-    return view('not_authorized');
-});
 
 /* BAC A SABLE */
 
