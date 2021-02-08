@@ -27,7 +27,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function __construct() {
-        $this->middleware('auth');
+        $this->middleware('auth',['except' => 'page_contact']);
     }
 
     public function page_dashboard()
