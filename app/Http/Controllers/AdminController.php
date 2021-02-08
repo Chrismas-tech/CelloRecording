@@ -198,9 +198,6 @@ class AdminController extends Controller
         return $nb_quote;
     }
 
-
-
-
     public static function order_notifications()
     {
         $nb_order = count(Order::where('status', 3)->orWhere('status', 4)->get());

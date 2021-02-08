@@ -28,7 +28,6 @@ class PaypalController extends Controller
         $quote = Quote::where('id', $quote_id)->first();
         $price = $quote->price / 100;
 
-
         $apiContext = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(
                 'ATdLwCnmk4QOjLGuyaPvBVsdw7-4VZD550fppzEUzW7vvEta_qzDG8uAbC1euta2_KO_OSgyCzC0Axva',     // ClientID

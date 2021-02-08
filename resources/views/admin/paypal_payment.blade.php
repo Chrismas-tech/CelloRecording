@@ -39,12 +39,7 @@
                                 {{ $quote->user->name }} <br> Description of the work
                             </p>
 
-                            <p class="text-md mq_payment_page_font_size_description"> {{ $quote->description }}Recording
-                                forRecording
-                                forRecording forRecording forRecording forRecording forRecording forRecording
-                                forRecording forRecording forRecording forRecording forRecording forRecording
-                                forRecording forRecording forRecording forRecording forRecording forRecording
-                                forRecording forRecording forRecording forRecording forRecording for
+                            <p class="text-md mq_payment_page_font_size_description"> {{ $quote->description }}
                             </p>
                         </div>
                     </div>

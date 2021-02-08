@@ -12,21 +12,21 @@ class Revision extends Mailable
     use Queueable, SerializesModels;
 
     public $email_user;
-    public $user_id;
     public $user_name;
-    public $nb_notif;
+    public $url;
+    public $order_id;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($email_user, $user_id, $user_name,$nb_notif)
+    public function __construct($email_user, $user_name, $url, $order_id)
     {
         $this->email_user = $email_user;
-        $this->user_id = $user_id;
         $this->user_name = $user_name;
-        $this->nb_notif = $nb_notif;
+        $this->url = $url;
+        $this->url = $order_id;
     }
 
     /**

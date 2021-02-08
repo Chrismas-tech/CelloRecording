@@ -27,7 +27,7 @@ paypal.Button.render({
         return actions.payment.create({
 
             redirect_urls: {
-                return_url: 'http://cellorecording.ml/execute_payment/'
+                return_url: 'http://cellorecording.ml/execute_payment'
             },
 
             transactions: [{
@@ -43,6 +43,7 @@ paypal.Button.render({
     // Execute the payment
     onAuthorize: function(data, actions) {
         // console.log(actions.redirect);
+
         return actions.redirect();
     }
 

@@ -428,7 +428,7 @@ class UserController extends Controller
         }
     }
 
-    public function page_paypal_payment(Request $request, $quote_id, $price)
+        public function page_paypal_payment(Request $request, $quote_id, $price)
     {
         $user_id = auth()->user()->id;
         $quote = Quote::where('user_id', $user_id)->where('id', $quote_id)->where('price', $price)->first();
@@ -441,7 +441,6 @@ class UserController extends Controller
             /* Variable de session pour conserver l'ID de la "quote" */
 
             if (($request->session()->has('quote_ready_payment'))) {
-
                 $request->session()->forget('quote_ready_payment');
                 $request->session()->push('quote_ready_payment', $quote->id);
             } else {
