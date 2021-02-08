@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactMail;
 use App\Mail\MessageToAdmin;
+use App\Mail\Revision;
 use App\Models\Admin;
 use App\Models\Conversation;
 use App\Models\Delivery;
@@ -280,10 +281,20 @@ class UserController extends Controller
         if (($order->status == 1) && ($order->nb_revision == 1)) {
 
             if ($request->order_status == 4) {
+
                 $order->status = 4;
                 $order->nb_revision -= 1;
                 $order->save();
                 $request->session()->forget('order_datas_session');
+
+                $email_user = User::find($user_id)->email;
+                $user_name = User::find($user_id)->name;
+                $url_redirection = 'http://cellorecording.ml/orders_admin';
+        
+                /*On envoie un mail à l'admin*/
+                
+                Mail::to('electriccellofou@gmail.com')->send(new Revision($email_user, $user_name, $url_redirection, $order->id));
+
                 return redirect('orders');
             } elseif ($request->order_status == 5) {
                 $order->status = 5;

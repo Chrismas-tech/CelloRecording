@@ -7,5 +7,5 @@ You have {{$nb_notif}} messages unread from {{$user_name}} ({{$email_user}}) !
 @endif
 
 @component('mail::button', ['url' => $url_redirection])
-Click here to answer him now !
+Click here to answer your client now !
 @endcomponent
