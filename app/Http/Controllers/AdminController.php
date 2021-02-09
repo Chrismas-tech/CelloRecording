@@ -88,7 +88,7 @@ class AdminController extends Controller
         $nb_notifications = Notification::where('to', 'Christophe Luciani')->sum('nb_notif');
 
 
-        return view('admin.list_conversation_admin', compact('nb_notifications', 'conversations', 'notifs_which_user','online'));
+        return view('admin.list_conversation_admin', compact('nb_notifications', 'conversations', 'notifs_which_user'));
     }
 
     public static function notifications()
