@@ -61,9 +61,10 @@ class UserController extends Controller
 
         $user_id = $user->id;
         $admin = Admin::find(1);
+        $adminname = $admin->name;
 
         $messages = Message::where('user_id', "=", $user_id)->get();
-        return view('conversation', compact('messages', 'user', 'admin'));
+        return view('conversation', compact('messages','adminname'));
     }
 
     public function page_profile()

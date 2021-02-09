@@ -22,11 +22,13 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
-    public function __construct() {
-        $this->middleware('admin',['except' => 'page_admin']);
+    public function __construct()
+    {
+        $this->middleware('admin', ['except' => 'page_admin']);
     }
 
-    public function connection_admin() {
+    public function connection_admin()
+    {
         return view('dashboard_admin');
     }
 
@@ -42,7 +44,7 @@ class AdminController extends Controller
         $request->session()->forget('admin_password');
         return redirect('/');
     }
-    
+
     public function page_dashboard()
     {
         $nb_users = count(User::all());
@@ -115,12 +117,12 @@ class AdminController extends Controller
         /**********************************************/
         /**********************************************/
 
-
+        $adminame = Admin::find(1)->name;
 
         $messages = Message::where('user_id', $user_id)->get();
         $user = User::find($user_id);
 
-        return view('admin.conversation_with_user', compact('messages', 'user'));
+        return view('admin.conversation_with_user', compact('messages', 'user', 'adminame'));
     }
 
     public function new_conversation_admin(Request $request, $user_id)

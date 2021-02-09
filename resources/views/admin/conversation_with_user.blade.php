@@ -10,7 +10,7 @@
                         Conversations list</a>
                 </div>
 
-                <x-chatbox-admin :messages="$messages"></x-chatbox-admin>
+                <x-chatbox-admin :messages="$messages" :adminname="$adminame"></x-chatbox-admin>
 
                 <div class="p-6 bg-gray-800 border-b border-gray-200 max-h-30">
 
