@@ -179,10 +179,10 @@
         
         <div class=" mq_social_icon p-8 mr-8">
                     <div class="flex">
-                        <a href="https://www.youtube.com/watch?v=Uj1OeaTc31w">
+                        <a href="https://www.youtube.com/watch?v=Uj1OeaTc31w" target="_blank">
                             <img src="{{ asset('img/youtube_icon.png') }}" alt="" class="w-20 h-20 mr-10">
                         </a>
-                        <a href="https://www.facebook.com/KrytofLuciani/">
+                        <a href="https://www.facebook.com/KrytofLuciani/" target="_blank">
                             <img src="{{ asset('img/facebook_icon.png') }}" alt="" class="w-20 h-20">
                         </a>
                     </div>

@@ -32,6 +32,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        $request->session()->push('online','yes');
+
         return redirect(RouteServiceProvider::HOME);
     }
 
@@ -48,6 +50,8 @@ class AuthenticatedSessionController extends Controller
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
+
+        $request->session()->forget('online');
 
         return redirect('/');
     }

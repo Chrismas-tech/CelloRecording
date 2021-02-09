@@ -76,7 +76,7 @@ class AdminController extends Controller
         return view('admin.quote_sent', compact('quotes'));
     }
 
-    public function page_list_conversation_admin()
+    public function page_list_conversation_admin(Request $request)
     {
         $notifs_which_user = Notification::where('from', '!=', 'Christophe Luciani')
             ->where('nb_notif', '!=', 0)->get();
@@ -87,7 +87,8 @@ class AdminController extends Controller
 
         $nb_notifications = Notification::where('to', 'Christophe Luciani')->sum('nb_notif');
 
-        return view('admin.list_conversation_admin', compact('nb_notifications', 'conversations', 'notifs_which_user'));
+
+        return view('admin.list_conversation_admin', compact('nb_notifications', 'conversations', 'notifs_which_user','online'));
     }
 
     public static function notifications()
