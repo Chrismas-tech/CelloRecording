@@ -13,10 +13,12 @@ use App\Models\Notification;
 use App\Models\Order;
 use App\Models\Quote;
 use App\Models\User;
+use DirectoryIterator;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
@@ -47,6 +49,9 @@ class AdminController extends Controller
 
     public function page_dashboard()
     {
+
+        $datas_size_file = $this->get_size_of_music_files_on_server();
+
         $nb_users = count(User::all());
         $nb_orders_delivered = count(Order::where('status', '1')->get());
         $nb_orders_canceled = count(Order::where('status', '2')->get());
@@ -56,7 +61,7 @@ class AdminController extends Controller
 
         $admin_name = Admin::find(1)->name;
 
-        return view('admin.dashboard', compact('admin_name', 'nb_users', 'nb_orders_waiting', 'nb_orders_completed', 'nb_orders_revision', 'nb_orders_canceled', 'nb_orders_delivered'));
+        return view('admin.dashboard', compact('admin_name', 'nb_users', 'nb_orders_waiting', 'nb_orders_completed', 'nb_orders_revision', 'nb_orders_canceled', 'nb_orders_delivered', 'datas_size_file'));
     }
 
     public function page_quotes()
@@ -248,5 +253,39 @@ class AdminController extends Controller
         } else {
             return Storage::download('public/deliveries/' . $user_id . '/' . $delivery_file->file_delivery);
         }
+    }
+
+    private function get_size_of_music_files_on_server()
+    {
+
+        $path_music_conversation = public_path('storage/music_conversations');
+        $path_music_deliveries = public_path('storage/deliveries');
+        $path_images = public_path('storage/images');
+
+        $file_size_music_conversations = 0;
+        $file_size_deliveries = 0;
+        $file_size_images = 0;
+
+        foreach (File::allFiles($path_music_conversation) as $file) {
+            $file_size_music_conversations += $file->getSize();
+        }
+
+        foreach (File::allFiles($path_music_deliveries) as $file) {
+            $file_size_deliveries += $file->getSize();
+        }
+
+        foreach (File::allFiles($path_images) as $file) {
+            $file_size_images += $file->getSize();
+        }
+
+        $file_mo_conversations = ceil($file_size_music_conversations / 1000000);
+        $file_mo_deliveries = ceil($file_size_music_conversations / 1000000);
+        $file_mo_images = ceil($file_size_images / 1000000);
+
+        $total_size_mo = $file_mo_conversations + $file_mo_deliveries + $file_mo_images;
+
+        $datas_size_file = [$file_mo_conversations, $file_mo_deliveries, $file_mo_images, $total_size_mo];
+
+        return $datas_size_file;
     }
 }

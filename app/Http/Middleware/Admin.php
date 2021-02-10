@@ -20,7 +20,7 @@ class Admin
         /* Si on se trouve sur la page Admin-Connexion */
 
         /* On vérifie les inputs, on les compare avec la BDD, si ils sont correct on créé 2 variables de session */
-        if ($request->name || $request->password) {
+        if ($request->name && $request->password) {
 
             $request->validate([
                 'name' => 'required',

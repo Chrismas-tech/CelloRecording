@@ -25,7 +25,7 @@
                     <div class="flex mt-10">
                         <div class="w-6/12">
                             <div>
-                                <p class="text-3xl underline">Users informations:</p>
+                                <p class="text-3xl">Users informations :</p>
                             </div>
                             <div class="mt-6">
                                 <p class="bg-green-400 mb-3 text-white px-2 py-1 w-max  rounded karma">Users registered :
@@ -35,13 +35,14 @@
                         </div>
                         <div class="w-6/12">
                             <div>
-                                <p class="text-3xl underline">Orders informations:</p>
+                                <p class="text-3xl">Orders informations :</p>
                             </div>
                             <div class="mt-6">
                                 <p class="bg-red-400 mb-3   text-white px-2 py-1 w-max rounded karma">Orders pending :
                                     {{ $nb_orders_waiting }}
                                 </p>
-                                <p class="bg-yellow-400 mb-3   text-white px-2 py-1 w-max rounded karma">Orders in revision :
+                                <p class="bg-yellow-400 mb-3   text-white px-2 py-1 w-max rounded karma">Orders in revision
+                                    :
                                     {{ $nb_orders_revision }}
                                 </p>
                                 <p class="bg-blue-400 mb-3   text-white px-2 py-1 w-max rounded karma">Orders delivered :
@@ -50,6 +51,45 @@
                                 <p class="bg-green-400 mb-3   text-white px-2 py-1 w-max rounded karma">Orders completed :
                                     {{ $nb_orders_completed }}
                                 </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="flex mt-10">
+                        <div class="w-6/12">
+                            <div>
+                                <p class="text-3xl karma">Total of space user on server : </p>
+                            </div>
+                            <div class="flex">
+
+                                <div class="mt-6">
+                                    <p class="bg-red-400 text-xl mb-3 text-white px-2 py-1 w-max  rounded karma">
+                                        Music Conversations : {{ $datas_size_file[0] }} Mo
+                                    </p>
+                                    <p class="bg-blue-400 text-xl mb-3 text-white px-2 py-1 w-max  rounded karma">
+                                        Deliveries : {{ $datas_size_file[1] }} Mo
+                                    </p>
+                                    <p class="bg-yellow-400 text-xl mb-3 text-black px-2 py-1 w-max  rounded karma">
+                                        Images : {{ $datas_size_file[2] }} Mo
+                                    </p>
+                                    <p class="bg-purple-400 text-xl mb-3 text-white px-2 py-1 w-max  rounded karma">
+                                        Total : {{ $datas_size_file[3] }} Mo
+                                    </p>
+                                </div>
+
+
+                                <div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-6/12">
+                            <div>
+                                <p class="text-3xl">Users informations :</p>
+                            </div>
+                            <div class="mt-6">
                             </div>
                         </div>
                     </div>
