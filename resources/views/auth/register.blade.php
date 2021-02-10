@@ -14,6 +14,9 @@
 
             <!-- Name -->
             <div>
+                <div class="flex justify-center items-center">
+                    <img src="{{ asset('img/cello_login.jpg') }}" alt="" class="w-36 h-auto">
+                </div>
                 <x-label for="name" :value="__('Name')" />
 
                 <x-input id="name" class="block w-full mt-1" type="text" name="name" :value="old('name')" required autofocus />

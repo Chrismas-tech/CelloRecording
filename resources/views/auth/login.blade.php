@@ -17,6 +17,9 @@
 
             <!-- Email Address -->
             <div>
+                <div class="flex justify-center items-center">
+                    <img src="{{ asset('img/cello_login.jpg') }}" alt="" class="w-36 h-auto">
+                </div>
                 <x-label for="email" :value="__('Email')" />
 
                 <x-input id="email" class="block w-full mt-1" type="email" name="email" :value="old('email')" required
@@ -50,7 +53,7 @@
                 @endif
 
                 <x-button class="ml-3">
-                   Login
+                    Login
                 </x-button>
 
             </div>

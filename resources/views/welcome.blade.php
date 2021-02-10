@@ -128,7 +128,7 @@
                 </div>
 
 
-                <div class="mq_padding_presentation_text p-8 mr-8 text-xl bg-white karma rounded border border-gray-300">
+                <div class="mq_padding_presentation_text p-8 text-xl bg-white karma rounded border border-gray-300">
                     <p>
                         Create your own account and begin a conversation with me today !<br>
                         We will discuss about your musical project, your requirements and aesthetic wishes you have and
@@ -154,7 +154,7 @@
                     <h1>Recording Environment</h1>
                 </div>
 
-                <div class="mq_padding_presentation_text p-8 mr-8 text-xl bg-white rounded border border-gray-300 karma">
+                <div class="mq_padding_presentation_text p-8 text-xl bg-white rounded border border-gray-300 karma">
                     <p>
                         I'm working only for CD quality album in professional studio on my real old cello, that's why
                         i'm used to deliver WAV-HQ audio music files to my clients.
@@ -165,7 +165,7 @@
                     <h1>Pricing</h1>
                 </div>
 
-                <div class="mq_padding_presentation_text p-8 mr-8 text-xl karma bg-white rounded border border-gray-300">
+                <div class="mq_padding_presentation_text p-8 text-xl karma bg-white rounded border border-gray-300">
                     <p>
                         I'm working only for CD quality album in professional studio on my real old cello, that's why
                         i'm used to deliver WAV-HQ audio music files to my clients.
@@ -177,7 +177,7 @@
 
         </div>
         
-        <div class=" mq_social_icon p-8 mr-8">
+        <div class=" mq_social_icon mr-8">
                     <div class="flex">
                         <a href="https://www.youtube.com/watch?v=Uj1OeaTc31w" target="_blank">
                             <img src="{{ asset('img/youtube_icon.png') }}" alt="" class="w-20 h-20 mr-10">
