@@ -50,6 +50,14 @@ class AdminController extends Controller
     public function page_dashboard()
     {
 
+        /*On créé les dossiers music_conversation et deliveries s'ils n'existent pas*/
+        $path_1 = public_path('storage/app/public/music_conversations');
+        $path_2 = public_path('storage/app/public/deliveries');
+
+        File::makeDirectory($path_1, $mode = 0777, true, true);
+        File::makeDirectory($path_2, $mode = 0777, true, true);
+
+        /* On calcule la taille des fichiers musicaux sur le serveur */
         $datas_size_file = $this->get_size_of_music_files_on_server();
 
         $nb_users = count(User::all());
@@ -258,9 +266,9 @@ class AdminController extends Controller
     private function get_size_of_music_files_on_server()
     {
 
-        $path_music_conversation = public_path('storage/music_conversations');
-        $path_music_deliveries = public_path('storage/deliveries');
-        $path_images = public_path('storage/images');
+        $path_music_conversation = public_path('storage/app/public/music_conversations');
+        $path_music_deliveries = public_path('storage/app/public/deliveries');
+        $path_images = public_path('storage/app/public/images');
 
         $file_size_music_conversations = 0;
         $file_size_deliveries = 0;
