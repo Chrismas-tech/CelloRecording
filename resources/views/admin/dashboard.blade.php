@@ -29,7 +29,7 @@
                                 <p class="text-3xl">Users informations </p>
                             </div>
                             <div class="mt-3">
-                                <p class="bg-green-400 mb-3 text-xl text-white px-2 py-1 w-max  rounded ">Users registered 
+                                <p class="bg-green-400 mb-3 text-xl text-white px-2 py-1 w-max  rounded ">Users registered
                                     {{ $nb_users }}
                                 </p>
                             </div>
@@ -95,14 +95,14 @@
                             <div>
                                 <div>
                                     <p class="text-3xl">Space used by the music files </p>
-                                  
+
                                 </div>
                                 <div class="flex justify-between mt-3">
                                     <p id="width_space_used_html" class="text-xl">Space used by the music files </p>
                                     <p class="text-xl">100%</p>
                                 </div>
-                                <div id="total_space_server_width" class="bg-blue-400 py-2 overflow-hidden rounded-full text-white">
-                                    <div id="width_space_used" class="bg-blue-900 py-2 rounded-ful text-white">
+                                <div id="total_space_server_width" class="bg-blue-200 rounded-full text-white">
+                                    <div id="width_space_used" class="z-10 bg-blue-600 p-2 rounded-full text-white">
                                     </div>
                                 </div>
                             </div>
@@ -132,21 +132,23 @@
                 /* Longueur de la div en px qui représente 100% */
 
                 $total_space_server_width = $('#total_space_server_width').width();
-                $total_space_server_html = parseInt($('#total_space_server_html').html());
+                // $total_space_server_html = parseInt($('#total_space_server_html').html());
 
+                $total_space_server_html = 3;
 
                 /* Space used on server + conversion to number, en Go */
                 $total_space_music_files = (parseInt($('#total_space_music_files').html()) / Math.pow(10, 3));
-                console.log($total_space_music_files+' Go');
+                console.log($total_space_music_files + ' Go');
 
                 /* Taille de la width en pixel = (100% x fichiers serveur) / total espace disk */
-                $width_space_used = ($total_space_server_width * $total_space_music_files / $total_space_server_html);
+                $width_space_used = ($total_space_server_width * $total_space_music_files /
+                    $total_space_server_html);
                 $width_space_used_decimal = $width_space_used.toFixed(2);
                 console.log($width_space_used_decimal);
                 $('#width_space_used').width($width_space_used_decimal);
 
                 /* Calcul du pourcentage écrit */
-                $space_used_html = (100*$width_space_used)/$total_space_server_width;
+                $space_used_html = (100 * $width_space_used) / $total_space_server_width;
                 $space_used_html_decimal = $space_used_html.toFixed(2);
                 $('#width_space_used_html').html($space_used_html_decimal + '%');
             })
