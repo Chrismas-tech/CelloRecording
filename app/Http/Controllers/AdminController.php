@@ -51,7 +51,6 @@ class AdminController extends Controller
     {
 
         /* Si les dossiers music_conversation et deliveries n'existent pas on les créé */
-
         $path = storage_path('app/public/music_conversations');
 
         if (!file_exists($path)) {

@@ -102,7 +102,7 @@
                                     <p class="text-xl">100%</p>
                                 </div>
                                 <div id="total_space_server_width" class="bg-blue-200 rounded-full text-white">
-                                    <div id="width_space_used" class="z-10 bg-blue-600 p-2 rounded-full text-white">
+                                    <div id="width_space_used" class="z-10 p-1 bg-blue-600 rounded-full text-white">
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +131,8 @@
 
                 /* Longueur de la div en px qui représente 100% */
                 $total_space_server_width = $('#total_space_server_width').width();
-                $total_space_server_html = parseInt($('#total_space_server_html').html());
+                //$total_space_server_html = parseInt($('#total_space_server_html').html());
+                $total_space_server_html = 3;
 
                 /* Space used on server + conversion to number, en Go */
                 $total_space_music_files = (parseInt($('#total_space_music_files').html()) / Math.pow(10, 3));
