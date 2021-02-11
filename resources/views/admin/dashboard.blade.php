@@ -106,7 +106,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="mt-3">
+                            <div class="mt-6">
                                 <p class="text-3xl">Disk Space</p>
                             </div>
                             <div class="mt-3">
@@ -135,13 +135,12 @@
 
                 /* Space used on server + conversion to number, en Go */
                 $total_space_music_files = (parseInt($('#total_space_music_files').html()) / Math.pow(10, 3));
-                console.log($total_space_music_files + ' Go');
+                //console.log($total_space_music_files + ' Go');
 
                 /* Taille de la width en pixel = (100% x fichiers serveur) / total espace disk */
-                $width_space_used = ($total_space_server_width * $total_space_music_files /
-                    $total_space_server_html);
+                $width_space_used = ($total_space_server_width * $total_space_music_files /$total_space_server_html);
                 $width_space_used_decimal = $width_space_used.toFixed(2);
-                console.log($width_space_used_decimal);
+               // console.log($width_space_used_decimal);
                 $('#width_space_used').width($width_space_used_decimal);
 
                 /* Calcul du pourcentage écrit */
