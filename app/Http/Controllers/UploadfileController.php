@@ -32,7 +32,7 @@ class UploadfileController extends Controller
                 Storage::delete('public/images/' . $user_id . '/' . $avatar_old);
             }
 
-            /*On  vérifie l'extension du fichier et on l'enregistre s'il est conforme dans Storage/images du dossier public */
+            /*On  vérifie l'extension du fichier et on l'enregistre s'il est conforme dans Storage/images du dossier public  */
 
             $extension_file = $request->file('file')->extension();
             $size_file = $request->file('file')->getSize();
