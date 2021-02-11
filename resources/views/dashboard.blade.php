@@ -17,13 +17,13 @@
             <div class="bg-gray-800 p-6 border border-gray-400 rounded">
 
                 <div class="flex flex-inline">
-                    <p class="py-2 text-xl sm:text-2xl md:text-3xl dancing_font text-white bg-red-400 rounded px-2">
+                    <p class="py-2 text-2xl sm:text-3xl md:text-4xl dancing_font text-white bg-red-400 rounded px-2">
                         Welcome to your personal space {{ auth()->user()->name }} !
                     </p>
                 </div>
                 <div class="flex mt-5 flex-inline">
-                    <p class="underline text-xs sm:text-sm md:text-lg lg:text-2xl text-white baskerville_font rounded">
-                        Follow the following guide lines if you want to proceed for a Cello-Recording
+                    <p class="underline karma text-xs sm:text-sm md:text-lg lg:text-xl text-white baskerville_font rounded">
+                        Follow the guide lines below if you want to proceed for a Cello-Recording
                     </p>
                 </div>
 

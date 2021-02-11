@@ -20,29 +20,30 @@
 
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-    
+
     <!-- AJAX -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
 
-        <link rel="icon" href="http://example.com/favicon.png">
+    <link rel="icon" href="http://example.com/favicon.png">
 </head>
 
-<body class="bg-gray-100">
-
-
-    <x-navbar></x-navbar>
-
-        <main class="my_min_height">
-            @yield('content')
-        </main>
+<body class="bg-gray-100 flex flex-col justify-between">
+    <div>
+    </div>
+    
+    <div class="mx-auto max-w-7xl">
+        <div class="text-center">
+            <h1 class="text-6xl text-gray-500">Error 403</h1>
+            <h1 class="text-2xl text-gray-500 mt-5">Not authorized to access this page :(</h1>
+        </div>
+    </div>
 
     <footer class="flex justify-center p-8 text-xl text-white bg-gray-500 border border-gray-500 nav_button_font">
         <div>
             <h3>Copyright &copy; 2020 Christophe Luciani, all Rights Reserved</h3>
         </div>
     </footer>
-    </div>
 
 </body>
 

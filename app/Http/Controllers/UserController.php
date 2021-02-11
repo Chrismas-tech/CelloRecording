@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactMail;
 use App\Mail\MessageToAdmin;
+use App\Mail\Revision;
 use App\Models\Admin;
 use App\Models\Conversation;
 use App\Models\Delivery;
@@ -26,6 +27,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct() {
+        $this->middleware('auth',['except' => 'page_contact']);
+    }
 
     public function page_dashboard()
     {
@@ -57,9 +61,10 @@ class UserController extends Controller
 
         $user_id = $user->id;
         $admin = Admin::find(1);
+        $adminname = $admin->name;
 
         $messages = Message::where('user_id', "=", $user_id)->get();
-        return view('conversation', compact('messages', 'user', 'admin'));
+        return view('conversation', compact('messages','adminname'));
     }
 
     public function page_profile()
@@ -108,7 +113,7 @@ class UserController extends Controller
 
         $email_user = User::find($user_id)->email;
         $user_name = User::find($user_id)->name;
-        $url_redirection = 'http://cellorecording.test:8080/conversation_with_user/'.$user_id;
+        $url_redirection = 'http://cellorecording.ml/conversation_with_user/'.$user_id;
 
         /*On envoie un mail à l'admin*/
         
@@ -277,10 +282,20 @@ class UserController extends Controller
         if (($order->status == 1) && ($order->nb_revision == 1)) {
 
             if ($request->order_status == 4) {
+
                 $order->status = 4;
                 $order->nb_revision -= 1;
                 $order->save();
                 $request->session()->forget('order_datas_session');
+
+                $email_user = User::find($user_id)->email;
+                $user_name = User::find($user_id)->name;
+                $url_redirection = 'http://cellorecording.ml/orders_admin';
+        
+                /*On envoie un mail à l'admin*/
+                
+                Mail::to('electriccellofou@gmail.com')->send(new Revision($email_user, $user_name, $url_redirection, $order->id));
+
                 return redirect('orders');
             } elseif ($request->order_status == 5) {
                 $order->status = 5;
@@ -422,6 +437,29 @@ class UserController extends Controller
             return view('page_error');
         } else {
             return Storage::download('public/music_conversations/' . $user_id . '/' . $message->content);
+        }
+    }
+
+        public function page_paypal_payment(Request $request, $quote_id, $price)
+    {
+        $user_id = auth()->user()->id;
+        $quote = Quote::where('user_id', $user_id)->where('id', $quote_id)->where('price', $price)->first();
+
+        if (!$quote) {
+
+            return view('page_error');
+        } else {
+
+            /* Variable de session pour conserver l'ID de la "quote" */
+
+            if (($request->session()->has('quote_ready_payment'))) {
+                $request->session()->forget('quote_ready_payment');
+                $request->session()->push('quote_ready_payment', $quote->id);
+            } else {
+                $request->session()->push('quote_ready_payment', $quote->id);
+            }
+
+            return view('admin.paypal_payment', compact('quote'));
         }
     }
 }

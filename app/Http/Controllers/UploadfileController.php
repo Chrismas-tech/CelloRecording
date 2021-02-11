@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Storage;
 class UploadfileController extends Controller
 {
 
-
     public function uploadphoto(Request $request)
     {
 

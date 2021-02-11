@@ -28,7 +28,6 @@ class PaypalController extends Controller
         $quote = Quote::where('id', $quote_id)->first();
         $price = $quote->price / 100;
 
-
         $apiContext = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(
                 'ATdLwCnmk4QOjLGuyaPvBVsdw7-4VZD550fppzEUzW7vvEta_qzDG8uAbC1euta2_KO_OSgyCzC0Axva',     // ClientID
@@ -73,7 +72,7 @@ class PaypalController extends Controller
 
                 return view('payment_success');
             } else {
-                return view('page_error')->with('message', 'The payment has been approved, but there is a problem about the amount paid :( Please contact the administrator through the conversations section !');
+                return view('page_error')->with('message', 'The payment has been approved, but there is a problem about the amount paid :( Please contact the administrator through the conversation section !');
             }
         }
     }

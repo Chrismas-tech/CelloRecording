@@ -67,7 +67,7 @@ form {
     position: relative;
 }
 
-::-webkit-scrollbar {
+ ::-webkit-scrollbar {
     display: none;
 }
 
@@ -104,12 +104,27 @@ input[type="file"] {
     min-height: calc(100vh - 305px);
 }
 
+.my_min_height_error {
+    min-height: calc(100vh - 94px);
+}
+
 .placeholder_contact::placeholder {
     color: white;
 }
 
 .my_margin_left {
     margin-left: 100px;
+}
+
+.connection_position {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.my_min_height_administration {
+    min-height: calc(100vh - 93px);
 }
 
 
@@ -135,7 +150,7 @@ input[type="file"] {
         font-size: 14px;
     }
     .mq_icon_size {
-        width: 26px;
+        width: 24px;
         height: auto;
     }
 }
@@ -158,6 +173,15 @@ input[type="file"] {
     }
 }
 
+@media (max-width: 600px) {
+    #hamburger {
+        font-size: 15px;
+    }
+}
+
+
+/* MEDIA QUERIES WELCOME PAGE */
+
 
 /* MEDIA QUERIES WELCOME PAGE */
 
@@ -168,7 +192,16 @@ input[type="file"] {
 /* MEDIA QUERIES WELCOME PAGE */
 
 
-/* MEDIA QUERIES WELCOME PAGE */
+/* UP BLOCK */
+
+
+/* UP BLOCK */
+
+
+/* UP BLOCK */
+
+
+/* UP BLOCK */
 
 @media (max-width: 1560px) {
     .jumbo_title_1 {
@@ -204,6 +237,9 @@ input[type="file"] {
     .mq_jumbo_btn a {
         font-size: 1.2rem;
     }
+    .jumbo_title_position {
+        top: 60%;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -222,6 +258,8 @@ input[type="file"] {
     }
     .jumbo_title_2 {
         font-size: 0.9rem;
+        margin-bottom: 3rem;
+        margin-top: 1rem;
     }
     .mq_jumbo_btn a {
         font-size: 1rem;
@@ -335,6 +373,91 @@ input[type="file"] {
 }
 
 
+/* DOWN BLOCK */
+
+
+/* DOWN BLOCK */
+
+
+/* DOWN BLOCK */
+
+
+/* DOWN BLOCK */
+
+.ytb_vid {
+    float: right;
+}
+
+@media (max-width: 1231px) {
+    .ytb_vid {
+        width: 506px;
+        height: 290px;
+    }
+    .mq_font_size_presentation_text p {
+        font-size: 18px;
+    }
+    .mq_padding_presentation_text {
+        padding: 14px;
+    }
+}
+
+@media (max-width: 970px) {
+    .mq_gray_menu a {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 945px) {
+    .ytb_vid {
+        width: 426px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 876px) {
+    .ytb_vid {
+        float: none;
+        width: 640px;
+        height: 360px;
+        margin: auto;
+        padding-bottom: 40px;
+    }
+    .mq_gray_menu a {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 770px) {
+    .mq_gray_menu a {
+        font-size: 14px;
+    }
+    .mq_font_size_presentation_text p {
+        font-size: 14px;
+    }
+    .mq_padding_presentation_text {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 705px) {
+    .ytb_vid {
+        width: 426px;
+        height: 240px;
+    }
+    .mq_social_icon img {
+        width: 50px;
+        height: auto;
+    }
+}
+
+@media (max-width: 488px) {
+    .ytb_vid {
+        width: 320px;
+        height: 200px;
+    }
+}
+
+
 /* MEDIA QUERIES ORDERS USER */
 
 @media (min-width: 796px) {
@@ -346,5 +469,63 @@ input[type="file"] {
 @media (max-width: 795px) {
     #orders_desktop_resp {
         display: none;
+    }
+}
+
+
+/* MEDIA QUERIES PAYMENT_PAGE USER */
+
+@media (max-width: 1243px) {
+    .mq_font_size_Order_payment_text {
+        font-size: 28px;
+    }
+    .mq_payment_page_font_size_titles {
+        font-size: 20px;
+    }
+    .mq_payment_page_font_size_description {
+        font-size: 16px;
+    }
+    .mq_text_price {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1021px) {
+    .mq_price_details_block {
+        margin: 0;
+        margin-top: 20px;
+    }
+    .mq_titlePCR_plus_description {
+        margin: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+    .img_cello_payment {
+        width: 200px;
+        height: auto;
+    }
+    .mq_order_payment_width {
+        width: 100%;
+        padding: 0;
+    }
+    .mq_img_div_center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 546px) {
+    .mq_font_size_Order_payment_text {
+        font-size: 18px;
+    }
+    .mq_payment_page_font_size_titles {
+        font-size: 12px;
+    }
+    .mq_payment_page_font_size_description {
+        font-size: 10px;
+    }
+    .mq_text_price {
+        font-size: 13px;
     }
 }

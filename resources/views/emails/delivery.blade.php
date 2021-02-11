@@ -1,10 +1,10 @@
 @component('mail::message')
 
-<h1>Congratulations {{$user_name}} ! </h1>
+<h1>Dear {{$user_name}} ! </h1>
 
-Your order #{{$order_id}} is ready to download !
+Your order #{{$order_id}} is ready to download :)
 
-@component('mail::button', ['url' => 'http://cellorecording.test:8080/deliveries'])
+@component('mail::button', ['url' => 'http://cellorecording.ml/deliveries'])
 Click here to check your order now !
 @endcomponent
 

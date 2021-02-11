@@ -12,10 +12,11 @@ paypal.Button.render({
     // Customize button (optional)
     locale: 'en_US',
     style: {
-        size: 'large',
+        size: 'medium',
         color: 'gold',
         shape: 'pill',
-        label: 'paypal'
+        label: 'paypal',
+        responsive: 'Dynamic'
     },
 
     // Enable Pay Now checkout flow (optional)
@@ -26,7 +27,7 @@ paypal.Button.render({
         return actions.payment.create({
 
             redirect_urls: {
-                return_url: 'http://cellorecording.test:8080/execute_payment/'
+                return_url: 'http://cellorecording.ml/execute_payment'
             },
 
             transactions: [{
@@ -42,6 +43,7 @@ paypal.Button.render({
     // Execute the payment
     onAuthorize: function(data, actions) {
         // console.log(actions.redirect);
+
         return actions.redirect();
     }
 

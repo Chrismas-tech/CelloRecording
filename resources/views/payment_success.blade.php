@@ -2,7 +2,6 @@
 @section('content')
 
     <div class="flex flex-col justify-around my_min_height">
-
         <div class="max-w-5xl mx-auto text-center">
             <div>
                 <h1 class="text-5xl text-gray-500">Payment Successfull !</h1>
@@ -12,16 +11,13 @@
                 <img src="{{ asset('img/checked.png') }}" alt="" class="w-28 h-28 text-center">
             </div>
         </div>
-
     </div>
-
 
     <script>
         $(document).ready(function() {
             setTimeout(() => {
-                window.location.replace('http://cellorecording.test:8080/orders');
+                window.location.replace('http://cellorecording.ml/orders');
             }, 4000);
         })
     </script>
-
 @endsection

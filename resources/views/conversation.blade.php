@@ -1,16 +1,16 @@
 @extends('layouts.app')
 @section('content')
 
-    <div class="p-0 sm:p-12">
+    <div class="p-0 sm:p-6">
         <div class="max-w-5xl mx-auto">
             <div class="overflow-hidden bg-white shadow-sm">
 
-                <div class="flex justify-center mt-8 mb-8">
+                <div class="flex justify-center bg-green-200 pt-4 pb-4">
                     <a href="{{ route('dashboard') }}" class="px-4 py-2 text-white bg-gray-800 rounded">Back to your
                         Dashboard</a>
                 </div>
 
-                <x-chatbox_user :messages="$messages"></x-chatbox_user>
+                <x-chatbox-user :messages="$messages" :adminname="$adminname"></x-chatbox-user>
 
                 <div class="p-6 bg-gray-800 border-b border-gray-200">
 
