@@ -116,7 +116,7 @@
                     <div id="checked" class="flex items-center">
                         <label class="text-white text-xl  px-4 py-2 cursor-pointer bg-gray-700 rounded" for="file">Upload
                             the work</label>
-                        <input class="" type="file" id="file" name="file[]" accept="audio/*" multiple>
+                        <input type="file" id="file" name="file[]" accept="audio/*" multiple>
                     </div>
 
                     <div>

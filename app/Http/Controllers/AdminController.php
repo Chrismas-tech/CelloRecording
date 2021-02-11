@@ -50,6 +50,26 @@ class AdminController extends Controller
     public function page_dashboard()
     {
 
+        /*Si les dossiers music_conversation et deliveries n'existent pas on les créé*/
+        $path = storage_path('app/public/music_conversations');
+
+        if (!file_exists($path)) {
+            File::makeDirectory($path, $mode = 0777, true, true);
+        }
+
+        $path = storage_path('app/public/deliveries');
+
+        if (!file_exists($path)) {
+            File::makeDirectory($path, $mode = 0777, true, true);
+        }
+
+        $path = storage_path('app/public/images');
+
+        if (!file_exists($path)) {
+            File::makeDirectory($path, $mode = 0777, true, true);
+        }
+
+        /* On calcule la taille de des fichiers musicaux sur le serveur */
         $datas_size_file = $this->get_size_of_music_files_on_server();
 
         $nb_users = count(User::all());
@@ -258,9 +278,9 @@ class AdminController extends Controller
     private function get_size_of_music_files_on_server()
     {
 
-        $path_music_conversation = public_path('storage/music_conversations');
-        $path_music_deliveries = public_path('storage/deliveries');
-        $path_images = public_path('storage/images');
+        $path_music_conversation = storage_path('app/public/music_conversations');
+        $path_music_deliveries = storage_path('app/public/deliveries');
+        $path_images = storage_path('app/public/images');
 
         $file_size_music_conversations = 0;
         $file_size_deliveries = 0;
@@ -279,8 +299,9 @@ class AdminController extends Controller
         }
 
         $file_mo_conversations = ceil($file_size_music_conversations / 1000000);
-        $file_mo_deliveries = ceil($file_size_music_conversations / 1000000);
+        $file_mo_deliveries = ceil($file_size_deliveries / 1000000);
         $file_mo_images = ceil($file_size_images / 1000000);
+
 
         $total_size_mo = $file_mo_conversations + $file_mo_deliveries + $file_mo_images;
 
