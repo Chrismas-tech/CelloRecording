@@ -95,7 +95,11 @@
                             <div>
                                 <div>
                                     <p class="text-3xl">Space used by the music files </p>
-                                    <p id="width_space_used_html" class="mt-3 text-xl">Space used by the music files </p>
+                                  
+                                </div>
+                                <div class="flex justify-between mt-3">
+                                    <p id="width_space_used_html" class="text-xl">Space used by the music files </p>
+                                    <p class="text-xl">100%</p>
                                 </div>
                                 <div id="total_space_server_width" class="bg-blue-400 py-2 overflow-hidden rounded-full text-white">
                                     <div id="width_space_used" class="bg-blue-900 py-2 rounded-ful text-white">
@@ -103,7 +107,7 @@
                                 </div>
                             </div>
                             <div class="mt-3">
-                                <p class="text-3xl">Disk Space </p>
+                                <p class="text-3xl">Disk Space</p>
                             </div>
                             <div class="mt-3">
                                 <div>
