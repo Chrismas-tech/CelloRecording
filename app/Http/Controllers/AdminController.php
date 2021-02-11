@@ -69,8 +69,14 @@ class AdminController extends Controller
         if (!file_exists($path)) {
             File::makeDirectory($path, $mode = 0777, true, true);
         }
-
+ 
+        /* On calcule la taille des fichiers musicaux sur le serveur*/
         $datas_size_file = $this->get_size_of_music_files_on_server();
+
+        /* Total de l'espace disk libre restant */
+        $total_space_server = floor((disk_total_space("/"))/pow(10,9));
+        $free_space_server_remaining = floor((disk_free_space("/"))/pow(10,9));
+
 
         $nb_users = count(User::all());
         $nb_orders_delivered = count(Order::where('status', '1')->get());
@@ -81,7 +87,7 @@ class AdminController extends Controller
 
         $admin_name = Admin::find(1)->name;
 
-        return view('admin.dashboard', compact('admin_name', 'nb_users', 'nb_orders_waiting', 'nb_orders_completed', 'nb_orders_revision', 'nb_orders_canceled', 'nb_orders_delivered', 'datas_size_file'));
+        return view('admin.dashboard', compact('admin_name', 'nb_users', 'nb_orders_waiting', 'nb_orders_completed', 'nb_orders_revision', 'nb_orders_canceled', 'nb_orders_delivered', 'datas_size_file','total_space_server','free_space_server_remaining'));
     }
 
     public function page_quotes()
@@ -299,9 +305,9 @@ class AdminController extends Controller
             $file_size_images += $file->getSize();
         }
 
-        $file_mo_conversations = ceil($file_size_music_conversations / 1000000);
-        $file_mo_deliveries = ceil($file_size_deliveries / 1000000);
-        $file_mo_images = ceil($file_size_images / 1000000);
+        $file_mo_conversations = ceil($file_size_music_conversations / pow(10,6));
+        $file_mo_deliveries = ceil($file_size_deliveries / pow(10,6));
+        $file_mo_images = ceil($file_size_images / pow(10,6));
 
 
         $total_size_mo = $file_mo_conversations + $file_mo_deliveries + $file_mo_images;
