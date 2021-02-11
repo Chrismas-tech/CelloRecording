@@ -130,11 +130,8 @@
             $(document).ready(function() {
 
                 /* Longueur de la div en px qui représente 100% */
-
                 $total_space_server_width = $('#total_space_server_width').width();
-                // $total_space_server_html = parseInt($('#total_space_server_html').html());
-
-                $total_space_server_html = 3;
+                $total_space_server_html = parseInt($('#total_space_server_html').html());
 
                 /* Space used on server + conversion to number, en Go */
                 $total_space_music_files = (parseInt($('#total_space_music_files').html()) / Math.pow(10, 3));
