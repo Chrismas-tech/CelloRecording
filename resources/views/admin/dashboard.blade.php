@@ -5,7 +5,7 @@
 
         <div class="mx-auto max-w-7xl">
             <div class="flex flex-inline pb-8">
-                <a href="/" class="py-2 px-3 text-4xl dancing_font text-black bg-gray-100 border border-gray-300 rounded">
+                <a href="/" class="py-2 px-3 text-4xl dancing_font text-black bg-white border border-gray-300 rounded">
                     Back to the welcome page !
                 </a>
             </div>
