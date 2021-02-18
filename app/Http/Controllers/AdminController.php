@@ -30,7 +30,7 @@ class AdminController extends Controller
     }
 
     public function verify_admin_connection() {
-        return redirect('admin_connection');
+        return redirect('connection_admin');
     }
 
     public function page_admin()
