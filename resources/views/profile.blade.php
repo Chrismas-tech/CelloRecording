@@ -257,10 +257,10 @@
                     }, 1000);
 
                 } else {
-                    console.log(res);
+
                     console.log('error')
                     $('#progress_bar_visible').addClass("hidden");
-                    $('#error').html(res)
+                    $('#error').html('Incorrect file type or size !')
                     $('#error').removeClass("hidden");
                 }
             }
