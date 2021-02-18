@@ -92,11 +92,14 @@ Route::post('/upload_delivery', [UploadfileController::class, 'upload_delivery']
 
 Route::get('/admin', [AdminController::class, 'page_admin'])->name('admin');
 Route::get('/admin_logout', [AdminController::class, 'page_admin_logout'])->name('admin_logout');
+Route::get('/dashboard_admin', [AdminController::class, 'page_dashboard'])->name('dashboard_admin');
+
+/* fausse route pour retourner sur le Middleware et valider le mot de passe et le name */ 
 Route::post('/connection_admin', [AdminController::class, 'connection_admin'])->name('connection_admin');
 
 /* SIDE ADMIN */
 
-Route::get('/dashboard_admin', [AdminController::class, 'page_dashboard'])->name('dashboard_admin');
+
 Route::get('/quotes_sent', [AdminController::class, 'page_quotes_sent'])->name('quotes_sent');
 Route::get('/list_conversation_admin', [AdminController::class, 'page_list_conversation_admin'])->name('list_conversation_admin');
 Route::get('/quote_form/{user_id}', [AdminController::class, 'page_quote_form'])->name('quote_form');

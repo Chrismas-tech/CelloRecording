@@ -6,7 +6,7 @@
             <x-navlink></x-navlink>
         </div>
 
-        <div x-data="{open:false}" class="flex items-center justify-center relative">
+        <div x-data="{open:false}" x-cloak class="flex items-center justify-center relative">
             <button @click="open = true" class="flex items-center md:mr-3 focus:outline-none">
                 @auth
                     <h1 class="mr-5 text-3xl dancing_font capitalize mq_username_fs">{{ Auth::User()->name }}</h1>

@@ -52,8 +52,8 @@
             </div>
 
             @if (Session::has('send_success'))
-            <div class="text-center mb-20 mt-10">
-                <p class="title_jumbo text-xl dancing_font">{{ Session::get('send_success') }}</p>
+            <div class="text-center mb-10 mt-10">
+                <p class="title_jumbo text-5xl dancing_font">{{ Session::get('send_success') }}</p>
             </div>
             @endif
 

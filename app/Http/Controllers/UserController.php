@@ -27,8 +27,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct() {
-        $this->middleware('auth',['except' => 'page_contact']);
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => array('page_contact', 'page_send_contact_email')]);
     }
 
     public function page_dashboard()
@@ -64,7 +65,7 @@ class UserController extends Controller
         $adminname = $admin->name;
 
         $messages = Message::where('user_id', "=", $user_id)->get();
-        return view('conversation', compact('messages','adminname'));
+        return view('conversation', compact('messages', 'adminname'));
     }
 
     public function page_profile()
@@ -113,11 +114,11 @@ class UserController extends Controller
 
         $email_user = User::find($user_id)->email;
         $user_name = User::find($user_id)->name;
-        $url_redirection = 'http://cellorecording.ml/conversation_with_user/'.$user_id;
+        $url_redirection = 'http://cellorecording.ml/conversation_with_user/' . $user_id;
 
         /*On envoie un mail à l'admin*/
-        
-        Mail::to('electriccellofou@gmail.com')->send(new MessageToAdmin($email_user, $user_name, $notifications->nb_notif,$url_redirection));
+
+        Mail::to('electriccellofou@gmail.com')->send(new MessageToAdmin($email_user, $user_name, $notifications->nb_notif, $url_redirection));
 
 
         return redirect()->back();
@@ -291,9 +292,9 @@ class UserController extends Controller
                 $email_user = User::find($user_id)->email;
                 $user_name = User::find($user_id)->name;
                 $url_redirection = 'http://cellorecording.ml/orders_admin';
-        
+
                 /*On envoie un mail à l'admin*/
-                
+
                 Mail::to('electriccellofou@gmail.com')->send(new Revision($email_user, $user_name, $url_redirection, $order->id));
 
                 return redirect('orders');
@@ -440,7 +441,7 @@ class UserController extends Controller
         }
     }
 
-        public function page_paypal_payment(Request $request, $quote_id, $price)
+    public function page_paypal_payment(Request $request, $quote_id, $price)
     {
         $user_id = auth()->user()->id;
         $quote = Quote::where('user_id', $user_id)->where('id', $quote_id)->where('price', $price)->first();

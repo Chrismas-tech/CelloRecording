@@ -10,7 +10,7 @@
                         <p class="text-3xl ">Profile Information</p>
                         <p class="text-sm text-gray-500">Update your account's profile and email address</p>
                     </div>
-                    <div x-data="{open:false}" class="mt-1">
+                    <div x-data="{open:false}" x-cloak class="mt-1">
                         <div class="bg-red-600 text-white rounded text-xl px-2 py-1 py- w-max">
                             <button @click="open=true" class="focus:outline-none">Delete your account</button>
                         </div>
