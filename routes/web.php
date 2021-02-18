@@ -95,7 +95,7 @@ Route::get('/admin_logout', [AdminController::class, 'page_admin_logout'])->name
 Route::get('/dashboard_admin', [AdminController::class, 'page_dashboard'])->name('dashboard_admin');
 
 /* fausse route pour retourner sur le Middleware et valider le mot de passe et le name */ 
-Route::post('/connection_admin', [AdminController::class, 'connection_admin'])->name('connection_admin');
+Route::post('/connection_admin', [AdminController::class, 'verify_admin_connection'])->name('connection_admin');
 
 /* SIDE ADMIN */
 
