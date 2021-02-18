@@ -42,7 +42,7 @@
                         <input type="password" name="password" class="rounded text-3xl w-full mb-3" placeholder="Password">
                     </div>
                     @if (Session::has('error'))
-                        <div class="bg-red-500 text-white mb-3 text-md px-1 py-1 rounded">{{ Session::get('error') }}
+                        <div class="bg-red-500 text-white mb-3 text-xl px-1 py-1 rounded">{{ Session::get('error') }}
                         </div>
                     @endif
                     @error('name')
@@ -52,6 +52,9 @@
                         <div class="bg-red-500 text-white mb-3 text-xl px-1 py-1 rounded">{{ $message }}</div>
                     @enderror
                     <button type="submit" class="px-4 mt-2 py-2 text-white bg-gray-800 rounded text-xl">Connect</button>
+                    <div>
+                        <input hidden type="text" name="connexion" value="1">
+                    </div>
                 </form>
             </div>
         </div>

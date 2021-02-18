@@ -17,19 +17,15 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-
-        /* Si les variables Session existent déjà on renvoie vers la page suivante */
-
-        if ($request->session()->get('admin_name') && $request->session()->get('admin_password')) {
-
+        /* LES VARIABLES DE SESSION EXISTENT -> PAGE SUIVANTE */
+        if ($request->session()->has('admin_name') && $request->session()->has('admin_password')) {
             return $next($request);
         } else {
 
-            /* Si on se trouve sur la page Admin-Connexion */
-            /* On vérifie les inputs, on les compare avec la BDD, si ils sont correct on créé 2 variables de session */
+            /* SINON ON SE TROUVE SUR LA PAGE CONNECTION, $request->connexion existe */
+            if ($request->connexion == 1) {
 
-            if ($request->name && $request->password) {
-
+                /* ON VERIFIE LES INPUTS */
                 $request->validate([
                     'name' => 'required',
                     'password' => 'required'
@@ -43,7 +39,7 @@ class Admin
                 $admin_name = $admin->name;
                 $admin_password = $admin->password;
 
-                /* Si le mot de passe et le nom sont correct -> dashboard_admin */
+                /* SI LE PASSWORD ET LE NAME SONT CORRECTS -> Dashboard ADMIN */
                 if ($name_input == $admin_name && $password_input == $admin_password) {
 
                     $request->session()->push('admin_name', $admin_name);
@@ -51,12 +47,13 @@ class Admin
 
                     return redirect('dashboard_admin');
                 } else {
-                    /* Sinon rafraîchissement et message d'erreur */
+                    /* SINON ERREUR SUR LA MEME PAGE */
                     return redirect()->back()->with('error', 'Invalid name or password');
                 }
+            } else {
+                /* Sinon on ne donne pas l'accès */
+                return redirect('not_authorized');
             }
         }
-        /* Sinon on ne donne pas l'accès */
-        return redirect('not_authorized');
     }
 }

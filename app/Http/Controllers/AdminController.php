@@ -29,8 +29,8 @@ class AdminController extends Controller
         $this->middleware('admin', ['except' => 'page_admin']);
     }
 
-    public function verify_admin_connection() {
-        return redirect('connection_admin');
+    public function connection_already_verified() {
+        return redirect('dashboard_admin');
     }
 
     public function page_admin()
