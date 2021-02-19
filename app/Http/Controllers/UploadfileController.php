@@ -62,8 +62,10 @@ class UploadfileController extends Controller
 
             foreach ($files as $file) {
 
+                /* VERIFICATION DE L'EXTENSION DES FICHIERS */
                 $extension_file = $file->extension();
-                //   $size_file = $request->file('file')->getSize();
+
+                // $size_file = $request->file('file')->getSize();
 
                 if ($extension_file == "mp3" || $extension_file == "wav") {
 
@@ -77,7 +79,7 @@ class UploadfileController extends Controller
                     $file_name = 'Download-File n°' . $nb_download_files_user->nb_download_files  . ' - ' .  $name_file;
                     $file->storeAs('music_conversations/' . $user_id, $file_name, 'public');
 
-                    /*Création d'un nouveau message avec le nom du fichier en tant que content*/
+                    /* CREATION D'UN NOUVEAU MESSAGE AVEC LE NOM DU FICHIER EN TANT QUE CONTENT */
 
                     $datas = [
                         'content' => $file_name,
@@ -96,12 +98,15 @@ class UploadfileController extends Controller
                     $notifications->nb_notif += 1;
                     $notifications->save();
                 } else {
+                    /* SI L'EXTENSION DE L'UN DES FICHIER N'EST PAS VALIDE -> MESSAGE D'ERREUR */
                     return "Incorrect files type or size ! Wav or Mp3 files accepted !";
                 }
             }
+            /* TOUS LES FICHIERS ONT ETE UPLOADE ET VERIFIE -> MESSAGE DE SUCCES*/
             return "Files have been successfully uploaded !";
         } else {
-            return 'Choose files to upload !';
+              /* IL N'Y A PAS DE FICHIER A l'UPLOAD -> MESSAGE D'ERREUR */
+            return "Choose files to upload !";
         }
     }
 

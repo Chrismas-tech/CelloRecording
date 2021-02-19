@@ -22,6 +22,10 @@ form {
     padding: 0;
 }
 
+[x-cloak] {
+    display: none !important;
+}
+
 .courgette_font {
     font-family: 'Courgette', cursive;
 }
