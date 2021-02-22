@@ -173,7 +173,7 @@ class AdminController extends Controller
             'from' => $from,
             'to' => $to,
             'admin_id' => $admin_id,
-            'type' => 'message',
+            'type_id' => 1,
         ];
 
         /*Création du nouveau message*/

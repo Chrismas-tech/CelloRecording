@@ -20,8 +20,8 @@
 
                     </li>
                     <li class="mb-2 ml-6 bg-red-400 w-max rounded px-2 text-white">
-                            <p>From 00:30 to 01:50 : cello accompaniment</p>
-                            <p>From 01:20 to 02:00 : improvisation</p>
+                        <p>From 00:30 to 01:50 : cello accompaniment</p>
+                        <p>From 01:20 to 02:00 : improvisation</p>
                     </li>
 
                 </ul>
@@ -45,17 +45,16 @@
 
                 <div class="flex justify-start text-xs sm:text-sm md:text-md lg:text-lg">
                     <div>
-                        @if ($message->type === 'automatic_message')
+                        @if ($message->type->id == 3)
                             <p class="px-1 py-1 mb-1 text-white bg-gray-400 rounded">You have declined the last offer
                                 made
                                 by Christophe Luciani
                             </p>
-                        @elseif ($message->type === 'download_file')
+                        @elseif ($message->type->id == 2)
 
-                            <a href="{{ route('download_music_file_user', [$message->id,$message->user_id]) }}"
+                            <a href="{{ route('download_music_file_user', [$message->id, $message->user_id]) }}"
                                 class="px-1 py-1 mb-1 flex underline items-center text-white bg-red-400 rounded">
-                                <img
-                                    src="{{ asset('img/download_icon.png') }}" class="w-6 h-6 md:w-10 md:h-10 mr-3 "
+                                <img src="{{ asset('img/download_icon.png') }}" class="w-6 h-6 md:w-10 md:h-10 mr-3 "
                                     alt="">{{ $message->content }}
                             </a>
                         @else
@@ -76,17 +75,16 @@
 
                 <div class="flex justify-end text-xs sm:text-sm md:text-md lg:text-lg">
                     <div>
-                        @if ($message->type === 'automatic_message')
+                        @if ($message->type->id == 3)
                             <p class="px-1 py-1 mb-1 text-white bg-gray-400 rounded">You have declined the last offer
                                 made
                                 by Christophe Luciani
                             </p>
-                        @elseif ($message->type === 'download_file')
+                        @elseif ($message->type->id == 2)
 
                             <a href="{{ route('download_music_file_user', [$message->id]) }}"
                                 class="px-1 py-1 mb-1 flex underline items-center text-white bg-red-400 rounded">
-                                <img
-                                    src="{{ asset('img/download_icon.png') }}" class="w-6 h-6 md:w-10 md:h-10 mr-3"
+                                <img src="{{ asset('img/download_icon.png') }}" class="w-6 h-6 md:w-10 md:h-10 mr-3"
                                     alt="">{{ $message->content }}
                             </a>
 

@@ -87,7 +87,7 @@ class UploadfileController extends Controller
                         'to' => 'Christophe Luciani',
                         'user_id' => $user_id,
                         'admin_id' => 1,
-                        'type' => 'download_file'
+                        'type_id' => 2,
                     ];
 
                     Message::create($datas);
@@ -147,7 +147,7 @@ class UploadfileController extends Controller
                         'to' => $to,
                         'user_id' => $user_id,
                         'admin_id' => 1,
-                        'type' => 'download_file'
+                        'type_id' => 2,
                     ];
 
                     Message::create($datas);

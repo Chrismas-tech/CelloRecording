@@ -17,10 +17,10 @@ class CreateMessagesTable extends Migration
             $table->id();
             $table->text('content');
             $table->string('from');
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->constrained();
             $table->string('to');
-            $table->foreignId('admin_id');
-            $table->string('type')->nullable();
+            $table->foreignId('admin_id')->constrained();
+            $table->foreignId('type_id')->constrained();
             $table->timestamps();
         });
     }

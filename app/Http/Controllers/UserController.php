@@ -59,12 +59,12 @@ class UserController extends Controller
         /**********************************************/
         /**********************************************/
 
-
         $user_id = $user->id;
         $admin = Admin::find(1);
         $adminname = $admin->name;
 
         $messages = Message::where('user_id', "=", $user_id)->get();
+
         return view('conversation', compact('messages', 'adminname'));
     }
 
@@ -75,7 +75,6 @@ class UserController extends Controller
 
     public function new_conversation(Request $request)
     {
-
         $request->validate([
             'message' => 'required',
         ]);
@@ -98,7 +97,7 @@ class UserController extends Controller
             'from' => $from,
             'to' => $to,
             'admin_id' => $admin_id,
-            'type' => 'message',
+            'type_id' => 1,
         ];
 
         Message::create($datas_messages);
@@ -119,7 +118,6 @@ class UserController extends Controller
         /*On envoie un mail à l'admin*/
 
         Mail::to('electriccellofou@gmail.com')->send(new MessageToAdmin($email_user, $user_name, $notifications->nb_notif, $url_redirection));
-
 
         return redirect()->back();
     }
@@ -202,7 +200,7 @@ class UserController extends Controller
                 'from' => $from,
                 'to' => $to,
                 'admin_id' => $admin_id,
-                'type' => 'automatic_message',
+                'type_id' => 'automatic_message',
             ];
 
             /* On créé un message, et on incrémente une notification de message */
