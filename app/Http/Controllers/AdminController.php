@@ -143,7 +143,8 @@ class AdminController extends Controller
         /**********************************************/
         /**********************************************/
 
-        $messages = Message::where('user_id', $user_id)->where('direction_send', 0)->get();
+        $messages = Message::where('user_id', $user_id)->get();
+        //dd($messages);
         $user = User::find($user_id);
 
         return view('admin.conversation_with_user', compact('messages', 'user'));
@@ -171,8 +172,7 @@ class AdminController extends Controller
         Message::create($datas_messages);
 
         /*On incrémente de 1 la relation Admin->User dans la table Notification*/
-        $notifications = Notification::where('admin_id', $admin_id)
-            ->where('user_id', $user_id)->where('direction_send', 1)->first();
+        $notifications = Notification::where('admin_id', $admin_id)->where('user_id', $user_id)->where('direction_send', 1)->first();
 
         $notifications->nb_notif += 1;
         $notifications->save();

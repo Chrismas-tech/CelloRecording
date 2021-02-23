@@ -125,15 +125,13 @@ class UploadfileController extends Controller
 
                 if ($extension_file == "mp3" || $extension_file == "wav") {
 
-                    $user_id = Auth()->user()->id;
+
                     $admin_id = Admin::find(1)->id;
 
                     $nb_download_files_admin = $this->increment_download_files_admin($user_id);
-
                     $name_file = $file->getClientOriginalName();
 
                     $file_name = 'Download-File n°' . $nb_download_files_admin->nb_download_files . ' - ' .  $name_file;
-
                     $file->storeAs('music_conversations/' . $user_id, $file_name, 'public');
 
                     /* Création d'un nouveau message avec le nom du fichier en tant que content */
@@ -148,9 +146,7 @@ class UploadfileController extends Controller
 
                     Message::create($datas);
 
-
                     /*On actualise une notif relation Admin -> User */
-
                     $notifications = Notification::where('admin_id', $admin_id)->where('user_id', $user_id)->where('direction_send', 1)->first();
 
                     $notifications->nb_notif += 1;
