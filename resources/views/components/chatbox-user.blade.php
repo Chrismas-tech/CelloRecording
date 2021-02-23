@@ -45,12 +45,12 @@
 
                 <div class="flex justify-start text-xs sm:text-sm md:text-md lg:text-lg">
                     <div>
-                        @if ($message->type->id == 3)
+                        @if ($message->type == 3)
                             <p class="px-1 py-1 mb-1 text-white bg-gray-400 rounded">You have declined the last offer
                                 made
                                 by Christophe Luciani
                             </p>
-                        @elseif ($message->type->id == 2)
+                        @elseif ($message->type == 2)
 
                             <a href="{{ route('download_music_file_user', [$message->id, $message->user_id]) }}"
                                 class="px-1 py-1 mb-1 flex underline items-center text-white bg-red-400 rounded">
@@ -75,12 +75,12 @@
 
                 <div class="flex justify-end text-xs sm:text-sm md:text-md lg:text-lg">
                     <div>
-                        @if ($message->type->id == 3)
+                        @if ($message->type == 3)
                             <p class="px-1 py-1 mb-1 text-white bg-gray-400 rounded">You have declined the last offer
                                 made
                                 by Christophe Luciani
                             </p>
-                        @elseif ($message->type->id == 2)
+                        @elseif ($message->type == 2)
 
                             <a href="{{ route('download_music_file_user', [$message->id]) }}"
                                 class="px-1 py-1 mb-1 flex underline items-center text-white bg-red-400 rounded">

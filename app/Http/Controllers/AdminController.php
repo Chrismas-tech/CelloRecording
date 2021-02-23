@@ -165,7 +165,7 @@ class AdminController extends Controller
             'user_id' => $user_id,
             'admin_id' => $admin_id,
             'direction_send' => 1,
-            'type_id' => 1,
+            'type' => 1,
         ];
 
         /*Création du nouveau message*/

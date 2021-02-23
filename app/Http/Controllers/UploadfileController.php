@@ -87,7 +87,7 @@ class UploadfileController extends Controller
                         'user_id' => $user_id,
                         'admin_id' => $admin_id,
                         'direction_send' => 0,
-                        'type_id' => 2,
+                        'type' => 2,
                     ];
 
                     Message::create($datas);
@@ -141,7 +141,7 @@ class UploadfileController extends Controller
                         'user_id' => $user_id,
                         'admin_id' => $admin_id,
                         'direction_send' => 1,
-                        'type_id' => 2,
+                        'type' => 2,
                     ];
 
                     Message::create($datas);

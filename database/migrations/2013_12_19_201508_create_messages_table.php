@@ -19,7 +19,7 @@ class CreateMessagesTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('admin_id')->constrained();
             $table->boolean('direction_send');
-            $table->foreignId('type_id')->constrained();
+            $table->integer('type');
             $table->timestamps();
         });
     }

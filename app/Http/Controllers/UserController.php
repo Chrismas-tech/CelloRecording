@@ -86,7 +86,7 @@ class UserController extends Controller
             'user_id' => $user_id,
             'admin_id' => $admin_id,
             'direction_send' => 0,
-            'type_id' => 1,
+            'type' => 1,
         ];
 
         Message::create($datas_messages);
@@ -172,35 +172,32 @@ class UserController extends Controller
 
 
             /* On supprime l'offre en cours */
-            Quote::destroy($quote_id);
+                Quote::destroy($quote_id);
 
             /* Envoyer un message automatique dans la conversation pour prévenir l'Admin*/
 
             $user_id = Auth::user()->id;
             $admin_id = Admin::find(1)->id;
-
-            $from = auth()->user()->name;
-            $to = Admin::find(1)->name;
             $message_declined = 'This is an automatic message, the client has declined your last offer';
 
             $datas_messages = [
                 'content' => $message_declined,
                 'user_id' => $user_id,
-                'from' => $from,
-                'to' => $to,
                 'admin_id' => $admin_id,
-                'type_id' => 'automatic_message',
+                'direction_send' => 0,
+                'type' => 3,
             ];
 
             /* On créé un message, et on incrémente une notification de message */
             Message::create($datas_messages);
 
-            $notifications = Notification::where('from', $from)->first();
+            $admin_name = Admin::find(1)->name;
+
+            $notifications = Notification::where('user_id', $user_id)->where('direction_send', 0)->first();
             $notifications->nb_notif += 1;
             $notifications->save();
 
-
-            return redirect()->back()->with('message', 'You have successfully declined the custom offer ! An automatic message has been sent to inform Christophe Luciani');
+            return redirect()->back()->with('message', 'You have successfully declined the custom offer ! An automatic message has been sent to inform '.$admin_name);
         }
     }
 
