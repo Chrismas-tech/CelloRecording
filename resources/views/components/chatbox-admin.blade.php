@@ -2,12 +2,12 @@
     @foreach ($messages as $message)
 
         <div class="mb-8">
-            @if ($message->from == 'Christophe Luciani')
+            @if ($message->direction_send == 1)
 
                 <div class="flex justify-end">
 
                     <div class="flex">
-                        <p class="mr-3 text-sm text-green-500">{{ $message->from }}</p>
+                        <p class="mr-3 text-sm text-green-500">{{ $message->admin->name }}</p>
                         <p class="text-sm text-gray-500">
                             {{ App\Http\Controllers\DateChangeController::date_created_at_to_string($message->created_at) }}
                         </p>
@@ -38,7 +38,7 @@
             @else
                 <div class="flex justify-start text-xs sm:text-sm md:text-md lg:text-lg">
                     <div class="flex">
-                        <p class="mr-3 text-sm text-indigo-500">{{ $message->from }}</p>
+                        <p class="mr-3 text-sm text-indigo-500">{{ $message->user->name }}</p>
                         <p class="text-sm text-gray-500">
                             {{ App\Http\Controllers\DateChangeController::date_created_at_to_string($message->created_at) }}
                         </p>

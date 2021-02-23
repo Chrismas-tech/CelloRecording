@@ -8,5 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Admin extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $fillable = [
+        'name',
+        'password',
+    ];
+
+    public function message() {
+        return $this->hasOne(Message::class);
+     }
 }

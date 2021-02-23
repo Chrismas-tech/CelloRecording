@@ -36,7 +36,7 @@
             @if ($message->direction_send == 1)
                 <div class="flex justify-start">
                     <div class="flex">
-                        <p class="mr-3 text-xs sm:text-sm text-green-500">{{ $message->from }}</p>
+                        <p class="mr-3 text-xs sm:text-sm text-green-500">{{ $message->admin->name }}</p>
                         <p class="text-xs sm:text-sm text-gray-500">
                             {{ App\Http\Controllers\DateChangeController::date_created_at_to_string($message->created_at) }}
                         </p>
@@ -66,7 +66,7 @@
             @else
                 <div class="flex justify-end">
                     <div class="flex">
-                        <p class="mr-3 text-xs sm:text-sm text-indigo-500">{{ $message->from }}</p>
+                        <p class="mr-3 text-xs sm:text-sm text-indigo-500">{{ $message->user->name }}</p>
                         <p class="text-xs sm:text-sm text-gray-500">
                             {{ App\Http\Controllers\DateChangeController::date_created_at_to_string($message->created_at) }}
                         </p>

@@ -15,6 +15,10 @@ class Message extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function admin() {
+        return $this->belongsTo(Admin::class);
+     }
+
     public function type()
     {
         return $this->belongsTo(Type::class);

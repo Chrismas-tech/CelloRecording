@@ -114,7 +114,7 @@ class UserController extends Controller
     public static function notifications()
     {
         $user_id = Auth::User()->id;
-        $nb_notifications = Notification::where('direction_send', 0)->where('user_id', $user_id)->sum('nb_notif');
+        $nb_notifications = Notification::where('direction_send', 1)->where('user_id', $user_id)->sum('nb_notif');
 
         return $nb_notifications;
     }

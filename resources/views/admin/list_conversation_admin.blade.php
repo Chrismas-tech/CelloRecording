@@ -70,7 +70,7 @@
                 </div>
                 @endif
 
-                @foreach ($notifs_which_user as $notif)
+                @foreach ($notifs_all_user as $notif)
                     <div class="mx-auto mt-3 max-w-7xl">
                         <div class="text-sm text-gray-500">
                             {{ App\Http\Controllers\DateChangeController::date_created_at_to_string($notif->created_at) }}
@@ -80,7 +80,7 @@
 
                             <div>
                                 <a href="{{ route('conversation_with_user', ['user_id' => $notif->user_id]) }}"><span
-                                        class="font-bold text-gray-500">{{ $notif->from }}</span>
+                                        class="font-bold text-gray-500">{{ $notif->user->name }}</span>
                                     sent you a new message ! Click here and read it now ! <div>
                                     </div></a>
                             </div>

@@ -109,14 +109,14 @@ class AdminController extends Controller
     public function page_list_conversation_admin(Request $request)
     {
         $admin_id = Admin::find(1)->id;
-        $notifs_which_user = Notification::where('direction_send', 0)->where('nb_notif', '!=', 0)->get();
+        $notifs_all_user = Notification::where('direction_send', 0)->where('nb_notif', '!=', 0)->get();
 
         /* On sélectionne le nombre de conversations en cours : toutes les entrées qui ne correspondent pas à un expéditeur Admin et qui pour leur user_id sont uniques.  */
 
         $conversations = Message::select('user_id', 'direction_send')->where('direction_send', 0)->distinct()->get();
         $nb_notifications = Notification::where('admin_id',  $admin_id)->sum('nb_notif');
 
-        return view('admin.list_conversation_admin', compact('nb_notifications', 'conversations', 'notifs_which_user'));
+        return view('admin.list_conversation_admin', compact('nb_notifications', 'conversations', 'notifs_all_user'));
     }
 
     public static function notifications()
@@ -131,11 +131,7 @@ class AdminController extends Controller
 
         /* Lors de l'ouverture de la conversation, on fait disparaître le nb de notifications de la relation ADMIN -> USER si la relation existe entre les deux */
 
-        $user = User::where('id', $user_id)->first();
-        $user_name =  $user->name;
-
-        $notifications_exist = Notification::where('from', $user_name)
-            ->where('to', 'Christophe Luciani')->first();
+        $notifications_exist = Notification::where('direction_send', 0)->where('user_id', $user_id)->first();
 
         if ($notifications_exist) {
             $notifications_exist->nb_notif = 0;
@@ -147,12 +143,10 @@ class AdminController extends Controller
         /**********************************************/
         /**********************************************/
 
-        $adminame = Admin::find(1)->name;
-
-        $messages = Message::where('user_id', $user_id)->get();
+        $messages = Message::where('user_id', $user_id)->where('direction_send', 0)->get();
         $user = User::find($user_id);
 
-        return view('admin.conversation_with_user', compact('messages', 'user', 'adminame'));
+        return view('admin.conversation_with_user', compact('messages', 'user'));
     }
 
     public function new_conversation_admin(Request $request, $user_id)
@@ -169,7 +163,7 @@ class AdminController extends Controller
             'content' => $message,
             'user_id' => $user_id,
             'admin_id' => $admin_id,
-            'direction_send' => 0,
+            'direction_send' => 1,
             'type_id' => 1,
         ];
 
