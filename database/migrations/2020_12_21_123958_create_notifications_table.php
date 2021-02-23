@@ -15,10 +15,9 @@ class CreateNotificationsTable extends Migration
     {
         Schema::create('notifications', function (Blueprint $table) {
             $table->id();
-            $table->string('from');
-            $table->foreignId('user_id');
-            $table->string('to');
-            $table->foreignId('admin_id');
+            $table->foreignId('user_id')->constrained()->nullable();
+            $table->foreignId('admin_id')->constrained()->nullable();
+            $table->boolean('direction_send');
             $table->integer('nb_notif')->nullable();
             $table->timestamps();
         });

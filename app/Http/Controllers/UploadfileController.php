@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\Delivery as MailDelivery;
+use App\Models\Admin;
 use App\Models\Message;
 use App\Models\Delivery;
 use App\Models\Notification;
@@ -70,7 +71,7 @@ class UploadfileController extends Controller
                 if ($extension_file == "mp3" || $extension_file == "wav") {
 
                     $user_id = Auth()->user()->id;
-                    $user_name = Auth()->user()->name;
+                    $admin_id = Admin::find(1)->id;
 
                     /*On incrémente de 1 le nombre de download_files*/
                     $nb_download_files_user = $this->increment_download_files_user();
@@ -83,10 +84,9 @@ class UploadfileController extends Controller
 
                     $datas = [
                         'content' => $file_name,
-                        'from' => $user_name,
-                        'to' => 'Christophe Luciani',
                         'user_id' => $user_id,
-                        'admin_id' => 1,
+                        'admin_id' => $admin_id,
+                        'direction_send' => 0,
                         'type_id' => 2,
                     ];
 
@@ -94,7 +94,7 @@ class UploadfileController extends Controller
 
                     /*On actualise une notif relation Admin -> User */
 
-                    $notifications = Notification::where('from', $user_name)->first();
+                    $notifications = Notification::where('user_id', $user_id)->where('direction_send', 0)->first();
                     $notifications->nb_notif += 1;
                     $notifications->save();
                 } else {
@@ -105,7 +105,7 @@ class UploadfileController extends Controller
             /* TOUS LES FICHIERS ONT ETE UPLOADE ET VERIFIE -> MESSAGE DE SUCCES*/
             return "Files have been successfully uploaded !";
         } else {
-              /* IL N'Y A PAS DE FICHIER A l'UPLOAD -> MESSAGE D'ERREUR */
+            /* IL N'Y A PAS DE FICHIER A l'UPLOAD -> MESSAGE D'ERREUR */
             return "Choose files to upload !";
         }
     }
@@ -125,9 +125,8 @@ class UploadfileController extends Controller
 
                 if ($extension_file == "mp3" || $extension_file == "wav") {
 
-                    $user = User::where('id', $user_id)->first();
-                    $to = $user->name;
-
+                    $user_id = Auth()->user()->id;
+                    $admin_id = Admin::find(1)->id;
 
                     $nb_download_files_admin = $this->increment_download_files_admin($user_id);
 
@@ -137,25 +136,22 @@ class UploadfileController extends Controller
 
                     $file->storeAs('music_conversations/' . $user_id, $file_name, 'public');
 
-                    /*
-                        Création d'un nouveau message avec le nom du fichier en tant que content
-                        */
+                    /* Création d'un nouveau message avec le nom du fichier en tant que content */
 
                     $datas = [
                         'content' => $file_name,
-                        'from' => 'Christophe Luciani',
-                        'to' => $to,
                         'user_id' => $user_id,
-                        'admin_id' => 1,
+                        'admin_id' => $admin_id,
+                        'direction_send' => 1,
                         'type_id' => 2,
                     ];
 
                     Message::create($datas);
 
+
                     /*On actualise une notif relation Admin -> User */
 
-                    $notifications = Notification::where('from', '=', 'Christophe Luciani')
-                        ->where('to', $to)->first();
+                    $notifications = Notification::where('admin_id', $admin_id)->where('user_id', $user_id)->where('direction_send', 1)->first();
 
                     $notifications->nb_notif += 1;
                     $notifications->save();

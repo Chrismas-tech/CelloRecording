@@ -20,7 +20,7 @@
                                     href="{{ route('conversation_with_user', ['user_id' => $conversation->user_id]) }}">
 
                                     <div>
-                                        Talk with <span class="text-white"> {{ $conversation->from }} </span> now !
+                                        Talk with <span class="text-white"> {{ $conversation->user->name }} </span> now !
                                     </div>
        
                                 </a>

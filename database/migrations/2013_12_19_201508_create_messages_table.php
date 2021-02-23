@@ -16,10 +16,9 @@ class CreateMessagesTable extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->text('content');
-            $table->string('from');
             $table->foreignId('user_id')->constrained();
-            $table->string('to');
             $table->foreignId('admin_id')->constrained();
+            $table->boolean('direction_send');
             $table->foreignId('type_id')->constrained();
             $table->timestamps();
         });

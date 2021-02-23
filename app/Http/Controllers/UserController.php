@@ -47,25 +47,19 @@ class UserController extends Controller
 
         /* Lors de l'ouverture de la conversation, on fait disparaître le nb de notifications de la relation USER -> ADMIN */
 
-        $user = Auth::User();
+        $user_id = Auth::User()->id;
 
-        $notifications_exist = Notification::where('to', $user->name)->first();
+        $notifications_exist = Notification::where('user_id', $user_id)->where('direction_send', 1)->first();
         $notifications_exist->nb_notif = 0;
         $notifications_exist->save();
 
-
-        /**********************************************/
-        /**********************************************/
         /**********************************************/
         /**********************************************/
 
-        $user_id = $user->id;
-        $admin = Admin::find(1);
-        $adminname = $admin->name;
+        $admin = Admin::find(1)->id;
+        $messages = Message::where('user_id', $user_id)->get();
 
-        $messages = Message::where('user_id', "=", $user_id)->get();
-
-        return view('conversation', compact('messages', 'adminname'));
+        return view('conversation', compact('messages'));
     }
 
     public function page_profile()
@@ -85,18 +79,13 @@ class UserController extends Controller
 
         $user_id = Auth::user()->id;
         $admin_id = Admin::find(1)->id;
-
-        $from =  auth()->user()->name;
-        $to = Admin::find(1)->name;
-
         $message = $request->message;
 
         $datas_messages = [
             'content' => $message,
             'user_id' => $user_id,
-            'from' => $from,
-            'to' => $to,
             'admin_id' => $admin_id,
+            'direction_send' => 0,
             'type_id' => 1,
         ];
 
@@ -107,7 +96,7 @@ class UserController extends Controller
         Elles vont gérer les notifications dans le sens User -> Admin et Admin -> User 
         */
 
-        $notifications = Notification::where('from', $from)->first();
+        $notifications = Notification::where('user_id', $user_id)->where('direction_send', 0)->first();
         $notifications->nb_notif += 1;
         $notifications->save();
 
@@ -124,8 +113,8 @@ class UserController extends Controller
 
     public static function notifications()
     {
-        $user_name = Auth::User()->name;
-        $nb_notifications = Notification::where('to', $user_name)->sum('nb_notif');
+        $user_id = Auth::User()->id;
+        $nb_notifications = Notification::where('direction_send', 0)->where('user_id', $user_id)->sum('nb_notif');
 
         return $nb_notifications;
     }

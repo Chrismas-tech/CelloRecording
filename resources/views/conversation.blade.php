@@ -10,7 +10,7 @@
                         Dashboard</a>
                 </div>
 
-                <x-chatbox-user :messages="$messages" :adminname="$adminname"></x-chatbox-user>
+                <x-chatbox-user :messages="$messages"></x-chatbox-user>
 
                 <div class="p-6 bg-gray-800 border-b border-gray-200">
 

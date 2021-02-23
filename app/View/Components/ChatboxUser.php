@@ -13,10 +13,9 @@ class ChatboxUser extends Component
      *
      * @return void
      */
-    public function __construct($messages, $adminname)
+    public function __construct($messages)
     {
         $this->messages = $messages;
-        $this->adminname = $adminname;
     }
     /**
      * Get the view / contents that represent the component.

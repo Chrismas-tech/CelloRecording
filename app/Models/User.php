@@ -54,4 +54,12 @@ class User extends Authenticatable
     public function delivery() {
         return $this->hasOne(User::class);
     }
+
+    public function numberfiles() {
+        $this->hasOne(User::class);
+    }
+
+    public function notifications() {
+        $this->hasOne(User::class);
+    }
 }

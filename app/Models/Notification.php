@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Notification extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $fillable = [
+        'user_id',
+        'admin_id',
+        'direction_send',
+        'nb_notif',
+    ];
     
     public function user() {
         return $this->belongsTo(User::class);

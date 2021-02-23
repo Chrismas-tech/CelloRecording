@@ -33,7 +33,7 @@
 
         <div class="mb-8">
 
-            @if ($message->from === $adminname)
+            @if ($message->direction_send == 1)
                 <div class="flex justify-start">
                     <div class="flex">
                         <p class="mr-3 text-xs sm:text-sm text-green-500">{{ $message->from }}</p>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Middleware\Admin;
+use App\Models\Admin as ModelsAdmin;
 use App\Models\Notification;
 use App\Models\NumberFiles;
 use App\Models\User;
@@ -53,23 +55,20 @@ class RegisteredUserController extends Controller
         Elles vont gérer les notifications dans le sens User -> Admin et Admin -> User 
         */
 
-        $from = Auth()->user()->name;
         $user_id = Auth()->user()->id;
-        $admin_id = 1;
+        $admin_id = ModelsAdmin::find(1)->id;
 
         $notifs_user_to_admin = [
-            'from' => $from,
             'user_id' => $user_id,
-            'to' => 'Christophe Luciani',
             'admin_id' => $admin_id,
+            'direction_send' => 0,
             'nb_notif' => 0,
         ];
-
+        
         $notifs_admin_to_user = [
-            'from' => 'Christophe Luciani',
             'user_id' => $user_id,
-            'to' => $from,
             'admin_id' => $admin_id,
+            'direction_send' => 1,
             'nb_notif' => 0,
         ];
 
@@ -79,7 +78,7 @@ class RegisteredUserController extends Controller
 
         Notification::create($notifs_user_to_admin);
         Notification::create($notifs_admin_to_user);
-
+        
         NumberFiles::create($datas);
 
         return redirect(RouteServiceProvider::HOME);

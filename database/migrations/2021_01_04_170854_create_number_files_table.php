@@ -15,7 +15,7 @@ class CreateNumberFilesTable extends Migration
     {
         Schema::create('number_files', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->constrained()->nullable();
             $table->integer('nb_download_files')->default(0);
             $table->integer('nb_delivery_files')->default(0);
             $table->timestamps();
