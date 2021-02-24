@@ -29,9 +29,15 @@
             <!-- Password -->
             <div class="mt-4">
                 <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block w-full mt-1" type="password" name="password" required
-                    autocomplete="current-password" />
+                <div class="flex">
+                    <x-input id="password" class="password_login_reveal block w-full rounded-r-none" type="password" name="password" required
+                        autocomplete="current-password" />
+                    <button type="text"class="reveal_password_login border border-gray-300 rounded-r">
+                        <img src="{{ asset('img/eye.png') }}" alt="" class="w-7 h-auto eye_open_login">
+                        <img class="eye_off_login eye_icon hidden w-7 h-auto" src="{{ asset('img/cross_eye.png') }}" alt=""
+                            class="eye_icon hidden">
+                    </button>
+                </div>
             </div>
 
             <!-- Remember Me -->
@@ -63,3 +69,26 @@
         </div>
     </x-auth-card>
 </x-guest-layout>
+
+
+<script>
+    $('document').ready(function() {
+
+        //console.log('test1');
+        /* REVELER LE PASSWORD login*/
+        $('.reveal_password_login').click(function() {
+
+           //console.log('test');
+            /* SI L'OEIL EST NORMAL -> ON CHANGE IMAGE + ON REVELE LE PASSWORD */
+            if (!$('.eye_open_login').hasClass('hidden')) {
+                $('.eye_open_login').addClass('hidden');
+                $('.eye_off_login').removeClass('hidden');
+                $('.password_login_reveal').attr('type', 'text');
+            } else {
+                $('.eye_open_login').removeClass('hidden');
+                $('.eye_off_login').addClass('hidden');
+                $('.password_login_reveal').attr('type', 'password');
+            }
+        });
+    });
+</script>
