@@ -64,6 +64,7 @@ class UserController extends Controller
 
     public function page_profile()
     {
+        $path_asset = storage_path('app/private/images/'. Auth::user()->id . '/' . Auth::user()->avatar);
         return view('profile');
     }
 
@@ -172,7 +173,7 @@ class UserController extends Controller
 
 
             /* On supprime l'offre en cours */
-                Quote::destroy($quote_id);
+            Quote::destroy($quote_id);
 
             /* Envoyer un message automatique dans la conversation pour prévenir l'Admin*/
 
@@ -197,7 +198,7 @@ class UserController extends Controller
             $notifications->nb_notif += 1;
             $notifications->save();
 
-            return redirect()->back()->with('message', 'You have successfully declined the custom offer ! An automatic message has been sent to inform '.$admin_name);
+            return redirect()->back()->with('message', 'You have successfully declined the custom offer ! An automatic message has been sent to inform ' . $admin_name);
         }
     }
 
@@ -298,7 +299,7 @@ class UserController extends Controller
                 $order->save();
 
                 /*On supprime les fichiers musicaux de la conversation et ses messages*/
-                Storage::deleteDirectory('public/music_conversations/' . $user_id);
+                Storage::deleteDirectory('private/music_conversations/' . $user_id);
 
                 /*Supprimer le reste*/
                 Message::where('user_id', $user_id)->delete();
@@ -373,9 +374,9 @@ class UserController extends Controller
         /*On suppime tout !*/
 
         /*Supprimer les fichiers musicaux et images de profil*/
-        Storage::deleteDirectory('public/music_conversations/' . $user_id);
-        Storage::deleteDirectory('public/deliveries/' . $user_id);
-        Storage::deleteDirectory('public/images/' . $user_id);
+        Storage::deleteDirectory('private/music_conversations/' . $user_id);
+        Storage::deleteDirectory('private/deliveries/' . $user_id);
+        Storage::deleteDirectory('private/images/' . $user_id);
 
         /*Supprimer le reste*/
         Delivery::where('user_id', $user_id)->delete();
@@ -422,7 +423,7 @@ class UserController extends Controller
         if (!$message) {
             return view('page_error');
         } else {
-            return Storage::download('public/music_conversations/' . $user_id . '/' . $message->content);
+            return Storage::download('private/music_conversations/' . $user_id . '/' . $message->content);
         }
     }
 

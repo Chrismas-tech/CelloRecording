@@ -30,10 +30,10 @@ class UploadfileController extends Controller
             $user_id = auth()->user()->id;
 
             if ($avatar_old) {
-                Storage::delete('public/images/' . $user_id . '/' . $avatar_old);
+                Storage::delete('private/images/' . $user_id . '/' . $avatar_old);
             }
 
-            /*On  vérifie l'extension du fichier et on l'enregistre s'il est conforme dans Storage/images du dossier public  */
+            /*On  vérifie l'extension du fichier et on l'enregistre s'il est conforme dans Storage/images du dossier private  */
 
             $extension_file = $request->file('file')->extension();
             $size_file = $request->file('file')->getSize();
@@ -41,7 +41,7 @@ class UploadfileController extends Controller
             if ($extension_file == 'png' || $extension_file == 'jpg' && $size_file < 2097152) {
 
                 $filename = $request->file->getClientOriginalName();
-                $request->file->storeAs('images/' . $user_id . '/', $filename, 'public');
+                $request->file->storeAs('images/' . $user_id . '/', $filename, 'private');
                 auth()->user()->update(['avatar' => $filename]);
 
                 $success = "File has been successfully uploaded !";
@@ -78,7 +78,7 @@ class UploadfileController extends Controller
 
                     $name_file = $file->getClientOriginalName();
                     $file_name = 'Download-File n°' . $nb_download_files_user->nb_download_files  . ' - ' .  $name_file;
-                    $file->storeAs('music_conversations/' . $user_id, $file_name, 'public');
+                    $file->storeAs('music_conversations/' . $user_id, $file_name, 'private');
 
                     /* CREATION D'UN NOUVEAU MESSAGE AVEC LE NOM DU FICHIER EN TANT QUE CONTENT */
 
@@ -132,7 +132,7 @@ class UploadfileController extends Controller
                     $name_file = $file->getClientOriginalName();
 
                     $file_name = 'Download-File n°' . $nb_download_files_admin->nb_download_files . ' - ' .  $name_file;
-                    $file->storeAs('music_conversations/' . $user_id, $file_name, 'public');
+                    $file->storeAs('music_conversations/' . $user_id, $file_name, 'private');
 
                     /* Création d'un nouveau message avec le nom du fichier en tant que content */
 
@@ -184,7 +184,7 @@ class UploadfileController extends Controller
                     $name_file = $file->getClientOriginalName();
                     $file_name = 'Delivery-File n°' . $nb_delivery_files->nb_delivery_files . ' - ' .  $name_file;
 
-                    $file->storeAs('deliveries/' . $user_id . '/', $file_name, 'public');
+                    $file->storeAs('deliveries/' . $user_id . '/', $file_name, 'private');
 
                     /*Création d'une nouvelle delivery */
 

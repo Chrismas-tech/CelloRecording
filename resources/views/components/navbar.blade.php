@@ -11,7 +11,7 @@
                 @auth
                     <h1 class="mr-5 text-3xl dancing_font capitalize mq_username_fs">{{ Auth::User()->name }}</h1>
                     @if (Auth::user()->avatar)
-                        <img src="{{ asset('/storage/images/' . Auth::user()->id . '/' . Auth::user()->avatar) }}"
+                        <img src="{{ url(storage_path('app/private/images/'. Auth::user()->id . '/' . Auth::user()->avatar)) }}"
                             class="mr-5 border border-gray-300 rounded-full w-16 h-16 circle mq_img_profile">
                     @else
                         <img src="{{ asset('img/noname_avatar.png') }}"

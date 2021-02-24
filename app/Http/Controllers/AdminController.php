@@ -51,19 +51,19 @@ class AdminController extends Controller
     {
 
         /* Si les dossiers music_conversation et deliveries n'existent pas on les créé */
-        $path = storage_path('app/public/music_conversations');
+        $path = storage_path('app/private/music_conversations');
 
         if (!file_exists($path)) {
             File::makeDirectory($path, $mode = 0777, true, true);
         }
 
-        $path = storage_path('app/public/deliveries');
+        $path = storage_path('app/private/deliveries');
 
         if (!file_exists($path)) {
             File::makeDirectory($path, $mode = 0777, true, true);
         }
 
-        $path = storage_path('app/public/images');
+        $path = storage_path('app/private/images');
 
         if (!file_exists($path)) {
             File::makeDirectory($path, $mode = 0777, true, true);
@@ -255,7 +255,10 @@ class AdminController extends Controller
         if (!$message) {
             return view('page_error');
         } else {
-            return Storage::download('public/music_conversations/' . $user_id . '/' . $message->content);
+
+
+
+            return Storage::download('private/music_conversations/' . $user_id . '/' . $message->content);
         }
     }
 
@@ -267,16 +270,16 @@ class AdminController extends Controller
         if (!$delivery_file) {
             return view('page_error');
         } else {
-            return Storage::download('public/deliveries/' . $user_id . '/' . $delivery_file->file_delivery);
+            return Storage::download('private/deliveries/' . $user_id . '/' . $delivery_file->file_delivery);
         }
     }
 
     private function get_size_of_music_files_on_server()
     {
 
-        $path_music_conversation = storage_path('app/public/music_conversations');
-        $path_music_deliveries = storage_path('app/public/deliveries');
-        $path_images = storage_path('app/public/images');
+        $path_music_conversation = storage_path('app/private/music_conversations');
+        $path_music_deliveries = storage_path('app/private/deliveries');
+        $path_images = storage_path('app/private/images');
 
 
         $file_size_music_conversations = 0;

@@ -161,12 +161,9 @@ $not_active_admin = 'border-green-200';
                     <button type="submit" class="mq_li_fs text-xl focus:outline-none">Logout</button>
                     <div class="absolute bottom-0 right-0 flex items-center">
                         <img src="{{ asset('img/shutdown.png') }}" alt="" class="w-7 mq_icon_size">
-
                     </div>
                 </li>
             </a>
-
-
         @endauth
     </ul>
 </div>

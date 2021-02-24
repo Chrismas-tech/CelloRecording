@@ -29,7 +29,6 @@
 
 <body class="bg-gray-100">
 
-
     <x-navbar></x-navbar>
 
         <main class="my_min_height">
