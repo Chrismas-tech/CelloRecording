@@ -402,6 +402,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required',
             'message' => 'required',
+            'g-recaptcha-response' => 'required'
         ]);
 
         $message = $request->message;

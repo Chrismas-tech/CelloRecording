@@ -13,6 +13,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    <!-- Captcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -52,9 +55,9 @@
             </div>
 
             @if (Session::has('send_success'))
-            <div class="text-center mb-10 mt-10">
-                <p class="title_jumbo text-5xl dancing_font">{{ Session::get('send_success') }}</p>
-            </div>
+                <div class="text-center mb-10 mt-10">
+                    <p class="title_jumbo text-5xl dancing_font">{{ Session::get('send_success') }}</p>
+                </div>
             @endif
 
             <div class="text-3xl karma border p-8 border-white rounded max-w-4xl mx-auto">
@@ -95,13 +98,34 @@
                             maxlength='1100' name="message" id="" cols="40" rows="10"
                             placeholder="Write your message here..."></textarea>
                     </div>
+
                     @error('message')
-                        <div class="text-white text-xl mb-5 my_margin_left">{{ $message }}</div>
+                        <div class="text-white text-xl mb-5 my_margin_left">{{ $message }}
+                        </div>
                     @enderror
 
-                    <div class="text-center">
+                    <div class="flex justify-center mb-4">
+                        <div class="g-recaptcha" data-type="image"
+                            data-sitekey="6LepTGYaAAAAAAVZbMvTzlHcmfOoJnBdmdu9-jx4">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center mb-3">
+                            @if ($errors->has('g-recaptcha-response'))
+                                <span class="text-white text-xl">
+                                    {{ $errors->first('g-recaptcha-response') }}
+                                </span>
+                            @endif
+                    </div>
+
+                    <div class="flex justify-center">
                         <button type="submit"
-                            class="px-2 py-3 mr-3 text-2xl border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font">Send</button>
+                            class="px-2 py-3 text-2xl border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font">Send
+                        </button>
+                    </div>
+
+                    <div class="text-center">
+
                     </div>
 
                 </form>
