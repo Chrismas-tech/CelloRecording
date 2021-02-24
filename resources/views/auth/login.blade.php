@@ -32,7 +32,7 @@
                 <div class="flex">
                     <x-input id="password" class="password_login_reveal block w-full rounded-r-none" type="password" name="password" required
                         autocomplete="current-password" />
-                    <button type="text"class="reveal_password_login border border-gray-300 rounded-r">
+                    <button type="button"class="reveal_password_login border border-gray-300 rounded-r">
                         <img src="{{ asset('img/eye.png') }}" alt="" class="w-7 h-auto eye_open_login">
                         <img class="eye_off_login eye_icon hidden w-7 h-auto" src="{{ asset('img/cross_eye.png') }}" alt=""
                             class="eye_icon hidden">
