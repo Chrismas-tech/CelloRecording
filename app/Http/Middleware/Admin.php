@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use App\Models\Admin as ModelsAdmin;
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class Admin
 {
@@ -40,7 +41,7 @@ class Admin
                 $admin_password = $admin->password;
 
                 /* SI LE PASSWORD ET LE NAME SONT CORRECTS -> Dashboard ADMIN */
-                if ($name_input == $admin_name && $password_input == $admin_password) {
+                if ($name_input == $admin_name && (Hash::check('123',$admin_password))) {
 
                     $request->session()->push('admin_name', $admin_name);
                     $request->session()->push('admin_password', $admin_password);

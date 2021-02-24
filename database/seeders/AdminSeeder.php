@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\DbCommand;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class AdminSeeder extends Seeder
 {
@@ -17,7 +18,7 @@ class AdminSeeder extends Seeder
     {
         DB::table('admins')->insert([
             'name' => 'Christophe Luciani',
-            'password' => '123',
+            'password' => Hash::make('123'),
         ]);
     }
 }
