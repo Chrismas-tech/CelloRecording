@@ -298,13 +298,15 @@ class AdminController extends Controller
             $file_size_images += $file->getSize();
         }
 
-        $file_mo_conversations = ceil($file_size_music_conversations / pow(10, 6));
-        $file_mo_deliveries = ceil($file_size_deliveries / pow(10, 6));
-        $file_mo_images = ceil($file_size_images / pow(10, 6));
+        /* Pour avoir un résultat en mo en partant d'Octet (Byte), on divise par 104843 */
 
+        $rapport_de_conversion_mo_to_bytes = 1048431;
+
+        $file_mo_conversations = ceil($file_size_music_conversations / $rapport_de_conversion_mo_to_bytes);
+        $file_mo_deliveries = ceil($file_size_deliveries / $rapport_de_conversion_mo_to_bytes);
+        $file_mo_images = ceil($file_size_images / $rapport_de_conversion_mo_to_bytes);
 
         $total_size_mo = $file_mo_conversations + $file_mo_deliveries + $file_mo_images;
-
         $datas_size_file = [$file_mo_conversations, $file_mo_deliveries, $file_mo_images, $total_size_mo];
 
         return $datas_size_file;

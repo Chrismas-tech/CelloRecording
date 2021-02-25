@@ -64,9 +64,9 @@ class UserController extends Controller
 
     public function page_profile()
     {
-        $path_asset = storage_path('app/private/images/'. Auth::user()->id . '/' . Auth::user()->avatar);
         return view('profile');
     }
+
 
     public function new_conversation(Request $request)
     {

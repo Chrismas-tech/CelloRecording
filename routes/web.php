@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\DateChangeController;
+use App\Http\Controllers\FileImageServe;
 use App\Http\Controllers\MonController;
 use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\UploadfileController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\UserController;
 use App\Mail\ContactMail;
 use App\Models\User;
 use GuzzleHttp\Psr7\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
@@ -24,13 +26,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+require __DIR__ . '/auth.php';
+
 /* WELCOME PAGE */
 
 Route::get('/', function () {
     return view('welcome');
 });
-
-require __DIR__.'/auth.php';
 
 /* PAGE ERROR*/
 Route::get('/not_authorized', function () {
@@ -41,10 +43,10 @@ Route::get('/not_authorized', function () {
 Route::get('/contact', [UserController::class, 'page_contact'])->name('contact');
 Route::post('/send_contact_email', [UserController::class, 'page_send_contact_email'])->name('send_contact_email');
 
-/*USER*/ 
-/*USER*/ 
-/*USER*/ 
-/*USER*/ 
+/*USER*/
+/*USER*/
+/*USER*/
+/*USER*/
 
 Route::get('/dashboard', [UserController::class, 'page_dashboard'])->name('dashboard');
 
@@ -57,7 +59,7 @@ Route::get('/profile', [UserController::class, 'page_profile'])->name('profile')
 Route::post('/update_profile', [UserController::class, 'update_profile'])->name('update_profile');
 Route::delete('/delete_account', [UserController::class, 'delete_account'])->name('delete_account');
 
-/*QUOTES*/ 
+/*QUOTES*/
 Route::get('/quotes_received', [UserController::class, 'page_quotes_received'])->name('quotes_received');
 Route::delete('/quotes_decline/{quote_id}', [UserController::class, 'quotes_decline'])->name('quotes_decline');
 
@@ -77,7 +79,7 @@ Route::post('/change_password', [ChangePasswordController::class, 'change_passwo
 /* UPLOAD PHOTO*/
 Route::post('/uploadphoto', [UploadfileController::class, 'uploadphoto'])->name('uploadphoto');
 
-/*UPLOAD MUSIC*/ 
+/*UPLOAD MUSIC*/
 Route::post('/upload_music_user', [UploadfileController::class, 'upload_music_user'])->name('upload_music_user');
 
 Route::post('/upload_music_admin/{user_id}', [UploadfileController::class, 'upload_music_admin'])->name('upload_music_admin');
@@ -94,7 +96,7 @@ Route::get('/admin', [AdminController::class, 'page_admin'])->name('admin');
 Route::get('/admin_logout', [AdminController::class, 'page_admin_logout'])->name('admin_logout');
 Route::get('/dashboard_admin', [AdminController::class, 'page_dashboard'])->name('dashboard_admin');
 
-/* fausse route pour retourner sur le Middleware et valider le mot de passe et le name */ 
+/* fausse route pour retourner sur le Middleware et valider le mot de passe et le name */
 Route::post('/connection_admin', [AdminController::class, 'connection_already_verified'])->name('connection_admin');
 
 /* SIDE ADMIN */
@@ -109,7 +111,7 @@ Route::get('/order_view_admin/{order_id}', [AdminController::class, 'page_order_
 Route::post('/new_conversation_admin/{user_id}', [AdminController::class, 'new_conversation_admin'])->name('new_conversation_admin');
 Route::get('/conversation_with_user/{user_id}', [AdminController::class, 'conversation_with_user'])->name('conversation_with_user');
 
-/* ADMIN-MINUTEUR */ 
+/* ADMIN-MINUTEUR */
 Route::get('/date_minuteur', [DateChangeController::class, 'date_minuteur'])->name('date_minuteur');
 
 /*GET MUSIC-FILE CONVERSATION*/
@@ -119,15 +121,20 @@ Route::get('/download_music_file_admin/{message_id}/{user_id}', [AdminController
 /*GET MUSIC-FILE DELIVERY*/
 Route::get('/download_delivery_file/{file_id}', [AdminController::class, 'download_delivery_file'])->name('download_delivery_file');
 
-/*PAYPAL-PAGE*/ 
+/*PAYPAL-PAGE*/
 Route::post('/page_paypal_payment/{quote_id}/{price}', [UserController::class, 'page_paypal_payment'])->name('page_paypal_payment');
 
 Route::get('/execute_payment', [PaypalController::class, 'execute_payment'])->name('execute_payment');
 
+
+/* FILE IMAGE PROFILE SERVE */
+Route::get('/profile_image/{id}', [FileImageServe::class, 'profile_image_serve'])->name('profile_image');
+
+
 /* BAC A SABLE */
 
 Route::get('/bac-a-sable', function () {
-    return view('bac-a-sable.bac-a-sable' , [
+    return view('bac-a-sable.bac-a-sable', [
         'info' => 'Very cool information',
     ]);
 });
@@ -135,6 +142,3 @@ Route::get('/bac-a-sable', function () {
 Route::get('/bac-a-sable-2', function () {
     return view('bac-a-sable.bac-a-sable-2');
 });
-
-
-
