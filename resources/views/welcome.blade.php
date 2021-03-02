@@ -150,9 +150,9 @@
                 </div>
 
                 <div class="mq_padding_presentation_text p-4 text-xl bg-white rounded border border-gray-300 karma">
-                    <div class="flex">
 
-                        <div class="w-4/12 p-4 border-r border-gray-300">
+                    <div class="flex">
+                        <div class="w-4/12 p-4 border border-gray-300 rounded mr-3 bg-gray-100">
                             <div class="flex justify-center items-center">
                                 <img src="{{ asset('img/violin_icon.png') }}" class="w-16 h-auto" alt="">
                                 <h1 class="text-3xl ml-3 dancing_font">My instrument</h1>
@@ -172,7 +172,7 @@
                             </div>
                         </div>
 
-                        <div class="w-6/12 p-4 border-r border-gray-300">
+                        <div class="w-6/12 p-4 border border-gray-300 rounded mr-3 bg-gray-100">
                             <div class="flex justify-center items-center">
                                 <img src="{{ asset('img/software_icon.png') }}" class="w-16 h-auto" alt="">
                                 <h1 class="text-3xl ml-3 dancing_font">Recording Software</h1>
@@ -199,10 +199,10 @@
                             </div>
                         </div>
 
-                        <div class="w-3/12 p-4">
+                        <div class="w-4/12 p-4 border border-gray-300 rounded bg-gray-100">
                             <div class="flex justify-center items-center">
                                 <img src="{{ asset('img/microphone_icon.png') }}" class="w-16 h-auto" alt="">
-                                <h1 class="text-3xl ml-3 dancing_font">Micro & Card sound</h1>
+                                <h1 class="text-3xl ml-3 dancing_font">Microphone & Card sound</h1>
                             </div>
                             <div class="mt-5">
                                 <p>
@@ -211,6 +211,11 @@
                                 <p>
                                     Card sound : <strong>Steinberg UR22</strong>
                                 </p>
+                                <br>
+                                <div class="flex items-center">
+                                    <img src="{{asset('img/download_icon.png')}}" class=" mr-2 w-10 h-auto" alt="">
+                                    <a href="{{route('download_demo_cello')}}" class="underline">Download a cello demo here</a>
+                                </div>
                             </div>
                         </div>
 

@@ -22,4 +22,14 @@ class FileImageServe extends Controller
             abort('404');
         }
     }
+
+    public function download_demo_cello() {
+
+        $demo_path = storage_path('app/private/demo/Cello_demo.mp3');
+
+        if (file_exists($demo_path)) {
+            return Storage::download('private/demo/Cello_demo.mp3');
+        }
+
+    }
 }

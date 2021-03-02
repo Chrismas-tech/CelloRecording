@@ -129,6 +129,7 @@ Route::get('/execute_payment', [PaypalController::class, 'execute_payment'])->na
 
 /* FILE IMAGE PROFILE SERVE */
 Route::get('/profile_image/{id}', [FileImageServe::class, 'profile_image_serve'])->name('profile_image');
+Route::get('/download_demo_cello', [FileImageServe::class, 'download_demo_cello'])->name('download_demo_cello');
 
 
 /* BAC A SABLE */
