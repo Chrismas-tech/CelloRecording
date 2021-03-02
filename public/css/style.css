@@ -75,6 +75,10 @@ form {
     display: none;
 }
 
+:root {
+    scrollbar-width: none !important
+}
+
 .jumbo_title_position {
     color: white;
     top: 50%;

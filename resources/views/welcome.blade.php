@@ -92,9 +92,13 @@
 
             <div class="flex text-xl rounded ">
                 <div class="mq_padding_presentation_text p-8 text-xl bg-white rounded karma border border-gray-300">
-                    <p><iframe class="rounded ytb_vid ml-8 mb-8" width="640" height="360"
-                            src="https://www.youtube.com/embed/Ut_Rgayxop4?autoplay=1;&mute=1" allow="fullscreen;" sessionlink="feature=player-button">
-                        </iframe>My name is Christophe. I'm a professional cellist, pianist,
+                    <p>
+                        <iframe class="rounded ytb_vid ml-8 mb-8" width="640" height="360"
+                            src="https://www.youtube.com/embed/Uj1OeaTc31w?autoplay=1;&mute=1" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                        My name is Christophe. I'm a professional cellist, pianist,
                         and composer born in 1990 in France (Nizza).<br><br>
 
                         I studied the violoncello in Paris where i graduated from the Bachelor of Music at the
@@ -153,9 +157,11 @@
 
                     <div class="mq_flex_welcome_page_recording_environment flex">
 
-                        <div class="w-4/12 mq_flex_welcome_page_recording_environment_width p-4 border border-gray-300 rounded mr-3 bg-gray-100">
+                        <div
+                            class="w-4/12 mq_flex_welcome_page_recording_environment_width p-4 border border-gray-300 rounded mr-3 bg-gray-100">
                             <div class="flex justify-center items-center">
-                                <img src="{{ asset('img/violin_icon.png') }}" class="w-16 h-auto icon_welcome_page_yellow" alt="">
+                                <img src="{{ asset('img/violin_icon.png') }}"
+                                    class="w-16 h-auto icon_welcome_page_yellow" alt="">
                                 <h1 class="text-3xl ml-3 dancing_font mq_title_recording_environment">My instrument</h1>
                             </div>
                             <div class="mt-5">
@@ -173,10 +179,13 @@
                             </div>
                         </div>
 
-                        <div class="w-6/12 mq_flex_welcome_page_recording_environment_width p-4 border border-gray-300 rounded mr-3 bg-gray-100">
+                        <div
+                            class="w-6/12 mq_flex_welcome_page_recording_environment_width p-4 border border-gray-300 rounded mr-3 bg-gray-100">
                             <div class="flex justify-center items-center">
-                                <img src="{{ asset('img/software_icon.png') }}" class="w-16 h-auto icon_welcome_page_yellow" alt="">
-                                <h1 class="text-3xl ml-3 dancing_font mq_title_recording_environment">Recording Software</h1>
+                                <img src="{{ asset('img/software_icon.png') }}"
+                                    class="w-16 h-auto icon_welcome_page_yellow" alt="">
+                                <h1 class="text-3xl ml-3 dancing_font mq_title_recording_environment">Recording Software
+                                </h1>
                             </div>
                             <div class="mt-5 mq_recording_environment">
                                 <h2>
@@ -200,20 +209,25 @@
                             </div>
                         </div>
 
-                        <div class="w-4/12 mq_flex_welcome_page_recording_environment_width p-4 border border-gray-300 rounded bg-gray-100">
+                        <div
+                            class="w-4/12 mq_flex_welcome_page_recording_environment_width p-4 border border-gray-300 rounded bg-gray-100">
                             <div class="flex justify-center items-center">
-                                <img src="{{ asset('img/microphone_icon.png') }}" class="w-16 h-auto icon_welcome_page_yellow" alt="">
-                                <h1 class="text-3xl ml-3 dancing_font mq_title_recording_environment">Microphone & Card sound</h1>
+                                <img src="{{ asset('img/microphone_icon.png') }}"
+                                    class="w-16 h-auto icon_welcome_page_yellow" alt="">
+                                <h1 class="text-3xl ml-3 dancing_font mq_title_recording_environment">Microphone & Card
+                                    sound</h1>
                             </div>
-                            <div class="mt-5" >
+                            <div class="mt-5">
                                 <h2 class="mq_recording_environment">
                                     Microphone : <strong>Senn­heiser MD441-U</strong><br>
                                     Card sound : <strong>Steinberg UR22</strong>
                                 </h2>
                                 <br>
                                 <div class="flex items-center">
-                                    <img src="{{ asset('img/download_icon.png') }}" class="icon_welcome_page_download mr-2 w-10 h-auto">
-                                    <a href="{{ route('download_demo_cello') }}" class="download_link_demo underline">Download a cello
+                                    <img src="{{ asset('img/download_icon.png') }}"
+                                        class="icon_welcome_page_download mr-2 w-10 h-auto">
+                                    <a href="{{ route('download_demo_cello') }}"
+                                        class="download_link_demo underline">Download a cello
                                         demo here (MP3)</a>
                                 </div>
                             </div>
@@ -221,7 +235,7 @@
 
                     </div>
                 </div>
-                
+
                 <div id="pricing" class="mt-10 text-3xl text-gray-700 rounded courgette_font">
                     <h1>Pricing</h1>
                 </div>
@@ -247,7 +261,7 @@
                         </a>
                     </div>
                 </div>
-                
+
             </div>
         </div>
 
