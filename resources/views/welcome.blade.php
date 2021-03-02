@@ -113,12 +113,7 @@
                         <br><br>
 
                         I would be very glad to be a part of your next musical project !
-
                 </div>
-                <div class="float-left">
-
-                </div>
-
             </div>
 
 
@@ -154,11 +149,72 @@
                     <h1>Recording Environment</h1>
                 </div>
 
-                <div class="mq_padding_presentation_text p-8 text-xl bg-white rounded border border-gray-300 karma">
-                    <p>
-                        I'm working only for CD quality album in professional studio on my real old cello, that's why
-                        i'm used to deliver WAV-HQ audio music files to my clients.
-                    </p>
+                <div class="mq_padding_presentation_text p-4 text-xl bg-white rounded border border-gray-300 karma">
+                    <div class="flex">
+
+                        <div class="w-4/12 p-4 border-r border-gray-300">
+                            <div class="flex justify-center items-center">
+                                <img src="{{ asset('img/violin_icon.png') }}" class="w-16 h-auto" alt="">
+                                <h1 class="text-3xl ml-3 dancing_font">My instrument</h1>
+                            </div>
+                            <div class="mt-5">
+                                <p>
+                                    All of your <strong>tracks</strong> will be performed and recorded on my <strong>old
+                                        acoustic cello</strong>.<br><br>
+
+                                    If you pay attention to my video clips on <strong>Youtube</strong>, you will notice
+                                    that the sound of the cello line is recorded on my real cello. <br><br>
+
+                                    I rarely use my <strong>electric-cello</strong>, essentially for modern projects or
+                                    when i have
+                                    to make a video-clip outside.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="w-6/12 p-4 border-r border-gray-300">
+                            <div class="flex justify-center items-center">
+                                <img src="{{ asset('img/software_icon.png') }}" class="w-16 h-auto" alt="">
+                                <h1 class="text-3xl ml-3 dancing_font">Recording Software</h1>
+                            </div>
+                            <div class="mt-5">
+                                <p>
+                                    Notice that i'm working only for <strong>CD quality</strong> album in
+                                    <strong>Professional Studio</strong>.<br><br>
+
+                                    In order to record the cello melodies in the best conditions, i'm using a famous
+                                    music software with which i have a huge experience as sound producer too :
+                                    <strong>Ableton Suite 10</strong>.
+
+                                    <br><br>
+
+                                    Once your work is achieved, i deliver you one or multiples audio files in the format
+                                    of your choice :
+
+                                    <br><br>
+                                    <strong>WAV/High-Quality files</strong> (24 or 32 bits, 44100 hz or 48000 hz) or
+                                    even <strong>MP3</strong>
+                                    <br><br>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="w-3/12 p-4">
+                            <div class="flex justify-center items-center">
+                                <img src="{{ asset('img/microphone_icon.png') }}" class="w-16 h-auto" alt="">
+                                <h1 class="text-3xl ml-3 dancing_font">Micro & Card sound</h1>
+                            </div>
+                            <div class="mt-5">
+                                <p>
+                                    Microphone : <strong>Senn­heiser MD441-U</strong>
+                                </p>
+                                <p>
+                                    Card sound : <strong>Steinberg UR22</strong>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
                 <div id="pricing" class="mt-10 text-3xl text-gray-700 rounded courgette_font">
@@ -177,7 +233,7 @@
 
         </div>
         
-        <div class=" mq_social_icon mr-8">
+        <div class=" mt-3 mq_social_icon mr-8">
                     <div class="flex">
                         <a href="https://www.youtube.com/watch?v=Uj1OeaTc31w" target="_blank">
                             <img src="{{ asset('img/youtube_icon.png') }}" alt="" class="w-20 h-20 mr-10">
