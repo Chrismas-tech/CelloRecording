@@ -216,6 +216,15 @@ input[type="file"] {
     }
 }
 
+@media (max-width: 1534px) {
+    .mq_recording_environment {
+        font-size: 1.2rem;
+    }
+    .download_link_demo {
+        font-size: 1rem;
+    }
+}
+
 @media (max-width: 1250px) {
     .bg_cello {
         height: 75vh;
@@ -225,6 +234,32 @@ input[type="file"] {
     }
     .jumbo_title_2 {
         font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 1233px) {
+    .mq_recording_environment {
+        font-size: 17px;
+    }
+    .download_link_demo {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 1175px) {
+    .mq_recording_environment {
+        font-size: 15px;
+    }
+    .download_link_demo {
+        font-size: 13px;
+    }
+    .icon_welcome_page_yellow {
+        width: 45px;
+        height: auto;
+    }
+    .icon_welcome_page_download {
+        width: 35px;
+        height: auto;
     }
 }
 
@@ -243,6 +278,37 @@ input[type="file"] {
     }
     .jumbo_title_position {
         top: 60%;
+    }
+    .icon_welcome_page_yellow {
+        width: 45px;
+        height: auto;
+    }
+    .icon_welcome_page_download {
+        width: 30px;
+        height: auto;
+    }
+    .mq_title_recording_environment {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1090px) {
+    .mq_flex_welcome_page_recording_environment {
+        display: block;
+    }
+    .mq_flex_welcome_page_recording_environment_width {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .mq_title_recording_environment {
+        font-size: 40px;
+    }
+    .mq_font_size_presentation_text h2 {
+        font-size: 18px;
+        margin-top: 40px;
+    }
+    .download_link_demo {
+        font-size: 17px;
     }
 }
 
@@ -441,6 +507,15 @@ input[type="file"] {
     .mq_padding_presentation_text {
         padding: 10px;
     }
+    .mq_title_recording_environment {
+        font-size: 30px;
+    }
+    .mq_font_size_presentation_text h2 {
+        font-size: 14px;
+    }
+    .download_link_demo {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 705px) {
@@ -458,6 +533,17 @@ input[type="file"] {
     .ytb_vid {
         width: 320px;
         height: 200px;
+    }
+    .mq_title_recording_environment {
+        font-size: 25px;
+    }
+    .icon_welcome_page_yellow {
+        width: 30px;
+        height: auto;
+    }
+    .icon_welcome_page_download {
+        width: 25px;
+        height: auto;
     }
 }
 

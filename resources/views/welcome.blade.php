@@ -151,14 +151,15 @@
 
                 <div class="mq_padding_presentation_text p-4 text-xl bg-white rounded border border-gray-300 karma">
 
-                    <div class="flex">
-                        <div class="w-4/12 p-4 border border-gray-300 rounded mr-3 bg-gray-100">
+                    <div class="mq_flex_welcome_page_recording_environment flex">
+
+                        <div class="w-4/12 mq_flex_welcome_page_recording_environment_width p-4 border border-gray-300 rounded mr-3 bg-gray-100">
                             <div class="flex justify-center items-center">
-                                <img src="{{ asset('img/violin_icon.png') }}" class="w-16 h-auto" alt="">
-                                <h1 class="text-3xl ml-3 dancing_font">My instrument</h1>
+                                <img src="{{ asset('img/violin_icon.png') }}" class="w-16 h-auto icon_welcome_page_yellow" alt="">
+                                <h1 class="text-3xl ml-3 dancing_font mq_title_recording_environment">My instrument</h1>
                             </div>
                             <div class="mt-5">
-                                <p>
+                                <h2 class="mq_recording_environment">
                                     All of your <strong>tracks</strong> will be performed and recorded on my <strong>old
                                         acoustic cello</strong>.<br><br>
 
@@ -168,17 +169,17 @@
                                     I rarely use my <strong>electric-cello</strong>, essentially for modern projects or
                                     when i have
                                     to make a video-clip outside.
-                                </p>
+                                </h2>
                             </div>
                         </div>
 
-                        <div class="w-6/12 p-4 border border-gray-300 rounded mr-3 bg-gray-100">
+                        <div class="w-6/12 mq_flex_welcome_page_recording_environment_width p-4 border border-gray-300 rounded mr-3 bg-gray-100">
                             <div class="flex justify-center items-center">
-                                <img src="{{ asset('img/software_icon.png') }}" class="w-16 h-auto" alt="">
-                                <h1 class="text-3xl ml-3 dancing_font">Recording Software</h1>
+                                <img src="{{ asset('img/software_icon.png') }}" class="w-16 h-auto icon_welcome_page_yellow" alt="">
+                                <h1 class="text-3xl ml-3 dancing_font mq_title_recording_environment">Recording Software</h1>
                             </div>
-                            <div class="mt-5">
-                                <p>
+                            <div class="mt-5 mq_recording_environment">
+                                <h2>
                                     Notice that i'm working only for <strong>CD quality</strong> album in
                                     <strong>Professional Studio</strong>.<br><br>
 
@@ -195,33 +196,32 @@
                                     <strong>WAV/High-Quality files</strong> (24 or 32 bits, 44100 hz or 48000 hz) or
                                     even <strong>MP3</strong>
                                     <br><br>
-                                </p>
+                                </h2>
                             </div>
                         </div>
 
-                        <div class="w-4/12 p-4 border border-gray-300 rounded bg-gray-100">
+                        <div class="w-4/12 mq_flex_welcome_page_recording_environment_width p-4 border border-gray-300 rounded bg-gray-100">
                             <div class="flex justify-center items-center">
-                                <img src="{{ asset('img/microphone_icon.png') }}" class="w-16 h-auto" alt="">
-                                <h1 class="text-3xl ml-3 dancing_font">Microphone & Card sound</h1>
+                                <img src="{{ asset('img/microphone_icon.png') }}" class="w-16 h-auto icon_welcome_page_yellow" alt="">
+                                <h1 class="text-3xl ml-3 dancing_font mq_title_recording_environment">Microphone & Card sound</h1>
                             </div>
-                            <div class="mt-5">
-                                <p>
-                                    Microphone : <strong>Senn­heiser MD441-U</strong>
-                                </p>
-                                <p>
+                            <div class="mt-5" >
+                                <h2 class="mq_recording_environment">
+                                    Microphone : <strong>Senn­heiser MD441-U</strong><br>
                                     Card sound : <strong>Steinberg UR22</strong>
-                                </p>
+                                </h2>
                                 <br>
                                 <div class="flex items-center">
-                                    <img src="{{asset('img/download_icon.png')}}" class=" mr-2 w-10 h-auto" alt="">
-                                    <a href="{{route('download_demo_cello')}}" class="underline">Download a cello demo here</a>
+                                    <img src="{{ asset('img/download_icon.png') }}" class="icon_welcome_page_download mr-2 w-10 h-auto">
+                                    <a href="{{ route('download_demo_cello') }}" class="download_link_demo underline">Download a cello
+                                        demo here (MP3)</a>
                                 </div>
                             </div>
                         </div>
 
                     </div>
                 </div>
-
+                
                 <div id="pricing" class="mt-10 text-3xl text-gray-700 rounded courgette_font">
                     <h1>Pricing</h1>
                 </div>
@@ -233,12 +233,11 @@
                     </p>
                 </div>
 
-                <div id="social_media" class="mt-10 text-3xl text-gray-700 rounded courgette_font"">
-            <h1 >Social Medias</h1>
+                <div id="social_media" class="mt-10 text-3xl text-gray-700 rounded courgette_font">
+                    <h1>Social Medias</h1>
+                </div>
 
-        </div>
-        
-        <div class=" mt-3 mq_social_icon mr-8">
+                <div class=" mt-3 mq_social_icon mr-8">
                     <div class="flex">
                         <a href="https://www.youtube.com/watch?v=Uj1OeaTc31w" target="_blank">
                             <img src="{{ asset('img/youtube_icon.png') }}" alt="" class="w-20 h-20 mr-10">
@@ -248,6 +247,7 @@
                         </a>
                     </div>
                 </div>
+                
             </div>
         </div>
 
