@@ -92,8 +92,8 @@
 
             <div class="flex text-xl rounded ">
                 <div class="mq_padding_presentation_text p-8 text-xl bg-white rounded karma border border-gray-300">
-                    <p> <iframe class="rounded ytb_vid ml-8 mb-8" width="640" height="360"
-                            src="https://www.youtube.com/embed/Ut_Rgayxop4?autoplay=1;&mute=1" allow="fullscreen;">
+                    <p><iframe class="rounded ytb_vid ml-8 mb-8" width="640" height="360"
+                            src="https://www.youtube.com/embed/Ut_Rgayxop4?autoplay=1;&mute=1" allow="fullscreen;" sessionlink="feature=player-button">
                         </iframe>My name is Christophe. I'm a professional cellist, pianist,
                         and composer born in 1990 in France (Nizza).<br><br>
 
