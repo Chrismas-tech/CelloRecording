@@ -653,9 +653,12 @@ input[type="file"] {
 }
 
 @media (max-width: 640px) {
-    .mq_contact_page a,
-    .submit_contact_btn {
+    .mq_contact_page a {
         font-size: 1rem;
+    }
+    .submit_contact_btn {
+        font-size: 0.9rem;
+        padding: 4px;
     }
     .mq_footer {
         font-size: 1rem;
@@ -667,10 +670,8 @@ input[type="file"] {
 }
 
 @media (max-width: 531px) {
-    .mq_contact_page a,
-    .submit_contact_btn {
+    .mq_contact_page a {
         font-size: 0.7rem;
-        padding: 6px;
     }
     .mq_font_email_title {
         font-size: 2.4rem;
@@ -684,9 +685,6 @@ input[type="file"] {
 @media (max-width: 437px) {
     .mq_contact_page a {
         font-size: 0.6rem;
-    }
-    .submit_contact_btn {
-        font-size: 1rem;
     }
     .mq_font_email_title {
         font-size: 1.8rem;
