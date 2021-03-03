@@ -623,3 +623,88 @@ input[type="file"] {
         font-size: 13px;
     }
 }
+
+
+/* CONTACT PAGE */
+
+
+/* CONTACT PAGE */
+
+
+/* CONTACT PAGE */
+
+
+/* CONTACT PAGE */
+
+
+/* CONTACT PAGE */
+
+@media (max-width: 940px) {
+    .mq_contact_page a {
+        font-size: 1rem;
+    }
+    .mq_font_email_title {
+        font-size: 3rem;
+    }
+    .mq_contact_page,
+    label {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .mq_contact_page a,
+    .submit_contact_btn {
+        font-size: 1rem;
+    }
+    .mq_footer {
+        font-size: 1rem;
+    }
+    .mq_contact_page,
+    label {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 531px) {
+    .mq_contact_page a,
+    .submit_contact_btn {
+        font-size: 0.7rem;
+        padding: 6px;
+    }
+    .mq_font_email_title {
+        font-size: 2.4rem;
+    }
+    .mq_footer {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 437px) {
+    .mq_contact_page a {
+        font-size: 0.6rem;
+    }
+    .submit_contact_btn {
+        font-size: 1rem;
+    }
+    .mq_font_email_title {
+        font-size: 1.8rem;
+    }
+    .mq_footer {
+        font-size: 0.8rem;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 393px) {
+    .mq_contact_page a {
+        font-size: 0.5rem;
+    }
+    .submit_contact_btn {
+        padding: 3px;
+    }
+    .mq_footer {
+        font-size: 0.7rem;
+    }
+}

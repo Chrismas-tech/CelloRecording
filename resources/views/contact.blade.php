@@ -20,26 +20,26 @@
 
 <body>
 
-    <div class="bg_cello_contact pb-20">
+    <div class="bg_cello_contact mq_contact_page  pb-20">
 
-        <nav class="flex justify-between p-10">
+        <nav class="flex justify-between p-10 mq_nav_padding">
             <div>
-                <a class="px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                <a class="mq_mr_btn-r px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
                     href="/">CelloRecording Services 7/7</a>
-                <a class="px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
-                    href="{{ route('contact') }}">Contact me</a>
+                <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                    href="{{ url('/contact') }}">Contact me</a>
             </div>
             <div>
                 @if (Route::has('login'))
                     <div>
                         @auth
-                            <a class="px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                            <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
                                 href="{{ url('/dashboard') }}">My Account</a>
                         @else
-                            <a class="px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                            <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
                                 href="{{ route('login') }}">Login</a>
                             @if (Route::has('register'))
-                                <a class="px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                                <a class="px-2 py-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
                                     href="{{ route('register') }}">Register</a>
                             @endif
                         @endauth
@@ -50,13 +50,13 @@
 
         <div class="mt-5 text-white my_min_height_contact">
             <div class="text-center">
-                <h1 class="mb-10 text-6xl title_jumbo dancing_font">Send me an email
+                <h1 class="mb-10 text-6xl mq_font_email_title title_jumbo dancing_font">Send me an email
                 </h1>
             </div>
 
             @if (Session::has('send_success'))
                 <div class="text-center mb-10 mt-10">
-                    <p class="title_jumbo text-5xl dancing_font">{{ Session::get('send_success') }}</p>
+                    <p class="title_jumbo mq_font_email_title text-5xl dancing_font">{{ Session::get('send_success') }}</p>
                 </div>
             @endif
 
@@ -120,7 +120,7 @@
 
                     <div class="flex justify-center">
                         <button type="submit"
-                            class="px-2 py-3 text-2xl border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font">Send
+                            class="submit_contact_btn px-2 py-3 text-2xl border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font">Send
                         </button>
                     </div>
 
@@ -133,7 +133,7 @@
         </div>
     </div>
 
-    <footer class="flex justify-center p-8 text-xl text-white bg-gray-500 border border-gray-500 nav_button_font">
+    <footer class="mq_footer flex justify-center p-8 text-xl text-white bg-gray-500 border border-gray-500 nav_button_font">
         <div>
             <h3>Copyright &copy; 2020 Christophe Luciani, all Rights Reserved</h3>
         </div>

@@ -18,15 +18,15 @@
 <body>
     <div class="bg_cello mq_jumbo_btn">
         <nav class="flex justify-between p-10 mq_nav_padding">
-            <div class="">
+            <div>
                 <a class="mq_mr_btn-r px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
                     href="/">CelloRecording Services 7/7</a>
                 <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
                     href="{{ url('/contact') }}">Contact me</a>
             </div>
-            <div class="">
+            <div>
                 @if (Route::has('login'))
-                    <div class="">
+                    <div>
                         @auth
                             <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
                                 href="{{ url('/dashboard') }}">My Account</a>
@@ -48,7 +48,7 @@
                 <p class="jumbo_title_1 dancing_font">Professional Cello Recording Services - 7/7 days
                 </p>
             </div>
-            <div class="">
+            <div>
                 <h1 class="mt-10 mb-16 jumbo_title_2 p-0 m-0 text-4xl font-bold karma">
                     Are you in need of a Professional Cellist for your next musical project ?
                 </h1>
@@ -266,7 +266,7 @@
         </div>
 
 
-        <footer class="flex justify-center p-8 text-xl text-white bg-gray-500 border border-gray-500 nav_button_font">
+        <footer class="mq_footer flex justify-center p-8 text-xl text-white bg-gray-500 border border-gray-500 nav_button_font">
             <div>
                 <h3>Copyright &copy; 2020 Christophe Luciani, all Rights Reserved</h3>
             </div>
