@@ -20,7 +20,7 @@
 
 <body>
 
-    <div class="bg_cello_contact mq_contact_page  pb-20">
+    <div class="bg_cello_contact mq_contact_page pb-20">
 
         <nav class="flex justify-between p-10 mq_nav_padding">
             <div>
@@ -48,7 +48,7 @@
             </div>
         </nav>
 
-        <div class="mt-5 text-white my_min_height_contact">
+        <div class="mt-5 text-white my_min_height_contact p-5">
             <div class="text-center">
                 <h1 class="mb-10 text-6xl mq_font_email_title title_jumbo dancing_font">Send me an email
                 </h1>
@@ -65,10 +65,10 @@
                     @csrf
                     <div class="flex flex-col items-center">
 
-                        <div class="mb-5 flex items-center w-full">
-                            <label class="dancing_font mr-10" for="name">Name</label>
+                        <div class="mb-5 md:flex items-center w-full">
+                            <label class="dancing_font md:mr-10" for="name">Name</label>
                             <input type="text" name="name"
-                                class="focus:outline-none focus:ring focus:border-gray-300 placeholder_contact bg-white bg-opacity-5 text-white border border-white rounded w-full text-xl"
+                                class="mq_input_contact_page focus:outline-none focus:ring focus:border-gray-300 placeholder_contact bg-white bg-opacity-5 text-white border border-white rounded w-full text-xl"
                                 placeholder="Name...">
                         </div>
                     </div>
@@ -78,10 +78,10 @@
                     @enderror
 
                     <div class="flex flex-col items-center">
-                        <div class="mb-5 flex items-center w-full">
-                            <label class="dancing_font mr-10" for="email">Email</label>
+                        <div class="mb-5 md:flex items-center w-full">
+                            <label class="dancing_font md:mr-10" for="email">Email</label>
                             <input type="email" required name="email"
-                                class="focus:outline-none focus:ring focus:border-gray-300 placeholder_contact bg-white bg-opacity-5 text-white border border-white rounded w-full text-xl"
+                                class="mq_input_contact_page focus:outline-none focus:ring focus:border-gray-300 placeholder_contact bg-white bg-opacity-5 text-white border border-white rounded w-full text-xl"
                                 placeholder="Email...">
                         </div>
                     </div>
@@ -91,10 +91,10 @@
                     @enderror
 
 
-                    <div class="flex items-start mb-5 w-full">
+                    <div class="md:flex items-start mb-5 w-full">
                         <label class="dancing_font mr-3" for="message">Message</label>
                         <textarea
-                            class="focus:outline-none focus:ring focus:border-gray-300 placeholder_contact bg-white bg-opacity-5 text-white border border-white rounded w-full text-xl"
+                            class=" focus:outline-none focus:ring focus:border-gray-300 placeholder_contact bg-white bg-opacity-5 text-white border border-white rounded w-full text-xl"
                             maxlength='1100' name="message" id="" cols="40" rows="10"
                             placeholder="Write your message here..."></textarea>
                     </div>

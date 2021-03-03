@@ -654,7 +654,7 @@ input[type="file"] {
 
 @media (max-width: 640px) {
     .mq_contact_page a {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     .submit_contact_btn {
         font-size: 0.9rem;
@@ -666,6 +666,10 @@ input[type="file"] {
     .mq_contact_page,
     label {
         font-size: 1.1rem;
+    }
+    .mq_input_contact_page {
+        width: 100%;
+        padding: 2px 6px;
     }
 }
 
