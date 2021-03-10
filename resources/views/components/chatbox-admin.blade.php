@@ -17,20 +17,20 @@
                 <div class="flex justify-end text-xs sm:text-sm md:text-md lg:text-lg">
                     <div>
                         @if ($message->type == 3)
-                        <p class="px-1 py-1 mb-1 text-white bg-gray-500 rounded">This is an automatic message, the
-                            client has declined your last offer
-                        </p>
-                    @elseif ($message->type == 2)
-                        <a href="{{ route('download_music_file_admin', [$message->id, $message->user_id]) }}"
-                            class="px-1 py-1 mb-1 flex underline items-center text-white bg-red-400 rounded"><img
-                                src="{{ asset('img/download_icon.png') }}" class="w-6 h-6 md:w-10 md:h-10 mr-3"
-                                alt="">{{ $message->content }}
-                        </a>
-                    @else
-                    <p class="px-1 py-1 mb-1 text-white bg-green-500 rounded">{{ $message->content }}
-                    </p>
-                    @endif
-                       
+                            <p class="px-1 py-1 mb-1 text-white bg-gray-500 rounded">This is an automatic message, the
+                                client has declined your last offer
+                            </p>
+                        @elseif ($message->type == 2)
+                            <a href="{{ route('download_music_file_admin', [$message->id, $message->user_id, $message->type]) }}"
+                                class="px-1 py-1 mb-1 flex underline items-center text-white bg-red-400 rounded"><img
+                                    src="{{ asset('img/download_icon.png') }}" class="w-6 h-6 md:w-10 md:h-10 mr-3"
+                                    alt="">{{ $message->content }}
+                            </a>
+                        @else
+                            <p class="px-1 py-1 mb-1 text-white bg-green-500 rounded">{{ $message->content }}
+                            </p>
+                        @endif
+
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@
                                 client has declined your last offer
                             </p>
                         @elseif ($message->type == 2)
-                            <a href="{{ route('download_music_file_admin', [$message->id,$message->user_id]) }}"
+                            <a href="{{ route('download_music_file_admin', [$message->id, $message->user_id, $message->type]) }}"
                                 class="px-1 py-1 mb-1 flex underline items-center text-white bg-red-400 rounded"><img
                                     src="{{ asset('img/download_icon.png') }}" class="w-6 h-6 md:w-10 md:h-10 mr-3"
                                     alt="">{{ $message->content }}
@@ -76,4 +76,5 @@
         $("#scroll_down").scrollTop($("#scroll_down")[0].scrollHeight);
 
     });
+
 </script>

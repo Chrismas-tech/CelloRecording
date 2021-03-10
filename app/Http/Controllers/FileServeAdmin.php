@@ -20,10 +20,10 @@ class FileServeAdmin extends Controller
         return response()->file($storage_path);
     }
 
-    public function download_music_file_admin($message_id, $user_id)
+    public function download_music_file_admin($message_id, $user_id, $message_type)
     {
 
-        $message = Message::where('id', $message_id)->where('user_id', $user_id)->first();
+        $message = Message::where('id', $message_id)->where('user_id', $user_id)->where('type', $message_type)->first();
 
         if (!$message) {
             return view('page_error');
