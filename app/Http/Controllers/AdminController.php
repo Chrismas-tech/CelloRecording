@@ -180,7 +180,7 @@ class AdminController extends Controller
         /*Pour le mail*/
         $email_user = User::find($user_id)->email;
         $admin_name = Admin::find(1)->name;
-        $url_redirection = "http://cellorecording.ml/conversation";
+        $url_redirection = "http://cellorecording-local.test/conversation";
 
         /*On envoie un mail à l'utilisateur*/
         Mail::to($email_user)->send(new Messages($admin_name, $notifications->nb_notif, $url_redirection));
@@ -208,7 +208,7 @@ class AdminController extends Controller
         $user_name = User::find($request->user_id)->name;
         $admin_name = Admin::find(1)->name;
 
-        $url_redirection = "http://cellorecording.ml/quotes_received";
+        $url_redirection = "http://cellorecording-local.test/quotes_received";
 
         /*On envoie un mail à l'utilisateur*/
         Mail::to($email_user)->send(new MailQuote($admin_name, $user_name, $datas, $url_redirection));
@@ -262,9 +262,8 @@ class AdminController extends Controller
         }
     }
 
-    public function download_delivery_file($delivery_id)
+    public function download_delivery_file_admin($delivery_id, $user_id)
     {
-        $user_id = auth()->user()->id;
         $delivery_file = Delivery::where('user_id', $user_id)->where('id', $delivery_id)->first();
 
         if (!$delivery_file) {

@@ -103,7 +103,7 @@ class UserController extends Controller
 
         $email_user = User::find($user_id)->email;
         $user_name = User::find($user_id)->name;
-        $url_redirection = 'http://cellorecording.ml/conversation_with_user/' . $user_id;
+        $url_redirection = 'http://cellorecording-local.test/conversation_with_user/' . $user_id;
 
         /*On envoie un mail à l'admin*/
 
@@ -276,7 +276,7 @@ class UserController extends Controller
 
                 $email_user = User::find($user_id)->email;
                 $user_name = User::find($user_id)->name;
-                $url_redirection = 'http://cellorecording.ml/orders_admin';
+                $url_redirection = 'http://cellorecording-local.test/orders_admin';
 
                 /*On envoie un mail à l'admin*/
 
@@ -424,6 +424,19 @@ class UserController extends Controller
             return view('page_error');
         } else {
             return Storage::download('private/music_conversations/' . $user_id . '/' . $message->content);
+        }
+    }
+
+    public function download_delivery_file_user($delivery_id)
+    {
+        $user_id = auth()->user()->id;
+        $delivery_file = Delivery::where('user_id', $user_id)->where('id', $delivery_id)->first();
+
+
+        if (!$delivery_file) {
+            return view('page_error');
+        } else {
+            return Storage::download('private/deliveries/' . $user_id . '/' . $delivery_file->file_delivery);
         }
     }
 

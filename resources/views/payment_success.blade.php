@@ -16,7 +16,7 @@
     <script>
         $(document).ready(function() {
             setTimeout(() => {
-                window.location.replace('http://cellorecording.ml/orders');
+                window.location.replace('http://cellorecording-local.test/orders');
             }, 4000);
         })
     </script>

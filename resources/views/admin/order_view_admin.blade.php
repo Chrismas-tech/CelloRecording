@@ -278,7 +278,7 @@
                     <div>
                         @foreach ($deliveries_order as $delivery_order)
                             <div>
-                                <a href="{{ route('download_delivery_file', [$delivery_order->id, $delivery_order->user_id]) }}"
+                                <a href="{{ route('download_delivery_file_admin', [$delivery_order->id, $delivery_order->user_id]) }}"
                                     class="mb-3 flex text-gray-500 w-max px-2 py-3 bg-white underline items-center  rounded"><img
                                         src="{{ asset('img/download_icon.png') }}" class="w-7 h-7 mr-3"
                                         alt="">{{ $delivery_order->file_delivery }}
@@ -465,7 +465,7 @@
                     <div>
                         @foreach ($deliveries_order as $delivery_order)
                             <div>
-                                <a href="{{ route('download_delivery_file', [$delivery_order->id]) }}"
+                                <a href="{{ route('download_delivery_file_admin', [$delivery_order->id, $delivery_order->user_id]) }}"
                                     class="mb-3 flex text-gray-500 w-max px-2 py-3 bg-white underline items-center  rounded"><img
                                         src="{{ asset('img/download_icon.png') }}" class="w-7 h-7 mr-3"
                                         alt="">{{ $delivery_order->file_delivery }}
@@ -597,7 +597,7 @@
                     <div>
                         @foreach ($deliveries_order as $delivery_order)
                             <div>
-                                <a href="{{ route('download_delivery_file', [$delivery_order->id, $delivery_order->user_id]) }}"
+                                <a href="{{ route('download_delivery_file_admin', [$delivery_order->id, $delivery_order->user_id]) }}"
                                     class="mb-3 flex text-gray-500 w-max px-2 py-3 bg-white underline items-center  rounded"><img
                                         src="{{ asset('img/download_icon.png') }}" class="w-7 h-7 mr-3"
                                         alt="">{{ $delivery_order->file_delivery }}
@@ -702,7 +702,7 @@
 
                         setTimeout(() => {
                             window.location.replace(
-                                "http://cellorecording.ml/orders_admin");
+                                "http://cellorecording-local.test/orders_admin");
                         }, 1000);
 
                     } else {

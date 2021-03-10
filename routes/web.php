@@ -119,7 +119,23 @@ Route::get('/download_music_file_user/{message_id}', [UserController::class, 'do
 Route::get('/download_music_file_admin/{message_id}/{user_id}', [AdminController::class, 'download_music_file_admin'])->name('download_music_file_admin');
 
 /*GET MUSIC-FILE DELIVERY*/
-Route::get('/download_delivery_file/{file_id}', [AdminController::class, 'download_delivery_file'])->name('download_delivery_file');
+
+/* USER */
+Route::get('/download_delivery_file_user/{delivery_id}', [UserController::class, 'download_delivery_file_user'])->name('download_delivery_file_user');
+
+
+
+
+
+/* ADMIN */
+Route::get('/download_delivery_file_admin/{delivery_id}/{user_id}', [AdminController::class, 'download_delivery_file_admin'])->name('download_delivery_file_admin');
+
+
+
+
+
+
+
 
 /*PAYPAL-PAGE*/
 Route::post('/page_paypal_payment/{quote_id}/{price}', [UserController::class, 'page_paypal_payment'])->name('page_paypal_payment');

@@ -3,7 +3,7 @@
 <h1>Dear {{$user_name}} !</h1>
 <h1>{{$message}}</h1>
 
-@component('mail::button', ['url' => 'http://cellorecording.ml/orders'])
+@component('mail::button', ['url' => 'http://cellorecording-local.test/orders'])
 Click here to check your order now !
 @endcomponent
 
