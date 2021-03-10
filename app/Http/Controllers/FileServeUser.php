@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
-class FileImageServe extends Controller
+class FileServeUser extends Controller
 {
     public function __contrust()
     {
@@ -23,14 +23,20 @@ class FileImageServe extends Controller
         }
     }
 
-    public function download_demo_cello() {
+    public function download_demo_cello()
+    {
 
         $demo_path = storage_path('app/private/demo/Cello_demo.mp3');
 
         if (file_exists($demo_path)) {
-            return Storage::download('private/demo/Cello_demo.mp3');
+            return Storage::download($demo_path);
         }
-
     }
-    
+
+    public function audio_delivery_user($file_name)
+    {
+        $user_id = auth()->user()->id;
+        $storage_path = storage_path('app/private/deliveries/' . $user_id . '/' . $file_name);
+        return response()->file($storage_path);
+    }
 }

@@ -606,7 +606,7 @@
                             <div class="mt-5 mb-10">
                                 <h1 class="text-2xl text-black">Listen to the track</h1>
                                 <audio class="focus:outline-none" controls
-                                    src="{{ asset('/storage/deliveries/' . $delivery_order->user_id . '/' . $delivery_order->file_delivery) }}">
+                                    src="{{ route('audio_delivery_admin' , [$delivery_order->user_id, $delivery_order->file_delivery]) }}">
                                     Your browser does not support the
                                     <code>audio</code> element.
                                 </audio>
@@ -614,7 +614,6 @@
                         @endforeach
                     </div>
                 </div>
-
             </div>
         </div>
     @endif

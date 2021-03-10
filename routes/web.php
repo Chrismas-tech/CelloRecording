@@ -4,6 +4,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\DateChangeController;
 use App\Http\Controllers\FileImageServe;
+use App\Http\Controllers\FileServeAdmin;
+use App\Http\Controllers\FileServeUser;
 use App\Http\Controllers\MonController;
 use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\UploadfileController;
@@ -144,9 +146,16 @@ Route::get('/execute_payment', [PaypalController::class, 'execute_payment'])->na
 
 
 /* FILE IMAGE PROFILE SERVE */
-Route::get('/profile_image/{id}', [FileImageServe::class, 'profile_image_serve'])->name('profile_image');
+/* USER */
+Route::get('/profile_image/{id}', [FileServeUser::class, 'profile_image_serve'])->name('profile_image');
 Route::get('/download_demo_cello', [FileImageServe::class, 'download_demo_cello'])->name('download_demo_cello');
 
+/* AUDIO FILE SERVE DELIVERY */
+
+/* USER */
+Route::get('/audio_delivery_user/{file_name}', [FileServeUser::class, 'audio_delivery_user'])->name('audio_delivery_user');
+/* ADMIN */
+Route::get('/audio_delivery_admin/{user_id}/{file_name}', [FileServeAdmin::class, 'audio_delivery_admin'])->name('audio_delivery_admin');
 
 /* BAC A SABLE */
 

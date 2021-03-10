@@ -64,7 +64,8 @@
                         <div class="mt-3">
                             <h1 class="text-2xl text-gray-500">Listen to the track</h1>
                             <audio class="focus:outline-none" controls
-                                src="{{ asset('/storage/deliveries/' . $delivery->user_id . '/' . $delivery->file_delivery) }}">
+                                src="{{ route('audio_delivery_user' , [$delivery->file_delivery]) }}">
+
                                 Your browser does not support the
                                 <code>audio</code> element.
                             </audio>
