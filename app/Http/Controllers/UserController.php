@@ -415,30 +415,7 @@ class UserController extends Controller
         return redirect('contact')->with('send_success', 'Your email has been successfully sent !');
     }
 
-    public function download_music_file_user($message_id)
-    {
-        $user_id = auth()->user()->id;
-        $message = Message::where('user_id', $user_id)->where('id', $message_id)->first();
 
-        if (!$message) {
-            return view('page_error');
-        } else {
-            return Storage::download('private/music_conversations/' . $user_id . '/' . $message->content);
-        }
-    }
-
-    public function download_delivery_file_user($delivery_id)
-    {
-        $user_id = auth()->user()->id;
-        $delivery_file = Delivery::where('user_id', $user_id)->where('id', $delivery_id)->first();
-
-
-        if (!$delivery_file) {
-            return view('page_error');
-        } else {
-            return Storage::download('private/deliveries/' . $user_id . '/' . $delivery_file->file_delivery);
-        }
-    }
 
     public function page_paypal_payment(Request $request, $quote_id, $price)
     {

@@ -52,7 +52,7 @@
                             </p>
                         @elseif ($message->type == 2)
 
-                            <a href="{{ route('download_music_file_user', [$message->id, $message->user_id]) }}"
+                            <a href="{{ route('download_music_file_user', [$message->id, $message->type]) }}"
                                 class="px-1 py-1 mb-1 flex underline items-center text-white bg-red-400 rounded">
                                 <img src="{{ asset('img/download_icon.png') }}" class="w-6 h-6 md:w-10 md:h-10 mr-3 "
                                     alt="">{{ $message->content }}
@@ -82,7 +82,7 @@
                             </p>
                         @elseif ($message->type == 2)
 
-                            <a href="{{ route('download_music_file_user', [$message->id]) }}"
+                            <a href="{{ route('download_music_file_user', [$message->id, $message->type]) }}"
                                 class="px-1 py-1 mb-1 flex underline items-center text-white bg-red-400 rounded">
                                 <img src="{{ asset('img/download_icon.png') }}" class="w-6 h-6 md:w-10 md:h-10 mr-3"
                                     alt="">{{ $message->content }}

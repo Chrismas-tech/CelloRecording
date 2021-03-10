@@ -54,7 +54,7 @@
 
                     <div class="mt-10">
                         <div>
-                            <a href="{{ route('download_delivery_file_user', [$delivery->id, $delivery->user_id]) }}"
+                            <a href="{{ route('download_delivery_file_user', [$delivery->user_id, $delivery->id, ]) }}"
                                 class="py-1 mb-1 flex underline items-center  rounded"><img
                                     src="{{ asset('img/download_icon.png') }}" class="w-7 h-7 mr-3"
                                     alt="">{{ $delivery->file_delivery }}
@@ -64,7 +64,7 @@
                         <div class="mt-3">
                             <h1 class="text-2xl text-gray-500">Listen to the track</h1>
                             <audio class="focus:outline-none" controls
-                                src="{{ route('audio_delivery_user' , [$delivery->file_delivery]) }}">
+                                src="{{ route('audio_delivery_user' , [$delivery->user_id, $delivery->file_delivery]) }}">
 
                                 Your browser does not support the
                                 <code>audio</code> element.

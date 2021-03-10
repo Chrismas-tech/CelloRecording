@@ -256,32 +256,6 @@ class AdminController extends Controller
         return view('admin.order_view_admin', compact('order', 'deliveries_order', 'minuteur_result'));
     }
 
-    public function download_music_file_admin($message_id, $user_id)
-    {
-
-        $message = Message::where('id', $message_id)->where('user_id', $user_id)->first();
-
-        if (!$message) {
-            return view('page_error');
-        } else {
-
-
-
-            return Storage::download('private/music_conversations/' . $user_id . '/' . $message->content);
-        }
-    }
-
-    public function download_delivery_file_admin($delivery_id, $user_id)
-    {
-        $delivery_file = Delivery::where('user_id', $user_id)->where('id', $delivery_id)->first();
-
-        if (!$delivery_file) {
-            return view('page_error');
-        } else {
-            return Storage::download('private/deliveries/' . $user_id . '/' . $delivery_file->file_delivery);
-        }
-    }
-
     private function get_size_of_music_files_on_server()
     {
 
