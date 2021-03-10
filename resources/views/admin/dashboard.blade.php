@@ -29,7 +29,7 @@
                                 <p class="text-3xl">Users informations </p>
                             </div>
                             <div class="mt-3">
-                                <p class="bg-green-400 mb-3 text-xl text-white px-2 py-1 w-max  rounded ">Users registered
+                                <p class="bg-green-400 mb-3 text-xl text-white px-2 py-1 w-max  rounded ">Users registered :
                                     {{ $nb_users }}
                                 </p>
                             </div>
