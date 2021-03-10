@@ -703,7 +703,7 @@
 
                         setTimeout(() => {
                             window.location.replace(
-                                "http://cellorecording-local.test/orders_admin");
+                                "http://cellorecording.ml/orders_admin");
                         }, 1000);
 
                     } else {

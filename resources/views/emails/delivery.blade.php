@@ -4,7 +4,7 @@
 
 Your order #{{$order_id}} is ready to download :)
 
-@component('mail::button', ['url' => 'http://cellorecording-local.test/deliveries'])
+@component('mail::button', ['url' => 'http://cellorecording.ml/deliveries'])
 Click here to check your order now !
 @endcomponent
 

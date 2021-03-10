@@ -180,7 +180,7 @@ class AdminController extends Controller
         /*Pour le mail*/
         $email_user = User::find($user_id)->email;
         $admin_name = Admin::find(1)->name;
-        $url_redirection = "http://cellorecording-local.test/conversation";
+        $url_redirection = "http://cellorecording.ml/conversation";
 
         /*On envoie un mail à l'utilisateur*/
         Mail::to($email_user)->send(new Messages($admin_name, $notifications->nb_notif, $url_redirection));
@@ -208,7 +208,7 @@ class AdminController extends Controller
         $user_name = User::find($request->user_id)->name;
         $admin_name = Admin::find(1)->name;
 
-        $url_redirection = "http://cellorecording-local.test/quotes_received";
+        $url_redirection = "http://cellorecording.ml/quotes_received";
 
         /*On envoie un mail à l'utilisateur*/
         Mail::to($email_user)->send(new MailQuote($admin_name, $user_name, $datas, $url_redirection));
