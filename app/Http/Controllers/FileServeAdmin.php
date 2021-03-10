@@ -14,12 +14,6 @@ class FileServeAdmin extends Controller
         $this->middleware('admin');
     }
 
-    public function audio_delivery_admin($user_id, $file_name)
-    {
-        $storage_path = storage_path('app/private/deliveries/' . $user_id . '/' . $file_name);
-        return response()->file($storage_path);
-    }
-
     public function download_music_file_admin($message_id, $user_id, $message_type)
     {
 
@@ -33,7 +27,23 @@ class FileServeAdmin extends Controller
         }
     }
 
-    public function download_delivery_file_admin($delivery_id, $user_id)
+    public function audio_delivery_admin($user_id, $delivery_id)
+    {
+        $audio_delivery = Delivery::where('user_id', $user_id)->where('id', $delivery_id)->first();
+
+        $storage_path = storage_path('app/private/deliveries/' . $user_id . '/' . $audio_delivery->file_delivery);
+
+        /* Est-ce que le fichier existe ? */
+        if (file_exists($storage_path)) {
+            
+            return response()->file($storage_path);
+        } else {
+            /* Sinon page d'erreur */
+            return view('page_error');
+        }
+    }
+
+    public function download_delivery_file_admin($user_id, $delivery_id)
     {
         $delivery_file = Delivery::where('user_id', $user_id)->where('id', $delivery_id)->first();
 

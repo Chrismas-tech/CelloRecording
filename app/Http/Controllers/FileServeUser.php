@@ -44,13 +44,16 @@ class FileServeUser extends Controller
         }
     }
 
-    public function audio_delivery_user($user_id, $file_name)
+    public function audio_delivery_user($delivery_id)
     {
+        $user_id = auth()->user()->id;
+        $audio_delivery = Delivery::where('user_id', $user_id)->where('id', $delivery_id)->first();
 
-        /* Vérification que l'audio que l'on peut écouter correspond à l'utilisateur connecté ! */
-        if ($user_id == auth()->user()->id) {
+        if (!$audio_delivery) {
+            return view('page_error');
+        } else {
 
-            $storage_path = storage_path('app/private/deliveries/' . $user_id . '/' . $file_name);
+            $storage_path = storage_path('app/private/deliveries/' . $user_id . '/' . $audio_delivery->file_delivery);
 
             /* Est-ce que le fichier existe ? */
             if (file_exists($storage_path)) {
@@ -59,9 +62,6 @@ class FileServeUser extends Controller
                 /* Sinon page d'erreur */
                 return view('page_error');
             }
-        } else {
-            /* Sinon page d'erreur */
-            return view('page_error');
         }
     }
 

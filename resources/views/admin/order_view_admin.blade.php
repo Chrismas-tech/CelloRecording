@@ -597,7 +597,7 @@
                     <div>
                         @foreach ($deliveries_order as $delivery_order)
                             <div>
-                                <a href="{{ route('download_delivery_file_admin', [$delivery_order->id, $delivery_order->user_id]) }}"
+                                <a href="{{ route('download_delivery_file_admin', [$delivery_order->user_id, $delivery_order->id]) }}"
                                     class="mb-3 flex text-gray-500 w-max px-2 py-3 bg-white underline items-center  rounded"><img
                                         src="{{ asset('img/download_icon.png') }}" class="w-7 h-7 mr-3"
                                         alt="">{{ $delivery_order->file_delivery }}
@@ -606,7 +606,7 @@
                             <div class="mt-5 mb-10">
                                 <h1 class="text-2xl text-black">Listen to the track</h1>
                                 <audio class="focus:outline-none" controls
-                                    src="{{ route('audio_delivery_admin' , [$delivery_order->user_id, $delivery_order->file_delivery]) }}">
+                                    src="{{ route('audio_delivery_admin' , [$delivery_order->user_id, $delivery_order->id]) }}">
                                     Your browser does not support the
                                     <code>audio</code> element.
                                 </audio>

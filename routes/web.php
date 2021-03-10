@@ -103,7 +103,6 @@ Route::post('/connection_admin', [AdminController::class, 'connection_already_ve
 
 /* SIDE ADMIN */
 
-
 Route::get('/quotes_sent', [AdminController::class, 'page_quotes_sent'])->name('quotes_sent');
 Route::get('/list_conversation_admin', [AdminController::class, 'page_list_conversation_admin'])->name('list_conversation_admin');
 Route::get('/quote_form/{user_id}', [AdminController::class, 'page_quote_form'])->name('quote_form');
@@ -117,16 +116,36 @@ Route::get('/conversation_with_user/{user_id}', [AdminController::class, 'conver
 Route::get('/date_minuteur', [DateChangeController::class, 'date_minuteur'])->name('date_minuteur');
 
 /*GET MUSIC-FILE CONVERSATION*/
+/*GET MUSIC-FILE CONVERSATION*/
+/*GET MUSIC-FILE CONVERSATION*/
+/*GET MUSIC-FILE CONVERSATION*/
+
 Route::get('/download_music_file_user/{message_id}/{message_type}', [FileServeUser::class, 'download_music_file_user'])->name('download_music_file_user');
 Route::get('/download_music_file_admin/{message_id}/{user_id}/{message_type}', [FileServeAdmin::class, 'download_music_file_admin'])->name('download_music_file_admin');
 
+/*GET MUSIC-FILE DELIVERY*/
+/*GET MUSIC-FILE DELIVERY*/
+/*GET MUSIC-FILE DELIVERY*/
 /*GET MUSIC-FILE DELIVERY*/
 
 /* USER */
 Route::get('/download_delivery_file_user/{delivery_id}', [FileServeUser::class, 'download_delivery_file_user'])->name('download_delivery_file_user');
 
 /* ADMIN */
-Route::get('/download_delivery_file_admin/{delivery_id}/{user_id}', [FileServeAdmin::class, 'download_delivery_file_admin'])->name('download_delivery_file_admin');
+Route::get('/download_delivery_file_admin/{user_id}/{delivery_id}', [FileServeAdmin::class, 'download_delivery_file_admin'])->name('download_delivery_file_admin');
+
+/* AUDIO FILE SERVE DELIVERY */
+/* AUDIO FILE SERVE DELIVERY */
+/* AUDIO FILE SERVE DELIVERY */
+/* AUDIO FILE SERVE DELIVERY */
+
+/* USER */
+Route::get('/audio_delivery_user/{delivery_id}', [FileServeUser::class, 'audio_delivery_user'])->name('audio_delivery_user');
+/* ADMIN */
+Route::get('/audio_delivery_admin/{user_id}/{delivery_id}', [FileServeAdmin::class, 'audio_delivery_admin'])->name('audio_delivery_admin');
+
+
+
 
 /*PAYPAL-PAGE*/
 Route::post('/page_paypal_payment/{quote_id}/{price}', [UserController::class, 'page_paypal_payment'])->name('page_paypal_payment');
@@ -139,12 +158,7 @@ Route::get('/execute_payment', [PaypalController::class, 'execute_payment'])->na
 Route::get('/profile_image/{user_id}', [FileServeUser::class, 'profile_image_serve'])->name('profile_image');
 Route::get('/download_demo_cello', [FileImageServe::class, 'download_demo_cello'])->name('download_demo_cello');
 
-/* AUDIO FILE SERVE DELIVERY */
 
-/* USER */
-Route::get('/audio_delivery_user/{user_id}/{file_name}', [FileServeUser::class, 'audio_delivery_user'])->name('audio_delivery_user');
-/* ADMIN */
-Route::get('/audio_delivery_admin/{user_id}/{file_name}', [FileServeAdmin::class, 'audio_delivery_admin'])->name('audio_delivery_admin');
 
 /* BAC A SABLE */
 
