@@ -156,7 +156,7 @@ Route::get('/execute_payment', [PaypalController::class, 'execute_payment'])->na
 /* FILE IMAGE PROFILE SERVE */
 /* USER */
 Route::get('/profile_image/{user_id}', [FileServeUser::class, 'profile_image_serve'])->name('profile_image');
-Route::get('/download_demo_cello', [FileImageServe::class, 'download_demo_cello'])->name('download_demo_cello');
+Route::get('/download_demo_cello', [FileImagez::class, 'download_demo_cello'])->name('download_demo_cello');
 
 
 
