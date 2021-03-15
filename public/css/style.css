@@ -112,7 +112,6 @@ form {
 menu {
     position: sticky;
     top: 0px;
-    opacity: 0.90;
 }
 
 input[type="file"] {
