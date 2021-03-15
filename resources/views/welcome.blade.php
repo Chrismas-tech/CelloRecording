@@ -66,22 +66,22 @@
     </div>
 
 
-    <menu class="mq_gray_menu flex items-center justify-center p-2 m-0 bg-gray-600">
+    <menu class="mq_gray_menu flex items-center justify-center p-2 m-0 bg-gray-600 border-2 border-gray-800 ">
         <ul class="flex ">
             <li class="mt-3 mb-3"><a
-                    class="px-2 py-3 mr-3 text-2xl text-white bg-gray-700 rounded hover:text-green-400 nav_button_font"
+                    class="px-2 py-3 mr-3 text-2xl text-white bg-gray-700 rounded hover:text-green-400 nav_button_font border border-gray-800"
                     href="#aboutme">About me</a></li>
             <li class="mt-3 mb-3"><a
-                    class="px-2 py-3 mr-3 text-2xl text-white bg-gray-700 rounded hover:text-green-400 nav_button_font"
+                    class="px-2 py-3 mr-3 text-2xl text-white bg-gray-700 rounded hover:text-green-400 nav_button_font border border-gray-800"
                     href="#hdiw">How does it work ?</a></li>
             <li class="mt-3 mb-3"><a
-                    class="px-2 py-3 mr-3 text-2xl text-white bg-gray-700 rounded hover:text-green-400 nav_button_font"
+                    class="px-2 py-3 mr-3 text-2xl text-white bg-gray-700 rounded hover:text-green-400 nav_button_font border border-gray-800"
                     href="#record_env">Recording Environment</a></li>
             <li class="mt-3 mb-3"><a
-                    class="px-2 py-3 mr-3 text-2xl text-white bg-gray-700 rounded hover:text-green-400 nav_button_font"
+                    class="px-2 py-3 mr-3 text-2xl text-white bg-gray-700 rounded hover:text-green-400 nav_button_font border border-gray-800"
                     href="#pricing">Pricing</a></li>
             <li class="mt-3 mb-3"><a
-                    class="px-2 py-3 mr-3 text-2xl text-white bg-gray-700 rounded hover:text-green-400 nav_button_font"
+                    class="px-2 py-3 mr-3 text-2xl text-white bg-gray-700 rounded hover:text-green-400 nav_button_font border border-gray-800"
                     href="#social_media">Social Medias</a></li>
         </ul>
     </menu>
