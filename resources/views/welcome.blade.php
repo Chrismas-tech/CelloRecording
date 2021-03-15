@@ -28,7 +28,7 @@
                 @if (Route::has('login'))
                     <div>
                         @auth
-                            <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                            <a class="mq_mr_btn px-2 py-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
                                 href="{{ url('/dashboard') }}">My Account</a>
                         @else
                             <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
