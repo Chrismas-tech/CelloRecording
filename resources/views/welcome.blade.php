@@ -95,7 +95,7 @@
                 </div>
 
                 <div class="flex text-xl rounded ">
-                    <div class="mq_padding_presentation_text p-8 text-xl rounded karma border border-white">
+                    <div class="mq_padding_presentation_text p-4 sm:p-8 text-xl rounded karma border border-white">
                         <p class="text-white">
                             <iframe class="rounded ytb_vid ml-8 mb-8" width="640" height="360"
                                 src="https://www.youtube.com/embed/Uj1OeaTc31w?autoplay=1;&mute=1" frameborder="0"
