@@ -62,7 +62,7 @@
     </div>
 
 
-    <menu class="mq_gray_menu flex items-center justify-center p-2 m-0 bg-gray-500">
+    <menu class="mq_gray_menu flex items-center justify-center p-2 m-0 bg-gray-900">
         <ul class="flex ">
             <li class="mt-3 mb-3"><a
                     class="px-2 py-3 mr-3 text-2xl text-white bg-gray-700 rounded hover:text-green-400 nav_button_font"
@@ -82,97 +82,113 @@
         </ul>
     </menu>
 
+    <div class="mq_font_size_presentation_text">
 
-    <div class="bg-yellow-50 mq_txt_services mq_font_size_presentation_text">
-        <div class=" xl:container px-5 pt-3 pb-10 mx-auto border-black rounded ">
+        <div class="bg_about_me px-5 py-16">
+            <div class="xl:container mx-auto border-black rounded">
+                <div id="aboutme" class="mq_about text-6xl pb-3 redressed_font">
+                    <h1 class="text-white">About Me</h1>
+                </div>
 
-            <div id="aboutme" class="mq_about mt-10 text-3xl text-gray-700 rounded courgette_font">
-                <h1>About Me</h1>
-            </div>
+                <div class="flex text-xl rounded ">
+                    <div class="mq_padding_presentation_text p-8 text-xl rounded karma border border-gray-500">
+                        <p class="text-white">
+                            <iframe class="rounded ytb_vid ml-8 mb-8" width="640" height="360"
+                                src="https://www.youtube.com/embed/Uj1OeaTc31w?autoplay=1;&mute=1" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                            My name is Christophe. I'm a professional cellist, pianist,
+                            and composer born in 1990 in France (Nizza).<br><br>
 
-            <div class="flex text-xl rounded ">
-                <div class="mq_padding_presentation_text p-8 text-xl bg-white rounded karma border border-gray-300">
-                    <p>
-                        <iframe class="rounded ytb_vid ml-8 mb-8" width="640" height="360"
-                            src="https://www.youtube.com/embed/Uj1OeaTc31w?autoplay=1;&mute=1" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                        My name is Christophe. I'm a professional cellist, pianist,
-                        and composer born in 1990 in France (Nizza).<br><br>
+                            I studied the violoncello in Paris where i graduated from the Bachelor of Music at the
+                            "Pôle
+                            Supérieur Paris Boulogne-Billancourt", then i continued my education by going to the
+                            University of Music and Performing Arts Graz for my Master Degree.
 
-                        I studied the violoncello in Paris where i graduated from the Bachelor of Music at the
-                        "Pôle
-                        Supérieur Paris Boulogne-Billancourt", then i continued my education by going to the
-                        University of Music and Performing Arts Graz for my Master Degree.
+                            <br><br>
+                            I worked many years with the top orchestra of World renown : ORF Vienna Radio Symphony
+                            Orchestra
+                            with which i performed in the world's most famous concert halls.
 
-                        <br><br>
-                        I worked many years with the top orchestra of World renown : ORF Vienna Radio Symphony Orchestra
-                        with which i performed in the world's most famous concert halls.
+                            <br><br>
 
-                        <br><br>
+                            Since more than 4 years now, i'm working for music films, radios, and international
+                            composers
+                            through famous online musical platforms like Airgigs and Soundbetter.
+                            <br><br>
 
-                        Since more than 4 years now, i'm working for music films, radios, and international composers
-                        through famous online musical platforms like Airgigs and Soundbetter.
-                        <br><br>
-
-                        I would be very glad to be a part of your next musical project !
+                            I would be very glad to be a part of your next musical project !
+                    </div>
                 </div>
             </div>
+        </div>
 
+        <div class="bg-gray-200 px-5 py-16">
+            <div class="xl:container mx-auto border-black rounded">
 
-            <div>
-                <div id="hdiw" class="mt-10 text-3xl text-gray-700 rounded courgette_font">
-                    <h1>How does it work ?</h1>
+                <div>
+                    <div id="hdiw" class="text-6xl text-gray-700 rounded redressed_font">
+                        <h1>How does it work ?</h1>
+                    </div>
+
+                    <div class="mq_padding_presentation_text p-8 text-xl bg-white karma rounded border border-gray-300">
+                        <p>
+                            Create your own account and begin a conversation with me today !<br>
+                            We will discuss about your musical project, your requirements and aesthetic wishes you
+                            have and
+                            i
+                            will give my opinion as expert.
+                        </p>
+                        <br>
+                        <p>
+                            As every project is different, i'm making custom quotes for each musical projects.
+                        </p>
+                        <p>
+                            Once we have common agreements, i will send you a quote that you can accept or decline
+                            throught
+                            your
+                            personal space.
+                        </p>
+                        <br>
+                        <p>
+                            Once the work is done, your files will be available to download on your private account.
+                        </p>
+                    </div>
                 </div>
+            </div>
+        </div>
 
+        <div class="bg_recording px-5 py-16">
+            <div class="xl:container mx-auto border-black rounded">
 
-                <div class="mq_padding_presentation_text p-8 text-xl bg-white karma rounded border border-gray-300">
-                    <p>
-                        Create your own account and begin a conversation with me today !<br>
-                        We will discuss about your musical project, your requirements and aesthetic wishes you have and
-                        i
-                        will give my opinion as expert.
-                    </p>
-                    <br>
-                    <p>
-                        As every project is different, i'm making custom quotes for each musical projects.
-                    </p>
-                    <p>
-                        Once we have common agreements, i will send you a quote that you can accept or decline throught
-                        your
-                        personal space.
-                    </p>
-                    <br>
-                    <p>
-                        Once the work is done, your files will be available to download on your private account.
-                    </p>
-                </div>
-
-                <div id="record_env" class="mt-10 text-3xl text-gray-700 rounded courgette_font">
+                <div id="record_env" class="text-6xl pb-3 text-white rounded redressed_font">
                     <h1>Recording Environment</h1>
                 </div>
 
-                <div class="mq_padding_presentation_text p-4 text-xl bg-white rounded border border-gray-300 karma">
+                <div class="flex mq_padding_presentation_text text-xl karma">
 
                     <div class="mq_flex_welcome_page_recording_environment flex">
-
                         <div
-                            class="w-4/12 mq_flex_welcome_page_recording_environment_width p-4 border border-gray-300 rounded mr-3 bg-gray-100">
+                            class="w-4/12 mq_flex_welcome_page_recording_environment_width bg-white rounded bg-opacity-80 p-5 mr-3 ">
                             <div class="flex justify-center items-center">
                                 <img src="{{ asset('img/violin_icon.png') }}"
                                     class="w-16 h-auto icon_welcome_page_yellow" alt="">
-                                <h1 class="text-3xl ml-3 dancing_font mq_title_recording_environment">My instrument</h1>
+                                <h1 class="text-4xl ml-3 dancing_font mq_title_recording_environment">My instrument
+                                </h1>
                             </div>
                             <div class="mt-5">
                                 <h2 class="mq_recording_environment">
-                                    All of your <strong>tracks</strong> will be performed and recorded on my <strong>old
+                                    All of your <strong>tracks</strong> will be performed and recorded on my
+                                    <strong>old
                                         acoustic cello</strong>.<br><br>
 
-                                    If you pay attention to my video clips on <strong>Youtube</strong>, you will notice
+                                    If you pay attention to my video clips on <strong>Youtube</strong>, you will
+                                    notice
                                     that the sound of the cello line is recorded on my real cello. <br><br>
 
-                                    I rarely use my <strong>electric-cello</strong>, essentially for modern projects or
+                                    I rarely use my <strong>electric-cello</strong>, essentially for modern projects
+                                    or
                                     when i have
                                     to make a video-clip outside.
                                 </h2>
@@ -180,11 +196,12 @@
                         </div>
 
                         <div
-                            class="w-6/12 mq_flex_welcome_page_recording_environment_width p-4 border border-gray-300 rounded mr-3 bg-gray-100">
+                            class="w-6/12 mq_flex_welcome_page_recording_environment_width bg-white rounded bg-opacity-80 p-5 mr-3 ">
                             <div class="flex justify-center items-center">
                                 <img src="{{ asset('img/software_icon.png') }}"
                                     class="w-16 h-auto icon_welcome_page_yellow" alt="">
-                                <h1 class="text-3xl ml-3 dancing_font mq_title_recording_environment">Recording Software
+                                <h1 class="text-4xl ml-3 dancing_font mq_title_recording_environment">Recording
+                                    Software
                                 </h1>
                             </div>
                             <div class="mt-5 mq_recording_environment">
@@ -198,7 +215,8 @@
 
                                     <br><br>
 
-                                    Once your work is achieved, i deliver you one or multiples audio files in the format
+                                    Once your work is achieved, i deliver you one or multiples audio files in the
+                                    format
                                     of your choice :
 
                                     <br><br>
@@ -210,11 +228,12 @@
                         </div>
 
                         <div
-                            class="w-4/12 mq_flex_welcome_page_recording_environment_width p-4 border border-gray-300 rounded bg-gray-100">
+                            class="w-4/12 mq_flex_welcome_page_recording_environment_width bg-white rounded bg-opacity-80 p-5 ">
                             <div class="flex justify-center items-center">
                                 <img src="{{ asset('img/microphone_icon.png') }}"
                                     class="w-16 h-auto icon_welcome_page_yellow" alt="">
-                                <h1 class="text-3xl ml-3 dancing_font mq_title_recording_environment">Microphone & Card
+                                <h1 class="text-4xl ml-3 dancing_font mq_title_recording_environment">Microphone &
+                                    Card
                                     sound</h1>
                             </div>
                             <div class="mt-5">
@@ -232,26 +251,35 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-                </div>
 
-                <div id="pricing" class="mt-10 text-3xl text-gray-700 rounded courgette_font">
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gray-200 px-5 py-16">
+            <div class="xl:container mx-auto border-black rounded">
+                <div id="pricing" class="pb-3 text-6xl text-gray-700 rounded redressed_font">
                     <h1>Pricing</h1>
                 </div>
 
-                <div class="mq_padding_presentation_text p-8 text-xl karma bg-white rounded border border-gray-300">
+                <div class="mq_padding_presentation_text p-8 text-xl karma bg-white rounded">
                     <p>
-                        I'm working only for CD quality album in professional studio on my real old cello, that's why
+                        I'm working only for CD quality album in professional studio on my real old cello, that's
+                        why
                         i'm used to deliver WAV-HQ audio music files to my clients.
                     </p>
                 </div>
+            </div>
+        </div>
 
-                <div id="social_media" class="mt-10 text-3xl text-gray-700 rounded courgette_font">
+        <div class="bg-gray-800 px-5 py-16">
+            <div class="xl:container mx-auto border-black rounded">
+                <div id="social_media" class="text-6xl pb-3 text-white rounded redressed_font">
                     <h1>Social Medias</h1>
                 </div>
 
-                <div class=" mt-3 mq_social_icon mr-8">
+                <div class="mt-3 mq_social_icon mr-8">
                     <div class="flex">
                         <a href="https://www.youtube.com/watch?v=Uj1OeaTc31w" target="_blank">
                             <img src="{{ asset('img/youtube_icon.png') }}" alt="" class="w-20 h-20 mr-10">
@@ -261,19 +289,15 @@
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
 
-
-        <footer class="mq_footer flex justify-center p-8 text-xl text-white bg-gray-500 border border-gray-500 nav_button_font">
+        <footer
+            class="mq_footer flex justify-center p-8 text-xl text-white bg-gray-500 border border-gray-500 nav_button_font">
             <div>
                 <h3>Copyright &copy; 2020 Christophe Luciani, all Rights Reserved</h3>
             </div>
         </footer>
-
-
 </body>
-
 
 </html>
