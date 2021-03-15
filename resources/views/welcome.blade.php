@@ -62,7 +62,7 @@
     </div>
 
 
-    <menu class="mq_gray_menu flex items-center justify-center p-2 m-0 bg-gray-900">
+    <menu class="mq_gray_menu flex items-center justify-center p-2 m-0 bg-gray-600">
         <ul class="flex ">
             <li class="mt-3 mb-3"><a
                     class="px-2 py-3 mr-3 text-2xl text-white bg-gray-700 rounded hover:text-green-400 nav_button_font"
@@ -124,12 +124,12 @@
             </div>
         </div>
 
-        <div class="bg-gray-200 px-5 py-16">
+        <div class="bg-gray-600 px-5 py-16">
             <div class="xl:container mx-auto border-black rounded">
 
                 <div>
-                    <div id="hdiw" class="text-6xl text-gray-700 rounded redressed_font">
-                        <h1>How does it work ?</h1>
+                    <div id="hdiw" class="text-6xl text-gray-700 pb-3 rounded redressed_font">
+                        <h1 class="text-white">How does it work ?</h1>
                     </div>
 
                     <div class="mq_padding_presentation_text p-8 text-xl bg-white karma rounded border border-gray-300">
@@ -257,9 +257,9 @@
             </div>
         </div>
 
-        <div class="bg-gray-200 px-5 py-16">
+        <div class="bg-gray-600 px-5 py-16">
             <div class="xl:container mx-auto border-black rounded">
-                <div id="pricing" class="pb-3 text-6xl text-gray-700 rounded redressed_font">
+                <div id="pricing" class="pb-3 text-6xl text-white rounded redressed_font">
                     <h1>Pricing</h1>
                 </div>
 
@@ -272,32 +272,33 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="bg-gray-800 px-5 py-16">
-            <div class="xl:container mx-auto border-black rounded">
-                <div id="social_media" class="text-6xl pb-3 text-white rounded redressed_font">
-                    <h1>Social Medias</h1>
-                </div>
+    <footer
+        class="mq_footer flex justify-center p-8 text-xl text-white bg-gray-900 border border-gray-500 nav_button_font">
+        <div>
 
-                <div class="mt-3 mq_social_icon mr-8">
-                    <div class="flex">
-                        <a href="https://www.youtube.com/watch?v=Uj1OeaTc31w" target="_blank">
-                            <img src="{{ asset('img/youtube_icon.png') }}" alt="" class="w-20 h-20 mr-10">
-                        </a>
-                        <a href="https://www.facebook.com/KrytofLuciani/" target="_blank">
-                            <img src="{{ asset('img/facebook_icon.png') }}" alt="" class="w-20 h-20">
-                        </a>
-                    </div>
+            <div id="social_media" class="flex justify-center text-6xl pb-3 text-white rounded ">
+                <h1>Social Medias</h1>
+            </div>
+
+            <div class="mq_social_icon flex justify-center">
+                <div class="flex">
+                    <a href="https://www.youtube.com/watch?v=Uj1OeaTc31w" target="_blank">
+                        <img src="{{ asset('img/youtube_icon.png') }}" alt="" class="w-20 h-20 mr-10">
+                    </a>
+                    <a href="https://www.facebook.com/KrytofLuciani/" target="_blank">
+                        <img src="{{ asset('img/facebook_icon.png') }}" alt="" class="w-20 h-20">
+                    </a>
                 </div>
+            </div>
+
+            <div class="mt-8">
+                <h3>Copyright &copy; {{ date('Y') }} Christophe Luciani, all Rights Reserved</h3>
             </div>
         </div>
 
-        <footer
-            class="mq_footer flex justify-center p-8 text-xl text-white bg-gray-500 border border-gray-500 nav_button_font">
-            <div>
-                <h3>Copyright &copy; {{date('Y')}} Christophe Luciani, all Rights Reserved</h3>
-            </div>
-        </footer>
+    </footer>
 </body>
 
 </html>
