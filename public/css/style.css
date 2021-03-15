@@ -371,7 +371,7 @@ input[type="file"] {
         font-size: 0.8rem;
     }
     .mq_nav_padding {
-        padding: 1.8rem;
+        padding: 0.6rem;
     }
     .mq_gray_menu {
         display: none;
@@ -379,11 +379,14 @@ input[type="file"] {
     .mq_jumbo_title_1 {
         display: block;
         font-size: 2.3rem;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
-    .mq_jumbo_title_2 {
-        display: block;
-        font-size: 1.1rem;
-    }
+}
+
+.mq_jumbo_title_2 {
+    display: block;
+    font-size: 1.1rem;
 }
 
 @media (max-width: 531px) {
@@ -404,9 +407,6 @@ input[type="file"] {
         font-size: 0.6rem;
         padding: 6px;
     }
-    .mq_nav_padding {
-        padding: 0.5rem;
-    }
     .jumbo_title_position {
         top: 55%;
     }
@@ -418,7 +418,7 @@ input[type="file"] {
         padding: 6px;
     }
     .mq_nav_padding {
-        padding: 0.5rem;
+        padding: 0.2rem;
     }
     .jumbo_title_position {
         top: 55%;
