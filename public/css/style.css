@@ -382,11 +382,10 @@ input[type="file"] {
         margin-top: 20px;
         margin-bottom: 20px;
     }
-}
-
-.mq_jumbo_title_2 {
-    display: block;
-    font-size: 1.1rem;
+    .mq_jumbo_title_2 {
+        display: block;
+        font-size: 1.1rem;
+    }
 }
 
 @media (max-width: 531px) {
