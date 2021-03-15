@@ -91,7 +91,7 @@
                 </div>
 
                 <div class="flex text-xl rounded ">
-                    <div class="mq_padding_presentation_text p-8 text-xl rounded karma border border-gray-500">
+                    <div class="mq_padding_presentation_text p-8 text-xl rounded karma border border-white">
                         <p class="text-white">
                             <iframe class="rounded ytb_vid ml-8 mb-8" width="640" height="360"
                                 src="https://www.youtube.com/embed/Uj1OeaTc31w?autoplay=1;&mute=1" frameborder="0"
@@ -170,7 +170,7 @@
 
                     <div class="mq_flex_welcome_page_recording_environment flex">
                         <div
-                            class="w-4/12 mq_flex_welcome_page_recording_environment_width bg-white rounded bg-opacity-80 p-5 mr-3 ">
+                            class="w-4/12 mq_flex_welcome_page_recording_environment_width bg-white rounded bg-opacity-90 p-5 mr-3 ">
                             <div class="flex justify-center items-center">
                                 <img src="{{ asset('img/violin_icon.png') }}"
                                     class="w-16 h-auto icon_welcome_page_yellow" alt="">
@@ -196,7 +196,7 @@
                         </div>
 
                         <div
-                            class="w-6/12 mq_flex_welcome_page_recording_environment_width bg-white rounded bg-opacity-80 p-5 mr-3 ">
+                            class="w-6/12 mq_flex_welcome_page_recording_environment_width bg-white rounded bg-opacity-90 p-5 mr-3 ">
                             <div class="flex justify-center items-center">
                                 <img src="{{ asset('img/software_icon.png') }}"
                                     class="w-16 h-auto icon_welcome_page_yellow" alt="">
@@ -228,7 +228,7 @@
                         </div>
 
                         <div
-                            class="w-4/12 mq_flex_welcome_page_recording_environment_width bg-white rounded bg-opacity-80 p-5 ">
+                            class="w-4/12 mq_flex_welcome_page_recording_environment_width bg-white rounded bg-opacity-90 p-5 ">
                             <div class="flex justify-center items-center">
                                 <img src="{{ asset('img/microphone_icon.png') }}"
                                     class="w-16 h-auto icon_welcome_page_yellow" alt="">
@@ -265,9 +265,9 @@
 
                 <div class="mq_padding_presentation_text p-8 text-xl karma bg-white rounded">
                     <p>
-                        I'm working only for CD quality album in professional studio on my real old cello, that's
-                        why
-                        i'm used to deliver WAV-HQ audio music files to my clients.
+                        As every music project requires a particular attention according to the request (improvisation, accompaniment, compositions of cello melodies above your music, cello recordings following your music score, etc...), I decided to write an appropriate quote for each of my clients' projects.
+                        <br>
+                        The average cost by my side to record your cello part in professionnal studio is about 50€ for 1 minute recording.
                     </p>
                 </div>
             </div>
