@@ -42,7 +42,7 @@
                 <button class="flex items-center md:mr-3 focus:outline-none">
                     <h1 class="text-3xl mr-3 dancing_font capitalize">{{ Auth::User()->name }}</h1>
                     @if (Auth::user()->avatar)
-                        <img src="{{ asset('/storage/images/' . Auth::user()->id . '/' . Auth::user()->avatar) }}"
+                        <img src="{{route('profile_image', Auth::user()->id)}}"
                             class="mr-5 border border-gray-300 rounded-full w-28 h-28 circle">
                     @else
                         <img src="{{ asset('img/noname_avatar.png') }}"
