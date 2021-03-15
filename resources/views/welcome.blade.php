@@ -275,7 +275,7 @@
     </div>
 
     <footer
-        class="mq_footer flex justify-center p-8 text-xl text-white bg-gray-900 border border-gray-500 nav_button_font">
+        class="mq_footer flex justify-center p-8 text-xl text-white bg-gray-900 nav_button_font">
         <div>
 
             <div id="social_media" class="flex justify-center text-6xl pb-3 text-white rounded ">
