@@ -508,9 +508,6 @@ input[type="file"] {
     .mq_font_size_presentation_text p {
         font-size: 19px;
     }
-    .mq_padding_presentation_text {
-        padding: 10px;
-    }
     .mq_title_recording_environment {
         font-size: 30px;
     }
@@ -551,6 +548,9 @@ input[type="file"] {
     .icon_welcome_page_download {
         width: 25px;
         height: auto;
+    }
+    .mq_font_size_h1 {
+        font-size: 40px !important;
     }
 }
 
