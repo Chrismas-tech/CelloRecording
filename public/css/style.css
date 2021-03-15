@@ -225,6 +225,10 @@ input[type="file"] {
 
 /* UP BLOCK */
 
+.mq_jumbo_title_1 {
+    display: none;
+}
+
 @media (max-width: 1560px) {
     .jumbo_title_1 {
         font-size: 4rem;
@@ -359,10 +363,10 @@ input[type="file"] {
 
 @media (max-width: 640px) {
     .jumbo_title_1 {
-        font-size: 1.7rem;
+        display: none;
     }
     .jumbo_title_2 {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
     }
     .mq_jumbo_btn a {
         font-size: 0.8rem;
@@ -373,21 +377,22 @@ input[type="file"] {
     .mq_gray_menu {
         display: none;
     }
+    .mq_jumbo_title_1 {
+        display: block;
+        font-size: 2.3rem;
+    }
 }
 
 @media (max-width: 531px) {
-    .jumbo_title_1 {
-        font-size: 1.4rem;
-    }
     .jumbo_title_2 {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
     .mq_jumbo_btn a {
         font-size: 0.7rem;
         padding: 6px;
     }
     .bg_cello {
-        height: 45vh;
+        height: 50vh;
     }
     .jumbo_title_position {
         top: 60%;
@@ -395,11 +400,8 @@ input[type="file"] {
 }
 
 @media (max-width: 437px) {
-    .jumbo_title_1 {
-        font-size: 1.1rem;
-    }
     .jumbo_title_2 {
-        font-size: 0.5rem;
+        font-size: 0.7rem;
     }
     .mq_jumbo_btn a {
         font-size: 0.6rem;
@@ -408,18 +410,12 @@ input[type="file"] {
     .mq_nav_padding {
         padding: 0.5rem;
     }
-    .bg_cello {
-        height: 40vh;
-    }
     .jumbo_title_position {
         top: 55%;
     }
 }
 
 @media (max-width: 393px) {
-    .jumbo_title_1 {
-        font-size: 1.26rem;
-    }
     .jumbo_title_2 {
         font-size: 0.65rem;
     }
@@ -430,18 +426,12 @@ input[type="file"] {
     .mq_nav_padding {
         padding: 0.5rem;
     }
-    .bg_cello {
-        height: 35vh;
-    }
     .jumbo_title_position {
         top: 55%;
     }
 }
 
 @media (max-width: 350px) {
-    .jumbo_title_1 {
-        font-size: 1rem;
-    }
     .jumbo_title_2 {
         font-size: 0.5rem;
     }
@@ -451,9 +441,6 @@ input[type="file"] {
     }
     .mq_nav_padding {
         padding: 0.5rem;
-    }
-    .bg_cello {
-        height: 35vh;
     }
     .jumbo_title_position {
         top: 55%;

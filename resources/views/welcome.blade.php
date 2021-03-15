@@ -49,6 +49,10 @@
                 </p>
             </div>
             <div>
+                <p class="mq_jumbo_title_1 dancing_font">Cello Recording Services <br> 7/7 days
+                </p>
+            </div>
+            <div>
                 <h1 class="mt-10 mb-16 jumbo_title_2 p-0 m-0 text-4xl font-bold karma">
                     Are you in need of a Professional Cellist for your next musical project ?
                 </h1>
@@ -87,7 +91,7 @@
         <div class="bg_about_me px-5 py-16">
             <div class="xl:container mx-auto border-black rounded">
                 <div id="aboutme" class="mq_about text-6xl pb-3 redressed_font">
-                    <h1 class="text-white">About Me</h1>
+                    <h1 class="text-white nav_button_font"">About Me</h1>
                 </div>
 
                 <div class="flex text-xl rounded ">
@@ -129,7 +133,7 @@
 
                 <div>
                     <div id="hdiw" class="text-6xl text-gray-700 pb-3 rounded redressed_font">
-                        <h1 class="text-white">How does it work ?</h1>
+                        <h1 class="text-white nav_button_font"">How does it work ?</h1>
                     </div>
 
                     <div class="mq_padding_presentation_text p-8 text-xl bg-white karma rounded border border-gray-300">
@@ -163,7 +167,7 @@
             <div class="xl:container mx-auto border-black rounded">
 
                 <div id="record_env" class="text-6xl pb-3 text-white rounded redressed_font">
-                    <h1>Recording Environment</h1>
+                    <h1 class="nav_button_font">Recording Environment</h1>
                 </div>
 
                 <div class="flex mq_padding_presentation_text text-xl karma">
@@ -260,7 +264,7 @@
         <div class="bg-gray-600 px-5 py-16">
             <div class="xl:container mx-auto border-black rounded">
                 <div id="pricing" class="pb-3 text-6xl text-white rounded redressed_font">
-                    <h1>Pricing</h1>
+                    <h1 class="nav_button_font">Pricing</h1>
                 </div>
 
                 <div class="mq_padding_presentation_text p-8 text-xl karma bg-white rounded">
