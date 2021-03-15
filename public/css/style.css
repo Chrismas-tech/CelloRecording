@@ -279,7 +279,7 @@ input[type="file"] {
         font-size: 13px;
     }
     .icon_welcome_page_yellow {
-        width: 45px;
+        width: 58px;
         height: auto;
     }
     .icon_welcome_page_download {
@@ -303,10 +303,6 @@ input[type="file"] {
     }
     .jumbo_title_position {
         top: 60%;
-    }
-    .icon_welcome_page_yellow {
-        width: 45px;
-        height: auto;
     }
     .icon_welcome_page_download {
         width: 30px;
@@ -505,7 +501,7 @@ input[type="file"] {
         font-size: 19px;
     }
     .mq_title_recording_environment {
-        font-size: 30px;
+        font-size: 43px;
     }
     .mq_font_size_presentation_text h2 {
         font-size: 19px;
@@ -533,13 +529,6 @@ input[type="file"] {
     .ytb_vid {
         width: 320px;
         height: 200px;
-    }
-    .mq_title_recording_environment {
-        font-size: 25px;
-    }
-    .icon_welcome_page_yellow {
-        width: 30px;
-        height: auto;
     }
     .icon_welcome_page_download {
         width: 25px;
