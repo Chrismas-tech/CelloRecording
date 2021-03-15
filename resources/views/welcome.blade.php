@@ -44,6 +44,7 @@
         </nav>
 
         <div class="mq_jumbo_btn text-center jumbo_title_position">
+
             <div>
                 <p class="jumbo_title_1 dancing_font">Professional Cello Recording Services - 7/7 days
                 </p>
@@ -52,9 +53,17 @@
                 <p class="mq_jumbo_title_1 dancing_font">Cello Recording Services <br> 7/7 days
                 </p>
             </div>
+
+
             <div>
                 <h1 class="mt-10 mb-16 jumbo_title_2 p-0 m-0 text-4xl font-bold karma">
                     Are you in need of a Professional Cellist for your next musical project ?
+                </h1>
+            </div>
+
+            <div>
+                <h1 class="mt-10 mb-16 mq_jumbo_title_2 p-0 m-0 text-4xl font-bold karma">
+                   In need of a Professional Cellist for your next musical project ?
                 </h1>
             </div>
 

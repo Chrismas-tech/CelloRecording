@@ -228,6 +228,10 @@ input[type="file"] {
     display: none;
 }
 
+.mq_jumbo_title_2 {
+    display: none;
+}
+
 @media (max-width: 1560px) {
     .jumbo_title_1 {
         font-size: 4rem;
@@ -365,7 +369,7 @@ input[type="file"] {
         display: none;
     }
     .jumbo_title_2 {
-        font-size: 0.9rem;
+        display: none;
     }
     .mq_jumbo_btn a {
         font-size: 0.8rem;
@@ -380,12 +384,13 @@ input[type="file"] {
         display: block;
         font-size: 2.3rem;
     }
+    .mq_jumbo_title_2 {
+        display: block;
+        font-size: 1.1rem;
+    }
 }
 
 @media (max-width: 531px) {
-    .jumbo_title_2 {
-        font-size: 0.8rem;
-    }
     .mq_jumbo_btn a {
         font-size: 0.7rem;
         padding: 6px;
@@ -399,9 +404,6 @@ input[type="file"] {
 }
 
 @media (max-width: 437px) {
-    .jumbo_title_2 {
-        font-size: 0.7rem;
-    }
     .mq_jumbo_btn a {
         font-size: 0.6rem;
         padding: 6px;
@@ -415,9 +417,6 @@ input[type="file"] {
 }
 
 @media (max-width: 393px) {
-    .jumbo_title_2 {
-        font-size: 0.65rem;
-    }
     .mq_jumbo_btn a {
         font-size: 0.7rem;
         padding: 6px;
@@ -431,9 +430,6 @@ input[type="file"] {
 }
 
 @media (max-width: 350px) {
-    .jumbo_title_2 {
-        font-size: 0.5rem;
-    }
     .mq_jumbo_btn a {
         font-size: 0.54rem;
         padding: 6px;
