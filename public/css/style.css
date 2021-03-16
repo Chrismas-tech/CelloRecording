@@ -67,6 +67,13 @@ form {
     position: relative;
 }
 
+.bg_about_me {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("/img/bg_about_me.png");
+    position: relative;
+}
+
 .bg_cello_contact {
     background-repeat: no-repeat;
     background-size: cover;

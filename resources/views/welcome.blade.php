@@ -97,13 +97,13 @@
 
     <div class="mq_font_size_presentation_text">
 
-        <div class="px-5 py-16">
-            <div class="xl:container mx-auto border-black rounded">
+        <div class="bg_about_me px-5 py-16">
+            <div class=" xl:container mx-auto border-black rounded">
                 <div id="aboutme" class="mq_about text-6xl pb-3 redressed_font">
                     <h1 class="nav_button_font mq_font_size_h1">About Me</h1>
                 </div>
 
-                <div class="flex text-xl rounded ">
+                <div class="flex text-xl rounded  bg-white bg-opacity-60">
                     <div class="mq_padding_presentation_text p-4 sm:p-8 text-xl rounded karma border border-black">
                         <p>
                             <iframe class="rounded ytb_vid ml-8 mb-8" width="640" height="360" src="https://www.youtube.com/embed/Ut_Rgayxop4?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
