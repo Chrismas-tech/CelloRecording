@@ -237,7 +237,6 @@
                                 <img src="{{ asset('img/microphone_icon.ico') }}"
                                     class="w-16 h-auto icon_welcome_page_yellow" alt="">
                                 <h1 class="text-4xl ml-3 dancing_font mq_title_recording_environment">Microphone &
-                                    Card
                                     sound</h1>
                             </div>
                             <div class="mt-5">
@@ -246,11 +245,11 @@
                                     Card sound : <strong>Steinberg UR22</strong>
                                 </h2>
                                 <br>
-                                <div class="flex items-center">
-                                    <img src="{{ asset('img/dowload_icon_welcome_page.ico') }}"
-                                        class="icon_welcome_page_download mr-2 w-10 h-auto">
+                                <div>
+                                 
                                     <a href="{{ route('download_demo_cello') }}"
-                                        class="download_link_demo underline">Download a cello
+                                        class="flex items-center download_link_demo underline">    <img src="{{ asset('img/dowload_icon_welcome_page.ico') }}"
+                                        class="icon_welcome_page_download mr-2 w-10 h-auto">Download a cello
                                         demo here (MP3)</a>
                                 </div>
                             </div>
