@@ -75,7 +75,7 @@
                                     <label for="price" class="text-xs sm:text-md md:text-lg px-2 text-white bg-red-400 rounded">Price in €</label>
                                 </div>
                                 <div class="mb-6">
-                                    <input type="number" max="14" min="1" name="price" disabled
+                                    <input type="number" name="price" disabled
                                         class="text-xs sm:text-md md:text-lg w-full p-2 border-gray-400 rounded min-h-8 max-h-20"
                                         value="{{ $quote->price / 100 }}">
                                     @error('price')

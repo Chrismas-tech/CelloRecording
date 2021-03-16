@@ -159,7 +159,6 @@ Route::get('/download_demo_cello', [FileServeUser::class, 'download_demo_cello']
 
 
 /* BAC A SABLE */
-
 Route::get('/bac-a-sable', function () {
     return view('bac-a-sable.bac-a-sable', [
         'info' => 'Very cool information',
