@@ -260,13 +260,13 @@
             </div>
         </div>
 
-        <div class="px-5 py-16">
+        <div class="px-5 py-16 bg_cello_pricing">
             <div class="xl:container mx-auto rounded">
                 <div id="pricing" class="pb-3 text-6xl text-black rounded redressed_font">
                     <h1 class="nav_button_font mq_font_size_h1">Pricing</h1>
                 </div>
 
-                <div class="mq_padding_presentation_text p-8 text-xl karma bg-white rounded border border-black">
+                <div class="mq_padding_presentation_text p-8 text-xl karma bg-white bg-opacity-60 rounded border border-black">
                     <p>
                         As every music project requires a particular attention according to the request (improvisation, accompaniment, compositions of cello melodies above your music, cello recordings following your music score, etc...) I decided to write an appropriate quote for each of my clients' projects.
                         <br>

@@ -74,15 +74,18 @@ form {
     position: relative;
 }
 
+.bg_cello_pricing {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("/img/bg_cello_pricing.png");
+    position: relative;
+}
+
 .bg_cello_contact {
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("/img/bg_cello_design.png");
     position: relative;
-}
-
-.bg_my_red {
-    background-color: #FE0000;
 }
 
  ::-webkit-scrollbar {
