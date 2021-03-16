@@ -176,7 +176,7 @@
                         <div
                             class="w-4/12 mq_flex_welcome_page_recording_environment_width bg-white rounded  p-5 mr-3 ">
                             <div class="flex justify-center items-center">
-                                <img src="{{ asset('img/violin_icon.png') }}"
+                                <img src="{{ asset('img/violin_icon.ico') }}"
                                     class="w-16 h-auto icon_welcome_page_yellow" alt="">
                                 <h1 class="text-4xl ml-3 dancing_font mq_title_recording_environment">My instrument
                                 </h1>
@@ -202,7 +202,7 @@
                         <div
                             class="w-6/12 mq_flex_welcome_page_recording_environment_width bg-white rounded  p-5 mr-3 ">
                             <div class="flex justify-center items-center">
-                                <img src="{{ asset('img/software_icon.png') }}"
+                                <img src="{{ asset('img/music-record.ico') }}"
                                     class="w-16 h-auto icon_welcome_page_yellow" alt="">
                                 <h1 class="text-4xl ml-3 dancing_font mq_title_recording_environment">Recording
                                     Software
@@ -234,7 +234,7 @@
                         <div
                             class="w-4/12 mq_flex_welcome_page_recording_environment_width bg-white rounded  p-5 ">
                             <div class="flex justify-center items-center">
-                                <img src="{{ asset('img/microphone_icon.png') }}"
+                                <img src="{{ asset('img/microphone_icon.ico') }}"
                                     class="w-16 h-auto icon_welcome_page_yellow" alt="">
                                 <h1 class="text-4xl ml-3 dancing_font mq_title_recording_environment">Microphone &
                                     Card
@@ -247,7 +247,7 @@
                                 </h2>
                                 <br>
                                 <div class="flex items-center">
-                                    <img src="{{ asset('img/download_icon.png') }}"
+                                    <img src="{{ asset('img/dowload_icon_welcome_page.ico') }}"
                                         class="icon_welcome_page_download mr-2 w-10 h-auto">
                                     <a href="{{ route('download_demo_cello') }}"
                                         class="download_link_demo underline">Download a cello
@@ -261,13 +261,13 @@
             </div>
         </div>
 
-        <div class="bg-gray-600 px-5 py-16">
-            <div class="xl:container mx-auto border-black rounded">
-                <div id="pricing" class="pb-3 text-6xl text-white rounded redressed_font">
+        <div class="px-5 py-16">
+            <div class="xl:container mx-auto rounded">
+                <div id="pricing" class="pb-3 text-6xl text-black rounded redressed_font">
                     <h1 class="nav_button_font mq_font_size_h1">Pricing</h1>
                 </div>
 
-                <div class="mq_padding_presentation_text p-8 text-xl karma bg-white rounded">
+                <div class="mq_padding_presentation_text p-8 text-xl karma bg-white rounded border border-black">
                     <p>
                         As every music project requires a particular attention according to the request (improvisation, accompaniment, compositions of cello melodies above your music, cello recordings following your music score, etc...), I decided to write an appropriate quote for each of my clients' projects.
                         <br>
@@ -279,7 +279,7 @@
     </div>
 
     <footer
-        class="mq_footer flex justify-center p-8 text-xl text-white bg-gray-900 nav_button_font">
+        class="mq_footer flex justify-center p-8 text-xl text-white bg-gray-600 nav_button_font">
         <div>
 
             <div id="social_media" class="flex justify-center text-6xl pb-3 text-white rounded ">
