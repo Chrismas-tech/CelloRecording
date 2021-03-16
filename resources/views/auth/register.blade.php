@@ -19,33 +19,45 @@
                 </div>
                 <x-label for="name" :value="__('Name')" />
 
-                <x-input id="name" class="block w-full mt-1" type="text" name="name" :value="old('name')" required autofocus />
+                <x-input id="name" class="block w-full mt-1" type="text" name="name" :value="old('name')" required
+                    autofocus />
             </div>
 
             <!-- Email Address -->
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />
 
-                <x-input id="email" class="block w-full mt-1" type="email" name="email" :value="old('email')" required />
+                <x-input id="email" class="block w-full mt-1" type="email" name="email" :value="old('email')"
+                    required />
             </div>
 
             <!-- Password -->
             <div class="mt-4">
                 <x-label for="password" :value="__('Password')" />
 
-                <x-input id="password" class="block w-full mt-1"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
+                <div class="flex">
+                    <x-input id="password" class="password_register_reveal block w-full rounded-r-none" type="password" name="password" required
+                        autocomplete="new-password" />
+                    <button type="button" class="reveal_password_register border border-gray-300 rounded-r">
+                        <img src="{{ asset('img/eye.png') }}" alt="" class="w-7 h-auto eye_open_login">
+                        <img class="eye_off_login eye_icon hidden w-7 h-auto" src="{{ asset('img/cross_eye.png') }}"
+                            alt="" class="eye_icon hidden">
+                    </button>
+                </div>
             </div>
 
             <!-- Confirm Password -->
             <div class="mt-4">
                 <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block w-full mt-1"
-                                type="password"
-                                name="password_confirmation" required />
+                <div class="flex">
+                    <x-input id="password_confirmation" class="block w-full w-full rounded-r-none" type="password"
+                        name="password_confirmation" required />
+                    <button type="button" class="reveal_password_register border border-gray-300 rounded-r">
+                        <img src="{{ asset('img/eye.png') }}" alt="" class="w-7 h-auto eye_open_login">
+                        <img class="eye_off_login eye_icon hidden w-7 h-auto" src="{{ asset('img/cross_eye.png') }}"
+                            alt="" class="eye_icon hidden">
+                    </button>
+                </div>
             </div>
 
             <div class="flex items-center justify-end mt-4">
@@ -63,3 +75,27 @@
         </div>
     </x-auth-card>
 </x-guest-layout>
+
+
+<script>
+    $('document').ready(function() {
+
+        //console.log('test1');
+        /* REVELER LE PASSWORD login*/
+        $('.reveal_password_register').click(function() {
+
+            //console.log('test');
+            /* SI L'OEIL EST NORMAL -> ON CHANGE IMAGE + ON REVELE LE PASSWORD */
+            if (!$('.eye_open_login').hasClass('hidden')) {
+                $('.eye_open_login').addClass('hidden');
+                $('.eye_off_login').removeClass('hidden');
+                $('.password_register_reveal').attr('type', 'text');
+            } else {
+                $('.eye_open_login').removeClass('hidden');
+                $('.eye_off_login').addClass('hidden');
+                $('.password_register_reveal').attr('type', 'password');
+            }
+        });
+    });
+
+</script>

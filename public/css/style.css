@@ -59,18 +59,6 @@ form {
     font-family: 'Redressed', cursive;
 }
 
-.bg_about_me {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("/img/bow_cello.jpg");
-}
-
-.bg_recording {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("/img/studio.jpg");
-}
-
 .bg_cello {
     background-repeat: no-repeat;
     background-size: cover;
