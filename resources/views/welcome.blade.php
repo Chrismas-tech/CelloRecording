@@ -16,35 +16,35 @@
 </head>
 
 <body>
-    <div class="bg_cello mq_jumbo_btn">  
-        <nav class="flex justify-between bg-white p-10 mq_nav_padding">
-            <div>
-                <a class="mq_mr_btn-r px-2 py-3 mr-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
-                    href="/">CelloRecording Services 7/7</a>
-                <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
-                    href="{{ url('/contact') }}">Contact me</a>
-            </div>
-            <div>
-                @if (Route::has('login'))
-                    <div>
-                        @auth
-                            <a class="mq_mr_btn px-2 py-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
-                                href="{{ url('/dashboard') }}">My Account</a>
-                        @else
-                            <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
-                                href="{{ route('login') }}">Login</a>
-                            @if (Route::has('register'))
-                                <a class="px-2 py-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
-                                    href="{{ route('register') }}">Register</a>
-                            @endif
-                        @endauth
-                    </div>
-                @endif
-            </div>
-        </nav>
 
+    <nav class="mq_jumbo_btn flex justify-between bg-white p-10 mq_nav_padding">
+        <div>
+            <a class="mq_mr_btn-r px-2 py-3 mr-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                href="/">CelloRecording Services 7/7</a>
+            <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                href="{{ url('/contact') }}">Contact me</a>
+        </div>
+        <div>
+            @if (Route::has('login'))
+                <div>
+                    @auth
+                        <a class="mq_mr_btn px-2 py-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                            href="{{ url('/dashboard') }}">My Account</a>
+                    @else
+                        <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                            href="{{ route('login') }}">Login</a>
+                        @if (Route::has('register'))
+                            <a class="px-2 py-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                                href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+        </div>
+    </nav>
+
+    <div class="bg_cello mq_jumbo_btn">
         <div class="mq_jumbo_btn text-center jumbo_title_position">
-
             <div>
                 <p class="jumbo_title_1 dancing_font">Professional Cello Recording Services - 7/7 days
                 </p>
@@ -63,7 +63,7 @@
 
             <div>
                 <h1 class="mt-10 mb-10 mq_jumbo_title_2 p-0 m-0 text-4xl font-bold karma">
-                   In need of a Professional Cellist for your next musical project ?
+                    In need of a Professional Cellist for your next musical project ?
                 </h1>
             </div>
 
@@ -73,6 +73,7 @@
             </div>
         </div>
     </div>
+
 
 
     <menu class="mq_gray_menu flex items-center justify-center p-2 m-0 bg-gray-600 border-2 border-gray-800 ">
@@ -98,27 +99,31 @@
     <div class="mq_font_size_presentation_text">
 
         <div class="bg_about_me px-5 py-16">
-            <div class=" xl:container mx-auto border-black rounded">
+            <div class=" xl:container mx-auto border-black rounded bg-gray-">
                 <div id="aboutme" class="mq_about text-6xl pb-3 redressed_font">
                     <h1 class="nav_button_font mq_font_size_h1">About Me</h1>
                 </div>
 
-                <div class="flex text-xl rounded  bg-white bg-opacity-60">
-                    <div class="mq_padding_presentation_text p-4 sm:p-8 text-xl rounded karma border border-black">
+                <div class="flex text-xl rounded ">
+                    <div class="mq_padding_presentation_text p-4 sm:p-8 text-xl rounded karma border border-black bg-opacity-60 bg-white">
                         <p>
-                            <iframe class="rounded ytb_vid ml-8 mb-8" width="640" height="360" src="https://www.youtube.com/embed/Ut_Rgayxop4?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            <iframe class="rounded ytb_vid ml-8 mb-8" width="640" height="360"
+                                src="https://www.youtube.com/embed/Ut_Rgayxop4?autoplay=1" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
                             </iframe>
                             My name is Christophe. I'm a professional cellist, pianist,
                             and composer born in 1990 in France (Nizza).<br><br>
 
                             I studied the violoncello in Paris where i graduated from the Bachelor of Music at the
                             <strong>Pôle
-                            Supérieur Paris Boulogne-Billancourt</strong>, then i continued my education by going to the
-                            <strong>University of Music and Performing Arts Graz for my Master Degree.</strong> 
+                                Supérieur Paris Boulogne-Billancourt</strong>, then i continued my education by going to
+                            the
+                            University of Music and Performing Arts Graz for my Master Degree.
 
                             <br><br>
-                            I worked many years with the top orchestra of World renown : <strong>ORF Vienna Radio Symphony
-                            Orchestra</strong> 
+                            I worked many years with the top orchestra of World renown : ORF Vienna Radio Symphony
+                            Orchestra
                             with which i performed in the world's most famous concert halls.
 
                             <br><br>
@@ -231,8 +236,7 @@
                             </div>
                         </div>
 
-                        <div
-                            class="w-4/12 mq_flex_welcome_page_recording_environment_width bg-white rounded  p-5 ">
+                        <div class="w-4/12 mq_flex_welcome_page_recording_environment_width bg-white rounded  p-5 ">
                             <div class="flex justify-center items-center">
                                 <img src="{{ asset('img/microphone_icon.ico') }}"
                                     class="w-16 h-auto icon_welcome_page_yellow" alt="">
@@ -246,10 +250,11 @@
                                 </h2>
                                 <br>
                                 <div>
-                                 
+
                                     <a href="{{ route('download_demo_cello') }}"
-                                        class="flex items-center download_link_demo underline">    <img src="{{ asset('img/dowload_icon_welcome_page.ico') }}"
-                                        class="icon_welcome_page_download mr-2 w-10 h-auto">Download a cello
+                                        class="flex items-center download_link_demo underline"> <img
+                                            src="{{ asset('img/dowload_icon_welcome_page.ico') }}"
+                                            class="icon_welcome_page_download mr-2 w-10 h-auto">Download a cello
                                         demo here (MP3)</a>
                                 </div>
                             </div>
@@ -260,25 +265,27 @@
             </div>
         </div>
 
-        <div class="px-5 py-16 bg_cello_pricing">
+        <div class="bg_cello_pricing px-5 py-16">
             <div class="xl:container mx-auto rounded">
                 <div id="pricing" class="pb-3 text-6xl text-black rounded redressed_font">
                     <h1 class="nav_button_font mq_font_size_h1">Pricing</h1>
                 </div>
 
-                <div class="mq_padding_presentation_text p-8 text-xl karma bg-white bg-opacity-60 rounded border border-black">
+                <div class="mq_padding_presentation_text p-8 text-xl karma bg-white rounded border border-black bg-opacity-60">
                     <p>
-                        As every music project requires a particular attention according to the request (improvisation, accompaniment, compositions of cello melodies above your music, cello recordings following your music score, etc...) I decided to write an appropriate quote for each of my clients' projects.
+                        As every music project requires a particular attention according to the request (improvisation,
+                        accompaniment, compositions of cello melodies above your music, cello recordings following your
+                        music score, etc...) I decided to write an appropriate quote for each of my clients' projects.
                         <br>
-                        The average cost by my side to record your cello part in professionnal studio is about 50€ for 1 minute recording.
+                        The average cost by my side to record your cello part in professionnal studio is about 50€ for 1
+                        minute recording.
                     </p>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer
-        class="mq_footer flex justify-center p-8 text-xl text-white bg-gray-600 nav_button_font">
+    <footer class="mq_footer flex justify-center p-8 text-xl text-white bg-gray-600 nav_button_font">
         <div>
 
             <div id="social_media" class="flex justify-center text-6xl pb-3 text-white rounded ">

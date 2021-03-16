@@ -63,7 +63,7 @@ form {
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("/img/bg_cello_design.png");
-    height: 100vh;
+    height: 112vh;
     position: relative;
 }
 
@@ -254,9 +254,6 @@ input[type="file"] {
 }
 
 @media (max-width: 1250px) {
-    .bg_cello {
-        height: 75vh;
-    }
     .jumbo_title_1 {
         font-size: 3.7rem;
     }
@@ -293,7 +290,7 @@ input[type="file"] {
 
 @media (max-width: 1160px) {
     .bg_cello {
-        height: 55vh;
+        height: 72vh;
     }
     .jumbo_title_1 {
         font-size: 3rem;
@@ -344,9 +341,6 @@ input[type="file"] {
 }
 
 @media (max-width: 940px) {
-    .bg_cello {
-        height: 55vh;
-    }
     .jumbo_title_1 {
         font-size: 2rem;
     }
@@ -396,9 +390,6 @@ input[type="file"] {
         font-size: 0.7rem;
         padding: 6px;
     }
-    .bg_cello {
-        height: 50vh;
-    }
     .jumbo_title_position {
         top: 60%;
     }
@@ -418,6 +409,7 @@ input[type="file"] {
     .mq_jumbo_btn a {
         font-size: 0.7rem;
         padding: 6px;
+        margin-right: 0;
     }
     .mq_nav_padding {
         padding: 0.2rem;
