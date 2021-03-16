@@ -22,24 +22,24 @@
 
     <div class="bg_cello_contact mq_contact_page pb-20">
 
-        <nav class="flex justify-between p-10 mq_nav_padding">
+        <nav class="flex justify-between bg-white p-10 mq_nav_padding">
             <div>
-                <a class="mq_mr_btn-r px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                <a class="mq_mr_btn-r px-2 py-3 mr-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
                     href="/">CelloRecording Services 7/7</a>
-                <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
                     href="{{ url('/contact') }}">Contact me</a>
             </div>
             <div>
                 @if (Route::has('login'))
                     <div>
                         @auth
-                            <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                            <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
                                 href="{{ url('/dashboard') }}">My Account</a>
                         @else
-                            <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                            <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
                                 href="{{ route('login') }}">Login</a>
                             @if (Route::has('register'))
-                                <a class="px-2 py-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                                <a class="px-2 py-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
                                     href="{{ route('register') }}">Register</a>
                             @endif
                         @endauth
@@ -48,7 +48,7 @@
             </div>
         </nav>
 
-        <div class="mt-5 text-white my_min_height_contact p-5">
+        <div class="mt-5 text-white my_min_height_contact p-5 ">
             <div class="text-center">
                 <h1 class="mb-10 text-6xl mq_font_email_title title_jumbo dancing_font">Send me an email
                 </h1>
@@ -60,7 +60,7 @@
                 </div>
             @endif
 
-            <div class="text-3xl karma border p-8 border-white rounded max-w-4xl mx-auto">
+            <div class="text-3xl karma border p-8 border-white rounded max-w-4xl mx-auto bg-gray-800" >
                 <form action="{{ route('send_contact_email') }}" method="POST">
                     @csrf
                     <div class="flex flex-col items-center">

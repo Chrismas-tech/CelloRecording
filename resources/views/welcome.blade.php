@@ -17,24 +17,24 @@
 
 <body>
     <div class="bg_cello mq_jumbo_btn">
-        <nav class="flex justify-between p-10 mq_nav_padding">
+        <nav class="flex justify-between bg-white p-10 mq_nav_padding">
             <div>
-                <a class="mq_mr_btn-r px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                <a class="mq_mr_btn-r px-2 py-3 mr-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
                     href="/">CelloRecording Services 7/7</a>
-                <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
                     href="{{ url('/contact') }}">Contact me</a>
             </div>
             <div>
                 @if (Route::has('login'))
                     <div>
                         @auth
-                            <a class="mq_mr_btn px-2 py-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                            <a class="mq_mr_btn px-2 py-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
                                 href="{{ url('/dashboard') }}">My Account</a>
                         @else
-                            <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                            <a class="mq_mr_btn px-2 py-3 mr-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
                                 href="{{ route('login') }}">Login</a>
                             @if (Route::has('register'))
-                                <a class="px-2 py-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                                <a class="px-2 py-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
                                     href="{{ route('register') }}">Register</a>
                             @endif
                         @endauth

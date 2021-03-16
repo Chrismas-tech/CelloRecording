@@ -74,15 +74,15 @@ form {
 .bg_cello {
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("/img/bg_cello_3.jpg");
-    height: 90vh;
+    background-image: url("/img/bg_cello_design.png");
+    height: 100vh;
     position: relative;
 }
 
 .bg_cello_contact {
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("/img/bg_cello_3.jpg");
+    background-image: url("/img/bg_cello_design.png");
     position: relative;
 }
 
