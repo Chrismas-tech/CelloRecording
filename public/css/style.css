@@ -72,6 +72,7 @@ form {
     background-size: cover;
     background-image: url("/img/bg_about_me.png");
     position: relative;
+    z-index: -1;
 }
 
 .bg_cello_contact {

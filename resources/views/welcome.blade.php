@@ -114,11 +114,11 @@
                             I studied the violoncello in Paris where i graduated from the Bachelor of Music at the
                             <strong>Pôle
                             Supérieur Paris Boulogne-Billancourt</strong>, then i continued my education by going to the
-                            University of Music and Performing Arts Graz for my Master Degree.
+                            <strong>University of Music and Performing Arts Graz for my Master Degree.</strong> 
 
                             <br><br>
-                            I worked many years with the top orchestra of World renown : ORF Vienna Radio Symphony
-                            Orchestra
+                            I worked many years with the top orchestra of World renown : <strong>ORF Vienna Radio Symphony
+                            Orchestra</strong> 
                             with which i performed in the world's most famous concert halls.
 
                             <br><br>
