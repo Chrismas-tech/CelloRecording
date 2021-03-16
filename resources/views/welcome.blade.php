@@ -97,23 +97,23 @@
 
     <div class="mq_font_size_presentation_text">
 
-        <div class="bg_about_me px-5 py-16">
+        <div class="px-5 py-16">
             <div class="xl:container mx-auto border-black rounded">
                 <div id="aboutme" class="mq_about text-6xl pb-3 redressed_font">
-                    <h1 class="text-white nav_button_font mq_font_size_h1">About Me</h1>
+                    <h1 class="nav_button_font mq_font_size_h1">About Me</h1>
                 </div>
 
                 <div class="flex text-xl rounded ">
-                    <div class="mq_padding_presentation_text p-4 sm:p-8 text-xl rounded karma border border-white">
-                        <p class="text-white">
+                    <div class="mq_padding_presentation_text p-4 sm:p-8 text-xl rounded karma border border-black">
+                        <p>
                             <iframe class="rounded ytb_vid ml-8 mb-8" width="640" height="360" src="https://www.youtube.com/embed/Ut_Rgayxop4?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                             </iframe>
                             My name is Christophe. I'm a professional cellist, pianist,
                             and composer born in 1990 in France (Nizza).<br><br>
 
                             I studied the violoncello in Paris where i graduated from the Bachelor of Music at the
-                            "Pôle
-                            Supérieur Paris Boulogne-Billancourt", then i continued my education by going to the
+                            <strong>Pôle
+                            Supérieur Paris Boulogne-Billancourt</strong>, then i continued my education by going to the
                             University of Music and Performing Arts Graz for my Master Degree.
 
                             <br><br>
@@ -134,10 +134,9 @@
             </div>
         </div>
 
-        <div class="bg-gray-600 px-5 py-16">
+        <div class="bg-red-500 px-5 py-16">
             <div class="xl:container mx-auto border-black rounded">
-
-                <div>
+                <div class="mb-12">
                     <div id="hdiw" class="text-6xl text-gray-700 pb-3 rounded redressed_font">
                         <h1 class="text-white nav_button_font mq_font_size_h1">How does it work ?</h1>
                     </div>
@@ -166,11 +165,6 @@
                         </p>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="bg_recording px-5 py-16">
-            <div class="xl:container mx-auto border-black rounded">
 
                 <div id="record_env" class="text-6xl pb-3 text-white rounded redressed_font">
                     <h1 class="nav_button_font mq_font_size_h1">Recording Environment</h1>
@@ -180,7 +174,7 @@
 
                     <div class="mq_flex_welcome_page_recording_environment flex">
                         <div
-                            class="w-4/12 mq_flex_welcome_page_recording_environment_width bg-white rounded bg-opacity-90 p-5 mr-3 ">
+                            class="w-4/12 mq_flex_welcome_page_recording_environment_width bg-white rounded  p-5 mr-3 ">
                             <div class="flex justify-center items-center">
                                 <img src="{{ asset('img/violin_icon.png') }}"
                                     class="w-16 h-auto icon_welcome_page_yellow" alt="">
@@ -206,7 +200,7 @@
                         </div>
 
                         <div
-                            class="w-6/12 mq_flex_welcome_page_recording_environment_width bg-white rounded bg-opacity-90 p-5 mr-3 ">
+                            class="w-6/12 mq_flex_welcome_page_recording_environment_width bg-white rounded  p-5 mr-3 ">
                             <div class="flex justify-center items-center">
                                 <img src="{{ asset('img/software_icon.png') }}"
                                     class="w-16 h-auto icon_welcome_page_yellow" alt="">
@@ -238,7 +232,7 @@
                         </div>
 
                         <div
-                            class="w-4/12 mq_flex_welcome_page_recording_environment_width bg-white rounded bg-opacity-90 p-5 ">
+                            class="w-4/12 mq_flex_welcome_page_recording_environment_width bg-white rounded  p-5 ">
                             <div class="flex justify-center items-center">
                                 <img src="{{ asset('img/microphone_icon.png') }}"
                                     class="w-16 h-auto icon_welcome_page_yellow" alt="">
