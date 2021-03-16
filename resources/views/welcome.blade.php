@@ -269,7 +269,7 @@
 
                 <div class="mq_padding_presentation_text p-8 text-xl karma bg-white rounded border border-black">
                     <p>
-                        As every music project requires a particular attention according to the request (improvisation, accompaniment, compositions of cello melodies above your music, cello recordings following your music score, etc...), I decided to write an appropriate quote for each of my clients' projects.
+                        As every music project requires a particular attention according to the request (improvisation, accompaniment, compositions of cello melodies above your music, cello recordings following your music score, etc...) I decided to write an appropriate quote for each of my clients' projects.
                         <br>
                         The average cost by my side to record your cello part in professionnal studio is about 50€ for 1 minute recording.
                     </p>
