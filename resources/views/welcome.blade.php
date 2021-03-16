@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="bg_cello mq_jumbo_btn">
+    <div class="bg_cello mq_jumbo_btn">  
         <nav class="flex justify-between bg-white p-10 mq_nav_padding">
             <div>
                 <a class="mq_mr_btn-r px-2 py-3 mr-3 text-2xl text-black border border-black rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
