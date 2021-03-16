@@ -50,7 +50,7 @@
             <div class="mt-4">
                 <x-label for="password_confirmation" :value="__('Confirm Password')" />
                 <div class="flex">
-                    <x-input id="password_confirmation" class="block w-full w-full rounded-r-none" type="password"
+                    <x-input id="password_confirmation" class="password_register_reveal block w-full w-full rounded-r-none" type="password"
                         name="password_confirmation" required />
                     <button type="button" class="reveal_password_register border border-gray-300 rounded-r">
                         <img src="{{ asset('img/eye.png') }}" alt="" class="w-7 h-auto eye_open_login">
@@ -90,9 +90,11 @@
                 $('.eye_open_login').addClass('hidden');
                 $('.eye_off_login').removeClass('hidden');
                 $('.password_register_reveal').attr('type', 'text');
+                $('.password_register_reveal').attr('type', 'text');
             } else {
                 $('.eye_open_login').removeClass('hidden');
                 $('.eye_off_login').addClass('hidden');
+                $('.password_register_reveal').attr('type', 'password');
                 $('.password_register_reveal').attr('type', 'password');
             }
         });
