@@ -48,6 +48,7 @@ class PaypalController extends Controller
         $price = $quote->price / 100;
 
         /* PHP PAYPAL SDK SAMPLE CODE https://paypal.github.io/PayPal-PHP-SDK/sample/doc/payments/CreatePaymentUsingPayPal.html*/
+
         $payer = new Payer();
         $payer->setPaymentMethod("paypal");
 
@@ -56,21 +57,15 @@ class PaypalController extends Controller
             ->setCurrency('USD')
             ->setQuantity(1)
             ->setSku("123123") // Similar to `item_number` in Classic API
-            ->setPrice(7.5);
-        $item2 = new Item();
-        $item2->setName('Granola bars')
-            ->setCurrency('USD')
-            ->setQuantity(5)
-            ->setSku("321321") // Similar to `item_number` in Classic API
-            ->setPrice(2);
+            ->setPrice($price);
 
         $itemList = new ItemList();
-        $itemList->setItems(array($item1, $item2));
+        $itemList->setItems(array($item1));
 
         $details = new Details();
-        $details->setShipping(1.2)
-            ->setTax(1.3)
-            ->setSubtotal(17.50);
+        $details->setShipping(0)
+            ->setTax(0)
+            ->setSubtotal($price);
 
         $amount = new Amount();
         $amount->setCurrency("USD")
