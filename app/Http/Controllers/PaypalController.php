@@ -53,7 +53,7 @@ class PaypalController extends Controller
         $payer->setPaymentMethod("paypal");
 
         $item1 = new Item();
-        $item1->setName($quote->tite)
+        $item1->setName($quote->title)
             ->setCurrency('EUR')
             ->setQuantity(1)
             ->setSku("123123") // Similar to `item_number` in Classic API
@@ -75,7 +75,7 @@ class PaypalController extends Controller
         $transaction = new Transaction();
         $transaction->setAmount($amount)
             ->setItemList($itemList)
-            ->setDescription("Payment description")
+            ->setDescription($quote->title)
             ->setInvoiceNumber(uniqid());
 
         $redirectUrls = new RedirectUrls();
