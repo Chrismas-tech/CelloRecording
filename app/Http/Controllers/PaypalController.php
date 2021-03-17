@@ -88,9 +88,8 @@ class PaypalController extends Controller
             ->setRedirectUrls($redirectUrls)
             ->setTransactions(array($transaction));
 
-
         $payment->create($this->apiContext);
-        return $payment->getApprovalLink();
+        return redirect($payment->getApprovalLink());
     }
 
     public function execute_payment(Request $request)

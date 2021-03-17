@@ -67,7 +67,7 @@
                         <div class="mt-5 mb-5 border-b border-gray-800">
                         </div>
 
-                        <div class="flex">
+                        <div class="flex justify-end">
                             <div>
                                 <p>Total : <span
                                         class="px-2 py-2 mb-3 text-white bg-red-400 rounded">{{ $quote->price / 100 }}
@@ -76,7 +76,12 @@
                             </div>
                         </div>
 
-                        <div id="paypal_button" class="mt-5 text-center">
+
+                        <div class="container mt-5 flex justify-end items-center">
+
+                        <div>
+                            <a href="{{ route('create_order_paypal') }}" class="flex items-center">
+                                <img src="{{asset('img/paypal-logo.png')}}" alt="" class="w-36 border-2 border-blue-400 hover:border-blue-700 rounded px-2 py-3 shadow-lg"></a>
                         </div>
 
                         <div>
@@ -88,11 +93,4 @@
             </div>
         </div>
     </div>
-
-
-    <script src="https://www.paypalobjects.com/api/checkout.js">
-    </script>
-
-    <script src={{ asset('js/payment_paypal.js') }}>
-    </script>
 @endsection
