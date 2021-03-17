@@ -17,7 +17,7 @@
             <div class="bg-gray-800 p-6 border border-gray-400 rounded">
 
                 <div class="flex flex-inline">
-                    <p class="py-2 text-2xl sm:text-3xl md:text-4xl dancing_font text-white bg-red-400 rounded px-2">
+                    <p class="py-2 text-2xl sm:text-3xl md:text-4xl dancing_font text-white bg-red-500 rounded px-2">
                         Welcome to your personal space {{ auth()->user()->name }} !
                     </p>
                 </div>
