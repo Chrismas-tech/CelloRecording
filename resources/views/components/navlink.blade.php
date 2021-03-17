@@ -32,7 +32,7 @@ $not_active_admin = 'border-green-200';
                         <img src="{{ asset('img/messages_icon.png') }}" alt="" class="w-7 mq_icon_size">
                         @if (App\Http\Controllers\UserController::notifications() > 0)
                             <div class="flex items-center justify-center text-black">
-                                <p class="text-sm font-bold">({{ App\Http\Controllers\UserController::notifications() }})
+                                <p class="text-sm font-bold text-blue-500">({{ App\Http\Controllers\UserController::notifications() }})
                                 </p>
                             </div>
                         @endif
@@ -44,12 +44,12 @@ $not_active_admin = 'border-green-200';
                 <li
                     class="mq_li_fs relative p-5 md:mr-8  border-b-2 hover:border-indigo-500 {{ Route::currentRouteName() == 'quotes_received' ? $active : $not_active }}">
                     Your Quotes
-                    <div class="absolute flex items-center bottom-1 right-0">
+                    <div class="absolute flex items-center bottom-0 right-0">
 
-                        <img src="{{ asset('img/quotes_icon.png') }}" alt="" class="w-5 mq_icon_size">
+                        <img src="{{ asset('img/quotes_icon.png') }}" alt="" class="w-8 mq_icon_size">
                         @if (App\Http\Controllers\UserController::quotes_notifications() > 0)
                             <div class="flex items-center justify-center text-black">
-                                <p class="text-sm font-bold">
+                                <p class="text-sm font-bold text-blue-500">
                                     ({{ App\Http\Controllers\UserController::quotes_notifications() }})
                                 </p>
                             </div>
@@ -68,7 +68,7 @@ $not_active_admin = 'border-green-200';
                         <img src="{{ asset('img/order_icon.png') }}" alt="" class="w-7 mq_icon_size">
                         @if (App\Http\Controllers\UserController::order_notifications() > 0)
                             <div class=" flex items-center justify-center text-black ">
-                                <p class="text-sm font-bold">
+                                <p class="text-sm font-bold text-blue-500">
                                     ({{ App\Http\Controllers\UserController::order_notifications() }})
                                 </p>
                             </div>
@@ -87,7 +87,7 @@ $not_active_admin = 'border-green-200';
                         <img src="{{ asset('img/delivery_icon.png') }}" alt="" class="w-7 mq_icon_size">
                         @if (App\Http\Controllers\UserController::deliveries_notifications() > 0)
                             <div class=" flex items-center justify-center text-black">
-                                <p class="text-sm font-bold">
+                                <p class="text-sm font-bold text-blue-500">
                                     ({{ App\Http\Controllers\UserController::deliveries_notifications() }})</p>
                             </div>
                         @endif
@@ -110,7 +110,7 @@ $not_active_admin = 'border-green-200';
                         <img src="{{ asset('img/messages_icon.png') }}" alt="" class="w-7 mq_icon_size">
                         @if (App\Http\Controllers\AdminController::notifications() > 0)
                             <div class="flex items-center justify-center text-black">
-                                <p class="text-sm font-bold">
+                                <p class="text-sm font-bold text-blue-500">
                                     ({{ App\Http\Controllers\AdminController::notifications() }})
                                 </p>
                             </div>
@@ -127,7 +127,7 @@ $not_active_admin = 'border-green-200';
                         <img src="{{ asset('img/quotes_icon.png') }}" alt="" class="w-5 mq_icon_size">
                         @if (App\Http\Controllers\AdminController::quotes_notifications() > 0)
                             <div class="flex items-center justify-center text-black">
-                                <p class="text-sm font-bold">
+                                <p class="text-sm font-bold text-blue-500">
                                     ({{ App\Http\Controllers\AdminController::quotes_notifications() }})</p>
                             </div>
                         @endif
@@ -145,7 +145,7 @@ $not_active_admin = 'border-green-200';
                         <img src="{{ asset('img/order_icon.png') }}" alt="" class="w-7 mq_icon_size">
                         @if (App\Http\Controllers\AdminController::order_notifications() > 0)
                             <div class=" flex items-center justify-center text-black">
-                                <p class="text-sm font-bold">
+                                <p class="text-sm font-bold text-blue-500">
                                     ({{ App\Http\Controllers\AdminController::order_notifications() }})
                                 </p>
                             </div>
