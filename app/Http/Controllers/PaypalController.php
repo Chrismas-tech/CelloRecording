@@ -7,36 +7,102 @@ use App\Mail\Order as MailOrder;
 use App\Models\Order;
 use App\Models\Quote;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use PayPal\Api\Amount;
 use PayPal\Api\Details;
+use PayPal\Api\Item;
+use PayPal\Api\ItemList;
+use PayPal\Api\Payer;
 use PayPal\Api\Payment;
 use PayPal\Api\PaymentExecution;
+use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
 
 class PaypalController extends Controller
 {
-    public function execute_payment(Request $request)
-    {
-        //    $req = $request->all();
-        //    dd($req);
+    private $apiContext;
 
-        /*On récupère la variable Session*/
+    public function __construct()
+    {
+        $api_Context = new \PayPal\Rest\ApiContext(
+            new \PayPal\Auth\OAuthTokenCredential(
+                'AXD4JaXfGe-qtPEvM6S7QHMYlpXJGp0bOy6H5GGe3ck-qRPTjOyhuEbQmn7w3iG-sD3beS8LRDpgpypX',     // ClientID
+                'EA3f0jdzj-ba2VvNjKSXkxQGeoTwhd8s5hTUqPYSQvzBxvAafDeF0dAWymbx6QtsIjXIELT6eZFLB98U'      // ClientSecret
+            )
+        );
+        $this->apiContext = $api_Context;
+    }
+
+    public function page_new_paypal_payment() {
+        return view('page_new_paypal_payment');
+    }
+
+    public function create_order_paypal(Request $request)
+    {
+        /* On récupère la variable de Session qui contient l'id du devis, donc son prix*/
         $quote_id = $request->session()->get('quote_ready_payment');
 
         $quote = Quote::where('id', $quote_id)->first();
         $price = $quote->price / 100;
 
-        $apiContext = new \PayPal\Rest\ApiContext(
-            new \PayPal\Auth\OAuthTokenCredential(
-                'ATdLwCnmk4QOjLGuyaPvBVsdw7-4VZD550fppzEUzW7vvEta_qzDG8uAbC1euta2_KO_OSgyCzC0Axva',     // ClientID
-                'EAaCbFvEvdO3chG5M8824QJ95J4-FKYXc5NvytBZ80uylqNjQCpg0fE8WUjJBRNxglBQaBcobX0WElDk'      // ClientSecret
-            )
-        );
+        /* PHP PAYPAL SDK SAMPLE CODE https://paypal.github.io/PayPal-PHP-SDK/sample/doc/payments/CreatePaymentUsingPayPal.html*/
+        $payer = new Payer();
+        $payer->setPaymentMethod("paypal");
+
+        $item1 = new Item();
+        $item1->setName('Ground Coffee 40 oz')
+            ->setCurrency('USD')
+            ->setQuantity(1)
+            ->setSku("123123") // Similar to `item_number` in Classic API
+            ->setPrice(7.5);
+        $item2 = new Item();
+        $item2->setName('Granola bars')
+            ->setCurrency('USD')
+            ->setQuantity(5)
+            ->setSku("321321") // Similar to `item_number` in Classic API
+            ->setPrice(2);
+
+        $itemList = new ItemList();
+        $itemList->setItems(array($item1, $item2));
+
+        $details = new Details();
+        $details->setShipping(1.2)
+            ->setTax(1.3)
+            ->setSubtotal(17.50);
+
+        $amount = new Amount();
+        $amount->setCurrency("USD")
+            ->setTotal(20)
+            ->setDetails($details);
+
+        $transaction = new Transaction();
+        $transaction->setAmount($amount)
+            ->setItemList($itemList)
+            ->setDescription("Payment description")
+            ->setInvoiceNumber(uniqid());
+
+        $redirectUrls = new RedirectUrls();
+        $redirectUrls->setReturnUrl("https://cellorecording.test/payment_success")
+            ->setCancelUrl("https://cellorecording.test/page_error");
+
+        $payment = new Payment();
+        $payment->setIntent("sale")
+            ->setPayer($payer)
+            ->setRedirectUrls($redirectUrls)
+            ->setTransactions(array($transaction));
+
+
+        $payment->create($this->apiContext);
+        return $payment->getApprovalLink();
+    }
+
+    public function execute_payment(Request $request)
+    {
 
         $paymentId = request('paymentId');
-        $payment = Payment::get($paymentId, $apiContext);
+        $payment = Payment::get($paymentId, $this->apiContext);
 
         $execution = new PaymentExecution();
         $execution->setPayerId(request('PayerID'));
@@ -56,7 +122,7 @@ class PaypalController extends Controller
 
         $execution->addTransaction($transaction);
 
-        $result = $payment->execute($execution, $apiContext);
+        $result = $payment->execute($execution, $this->apiContext);
 
         if (!($result->state == 'approved')) {
             return view('page_error')->with('message', 'The payment has not been approved by Paypal !');
@@ -99,7 +165,7 @@ class PaypalController extends Controller
         $user_name = $user->name;
 
         $message = "Your order has been confirmed !";
-        Mail::to($email_user)->send(new MailOrder($message,$user_name));
+        Mail::to($email_user)->send(new MailOrder($message, $user_name));
 
         return;
     }

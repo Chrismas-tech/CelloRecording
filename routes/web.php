@@ -3,17 +3,11 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\DateChangeController;
-use App\Http\Controllers\FileImageServe;
 use App\Http\Controllers\FileServeAdmin;
 use App\Http\Controllers\FileServeUser;
-use App\Http\Controllers\MonController;
-use App\Http\Controllers\PaymentPaypalController;
 use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\UploadfileController;
 use App\Http\Controllers\UserController;
-use App\Mail\ContactMail;
-use App\Models\User;
-use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -158,6 +152,6 @@ Route::get('/profile_image/{user_id}', [FileServeUser::class, 'profile_image_ser
 Route::get('/download_demo_cello', [FileServeUser::class, 'download_demo_cello'])->name('download_demo_cello');
 
 
-
 /* BAC A SABLE */
-Route::get('/page_new_paypal_payment', [PaymentPaypalController::class, 'page_new_paypal_payment'])->name('page_paypal_payment');
+Route::get('/page_new_paypal_payment', [PaypalController::class, 'page_new_paypal_payment'])->name('page_new_paypal_payment');
+Route::get('/create_order_paypal', [PaypalController::class, 'create_order_paypal'])->name('create_order_paypal');
