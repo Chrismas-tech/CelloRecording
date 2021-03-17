@@ -7,6 +7,7 @@ use App\Http\Controllers\FileImageServe;
 use App\Http\Controllers\FileServeAdmin;
 use App\Http\Controllers\FileServeUser;
 use App\Http\Controllers\MonController;
+use App\Http\Controllers\PaymentPaypalController;
 use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\UploadfileController;
 use App\Http\Controllers\UserController;
@@ -159,12 +160,4 @@ Route::get('/download_demo_cello', [FileServeUser::class, 'download_demo_cello']
 
 
 /* BAC A SABLE */
-Route::get('/bac-a-sable', function () {
-    return view('bac-a-sable.bac-a-sable', [
-        'info' => 'Very cool information',
-    ]);
-});
-
-Route::get('/bac-a-sable-2', function () {
-    return view('bac-a-sable.bac-a-sable-2');
-});
+Route::get('/page_new_paypal_payment', [PaymentPaypalController::class, 'page_new_paypal_payment'])->name('page_paypal_payment');
