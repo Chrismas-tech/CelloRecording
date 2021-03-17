@@ -143,6 +143,7 @@ Route::get('/audio_delivery_admin/{user_id}/{delivery_id}', [FileServeAdmin::cla
 /*PAYPAL-PAGE*/
 Route::post('/page_paypal_payment/{quote_id}/{price}', [UserController::class, 'page_paypal_payment'])->name('page_paypal_payment');
 
+Route::get('/create_order_paypal', [PaypalController::class, 'create_order_paypal'])->name('create_order_paypal');
 Route::get('/execute_payment', [PaypalController::class, 'execute_payment'])->name('execute_payment');
 
 
@@ -151,7 +152,3 @@ Route::get('/execute_payment', [PaypalController::class, 'execute_payment'])->na
 Route::get('/profile_image/{user_id}', [FileServeUser::class, 'profile_image_serve'])->name('profile_image');
 Route::get('/download_demo_cello', [FileServeUser::class, 'download_demo_cello'])->name('download_demo_cello');
 
-
-/* BAC A SABLE */
-Route::get('/page_new_paypal_payment', [PaypalController::class, 'page_new_paypal_payment'])->name('page_new_paypal_payment');
-Route::get('/create_order_paypal', [PaypalController::class, 'create_order_paypal'])->name('create_order_paypal');

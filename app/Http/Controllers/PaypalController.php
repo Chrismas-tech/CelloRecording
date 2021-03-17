@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\Messages;
 use App\Mail\Order as MailOrder;
 use App\Models\Order;
 use App\Models\Quote;
 use App\Models\User;
-use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use PayPal\Api\Amount;
@@ -23,6 +21,8 @@ use PayPal\Api\Transaction;
 class PaypalController extends Controller
 {
     private $apiContext;
+    private $price;
+    private $quote;
 
     public function __construct()
     {
@@ -35,17 +35,20 @@ class PaypalController extends Controller
         $this->apiContext = $api_Context;
     }
 
-    public function page_new_paypal_payment() {
+    public function page_new_paypal_payment()
+    {
         return view('page_new_paypal_payment');
     }
 
     public function create_order_paypal(Request $request)
     {
-        /* On récupère la variable de Session qui contient l'id du devis, donc son prix*/
+        /* On récupère la variable de Session qui contient l'id du devis, donc son prix initial */
         $quote_id = $request->session()->get('quote_ready_payment');
-
         $quote = Quote::where('id', $quote_id)->first();
         $price = $quote->price / 100;
+
+        $this->quote = $quote;
+        $this->price = $price;
 
         /* PHP PAYPAL SDK SAMPLE CODE https://paypal.github.io/PayPal-PHP-SDK/sample/doc/payments/CreatePaymentUsingPayPal.html*/
 
@@ -57,7 +60,7 @@ class PaypalController extends Controller
             ->setCurrency('EUR')
             ->setQuantity(1)
             ->setSku("123123") // Similar to `item_number` in Classic API
-            ->setPrice($price);
+            ->setPrice($this->price);
 
         $itemList = new ItemList();
         $itemList->setItems(array($item1));
@@ -65,11 +68,11 @@ class PaypalController extends Controller
         $details = new Details();
         $details->setShipping(0)
             ->setTax(0)
-            ->setSubtotal($price);
+            ->setSubtotal($this->price);
 
         $amount = new Amount();
         $amount->setCurrency('EUR')
-            ->setTotal($price)
+            ->setTotal($this->price)
             ->setDetails($details);
 
         $transaction = new Transaction();
@@ -79,7 +82,7 @@ class PaypalController extends Controller
             ->setInvoiceNumber(uniqid());
 
         $redirectUrls = new RedirectUrls();
-        $redirectUrls->setReturnUrl("https://cellorecording.test/payment_success")
+        $redirectUrls->setReturnUrl("https://cellorecording.test/execute_payment")
             ->setCancelUrl("https://cellorecording.test/page_error");
 
         $payment = new Payment();
@@ -94,12 +97,17 @@ class PaypalController extends Controller
 
     public function execute_payment(Request $request)
     {
+        /* On récupère la variable de Session qui contient l'id du devis, donc son prix initial */
+        $quote_id = $request->session()->get('quote_ready_payment');
+        $quote = Quote::where('id', $quote_id)->first();
+        $price = $quote->price / 100;
 
-        $paymentId = request('paymentId');
+        $paymentId = $request['paymentId'];
         $payment = Payment::get($paymentId, $this->apiContext);
 
         $execution = new PaymentExecution();
-        $execution->setPayerId(request('PayerID'));
+        $execution->setPayerId($request['PayerID']);
+
 
         $transaction = new Transaction();
         $amount = new Amount();
@@ -115,15 +123,15 @@ class PaypalController extends Controller
         $transaction->setAmount($amount);
 
         $execution->addTransaction($transaction);
-
         $result = $payment->execute($execution, $this->apiContext);
+        $response = $result->state;
+        //dd($result->transactions[0]->amount->total);
 
-        if (!($result->state == 'approved')) {
+        if ($response !== 'approved') {
             return view('page_error')->with('message', 'The payment has not been approved by Paypal !');
         } else {
 
             if ($result->transactions[0]->amount->total == $price) {
-
                 /* Destroy session variable */
                 $request->session()->forget('quote_ready_payment');
 

@@ -69,7 +69,7 @@
 
                         <div class="flex justify-end">
                             <div>
-                                <p>Total : <span
+                                <p>Total via Paypal : <span
                                         class="px-2 py-2 mb-3 text-white bg-red-400 rounded">{{ $quote->price / 100 }}
                                         €</span>
                                 </p>

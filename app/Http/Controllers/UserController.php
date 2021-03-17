@@ -435,7 +435,6 @@ class UserController extends Controller
             } else {
                 $request->session()->push('quote_ready_payment', $quote->id);
             }
-
             return view('admin.paypal_payment', compact('quote'));
         }
     }
