@@ -21,8 +21,6 @@ use PayPal\Api\Transaction;
 class PaypalController extends Controller
 {
     private $apiContext;
-    private $price;
-    private $quote;
 
     public function __construct()
     {
@@ -47,9 +45,6 @@ class PaypalController extends Controller
         $quote = Quote::where('id', $quote_id)->first();
         $price = $quote->price / 100;
 
-        $this->quote = $quote;
-        $this->price = $price;
-
         /* PHP PAYPAL SDK SAMPLE CODE https://paypal.github.io/PayPal-PHP-SDK/sample/doc/payments/CreatePaymentUsingPayPal.html*/
 
         $payer = new Payer();
@@ -60,7 +55,7 @@ class PaypalController extends Controller
             ->setCurrency('EUR')
             ->setQuantity(1)
             ->setSku("123123") // Similar to `item_number` in Classic API
-            ->setPrice($this->price);
+            ->setPrice($price);
 
         $itemList = new ItemList();
         $itemList->setItems(array($item1));
@@ -68,11 +63,11 @@ class PaypalController extends Controller
         $details = new Details();
         $details->setShipping(0)
             ->setTax(0)
-            ->setSubtotal($this->price);
+            ->setSubtotal($price);
 
         $amount = new Amount();
         $amount->setCurrency('EUR')
-            ->setTotal($this->price)
+            ->setTotal($price)
             ->setDetails($details);
 
         $transaction = new Transaction();
@@ -102,12 +97,13 @@ class PaypalController extends Controller
         $quote = Quote::where('id', $quote_id)->first();
         $price = $quote->price / 100;
 
+        /* PHP PAYPAL SDK SAMPLE CODE https://paypal.github.io/PayPal-PHP-SDK/sample/doc/payments/ExecutePayment.html*/
+
         $paymentId = $request['paymentId'];
         $payment = Payment::get($paymentId, $this->apiContext);
 
         $execution = new PaymentExecution();
         $execution->setPayerId($request['PayerID']);
-
 
         $transaction = new Transaction();
         $amount = new Amount();

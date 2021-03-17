@@ -142,7 +142,6 @@ Route::get('/audio_delivery_admin/{user_id}/{delivery_id}', [FileServeAdmin::cla
 
 /*PAYPAL-PAGE*/
 Route::post('/page_paypal_payment/{quote_id}/{price}', [UserController::class, 'page_paypal_payment'])->name('page_paypal_payment');
-
 Route::get('/create_order_paypal', [PaypalController::class, 'create_order_paypal'])->name('create_order_paypal');
 Route::get('/execute_payment', [PaypalController::class, 'execute_payment'])->name('execute_payment');
 
