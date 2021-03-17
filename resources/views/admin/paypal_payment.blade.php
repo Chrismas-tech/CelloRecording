@@ -12,7 +12,6 @@
 
             <div class="bg-white border-2 border-t-0 border-gray-300 rounded-b ">
 
-
                 <!-- IMG + DESCRIPTION -->
                 <!-- IMG + DESCRIPTION -->
                 <!-- IMG + DESCRIPTION -->
