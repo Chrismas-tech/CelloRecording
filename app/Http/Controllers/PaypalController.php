@@ -53,8 +53,8 @@ class PaypalController extends Controller
         $payer->setPaymentMethod("paypal");
 
         $item1 = new Item();
-        $item1->setName('Ground Coffee 40 oz')
-            ->setCurrency('USD')
+        $item1->setName($quote->tite)
+            ->setCurrency('EUR')
             ->setQuantity(1)
             ->setSku("123123") // Similar to `item_number` in Classic API
             ->setPrice($price);
@@ -68,8 +68,8 @@ class PaypalController extends Controller
             ->setSubtotal($price);
 
         $amount = new Amount();
-        $amount->setCurrency("USD")
-            ->setTotal(20)
+        $amount->setCurrency('EUR')
+            ->setTotal($price)
             ->setDetails($details);
 
         $transaction = new Transaction();
