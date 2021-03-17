@@ -417,10 +417,10 @@ class UserController extends Controller
 
 
 
-    public function page_paypal_payment(Request $request, $quote_id, $price)
+    public function page_paypal_payment(Request $request, $quote_id)
     {
         $user_id = auth()->user()->id;
-        $quote = Quote::where('user_id', $user_id)->where('id', $quote_id)->where('price', $price)->first();
+        $quote = Quote::where('user_id', $user_id)->where('id', $quote_id)->first();
 
         if (!$quote) {
 
