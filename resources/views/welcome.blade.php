@@ -119,18 +119,18 @@
                             <strong>Pôle
                                 Supérieur Paris Boulogne-Billancourt</strong>, then i continued my education by going to
                             the
-                            University of Music and Performing Arts Graz for my Master Degree.
+                            <strong>University of Music and Performing Arts Graz</strong>, for my Master Degree.
 
                             <br><br>
-                            I worked many years with the top orchestra of World renown : ORF Vienna Radio Symphony
-                            Orchestra
+                            I worked many years with the top orchestra of World renown : <strong>ORF Vienna Radio Symphony
+                            Orchestra</strong>
                             with which i performed in the world's most famous concert halls.
 
                             <br><br>
 
                             Since more than 4 years now, i'm working for music films, radios, and international
                             composers
-                            through famous online musical platforms like Airgigs and Soundbetter.
+                            through famous online musical platforms like <strong>Airgigs and Soundbetter</strong>.
                             <br><br>
 
                             I would be very glad to be a part of your next musical project !
