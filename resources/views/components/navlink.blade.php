@@ -123,8 +123,8 @@ $not_active_admin = 'border-green-200';
                     class="mq_li_fs relative p-5 md:mr-8  border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'quotes_sent' ? $active_admin : $not_active_admin }}">
                     Your Quotes
 
-                    <div class="absolute bottom-1 right-0 flex items-center">
-                        <img src="{{ asset('img/quotes_icon.png') }}" alt="" class="w-5 mq_icon_size">
+                    <div class="absolute bottom-0 right-0 flex items-center">
+                        <img src="{{ asset('img/quotes_icon.png') }}" alt="" class="w-6 mq_icon_size">
                         @if (App\Http\Controllers\AdminController::quotes_notifications() > 0)
                             <div class="flex items-center justify-center text-black">
                                 <p class="text-sm font-bold text-blue-500">
