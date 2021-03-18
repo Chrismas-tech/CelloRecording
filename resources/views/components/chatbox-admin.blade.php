@@ -6,7 +6,7 @@
 
                 <div class="flex justify-end">
 
-                    <div class="flex">
+                    <div class="flex mq_font_size_conversation_info">
                         <p class="mr-3 text-sm text-green-500">{{ $message->admin->name }}</p>
                         <p class="text-sm text-gray-500">
                             {{ App\Http\Controllers\DateChangeController::date_created_at_to_string($message->created_at) }}
@@ -37,7 +37,7 @@
 
             @else
                 <div class="flex justify-start text-xs sm:text-sm md:text-md lg:text-lg">
-                    <div class="flex">
+                    <div class="flex mq_font_size_conversation_info">
                         <p class="mr-3 text-sm text-indigo-500">{{ $message->user->name }}</p>
                         <p class="text-sm text-gray-500">
                             {{ App\Http\Controllers\DateChangeController::date_created_at_to_string($message->created_at) }}
