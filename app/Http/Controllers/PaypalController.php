@@ -26,8 +26,8 @@ class PaypalController extends Controller
     {
         $api_Context = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(
-                'AXD4JaXfGe-qtPEvM6S7QHMYlpXJGp0bOy6H5GGe3ck-qRPTjOyhuEbQmn7w3iG-sD3beS8LRDpgpypX',     // ClientID
-                'EA3f0jdzj-ba2VvNjKSXkxQGeoTwhd8s5hTUqPYSQvzBxvAafDeF0dAWymbx6QtsIjXIELT6eZFLB98U'      // ClientSecret
+                'AdsIAzhYOubOuMwko6xfyLssUENyKc3N0R33D3AdKHeWcx5wltR0ISjuHNpuiuj7DXgZwuypXf4s7uAs',     // ClientID
+                'EEGK9s4zv2MHt9KtXv2EfSHyfhRyVLkTc0sdL8iEHjgqBCEnczDdpJK7VBKlpxkzAavfrreGluJ10JQG'      // ClientSecret
             )
         );
         $this->apiContext = $api_Context;
