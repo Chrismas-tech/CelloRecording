@@ -124,7 +124,7 @@ $not_active_admin = 'border-green-200';
                     Your Quotes
 
                     <div class="absolute bottom-0 right-0 flex items-center">
-                        <img src="{{ asset('img/quotes_icon.png') }}" alt="" class="w-6 mq_icon_size">
+                        <img src="{{ asset('img/quotes_icon.png') }}" alt="" class="w-7 mq_icon_size">
                         @if (App\Http\Controllers\AdminController::quotes_notifications() > 0)
                             <div class="flex items-center justify-center text-black">
                                 <p class="text-sm font-bold text-blue-500">
