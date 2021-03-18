@@ -10,7 +10,7 @@ $not_active ="border-indigo-200";
             class="hover:text-purple-600 relative p-3 border-b-2 hover:border-indigo-500 {{ Route::currentRouteName() == 'profile' ? $active : $not_active }}">
             Profile
             <div class="absolute bottom-1 right-3 flex items-center">
-                <img src="{{ asset('img/profile.png') }}" alt="" class="w-12">
+                <img src="{{ asset('img/profile.png') }}" alt="" class="w-8">
             </div>
         </li>
     </a>
@@ -20,7 +20,7 @@ $not_active ="border-indigo-200";
         @csrf
         <button type="submit" class="p-3 ">Logout
             <div class="absolute bottom-1 right-3 flex items-center">
-                <img src="{{ asset('img/shutdown.png') }}" alt="" class="w-12">
+                <img src="{{ asset('img/shutdown.png') }}" alt="" class="w-8">
             </div>
         </button>
     </form>
@@ -32,7 +32,7 @@ $not_active ="border-indigo-200";
 
 
             <div class="absolute bottom-1 right-3 flex items-center">
-                <img src="{{ asset('img/home_icon.png') }}" alt="" class="w-12">
+                <img src="{{ asset('img/home_icon.png') }}" alt="" class="w-8">
             </div>
         </li>
     </a>
@@ -43,7 +43,7 @@ $not_active ="border-indigo-200";
 
             <div class="absolute bottom-1 right-3 flex items-center">
 
-                <img src="{{ asset('img/messages_icon.png') }}" alt="" class="w-12">
+                <img src="{{ asset('img/messages_icon.png') }}" alt="" class="w-8">
                 @if (App\Http\Controllers\UserController::notifications() > 0)
                     <div class="flex items-center justify-center text-black">
                         <p class="text-sm font-bold">({{ App\Http\Controllers\UserController::notifications() }})</p>
@@ -56,7 +56,7 @@ $not_active ="border-indigo-200";
         <li
             class="hover:text-purple-600 relative p-3  border-b-2 hover:border-indigo-500 {{ Route::currentRouteName() == 'quotes_received' ? $active : $not_active }}">
             Your Quotes
-            <div class="absolute flex items-center bottom-1 right-0">
+            <div class="absolute bottom-1 right-3 flex items-center">
 
                 <img src="{{ asset('img/quotes_icon.png') }}" alt="" class="w-9">
                 @if (App\Http\Controllers\UserController::quotes_notifications() > 0)
@@ -74,7 +74,7 @@ $not_active ="border-indigo-200";
             My Orders
 
             <div class="absolute bottom-1 right-3 flex items-center">
-                <img src="{{ asset('img/order_icon.png') }}" alt="" class="w-12">
+                <img src="{{ asset('img/order_icon.png') }}" alt="" class="w-8">
                 @if (App\Http\Controllers\UserController::order_notifications() > 0)
                     <div class=" flex items-center justify-center text-black ">
                         <p class="text-sm font-bold">({{ App\Http\Controllers\UserController::order_notifications() }})
@@ -90,7 +90,7 @@ $not_active ="border-indigo-200";
             My Deliveries
 
             <div class="absolute bottom-1 right-3 flex items-center">
-                <img src="{{ asset('img/delivery_icon.png') }}" alt="" class="w-12">
+                <img src="{{ asset('img/delivery_icon.png') }}" alt="" class="w-8">
                 @if (App\Http\Controllers\UserController::deliveries_notifications() > 0)
                     <div class=" flex items-center justify-center text-black">
                         <p class="text-sm font-bold">

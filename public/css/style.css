@@ -691,7 +691,11 @@ input[type="file"] {
     .mq_footer {
         font-size: 0.7rem;
     }
-    .mq_font_size_conversation_info {
+    .mq_font_size_conversation_info p {
         font-size: 0.8rem;
+    }
+    .mq_font_size_conversation_message p,
+    a {
+        font-size: 0.9rem;
     }
 }

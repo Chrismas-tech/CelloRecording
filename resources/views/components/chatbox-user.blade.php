@@ -43,7 +43,7 @@
                     </div>
                 </div>
 
-                <div class="flex justify-start text-xs sm:text-sm md:text-md lg:text-lg">
+                <div class="mq_font_size_conversation_message flex justify-start text-xs sm:text-sm md:text-md lg:text-lg">
                     <div>
                         @if ($message->type == 3)
                             <p class="px-1 py-1 mb-1 text-white bg-gray-400 rounded">You have declined the last offer
@@ -73,7 +73,7 @@
                     </div>
                 </div>
 
-                <div class="flex justify-end text-xs sm:text-sm md:text-md lg:text-lg">
+                <div class="mq_font_size_conversation_message flex justify-end text-xs sm:text-sm md:text-md lg:text-lg">
                     <div>
                         @if ($message->type == 3)
                             <p class="px-1 py-1 mb-1 text-white bg-gray-400 rounded">You have declined the last offer
