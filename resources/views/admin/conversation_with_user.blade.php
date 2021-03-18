@@ -41,7 +41,7 @@
                             </label>
 
                             <input type="file" id="file" name="file[]" accept="audio/*"
-                                class="focus:outline-none cursor-pointer" multiple>
+                                class="focus:outline-none cursor-pointer" multiple>   
 
                             <div id="div_send_music_file" class="w-max hidden">
                                 <button class="px-2 py-1 text-white bg-red-500 rounded" type="submit">
