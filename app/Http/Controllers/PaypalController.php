@@ -26,10 +26,20 @@ class PaypalController extends Controller
     {
         $api_Context = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(
-                'AdsIAzhYOubOuMwko6xfyLssUENyKc3N0R33D3AdKHeWcx5wltR0ISjuHNpuiuj7DXgZwuypXf4s7uAs',     // ClientID
-                'EEGK9s4zv2MHt9KtXv2EfSHyfhRyVLkTc0sdL8iEHjgqBCEnczDdpJK7VBKlpxkzAavfrreGluJ10JQG'      // ClientSecret
+                env('PAYPAL_CLIENT_ID'),   // ClientID
+                env('PAYPAL_SECRET')      // ClientSecret
             )
         );
+
+        $api_Context->setConfig(
+            array(
+                'log.LogEnabled' => true,
+                'log.FileName' => 'PayPal.log',
+                'log.LogLevel' => 'DEBUG',
+                'mode' => env('PAYPAL_MODE')
+            )
+        );
+
         $this->apiContext = $api_Context;
     }
 
@@ -40,10 +50,12 @@ class PaypalController extends Controller
 
     public function create_order_paypal(Request $request)
     {
+
         /* On récupère la variable de Session qui contient l'id du devis, donc son prix initial */
         $quote_id = $request->session()->get('quote_ready_payment');
         $quote = Quote::where('id', $quote_id)->first();
         $price = $quote->price / 100;
+ 
 
         /* PHP PAYPAL SDK SAMPLE CODE https://paypal.github.io/PayPal-PHP-SDK/sample/doc/payments/CreatePaymentUsingPayPal.html*/
 
@@ -87,6 +99,7 @@ class PaypalController extends Controller
             ->setTransactions(array($transaction));
 
         $payment->create($this->apiContext);
+
         return redirect($payment->getApprovalLink());
     }
 
