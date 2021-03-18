@@ -52,8 +52,8 @@
 
                     <div class="text-xl ml-8 flex flex-col justify-between mq_price_details_block">
 
-                        <div class="px-2 py-2 mb-8 text-white bg-blue-600 rounded courgette_font">
-                            <h1 class="mq_payment_page_font_size_titles text-2xl ">
+                        <div class="px-2 py-2 mb-8 text-white bg-blue-600 rounded">
+                            <h1 class="karma mq_payment_page_font_size_titles text-2xl ">
                                 Price Details
                             </h1>
                         </div>
