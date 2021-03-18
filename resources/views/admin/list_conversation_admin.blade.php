@@ -13,14 +13,14 @@
 
                     <div>
 
-                        @foreach ($conversations as $conversation)
+                        @foreach ($nb_users as $user)
                             <div>
 
                                 <a class="p-3 flex justify-between overflow-hidden text-xl text-black karma bg-blue-400 w-full hover:bg-blue-500 border-gray-300 border-b border-r border-l"
-                                    href="{{ route('conversation_with_user', ['user_id' => $conversation->user_id]) }}">
+                                    href="{{ route('conversation_with_user', ['user_id' => $user->id]) }}">
 
                                     <div>
-                                        Talk with <span class="text-white"> {{ $conversation->user->name }} </span> now !
+                                        Talk with <span class="text-white"> {{ $user->name }} </span> now !
                                     </div>
        
                                 </a>

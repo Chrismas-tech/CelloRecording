@@ -111,12 +111,12 @@ class AdminController extends Controller
         $admin_id = Admin::find(1)->id;
         $notifs_all_user = Notification::where('direction_send', 0)->where('nb_notif', '!=', 0)->get();
 
-        /* On sélectionne le nombre de conversations en cours : toutes les entrées qui ne correspondent pas à un expéditeur Admin et qui pour leur user_id sont uniques.  */
+        /* On compte le nombre d'utilisateur */
 
-        $conversations = Message::select('user_id', 'direction_send')->where('direction_send', 0)->distinct()->get();
+        $nb_users = User::all();
         $nb_notifications = Notification::where('admin_id',  $admin_id)->sum('nb_notif');
 
-        return view('admin.list_conversation_admin', compact('nb_notifications', 'conversations', 'notifs_all_user'));
+        return view('admin.list_conversation_admin', compact('nb_notifications', 'nb_users', 'notifs_all_user'));
     }
 
     public static function notifications()
