@@ -7,6 +7,26 @@
 
     {!! SEOMeta::generate() !!}
 
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('img/favicon/apple-icon-57x57.png') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('img/favicon/apple-icon-60x60.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('img/favicon/apple-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/favicon/apple-icon-76x76.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('img/favicon/apple-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('img/favicon/apple-icon-120x120.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('img/favicon/apple-icon-144x144.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('img/favicon/apple-icon-152x152.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon/apple-icon-180x180.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('img/favicon/android-icon-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('img/favicon/favicon-96x96.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('favicon/manifest.json') }}">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -56,11 +76,12 @@
 
             @if (Session::has('send_success'))
                 <div class="text-center mb-10 mt-10">
-                    <p class="title_jumbo mq_font_email_title text-5xl dancing_font">{{ Session::get('send_success') }}</p>
+                    <p class="title_jumbo mq_font_email_title text-5xl dancing_font">
+                        {{ Session::get('send_success') }}</p>
                 </div>
             @endif
 
-            <div class="text-3xl karma border p-8 border-white rounded max-w-4xl mx-auto bg-gray-800" >
+            <div class="text-3xl karma border p-8 border-white rounded max-w-4xl mx-auto bg-gray-800">
                 <form action="{{ route('send_contact_email') }}" method="POST">
                     @csrf
                     <div class="flex flex-col items-center">
@@ -111,11 +132,11 @@
                     </div>
 
                     <div class="flex justify-center mb-3">
-                            @if ($errors->has('g-recaptcha-response'))
-                                <span class="text-white text-xl">
-                                    {{ $errors->first('g-recaptcha-response') }}
-                                </span>
-                            @endif
+                        @if ($errors->has('g-recaptcha-response'))
+                            <span class="text-white text-xl">
+                                {{ $errors->first('g-recaptcha-response') }}
+                            </span>
+                        @endif
                     </div>
 
                     <div class="flex justify-center">
@@ -133,7 +154,8 @@
         </div>
     </div>
 
-    <footer class="mq_footer flex justify-center p-8 text-xl text-white bg-gray-500 border border-gray-500 nav_button_font">
+    <footer
+        class="mq_footer flex justify-center p-8 text-xl text-white bg-gray-500 border border-gray-500 nav_button_font">
         <div>
             <h3>Copyright &copy; 2020 Christophe Luciani, all Rights Reserved</h3>
         </div>

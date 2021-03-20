@@ -26,6 +26,8 @@ class PaypalController extends Controller
 
     public function __construct()
     {
+        /* SANDBOX */
+        
         $api_Context = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(
                 env('SANDBOX_CLIENT_ID'),   // ClientID
@@ -34,7 +36,6 @@ class PaypalController extends Controller
         );
 
         /*
-        .env change paypal_mode to live
         $api_Context = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(
                 env('PAYPAL_CLIENT_ID'),   // ClientID
@@ -102,8 +103,8 @@ class PaypalController extends Controller
             ->setInvoiceNumber(uniqid());
 
         $redirectUrls = new RedirectUrls();
-        $redirectUrls->setReturnUrl("https://cellorecording.test/execute_payment")
-            ->setCancelUrl("https://cellorecording.test/page-error");
+        $redirectUrls->setReturnUrl("https://cellorecording.com/execute_payment")
+            ->setCancelUrl("https://cellorecording.com/page-error");
 
         $payment = new Payment();
         $payment->setIntent("sale")
