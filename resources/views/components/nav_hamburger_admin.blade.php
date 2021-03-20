@@ -6,7 +6,7 @@ $not_active_admin ="border-green-200";
 
 <div class="list-none">
 
-    <a href="{{ route('dashboard_admin') }}" class="hover:text-green-600">
+    <a href="{{ route('dashboard-admin') }}" class="hover:text-green-600">
         <li
             class="relative p-5  border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'dashboard_admin' ? $active_admin : $not_active_admin }}">
             Admin Dashboard
@@ -15,7 +15,7 @@ $not_active_admin ="border-green-200";
             </div>
         </li>
     </a>
-    <a href="{{ route('list_conversation_admin') }}" class="hover:text-green-600">
+    <a href="{{ route('list-conversation-admin') }}" class="hover:text-green-600">
         <li
             class="relative p-5  border-b-2 hover:border-green-500  {{ Route::currentRouteName() == 'list_conversation_admin' ? $active_admin : $not_active_admin }}">
             Conversations with Clients
@@ -30,9 +30,9 @@ $not_active_admin ="border-green-200";
             </div>
         </li>
     </a>
-    <a href="{{ route('quotes_sent') }}" class="hover:text-green-600">
+    <a href="{{ route('quotes-sent') }}" class="hover:text-green-600">
         <li
-            class="relative p-5  border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'quotes_sent' ? $active_admin : $not_active_admin }}">
+            class="relative p-5  border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'quotes-sent' ? $active_admin : $not_active_admin }}">
             Your Quotes
 
             <div class="flex absolute bottom-3 right-3">
@@ -49,7 +49,7 @@ $not_active_admin ="border-green-200";
 
     <a href="{{ route('orders_admin') }}" class="hover:text-purple-600">
         <li
-            class="relative p-5  border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'orders_admin' ? $active_admin : $not_active_admin }}">
+            class="relative p-5  border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'orders-admin' ? $active_admin : $not_active_admin }}">
             My Orders
 
             <div class="absolute bottom-3 right-3 flex items-center">

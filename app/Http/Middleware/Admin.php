@@ -46,7 +46,7 @@ class Admin
                     $request->session()->push('admin_name', $admin_name);
                     $request->session()->push('admin_password', $admin_password);
 
-                    return redirect('dashboard_admin');
+                    return redirect('dashboard-admin');
                 } else {
                     /* SINON ERREUR SUR LA MEME PAGE */
                     return redirect()->back()->with('error', 'Invalid name or password');

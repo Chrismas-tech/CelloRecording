@@ -52,9 +52,9 @@ $not_active ="border-indigo-200";
             </div>
         </li>
     </a>
-    <a href="{{ route('quotes_received') }}">
+    <a href="{{ route('quotes-received') }}">
         <li
-            class="hover:text-purple-600 relative p-3  border-b-2 hover:border-indigo-500 {{ Route::currentRouteName() == 'quotes_received' ? $active : $not_active }}">
+            class="hover:text-purple-600 relative p-3  border-b-2 hover:border-indigo-500 {{ Route::currentRouteName() == 'quotes-received' ? $active : $not_active }}">
             Your Quotes
             <div class="absolute bottom-1 right-3 flex items-center">
 

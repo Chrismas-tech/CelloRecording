@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
@@ -27,6 +28,9 @@ class AdminController extends Controller
     public function __construct()
     {
         $this->middleware('admin', ['except' => 'page_admin']);
+        $name_route = Route::getFacadeRoot()->current()->uri();
+        //dd($name_route);
+        SEOController::metaTag($name_route);
     }
 
     public function connection_already_verified()

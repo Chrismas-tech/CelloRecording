@@ -96,15 +96,15 @@ $not_active_admin = 'border-green-200';
             </a>
 
         @else
-            <a href="{{ route('dashboard_admin') }}" class="hover:text-green-600">
+            <a href="{{ route('dashboard-admin') }}" class="hover:text-green-600">
                 <li
-                    class="mq_li_fs p-5 md:mr-8  border-b-2 hover:border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'dashboard_admin' ? $active_admin : $not_active_admin }}">
+                    class="mq_li_fs p-5 md:mr-8  border-b-2 hover:border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'dashboard-admin' ? $active_admin : $not_active_admin }}">
                     Admin Dashboard
                 </li>
             </a>
-            <a href="{{ route('list_conversation_admin') }}" class="hover:text-green-600">
+            <a href="{{ route('list-conversation-admin') }}" class="hover:text-green-600">
                 <li
-                    class="mq_li_fs relative p-5 md:mr-8  border-b-2 hover:border-green-500  {{ Route::currentRouteName() == 'list_conversation_admin' ? $active_admin : $not_active_admin }}">
+                    class="mq_li_fs relative p-5 md:mr-8  border-b-2 hover:border-green-500  {{ Route::currentRouteName() == 'list-conversation-admin' ? $active_admin : $not_active_admin }}">
                     Conversations with Clients
                     <div class="absolute bottom-0 right-0 flex items-center">
                         <img src="{{ asset('img/messages_icon.png') }}" alt="" class="w-7 mq_icon_size">
@@ -118,9 +118,9 @@ $not_active_admin = 'border-green-200';
                     </div>
                 </li>
             </a>
-            <a href="{{ route('quotes_sent') }}" class="hover:text-green-600">
+            <a href="{{ route('quotes-sent') }}" class="hover:text-green-600">
                 <li
-                    class="mq_li_fs relative p-5 md:mr-8  border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'quotes_sent' ? $active_admin : $not_active_admin }}">
+                    class="mq_li_fs relative p-5 md:mr-8  border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'quotes-sent' ? $active_admin : $not_active_admin }}">
                     Your Quotes
 
                     <div class="absolute bottom-0 right-0 flex items-center">
@@ -138,7 +138,7 @@ $not_active_admin = 'border-green-200';
 
             <a href="{{ route('orders_admin') }}" class="hover:text-green-600">
                 <li
-                    class="mq_li_fs relative p-5 md:mr-8  border-b-2 hover:border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'orders_admin' ? $active_admin : $not_active_admin }}">
+                    class="mq_li_fs relative p-5 md:mr-8  border-b-2 hover:border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'orders-admin' ? $active_admin : $not_active_admin }}">
                     My Orders
 
                     <div class="absolute bottom-0 right-0 flex items-center">

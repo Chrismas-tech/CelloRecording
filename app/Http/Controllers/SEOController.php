@@ -13,7 +13,7 @@ class SEOController extends Controller
 
         switch ($name_route) {
 
-            /* ROUTE LOGIN */
+                /* ROUTE LOGIN */
             case $name_route == 'login':
                 SEOMeta::setTitle('Login into your account');
                 SEOMeta::setDescription('Login into your account on Cellorecording.com, fill the following formular');
@@ -24,7 +24,7 @@ class SEOController extends Controller
                 ]);
                 break;
 
-            /* ROUTE REGISTER */
+                /* ROUTE REGISTER */
             case $name_route == 'register':
                 SEOMeta::setTitle('Create your account');
                 SEOMeta::setDescription('Create your account on Cellorecording.com, fill the following formular');
@@ -36,7 +36,7 @@ class SEOController extends Controller
                 ]);
                 break;
 
-            /* ROUTES USER */
+                /* ROUTES USER */
             case $name_route == '/':
                 SEOMeta::setTitle('Professional Cello Recording Services Online | 7/7 days');
                 SEOMeta::setDescription('In need of a Professional Cellist for your next musical project ? On Cellorecording.com, get a quote and order your professional cello recording today !');
@@ -140,11 +140,41 @@ class SEOController extends Controller
                 SEOMeta::addKeyword(['Profile', 'cellorecording.com', 'Your Profile', 'Deliveries page', 'Your account', 'Change password', 'Change username', 'Change email']);
                 break;
 
-            /* ROUTES ADMIN */
+                /* ROUTES ADMIN */
             case $name_route == 'admin':
-                SEOMeta::setTitle('Admin');
+                SEOMeta::setTitle('Admin - Connection');
                 SEOMeta::setDescription('Here is the page reserved to the administrator connection');
-                SEOMeta::addKeyword(['Profile', 'cellorecording.com', 'Your Profile', 'Deliveries page', 'Your account', 'Change password', 'Change username', 'Change email']);
+                SEOMeta::addKeyword(['Admin', 'cellorecording.com', 'Admin connection page']);
+                break;
+
+            case $name_route == 'dashboard-admin':
+                SEOMeta::setTitle('Admin - Dashboard');
+                SEOMeta::setDescription('Here is the dashboard page reserved to the administrator');
+                SEOMeta::addKeyword(['Admin', 'cellorecording.com', 'Admin dashboard page']);
+                break;
+
+            case $name_route == 'list-conversation-admin':
+                SEOMeta::setTitle('Admin - List of Conversation');
+                SEOMeta::setDescription('Here is the list conversation page reserved to the administrator');
+                SEOMeta::addKeyword(['Admin', 'cellorecording.com', 'Admin - list of conversation page']);
+                break;
+
+            case $name_route == 'quotes-sent':
+                SEOMeta::setTitle('Admin - Quotes sent to clients');
+                SEOMeta::setDescription('Here is the list of quotes sent to clients, a page reserved to the administrator');
+                SEOMeta::addKeyword(['Admin', 'cellorecording.com', 'Admin - page of quotes sent to clients']);
+                break;
+
+            case $name_route == 'orders-admin':
+                SEOMeta::setTitle('Admin - List of current orders');
+                SEOMeta::setDescription('Here is the list of current orders of clients, a page reserved to the administrator');
+                SEOMeta::addKeyword(['Admin', 'cellorecording.com', 'Admin - list of current orders']);
+                break;
+
+            case $name_route == 'orders-admin':
+                SEOMeta::setTitle('Admin - List of current orders');
+                SEOMeta::setDescription('Here is the list of current orders of clients, a page reserved to the administrator');
+                SEOMeta::addKeyword(['Admin', 'cellorecording.com', 'Admin - list of current orders']);
                 break;
         }
     }

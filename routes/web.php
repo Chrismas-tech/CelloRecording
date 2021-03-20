@@ -89,18 +89,18 @@ Route::post('/upload_delivery', [UploadfileController::class, 'upload_delivery']
 
 Route::get('/admin', [AdminController::class, 'page_admin'])->name('admin');
 Route::get('/admin_logout', [AdminController::class, 'page_admin_logout'])->name('admin_logout');
-Route::get('/dashboard_admin', [AdminController::class, 'page_dashboard'])->name('dashboard_admin');
+Route::get('/dashboard-admin', [AdminController::class, 'page_dashboard'])->name('dashboard-admin');
 
 /* fausse route pour retourner sur le Middleware et valider le mot de passe et le name */
 Route::post('/connection_admin', [AdminController::class, 'connection_already_verified'])->name('connection_admin');
 
 /* SIDE ADMIN */
 
-Route::get('/quotes_sent', [AdminController::class, 'page_quotes_sent'])->name('quotes_sent');
-Route::get('/list_conversation_admin', [AdminController::class, 'page_list_conversation_admin'])->name('list_conversation_admin');
+Route::get('/quotes-sent', [AdminController::class, 'page_quotes_sent'])->name('quotes-sent');
+Route::get('/list-conversation-admin', [AdminController::class, 'page_list_conversation_admin'])->name('list-conversation-admin');
 Route::get('/quote_form/{user_id}', [AdminController::class, 'page_quote_form'])->name('quote_form');
 Route::post('/send_quote_client', [AdminController::class, 'send_quote_client'])->name('send_quote_client');
-Route::get('/orders_admin', [AdminController::class, 'page_orders_admin'])->name('orders_admin');
+Route::get('/orders-admin', [AdminController::class, 'page_orders_admin'])->name('orders_admin');
 Route::get('/order_view_admin/{order_id}', [AdminController::class, 'page_order_view_admin'])->name('order_view_admin');
 Route::post('/new_conversation_admin/{user_id}', [AdminController::class, 'new_conversation_admin'])->name('new_conversation_admin');
 Route::get('/conversation_with_user/{user_id}', [AdminController::class, 'conversation_with_user'])->name('conversation_with_user');
