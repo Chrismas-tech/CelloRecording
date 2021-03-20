@@ -31,6 +31,11 @@ class UserController extends Controller
     {
         $this->middleware('auth', ['except' => array('page_contact', 'page_send_contact_email')]);
     }
+    
+    public function welcome_page()
+    {
+        return view('welcome');
+    }
 
     public function page_dashboard()
     {
