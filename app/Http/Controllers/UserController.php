@@ -13,7 +13,8 @@ use App\Models\NumberFiles;
 use App\Models\Order;
 use App\Models\Quote;
 use App\Models\User;
-use Artesaos\SEOTools\Facades\SEOMeta;
+use Artesaos\SEOTools\Facades\SEOTools
+use Artesaos\SEOTools\Facades\SEOTools;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -450,47 +451,59 @@ class UserController extends Controller
     private function metaTag($name_route)
     {
 
-        SEOMeta::setCanonical('https://cellorecording.test/' . $name_route);
-        SEOMeta::addKeyword([
-            'cello recording studio',
-            'cello recording online',
-            'cello recording app',
-            'cello recordings best',
-            'cello recording techniques',
-            'recording cello at home',
-            'cello audio recording',
-            'cello recording studios los angeles',
-            'recording a cello',
-            'best cello recording',
-            'recording for cello',
-            'cello home recording',
-            'cello in recording ',
-            'remote cello recording',
-            'recording cello solo',
-            'recording setup cello',
-            'how to record cello at home',
-            'how to recording cello sound',
-            'cello customer service',
-            'cello wrapping services',
-            'cello customer service number',
-            'cello customer care',
-            'cello tv customer service',
-            'cello connection',
-            '2 cello',
-            '2cellos',
-            'recording cello',
-            'cello session player',
-            'remote cello recording online',
-        ]);
+        SEOTools::setCanonical('https://cellorecording.test/' . $name_route);
 
         switch ($name_route) {
             case $name_route == '/':
-                SEOMeta::setTitle('Professional Cello Recording Services Online | 7/7 days');
-                SEOMeta::setDescription('In need of a Professional Cellist for your next musical project ? On Cellorecording.com, get a quote and order your professional cello recording today !');
+                SEOTools::setTitle('Professional Cello Recording Services Online | 7/7 days');
+                SEOTools::setDescription('In need of a Professional Cellist for your next musical project ? On Cellorecording.com, get a quote and order your professional cello recording today !');
+                SEOTools::addKeyword([
+                    'cellorecording.com',
+                    'cello recording studio',
+                    'cello recording online',
+                    'cello recording app',
+                    'cello recordings best',
+                    'cello recording techniques',
+                    'recording cello at home',
+                    'cello audio recording',
+                    'cello recording studios los angeles',
+                    'recording a cello',
+                    'best cello recording',
+                    'recording for cello',
+                    'cello home recording',
+                    'cello in recording ',
+                    'remote cello recording',
+                    'recording cello solo',
+                    'recording setup cello',
+                    'how to record cello at home',
+                    'how to recording cello sound',
+                    'cello customer service',
+                    'cello wrapping services',
+                    'cello customer service number',
+                    'cello customer care',
+                    'cello tv customer service',
+                    'cello connection',
+                    '2 cello',
+                    '2cellos',
+                    'recording cello',
+                    'cello session player',
+                    'remote cello recording online',
+                ]);
                 break;
             case $name_route == 'contact':
-                SEOMeta::setTitle('Contact page');
-                SEOMeta::setDescription('On this page you can send me an email');
+                SEOTools::setTitle('Contact page');
+                SEOTools::setDescription('On this page you can send an email to cellorecording.com');
+                SEOTools::addKeyword([
+                    'cellorecording.com',
+                    'Dashboard',
+                    'Proceed for a cello recording',
+                    'Guide',
+                ]);
+                break;
+            case $name_route == 'dashboard':
+                SEOTools::setTitle('Dashboard');
+                SEOTools::setDescription('Here is your dashboard, follow the guide below to proceed for a cello recording');
+                SEOTools::addKeyword(['']);
                 break;
         }
     }

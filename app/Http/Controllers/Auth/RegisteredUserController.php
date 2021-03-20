@@ -10,6 +10,7 @@ use App\Models\NumberFiles;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Artesaos\SEOTools\Facades\SEOMeta;
+use Artesaos\SEOTools\Facades\SEOTools;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -91,43 +92,18 @@ class RegisteredUserController extends Controller
     private function metaTag($name_route)
     {
 
-        SEOMeta::setCanonical('https://cellorecording.test/' . $name_route);
-        SEOMeta::addKeyword([
-            'cello recording studio',
-            'cello recording online',
-            'cello recording app',
-            'cello recordings best',
-            'cello recording techniques',
-            'recording cello at home',
-            'cello audio recording',
-            'cello recording studios los angeles',
-            'recording a cello',
-            'best cello recording',
-            'recording for cello',
-            'cello home recording',
-            'cello in recording ',
-            'remote cello recording',
-            'recording cello solo',
-            'recording setup cello',
-            'how to record cello at home',
-            'how to recording cello sound',
-            'cello customer service',
-            'cello wrapping services',
-            'cello customer service number',
-            'cello customer care',
-            'cello tv customer service',
-            'cello connection',
-            '2 cello',
-            '2cellos',
-            'recording cello',
-            'cello session player',
-            'remote cello recording online',
+        SEOTools::setCanonical('https://cellorecording.test/' . $name_route);
+        SEOTools::addKeyword([
+            'cellorecording.com',
+            'Cello recording',
+            'Register a new account',
+            'Create an account',
         ]);
 
         switch ($name_route) {
             case $name_route == 'register':
-                SEOMeta::setTitle('Professional Cello Recording Services Online | 7/7 days');
-                SEOMeta::setDescription('Create your account on Cellorecording.com, fill the following formular');
+                SEOTools::setTitle('Professional Cello Recording Services Online | 7/7 days');
+                SEOTools::setDescription('Create your account on Cellorecording.com, fill the following formular');
                 break;
         }
     }
