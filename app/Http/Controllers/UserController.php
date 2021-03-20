@@ -6,7 +6,6 @@ use App\Mail\ContactMail;
 use App\Mail\MessageToAdmin;
 use App\Mail\Revision;
 use App\Models\Admin;
-
 use App\Models\Delivery;
 use App\Models\Message;
 use App\Models\Notification;
@@ -14,9 +13,11 @@ use App\Models\NumberFiles;
 use App\Models\Order;
 use App\Models\Quote;
 use App\Models\User;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
@@ -26,11 +27,14 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
+    public function __construct(Request $request)
     {
-        $this->middleware('auth', ['except' => array('page_welcome','page_contact', 'page_send_contact_email')]);
+        $this->middleware('auth', ['except' => array('page_welcome', 'page_contact', 'page_send_contact_email')]);
+        $name_route = Route::getFacadeRoot()->current()->uri();
+        //dd($name_route);
+        $this->metaTag($name_route);
     }
-    
+
     public function page_welcome()
     {
         return view('welcome');
@@ -440,6 +444,23 @@ class UserController extends Controller
                 $request->session()->push('quote_ready_payment', $quote->id);
             }
             return view('admin.paypal_payment', compact('quote'));
+        }
+    }
+
+    private function metaTag($name_route)
+    {
+
+        switch ($name_route) {
+            case $name_route == '/':
+                SEOMeta::setTitle('Welcome page');
+                SEOMeta::setDescription('This is my page description');
+                SEOMeta::setCanonical('https://codecasts.com.br/lesson');
+                break;
+            case $name_route == 'contact':
+                SEOMeta::setTitle('Contact page');
+                SEOMeta::setDescription('This is my page description');
+                SEOMeta::setCanonical('https://codecasts.com.br/lesson');
+                break;
         }
     }
 }
