@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\SEOController;
 
 class UserController extends Controller
 {
@@ -32,7 +33,7 @@ class UserController extends Controller
         $this->middleware('auth', ['except' => array('page_welcome', 'page_contact', 'page_send_contact_email')]);
         $name_route = Route::getFacadeRoot()->current()->uri();
         //dd($name_route);
-        $this->metaTag($name_route);
+        SEOController::metaTag($name_route);
     }
 
     public function page_welcome()
@@ -443,67 +444,9 @@ class UserController extends Controller
             } else {
                 $request->session()->push('quote_ready_payment', $quote->id);
             }
-            return view('admin.paypal_payment', compact('quote'));
+            return view('paypal_payment', compact('quote'));
         }
     }
 
-    private function metaTag($name_route)
-    {
 
-        SEOMeta::setCanonical('https://cellorecording.test/' . $name_route);
-
-        switch ($name_route) {
-            case $name_route == '/':
-                SEOMeta::setTitle('Professional Cello Recording Services Online | 7/7 days');
-                SEOMeta::setDescription('In need of a Professional Cellist for your next musical project ? On Cellorecording.com, get a quote and order your professional cello recording today !');
-                SEOMeta::addKeyword([
-                    'cellorecording.com',
-                    'cello recording studio',
-                    'cello recording online',
-                    'cello recording app',
-                    'cello recordings best',
-                    'cello recording techniques',
-                    'recording cello at home',
-                    'cello audio recording',
-                    'cello recording studios los angeles',
-                    'recording a cello',
-                    'best cello recording',
-                    'recording for cello',
-                    'cello home recording',
-                    'cello in recording ',
-                    'remote cello recording',
-                    'recording cello solo',
-                    'recording setup cello',
-                    'how to record cello at home',
-                    'how to recording cello sound',
-                    'cello customer service',
-                    'cello wrapping services',
-                    'cello customer service number',
-                    'cello customer care',
-                    'cello tv customer service',
-                    'cello connection',
-                    '2 cello',
-                    '2cellos',
-                    'recording cello',
-                    'cello session player',
-                    'remote cello recording online',
-                ]);
-                break;
-            case $name_route == 'contact':
-                SEOMeta::setTitle('Contact page');
-                SEOMeta::setDescription('On this page you can send an email to cellorecording.com');
-                SEOMeta::addKeyword([
-                    'cellorecording.com',
-                    'Dashboard',
-                    'Proceed for a cello recording',
-                    'Guide',
-                ]);
-                break;
-            case $name_route == 'dashboard':
-                SEOMeta::setTitle('Dashboard');
-                SEOMeta::setDescription('Here is your dashboard, follow the guide below to proceed for a cello recording');
-                SEOMeta::addKeyword(['']);
-                break;
-        }
-    }
 }

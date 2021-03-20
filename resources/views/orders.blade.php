@@ -155,7 +155,7 @@
                                     class="{{ $class }} bg-white border p-4 align-middle text-center text-sm md:text-md lg:text-xl">
 
                                     @if ($order->status == 1)
-                                        <form action="{{ route('delivery_view', [$order->id]) }}" method="post">
+                                        <form action="{{ route('delivery-view', [$order->id]) }}" method="post">
                                             @csrf
                                             <button class="underline">Check
                                                 your delivery now !
@@ -166,14 +166,14 @@
                                     @elseif ($order->status == 3)
                                         <p>Cello Recording in process...</p>
                                     @elseif ($order->status == 4)
-                                        <form action="{{ route('delivery_view', [$order->id]) }}" method="post">
+                                        <form action="{{ route('delivery-view', [$order->id]) }}" method="post">
                                             @csrf
                                             <button class="underline">Revision in
                                                 Process
                                             </button>
                                         </form>
                                     @elseif ($order->status == 5)
-                                        <form action="{{ route('delivery_view', [$order->id]) }}" method="post">
+                                        <form action="{{ route('delivery-view', [$order->id]) }}" method="post">
                                             @csrf
                                             <button class="underline">Order marked as
                                                 completed
@@ -255,7 +255,7 @@
                     </div>
                     <div class="flex text-xl mt-3 justify-center">
                         @if ($order->status == 1)
-                            <form action="{{ route('delivery_view', [$order->id]) }}" method="post">
+                            <form action="{{ route('delivery-view', [$order->id]) }}" method="post">
                                 @csrf
                                 <button class="underline">Check
                                     your delivery now !
@@ -266,14 +266,14 @@
                         @elseif ($order->status == 3)
                             <p> Cello Recording in process...</p>
                         @elseif ($order->status == 4)
-                            <form action="{{ route('delivery_view', [$order->id]) }}" method="post">
+                            <form action="{{ route('delivery-view', [$order->id]) }}" method="post">
                                 @csrf
                                 <button class="underline"> Revision in
                                     Process
                                 </button>
                             </form>
                         @elseif ($order->status == 5)
-                            <form action="{{ route('delivery_view', [$order->id]) }}" method="post">
+                            <form action="{{ route('delivery-view', [$order->id]) }}" method="post">
                                 @csrf
                                 <button class="underline"> Order marked as
                                     completed

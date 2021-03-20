@@ -3,13 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Middleware\Admin;
+use App\Http\Controllers\SEOController;
 use App\Models\Admin as ModelsAdmin;
 use App\Models\Notification;
 use App\Models\NumberFiles;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
-use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +25,7 @@ class RegisteredUserController extends Controller
     public function create()
     {
         $name_route = Route::getFacadeRoot()->current()->uri();
-        $this->metaTag($name_route);
+        SEOController::metaTag($name_route);
         return view('auth.register');
     }
 
@@ -68,7 +67,7 @@ class RegisteredUserController extends Controller
             'direction_send' => 0,
             'nb_notif' => 0,
         ];
-        
+
         $notifs_admin_to_user = [
             'user_id' => $user_id,
             'admin_id' => $admin_id,
@@ -82,28 +81,9 @@ class RegisteredUserController extends Controller
 
         Notification::create($notifs_user_to_admin);
         Notification::create($notifs_admin_to_user);
-        
+
         NumberFiles::create($datas);
 
         return redirect(RouteServiceProvider::HOME);
-    }
-
-    private function metaTag($name_route)
-    {
-
-        SEOMeta::setCanonical('https://cellorecording.test/' . $name_route);
-        SEOMeta::addKeyword([
-            'cellorecording.com',
-            'Cello recording',
-            'Register a new account',
-            'Create an account',
-        ]);
-
-        switch ($name_route) {
-            case $name_route == 'register':
-                SEOMeta::setTitle('Professional Cello Recording Services Online | 7/7 days');
-                SEOMeta::setDescription('Create your account on Cellorecording.com, fill the following formular');
-                break;
-        }
     }
 }

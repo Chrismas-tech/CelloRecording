@@ -55,7 +55,7 @@ Route::post('/update_profile', [UserController::class, 'update_profile'])->name(
 Route::delete('/delete_account', [UserController::class, 'delete_account'])->name('delete_account');
 
 /*QUOTES*/
-Route::get('/quotes_received', [UserController::class, 'page_quotes_received'])->name('quotes_received');
+Route::get('/quotes-received', [UserController::class, 'page_quotes_received'])->name('quotes-received');
 Route::delete('/quotes_decline/{quote_id}', [UserController::class, 'quotes_decline'])->name('quotes_decline');
 
 /*ORDERS*/
@@ -64,7 +64,7 @@ Route::get('/order_view/{order_id}', [UserController::class, 'page_order_view'])
 
 /*DELIVERY*/
 Route::get('/deliveries', [UserController::class, 'page_deliveries'])->name('deliveries');
-Route::post('/delivery_view/{delivery_id}', [UserController::class, 'page_delivery_view'])->name('delivery_view');
+Route::post('/delivery-view/{delivery_id}', [UserController::class, 'page_delivery_view'])->name('delivery-view');
 
 Route::patch('/update_delivery', [UserController::class, 'update_delivery'])->name('update_delivery');
 
@@ -134,12 +134,13 @@ Route::get('/download_delivery_file_admin/{user_id}/{delivery_id}', [FileServeAd
 
 /* USER */
 Route::get('/audio_delivery_user/{delivery_id}', [FileServeUser::class, 'audio_delivery_user'])->name('audio_delivery_user');
+
 /* ADMIN */
 Route::get('/audio_delivery_admin/{user_id}/{delivery_id}', [FileServeAdmin::class, 'audio_delivery_admin'])->name('audio_delivery_admin');
 
 
 /*PAYPAL-PAGE*/
-Route::post('/page_paypal_payment/{quote_id}', [UserController::class, 'page_paypal_payment'])->name('page_paypal_payment');
+Route::post('/paypal-payment/{quote_id}', [UserController::class, 'page_paypal_payment'])->name('paypal-payment');
 Route::get('/create_order_paypal', [PaypalController::class, 'create_order_paypal'])->name('create_order_paypal');
 Route::get('/execute_payment', [PaypalController::class, 'execute_payment'])->name('execute_payment');
 

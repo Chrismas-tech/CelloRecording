@@ -26,11 +26,21 @@ class PaypalController extends Controller
     {
         $api_Context = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(
+                env('SANDBOX_CLIENT_ID'),   // ClientID
+                env('SANDBOX_SECRET')      // ClientSecret
+            )
+        );
+
+        /*
+        .env change paypal_mode to live
+        $api_Context = new \PayPal\Rest\ApiContext(
+            new \PayPal\Auth\OAuthTokenCredential(
                 env('PAYPAL_CLIENT_ID'),   // ClientID
                 env('PAYPAL_SECRET')      // ClientSecret
             )
         );
 
+ 
         $api_Context->setConfig(
             array(
                 'log.LogEnabled' => true,
@@ -39,6 +49,7 @@ class PaypalController extends Controller
                 'mode' => env('PAYPAL_MODE')
             )
         );
+        */
 
         $this->apiContext = $api_Context;
     }
@@ -89,8 +100,8 @@ class PaypalController extends Controller
             ->setInvoiceNumber(uniqid());
 
         $redirectUrls = new RedirectUrls();
-        $redirectUrls->setReturnUrl("https://cellorecording.ml/execute_payment")
-            ->setCancelUrl("https://cellorecording.ml/page_error");
+        $redirectUrls->setReturnUrl("https://cellorecording.test/execute_payment")
+            ->setCancelUrl("https://cellorecording.test/page-error");
 
         $payment = new Payment();
         $payment->setIntent("sale")
@@ -147,9 +158,9 @@ class PaypalController extends Controller
                 /*Destroy quote in table and create an order*/
                 $this->destroy_quote_and_create_order($quote);
 
-                return view('payment_success');
+                return view('payment-success');
             } else {
-                return view('page_error')->with('message', 'The payment has been approved, but there is a problem about the amount paid :( Please contact the administrator through the conversation section !');
+                return view('page-error')->with('message', 'The payment has been approved, but there is a problem about the amount paid :( Please contact the administrator through the conversation section !');
             }
         }
     }

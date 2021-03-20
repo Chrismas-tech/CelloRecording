@@ -24,7 +24,7 @@
                     </div>
                     <div class="mb-8">
                         @if ($order_completed->status == 1)
-                            <form action="{{ route('delivery_view', [$order_completed->id])}}"  method="post">
+                            <form action="{{ route('delivery-view', [$order_completed->id])}}"  method="post">
                                 @csrf
                                 <button type="submit" class="text-white text-xl bg-blue-400 px-2 py-3 rounded">Good news {{ $user_name }}
                                     ! Your
@@ -38,7 +38,7 @@
                                 </button>
                             </form>
                         @else
-                        <form action="{{ route('delivery_view', [$order_completed->id])}}"  method="post">
+                        <form action="{{ route('delivery-view', [$order_completed->id])}}"  method="post">
                             @csrf
                             <button type="submit" class="text-white text-xl bg-green-400 px-2 py-3 rounded"> Order
                                 #{{ $order_completed->id }}
