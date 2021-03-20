@@ -6,8 +6,10 @@ use App\Mail\Order as MailOrder;
 use App\Models\Order;
 use App\Models\Quote;
 use App\Models\User;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Route;
 use PayPal\Api\Amount;
 use PayPal\Api\Details;
 use PayPal\Api\Item;
@@ -66,7 +68,7 @@ class PaypalController extends Controller
         $quote_id = $request->session()->get('quote_ready_payment');
         $quote = Quote::where('id', $quote_id)->first();
         $price = $quote->price / 100;
- 
+
 
         /* PHP PAYPAL SDK SAMPLE CODE https://paypal.github.io/PayPal-PHP-SDK/sample/doc/payments/CreatePaymentUsingPayPal.html*/
 
@@ -157,6 +159,11 @@ class PaypalController extends Controller
 
                 /*Destroy quote in table and create an order*/
                 $this->destroy_quote_and_create_order($quote);
+
+                /* SEO Intégration car on ne passe par aucun constructeur qui gère le SEO ici , on retourne directement une vue */
+                SEOMeta::setTitle('Payment Success');
+                SEOMeta::setDescription('The order has been completed by the client');
+                SEOMeta::addKeyword(['Payment success', 'cellorecording.com']);
 
                 return view('payment-success');
             } else {

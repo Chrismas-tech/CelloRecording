@@ -136,7 +136,7 @@ $not_active_admin = 'border-green-200';
             </a>
 
 
-            <a href="{{ route('orders_admin') }}" class="hover:text-green-600">
+            <a href="{{ route('orders-admin') }}" class="hover:text-green-600">
                 <li
                     class="mq_li_fs relative p-5 md:mr-8  border-b-2 hover:border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'orders-admin' ? $active_admin : $not_active_admin }}">
                     My Orders

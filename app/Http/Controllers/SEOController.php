@@ -109,13 +109,6 @@ class SEOController extends Controller
                 SEOMeta::addKeyword(['Paypal Payment', 'cellorecording.com', 'Proceed for payment via Paypal', 'Payment page']);
                 break;
 
-            case $name_route == 'paypal-payment/{quote_id}':
-
-                SEOMeta::setTitle('Paypal Payment');
-                SEOMeta::setDescription('Order your custom-made cello recording safely via Paypal');
-                SEOMeta::addKeyword(['Paypal Payment', 'cellorecording.com', 'Proceed for payment via Paypal', 'Payment page']);
-                break;
-
             case $name_route == 'orders':
                 SEOMeta::setTitle('Orders');
                 SEOMeta::setDescription('Here you can check your current orders and access to them by clicking on the delivery link when your cello recording is ready');
@@ -165,16 +158,22 @@ class SEOController extends Controller
                 SEOMeta::addKeyword(['Admin', 'cellorecording.com', 'Admin - page of quotes sent to clients']);
                 break;
 
+            case $name_route == 'quote-form/{user_id}':
+                SEOMeta::setTitle('Admin - Create the quote and send it to the client');
+                SEOMeta::setDescription('Here is a page dedicated to the creation of a quote for the clients,reserved to the administrator');
+                SEOMeta::addKeyword(['Admin', 'cellorecording.com', 'Admin - Creation of a quote']);
+                break;
+
             case $name_route == 'orders-admin':
-                SEOMeta::setTitle('Admin - List of current orders');
+                SEOMeta::setTitle('Admin - Current Orders');
                 SEOMeta::setDescription('Here is the list of current orders of clients, a page reserved to the administrator');
                 SEOMeta::addKeyword(['Admin', 'cellorecording.com', 'Admin - list of current orders']);
                 break;
 
-            case $name_route == 'orders-admin':
-                SEOMeta::setTitle('Admin - List of current orders');
-                SEOMeta::setDescription('Here is the list of current orders of clients, a page reserved to the administrator');
-                SEOMeta::addKeyword(['Admin', 'cellorecording.com', 'Admin - list of current orders']);
+            case $name_route == 'conversation-with-user/{user_id}':
+                SEOMeta::setTitle('Admin - Conversation with user');
+                SEOMeta::setDescription('Here is the current conversation with the client, a page reserved to the administrator');
+                SEOMeta::addKeyword(['Admin', 'cellorecording.com', 'Admin - current conversation witth the client']);
                 break;
         }
     }

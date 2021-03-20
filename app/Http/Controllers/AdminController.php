@@ -1,27 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Mail\CelloRecordingServices;
 use App\Mail\Messages;
 use App\Mail\Quote as MailQuote;
 use App\Models\Admin;
-use App\Models\Conversation;
 use App\Models\Delivery;
 use App\Models\Message;
 use App\Models\Notification;
 use App\Models\Order;
 use App\Models\Quote;
 use App\Models\User;
-use DirectoryIterator;
-use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Storage;
+
 
 class AdminController extends Controller
 {
@@ -35,7 +28,7 @@ class AdminController extends Controller
 
     public function connection_already_verified()
     {
-        return redirect('dashboard_admin');
+        return redirect('dashboard-admin');
     }
 
     public function page_admin()
@@ -184,7 +177,7 @@ class AdminController extends Controller
         /*Pour le mail*/
         $email_user = User::find($user_id)->email;
         $admin_name = Admin::find(1)->name;
-        $url_redirection = "http://cellorecording.ml/conversation";
+        $url_redirection = "http://cellorecording.test/conversation";
 
         /*On envoie un mail à l'utilisateur*/
         Mail::to($email_user)->send(new Messages($admin_name, $notifications->nb_notif, $url_redirection));
@@ -212,12 +205,12 @@ class AdminController extends Controller
         $user_name = User::find($request->user_id)->name;
         $admin_name = Admin::find(1)->name;
 
-        $url_redirection = "http://cellorecording.ml/quotes_received";
+        $url_redirection = "http://cellorecording.test/quotes-received";
 
         /*On envoie un mail à l'utilisateur*/
         Mail::to($email_user)->send(new MailQuote($admin_name, $user_name, $datas, $url_redirection));
 
-        return redirect('dashboard_admin')->with('quotesent', 'The quote has been successfully sent to the client !');
+        return redirect('dashboard-admin')->with('quotesent', 'The quote has been successfully sent to the client !');
     }
 
     public static function quotes_notifications()

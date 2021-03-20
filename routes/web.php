@@ -98,12 +98,12 @@ Route::post('/connection_admin', [AdminController::class, 'connection_already_ve
 
 Route::get('/quotes-sent', [AdminController::class, 'page_quotes_sent'])->name('quotes-sent');
 Route::get('/list-conversation-admin', [AdminController::class, 'page_list_conversation_admin'])->name('list-conversation-admin');
-Route::get('/quote_form/{user_id}', [AdminController::class, 'page_quote_form'])->name('quote_form');
+Route::get('/quote-form/{user_id}', [AdminController::class, 'page_quote_form'])->name('quote-form');
 Route::post('/send_quote_client', [AdminController::class, 'send_quote_client'])->name('send_quote_client');
-Route::get('/orders-admin', [AdminController::class, 'page_orders_admin'])->name('orders_admin');
+Route::get('/orders-admin', [AdminController::class, 'page_orders_admin'])->name('orders-admin');
 Route::get('/order_view_admin/{order_id}', [AdminController::class, 'page_order_view_admin'])->name('order_view_admin');
 Route::post('/new_conversation_admin/{user_id}', [AdminController::class, 'new_conversation_admin'])->name('new_conversation_admin');
-Route::get('/conversation_with_user/{user_id}', [AdminController::class, 'conversation_with_user'])->name('conversation_with_user');
+Route::get('/conversation-with-user/{user_id}', [AdminController::class, 'conversation_with_user'])->name('conversation-with-user');
 
 /* ADMIN-MINUTEUR */
 Route::get('/date_minuteur', [DateChangeController::class, 'date_minuteur'])->name('date_minuteur');
