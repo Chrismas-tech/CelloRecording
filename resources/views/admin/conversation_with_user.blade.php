@@ -92,10 +92,9 @@
                     <!-- END PROGRESSBAR -->
                     <!-- END PROGRESSBAR -->
 
-
                     <div class="flex">
                         <div class="px-4 py-2 mb-6 text-white bg-red-500 rounded"> <a
-                                href="{{ route('quote_form', ['user_id' => $user->id]) }}">Propose a quote to the
+                                href="{{ route('quote-form', ['user_id' => $user->id]) }}">Propose a quote to the
                                 client</a>
                         </div>
                     </div>

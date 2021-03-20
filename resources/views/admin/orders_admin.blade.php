@@ -76,7 +76,7 @@
                                     <td
                                         class="{{ $class }} bg-white border p-4 courgette_font align-middle text-center text-xl underline">
                                         <a
-                                            href="{{ route('order_view_admin', ['order_id' => $order->id]) }}">#{{ $order->id }}</a>
+                                            href="{{ route('order-view-admin', ['order_id' => $order->id]) }}">#{{ $order->id }}</a>
                                     </td>
 
                                     <td class="{{ $class }} bg-white border  p-4  align-middle text-center text-xl">
@@ -100,18 +100,18 @@
                                     <td class="{{ $class }} bg-white border p-4 align-middle text-center text-xl">
 
                                         @if ($order->status == 1)
-                                            <a href="{{ route('order_view_admin', ['order_id' => $order->id]) }}"
+                                            <a href="{{ route('order-view-admin', ['order_id' => $order->id]) }}"
                                                 class="underline">Already delivered !</a>
                                         @elseif ($order->status == 2)
                                             <p>Canceled</p>
                                         @elseif ($order->status == 3)
-                                            <a href="{{ route('order_view_admin', ['order_id' => $order->id]) }}"
+                                            <a href="{{ route('order-view-admin', ['order_id' => $order->id]) }}"
                                                 class="underline">Deliver now</a>
                                         @elseif ($order->status == 4)
-                                            <a href="{{ route('order_view_admin', ['order_id' => $order->id]) }}"
+                                            <a href="{{ route('order-view-admin', ['order_id' => $order->id]) }}"
                                                 class="underline">Deliver the work again</a>
                                         @elseif ($order->status == 5)
-                                            <a href="{{ route('order_view_admin', ['order_id' => $order->id]) }}"
+                                            <a href="{{ route('order-view-admin', ['order_id' => $order->id]) }}"
                                                 class="underline">Order marked as completed !</a>
                                         @endif
 

@@ -101,7 +101,7 @@ Route::get('/list-conversation-admin', [AdminController::class, 'page_list_conve
 Route::get('/quote-form/{user_id}', [AdminController::class, 'page_quote_form'])->name('quote-form');
 Route::post('/send_quote_client', [AdminController::class, 'send_quote_client'])->name('send_quote_client');
 Route::get('/orders-admin', [AdminController::class, 'page_orders_admin'])->name('orders-admin');
-Route::get('/order_view_admin/{order_id}', [AdminController::class, 'page_order_view_admin'])->name('order_view_admin');
+Route::get('/order-view-admin/{order_id}', [AdminController::class, 'page_order_view_admin'])->name('order-view-admin');
 Route::post('/new_conversation_admin/{user_id}', [AdminController::class, 'new_conversation_admin'])->name('new_conversation_admin');
 Route::get('/conversation-with-user/{user_id}', [AdminController::class, 'conversation_with_user'])->name('conversation-with-user');
 

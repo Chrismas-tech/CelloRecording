@@ -152,6 +152,12 @@ class SEOController extends Controller
                 SEOMeta::addKeyword(['Admin', 'cellorecording.com', 'Admin - list of conversation page']);
                 break;
 
+            case $name_route == 'conversation-with-user/{user_id}':
+                SEOMeta::setTitle('Admin - Conversation with user');
+                SEOMeta::setDescription('Here is the current conversation with the client, a page reserved to the administrator');
+                SEOMeta::addKeyword(['Admin', 'cellorecording.com', 'Admin - current conversation witth the client']);
+                break;
+
             case $name_route == 'quotes-sent':
                 SEOMeta::setTitle('Admin - Quotes sent to clients');
                 SEOMeta::setDescription('Here is the list of quotes sent to clients, a page reserved to the administrator');
@@ -170,10 +176,10 @@ class SEOController extends Controller
                 SEOMeta::addKeyword(['Admin', 'cellorecording.com', 'Admin - list of current orders']);
                 break;
 
-            case $name_route == 'conversation-with-user/{user_id}':
-                SEOMeta::setTitle('Admin - Conversation with user');
-                SEOMeta::setDescription('Here is the current conversation with the client, a page reserved to the administrator');
-                SEOMeta::addKeyword(['Admin', 'cellorecording.com', 'Admin - current conversation witth the client']);
+            case $name_route == 'order-view-admin/{order_id}':
+                SEOMeta::setTitle('Admin - View current order');
+                SEOMeta::setDescription('Here is a page dedicated to the upload delivery, reserved to the administrator');
+                SEOMeta::addKeyword(['Admin', 'cellorecording.com', 'Admin - View current order']);
                 break;
         }
     }
