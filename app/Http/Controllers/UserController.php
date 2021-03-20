@@ -6,7 +6,7 @@ use App\Mail\ContactMail;
 use App\Mail\MessageToAdmin;
 use App\Mail\Revision;
 use App\Models\Admin;
-use App\Models\Conversation;
+
 use App\Models\Delivery;
 use App\Models\Message;
 use App\Models\Notification;
@@ -16,7 +16,6 @@ use App\Models\Quote;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
@@ -29,10 +28,10 @@ class UserController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => array('page_contact', 'page_send_contact_email')]);
+        $this->middleware('auth', ['except' => array('page_welcome','page_contact', 'page_send_contact_email')]);
     }
     
-    public function welcome_page()
+    public function page_welcome()
     {
         return view('welcome');
     }

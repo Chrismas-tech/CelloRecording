@@ -27,7 +27,7 @@ require __DIR__ . '/auth.php';
 
 /* WELCOME PAGE */
 
-Route::get('/', [UserController::class, 'welcome_page']);
+Route::get('/', [UserController::class, 'page_welcome']);
 
 /* PAGE ERROR*/
 Route::get('/not_authorized', function () {
