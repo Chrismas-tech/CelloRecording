@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Artesaos\SEOTools\Facades\SEOMeta;
-use Artesaos\SEOTools\Facades\SEOTools;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -61,8 +60,8 @@ class AuthenticatedSessionController extends Controller
     private function metaTag($name_route)
     {
 
-        SEOTools::setCanonical('https://cellorecording.test/' . $name_route);
-        SEOTools::addKeyword([
+        SEOMeta::setCanonical('https://cellorecording.test/' . $name_route);
+        SEOMeta::addKeyword([
             'cellorecording.com',
             'Cello recording',
             'Login into your account',
@@ -70,8 +69,8 @@ class AuthenticatedSessionController extends Controller
 
         switch ($name_route) {
             case $name_route == 'login':
-                SEOTools::setTitle('Login into your account');
-                SEOTools::setDescription('Login into your account on Cellorecording.com, fill the following formular');
+                SEOMeta::setTitle('Login into your account');
+                SEOMeta::setDescription('Login into your account on Cellorecording.com, fill the following formular');
                 break;
         }
     }

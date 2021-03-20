@@ -10,7 +10,6 @@ use App\Models\NumberFiles;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Artesaos\SEOTools\Facades\SEOMeta;
-use Artesaos\SEOTools\Facades\SEOTools;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -92,8 +91,8 @@ class RegisteredUserController extends Controller
     private function metaTag($name_route)
     {
 
-        SEOTools::setCanonical('https://cellorecording.test/' . $name_route);
-        SEOTools::addKeyword([
+        SEOMeta::setCanonical('https://cellorecording.test/' . $name_route);
+        SEOMeta::addKeyword([
             'cellorecording.com',
             'Cello recording',
             'Register a new account',
@@ -102,8 +101,8 @@ class RegisteredUserController extends Controller
 
         switch ($name_route) {
             case $name_route == 'register':
-                SEOTools::setTitle('Professional Cello Recording Services Online | 7/7 days');
-                SEOTools::setDescription('Create your account on Cellorecording.com, fill the following formular');
+                SEOMeta::setTitle('Professional Cello Recording Services Online | 7/7 days');
+                SEOMeta::setDescription('Create your account on Cellorecording.com, fill the following formular');
                 break;
         }
     }

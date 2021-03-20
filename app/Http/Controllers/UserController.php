@@ -13,8 +13,7 @@ use App\Models\NumberFiles;
 use App\Models\Order;
 use App\Models\Quote;
 use App\Models\User;
-use Artesaos\SEOTools\Facades\SEOTools
-use Artesaos\SEOTools\Facades\SEOTools;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -451,13 +450,13 @@ class UserController extends Controller
     private function metaTag($name_route)
     {
 
-        SEOTools::setCanonical('https://cellorecording.test/' . $name_route);
+        SEOMeta::setCanonical('https://cellorecording.test/' . $name_route);
 
         switch ($name_route) {
             case $name_route == '/':
-                SEOTools::setTitle('Professional Cello Recording Services Online | 7/7 days');
-                SEOTools::setDescription('In need of a Professional Cellist for your next musical project ? On Cellorecording.com, get a quote and order your professional cello recording today !');
-                SEOTools::addKeyword([
+                SEOMeta::setTitle('Professional Cello Recording Services Online | 7/7 days');
+                SEOMeta::setDescription('In need of a Professional Cellist for your next musical project ? On Cellorecording.com, get a quote and order your professional cello recording today !');
+                SEOMeta::addKeyword([
                     'cellorecording.com',
                     'cello recording studio',
                     'cello recording online',
@@ -491,9 +490,9 @@ class UserController extends Controller
                 ]);
                 break;
             case $name_route == 'contact':
-                SEOTools::setTitle('Contact page');
-                SEOTools::setDescription('On this page you can send an email to cellorecording.com');
-                SEOTools::addKeyword([
+                SEOMeta::setTitle('Contact page');
+                SEOMeta::setDescription('On this page you can send an email to cellorecording.com');
+                SEOMeta::addKeyword([
                     'cellorecording.com',
                     'Dashboard',
                     'Proceed for a cello recording',
@@ -501,9 +500,9 @@ class UserController extends Controller
                 ]);
                 break;
             case $name_route == 'dashboard':
-                SEOTools::setTitle('Dashboard');
-                SEOTools::setDescription('Here is your dashboard, follow the guide below to proceed for a cello recording');
-                SEOTools::addKeyword(['']);
+                SEOMeta::setTitle('Dashboard');
+                SEOMeta::setDescription('Here is your dashboard, follow the guide below to proceed for a cello recording');
+                SEOMeta::addKeyword(['']);
                 break;
         }
     }
