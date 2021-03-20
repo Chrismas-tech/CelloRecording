@@ -127,7 +127,7 @@
 
                     <div class="flex justify-center mb-4">
                         <div class="g-recaptcha" data-type="image"
-                            data-sitekey="6LepTGYaAAAAAAVZbMvTzlHcmfOoJnBdmdu9-jx4">
+                            data-sitekey="6Ldux4caAAAAAOleCshNf7Pl2fbDfk-EcHPy8dJf">
                         </div>
                     </div>
 
