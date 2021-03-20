@@ -40,7 +40,6 @@ class Admin
                 $admin_name = $admin->name;
                 $admin_password = $admin->password;
 
-
                 /* SI LE PASSWORD ET LE NAME SONT CORRECTS -> Dashboard ADMIN */
                 if ($name_input == $admin_name && (Hash::check($password_input,$admin_password) )) {
 

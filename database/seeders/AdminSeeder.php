@@ -1,8 +1,6 @@
 <?php
 
 namespace Database\Seeders;
-
-use Illuminate\Database\Console\DbCommand;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -16,9 +14,11 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
+   
         DB::table('admins')->insert([
             'name' => 'Christophe Luciani',
-            'password' => Hash::make('darkbanboula1905'),
+            'password' => Hash::make(env('PASSWORD_ADMIN')),
         ]);
+        dd(env('PASSWORD_ADMIN'));
     }
 }

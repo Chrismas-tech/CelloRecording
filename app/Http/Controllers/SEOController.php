@@ -141,6 +141,11 @@ class SEOController extends Controller
                 break;
 
             /* ROUTES ADMIN */
+            case $name_route == 'admin':
+                SEOMeta::setTitle('Admin');
+                SEOMeta::setDescription('Here is the page reserved to the administrator connection');
+                SEOMeta::addKeyword(['Profile', 'cellorecording.com', 'Your Profile', 'Deliveries page', 'Your account', 'Change password', 'Change username', 'Change email']);
+                break;
         }
     }
 }
