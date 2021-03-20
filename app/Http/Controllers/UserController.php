@@ -450,16 +450,47 @@ class UserController extends Controller
     private function metaTag($name_route)
     {
 
+        SEOMeta::setCanonical('https://cellorecording.test/' . $name_route);
+        SEOMeta::addKeyword([
+            'cello recording studio',
+            'cello recording online',
+            'cello recording app',
+            'cello recordings best',
+            'cello recording techniques',
+            'recording cello at home',
+            'cello audio recording',
+            'cello recording studios los angeles',
+            'recording a cello',
+            'best cello recording',
+            'recording for cello',
+            'cello home recording',
+            'cello in recording ',
+            'remote cello recording',
+            'recording cello solo',
+            'recording setup cello',
+            'how to record cello at home',
+            'how to recording cello sound',
+            'cello customer service',
+            'cello wrapping services',
+            'cello customer service number',
+            'cello customer care',
+            'cello tv customer service',
+            'cello connection',
+            '2 cello',
+            '2cellos',
+            'recording cello',
+            'cello session player',
+            'remote cello recording online',
+        ]);
+
         switch ($name_route) {
             case $name_route == '/':
-                SEOMeta::setTitle('Welcome page');
-                SEOMeta::setDescription('This is my page description');
-                SEOMeta::setCanonical('https://codecasts.com.br/lesson');
+                SEOMeta::setTitle('Professional Cello Recording Services Online | 7/7 days');
+                SEOMeta::setDescription('In need of a Professional Cellist for your next musical project ? On Cellorecording.com, get a quote and order your professional cello recording today !');
                 break;
             case $name_route == 'contact':
                 SEOMeta::setTitle('Contact page');
-                SEOMeta::setDescription('This is my page description');
-                SEOMeta::setCanonical('https://codecasts.com.br/lesson');
+                SEOMeta::setDescription('On this page you can send me an email');
                 break;
         }
     }

@@ -7,6 +7,25 @@
 
     {!! SEOMeta::generate() !!}
 
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="{{asset('img/favicon/apple-icon-57x57.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{asset('img/favicon/apple-icon-60x60.png')}}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{asset('img/favicon/apple-icon-72x72.png')}}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/favicon/apple-icon-76x76.png')}}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{asset('img/favicon/apple-icon-114x114.png')}}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{asset('img/favicon/apple-icon-120x120.png')}}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{asset('img/favicon/apple-icon-144x144.png')}}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{asset('img/favicon/apple-icon-152x152.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('img/favicon/apple-icon-180x180.png')}}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{asset('img/favicon/android-icon-192x192.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('img/favicon/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{asset('img/favicon/favicon-96x96.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('img/favicon/favicon-16x16.png')}}">
+    <link rel="manifest" href="{{asset('favicon/manifest.json')}}">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -105,7 +124,8 @@
                 </div>
 
                 <div class="flex text-xl rounded ">
-                    <div class="mq_padding_presentation_text p-4 sm:p-8 text-xl rounded karma border border-black bg-opacity-60 bg-white">
+                    <div
+                        class="mq_padding_presentation_text p-4 sm:p-8 text-xl rounded karma border border-black bg-opacity-60 bg-white">
                         <p>
                             <iframe class="rounded ytb_vid ml-8 mb-8" width="640" height="360"
                                 src="https://www.youtube.com/embed/Ut_Rgayxop4?autoplay=1" frameborder="0"
@@ -122,8 +142,9 @@
                             <strong>University of Music and Performing Arts Graz</strong>, for my Master Degree.
 
                             <br><br>
-                            I worked many years with the top orchestra of World renown : <strong>ORF Vienna Radio Symphony
-                            Orchestra</strong>
+                            I worked many years with the top orchestra of World renown : <strong>ORF Vienna Radio
+                                Symphony
+                                Orchestra</strong>
                             with which i performed in the world's most famous concert halls.
 
                             <br><br>
@@ -271,7 +292,8 @@
                     <h1 class="nav_button_font mq_font_size_h1">Pricing</h1>
                 </div>
 
-                <div class="mq_padding_presentation_text p-8 text-xl karma bg-white rounded border border-black bg-opacity-60">
+                <div
+                    class="mq_padding_presentation_text p-8 text-xl karma bg-white rounded border border-black bg-opacity-60">
                     <p>
                         As every music project requires a particular attention according to the request (improvisation,
                         accompaniment, compositions of cello melodies above your music, cello recordings following your
