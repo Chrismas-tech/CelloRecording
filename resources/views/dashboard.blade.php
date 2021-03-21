@@ -61,10 +61,10 @@
                         <div class="md:flex">
 
                             <div class="md:w-4/12 p-2 mt-5 mr-10 rounded  text-gray-500">
-                                <a class="" href="{{ route('quotes_received') }}">
+                                <a class="" href="{{ route('quotes-received') }}">
                                     <p>If you agree about the charge by mutual agreement, you will receive a
                                         quote that you can accept or decline through the tab <a class="underline text-black"
-                                            href="{{ route('quotes_received') }}">Your
+                                            href="{{ route('quotes-received') }}">Your
                                             Quotes</a>.</p>
                                     <br>
                                     <p>Then you can safely proceed to the transfert via Paypal.</p>

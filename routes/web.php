@@ -8,8 +8,6 @@ use App\Http\Controllers\FileServeUser;
 use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\UploadfileController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,12 +27,12 @@ require __DIR__ . '/auth.php';
 
 Route::get('/', [UserController::class, 'page_welcome']);
 
-/* PAGE ERROR*/
+/* PAGE ERROR */
 Route::get('/not_authorized', function () {
     return view('not_authorized');
 });
 
-/*CONTACT-FORM*/
+/*CONTACT-FORM */
 Route::get('/contact', [UserController::class, 'page_contact'])->name('contact');
 Route::post('/send_contact_email', [UserController::class, 'page_send_contact_email'])->name('send_contact_email');
 
@@ -45,36 +43,36 @@ Route::post('/send_contact_email', [UserController::class, 'page_send_contact_em
 
 Route::get('/dashboard', [UserController::class, 'page_dashboard'])->name('dashboard');
 
-/*CONVERSATIONS*/
+/*CONVERSATIONS */
 Route::get('/conversation', [UserController::class, 'page_conversation'])->name('conversation');
 Route::post('/new_conversation', [UserController::class, 'new_conversation'])->name('new_conversation');
 
-/*PROFILE*/
+/* PROFILE */
 Route::get('/profile', [UserController::class, 'page_profile'])->name('profile');
 Route::post('/update_profile', [UserController::class, 'update_profile'])->name('update_profile');
 Route::delete('/delete_account', [UserController::class, 'delete_account'])->name('delete_account');
 
-/*QUOTES*/
+/* QUOTES */
 Route::get('/quotes-received', [UserController::class, 'page_quotes_received'])->name('quotes-received');
 Route::delete('/quotes_decline/{quote_id}', [UserController::class, 'quotes_decline'])->name('quotes_decline');
 
-/*ORDERS*/
+/* ORDERS */
 Route::get('/orders', [UserController::class, 'page_orders'])->name('orders');
 Route::get('/order_view/{order_id}', [UserController::class, 'page_order_view'])->name('order_view');
 
-/*DELIVERY*/
+/* DELIVERY */
 Route::get('/deliveries', [UserController::class, 'page_deliveries'])->name('deliveries');
 Route::post('/delivery-view/{delivery_id}', [UserController::class, 'page_delivery_view'])->name('delivery-view');
 
 Route::patch('/update_delivery', [UserController::class, 'update_delivery'])->name('update_delivery');
 
-/*CHANGE PASSWORD*/
+/* CHANGE PASSWORD */
 Route::post('/change_password', [ChangePasswordController::class, 'change_password'])->name('change_password');
 
-/* UPLOAD PHOTO*/
+/* UPLOAD PHOTO */
 Route::post('/uploadphoto', [UploadfileController::class, 'uploadphoto'])->name('uploadphoto');
 
-/*UPLOAD MUSIC*/
+/* UPLOAD MUSIC */
 Route::post('/upload_music_user', [UploadfileController::class, 'upload_music_user'])->name('upload_music_user');
 
 Route::post('/upload_music_admin/{user_id}', [UploadfileController::class, 'upload_music_admin'])->name('upload_music_admin');

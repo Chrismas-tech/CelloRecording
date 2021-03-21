@@ -13,7 +13,6 @@ use App\Models\NumberFiles;
 use App\Models\Order;
 use App\Models\Quote;
 use App\Models\User;
-use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -28,7 +27,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct(Request $request)
+    public function __construct()
     {
         $this->middleware('auth', ['except' => array('page_welcome', 'page_contact', 'page_send_contact_email')]);
         $name_route = Route::getFacadeRoot()->current()->uri();
