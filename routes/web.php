@@ -6,8 +6,10 @@ use App\Http\Controllers\DateChangeController;
 use App\Http\Controllers\FileServeAdmin;
 use App\Http\Controllers\FileServeUser;
 use App\Http\Controllers\PaypalController;
+use App\Http\Controllers\SiteMapController;
 use App\Http\Controllers\UploadfileController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -148,6 +150,5 @@ Route::get('/execute_payment', [PaypalController::class, 'execute_payment'])->na
 Route::get('/profile_image/{user_id}', [FileServeUser::class, 'profile_image_serve'])->name('profile_image');
 Route::get('/download_demo_cello', [FileServeUser::class, 'download_demo_cello'])->name('download_demo_cello');
 
-Route::get('/sitemap', function () {
-    return asset('sitemap.xml');
-});
+/* SITEMAP */
+Route::get('/sitemap', [SiteMapController::class, 'sitemap_page']);
