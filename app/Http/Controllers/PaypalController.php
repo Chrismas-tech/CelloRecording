@@ -9,7 +9,6 @@ use App\Models\User;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Route;
 use PayPal\Api\Amount;
 use PayPal\Api\Details;
 use PayPal\Api\Item;
@@ -26,7 +25,7 @@ class PaypalController extends Controller
 
     public function __construct()
     {
-        /* SANDBOX */
+        /* SANDBOX 
         
         $api_Context = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(
@@ -35,7 +34,7 @@ class PaypalController extends Controller
             )
         );
 
-        /*
+        */
         $api_Context = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(
                 env('PAYPAL_CLIENT_ID'),   // ClientID
@@ -52,7 +51,6 @@ class PaypalController extends Controller
                 'mode' => env('PAYPAL_MODE')
             )
         );
-        */
 
         $this->apiContext = $api_Context;
     }
