@@ -8,6 +8,9 @@
 
     {!! SEOMeta::generate() !!}
 
+    <!-- Google Search Console Index -->
+    <meta name="google-site-verification" content="t5GFMnr3HKSD8M0t1LKDoB_WCMrEVV6iB4LnivNvjHY" />
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('img/favicon/apple-icon-57x57.png') }}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('img/favicon/apple-icon-60x60.png') }}">
