@@ -79,7 +79,7 @@
 
             @if (Session::has('send_success'))
                 <div class="flex justify-center mb-10 mt-10">
-                    <p class="w-max title_jumbo mq_font_email_title text-5xl dancing_font text-green-400 bg-white px-2 py-3">
+                    <p class="w-max title_jumbo mq_font_email_title text-5xl dancing_font text-green-400 bg-white px-2 py-3 rounded">
                         {{ Session::get('send_success') }}</p>
                 </div>
             @endif
