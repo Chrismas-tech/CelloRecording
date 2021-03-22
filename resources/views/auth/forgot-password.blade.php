@@ -23,7 +23,8 @@
             <div>
                 <x-label for="email" :value="__('Email')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
+                    autofocus />
             </div>
 
             <div class="flex items-center justify-end mt-4">
@@ -32,5 +33,8 @@
                 </x-button>
             </div>
         </form>
+        <div class="flex justify-center mt-8">
+            <a href="/" class="px-4 py-2 text-white bg-gray-800 rounded">Back to the welcome page</a>
+        </div>
     </x-auth-card>
 </x-guest-layout>
