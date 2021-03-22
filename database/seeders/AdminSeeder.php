@@ -18,7 +18,5 @@ class AdminSeeder extends Seeder
             'name' => env('USERNAME_ADMIN'),
             'password' => Hash::make(env('PASSWORD_ADMIN')),
         ]);
-        dd(env('USERNAME_ADMIN'));
-        //dd(env('PASSWORD_ADMIN'));
     }
 }
