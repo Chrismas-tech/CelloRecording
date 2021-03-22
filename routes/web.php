@@ -6,7 +6,6 @@ use App\Http\Controllers\DateChangeController;
 use App\Http\Controllers\FileServeAdmin;
 use App\Http\Controllers\FileServeUser;
 use App\Http\Controllers\PaypalController;
-use App\Http\Controllers\SiteMapController;
 use App\Http\Controllers\UploadfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\File;
