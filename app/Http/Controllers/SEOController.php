@@ -39,6 +39,7 @@ class SEOController extends Controller
                 SEOMeta::setTitle('Professional Cello Recording Services Online | 7/7 days');
                 SEOMeta::setDescription('In need of a Professional Cellist for your next musical project ? On Cellorecording.com, get a quote and order your professional cello recording today !');
                 SEOMeta::addKeyword([
+                    'Cello - Hire an online session cellist for recordings',
                     'Studio Recording Session Cellist',
                     'Online Session Cello',
                     'Session Notes',
