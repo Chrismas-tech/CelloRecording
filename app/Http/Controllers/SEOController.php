@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Artesaos\SEOTools\Facades\SEOMeta;
-use Illuminate\Http\Request;
 
 class SEOController extends Controller
 {
@@ -40,6 +39,17 @@ class SEOController extends Controller
                 SEOMeta::setTitle('Professional Cello Recording Services Online | 7/7 days');
                 SEOMeta::setDescription('In need of a Professional Cellist for your next musical project ? On Cellorecording.com, get a quote and order your professional cello recording today !');
                 SEOMeta::addKeyword([
+                    'Studio Recording Session Cellist',
+                    'Online Session Cello',
+                    'Session Notes',
+                    'Online session cellist',
+                    'Cello soundbetter',
+                    'Online Remote Session Cello Recording', 
+                    'Hire Violinists, Cellists & Viola Players',
+                    'Cello, Violin and Double Bass Recording Sessions',
+                    'Best Cello Services To Buy Online',
+                    'Record professional real cello for your project',
+                    'cello recording',
                     'cellorecording.com',
                     'cello recording studio',
                     'cello recording online',
@@ -70,6 +80,9 @@ class SEOController extends Controller
                     'recording cello',
                     'cello session player',
                     'remote cello recording online',
+                    'cello session online',
+                    'cello session online service',
+                    'cello service',
                 ]);
                 break;
 
