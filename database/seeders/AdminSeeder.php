@@ -14,7 +14,7 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        echo(env('PASSWORD_ADMIN')).'<br/>'.(env('USERNAME_ADMIN'));
+        echo(env('PASSWORD_ADMIN'))."\n".(env('USERNAME_ADMIN'));
       
         DB::table('admins')->insert([
             'name' => env('USERNAME_ADMIN'),
