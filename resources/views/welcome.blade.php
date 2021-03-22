@@ -91,7 +91,7 @@
             </div>
 
             <div class="mt-10 mq_quote">
-                <a class=" px-2 py-3 mr-3 text-2xl text-white border border-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
+                <a class=" px-2 py-3 mr-3 text-2xl text-black border border-black bg-white rounded hover:bg-gray-700 hover:text-green-400 nav_button_font"
                     href="{{ url('/dashboard') }}">Get a quote for your project today !</a>
             </div>
         </div>
