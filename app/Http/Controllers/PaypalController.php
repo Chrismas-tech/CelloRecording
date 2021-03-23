@@ -57,20 +57,14 @@ class PaypalController extends Controller
         $this->apiContext = $api_Context;
     }
 
-    public function page_new_paypal_payment()
-    {
-        return view('page_new_paypal_payment');
-    }
-
     public function create_order_paypal(Request $request)
     {
-
         /* On récupère la variable de Session qui contient l'id du devis, donc son prix initial */
         $quote_id = $request->session()->get('quote_ready_payment');
         $quote = Quote::where('id', $quote_id)->first();
         $price = $quote->price / 100;
 
-        /* PHP PAYPAL SDK SAMPLE CODE https://paypal.github.io/PayPal-PHP-SDK/sample/doc/payments/CreatePaymentUsingPayPal.html*/
+        /* PHP PAYPAL SDK SAMPLE CODE https://paypal.github.io/PayPal-PHP-SDK/sample/doc/payments/CreatePaymentUsingPayPal.html */
 
         $payer = new Payer();
         $payer->setPaymentMethod("paypal");
