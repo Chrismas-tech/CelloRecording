@@ -27,8 +27,6 @@ class PaypalController extends Controller
     public function __construct()
     {
         /* SANDBOX */
-
-
         /*
         $api_Context = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(
@@ -38,23 +36,13 @@ class PaypalController extends Controller
         );
         */
 
-
         /* LIVE */
-        
         $api_Context = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(
                 env('PAYPAL_CLIENT_ID'),   // ClientID
                 env('PAYPAL_SECRET')      // ClientSecret
             )
         );
-
-        $api_Context->setConfig(
-            array(
-                'log.LogEnabled' => true,
-                'mode' => env('PAYPAL_MODE')
-            )
-        );
-        
 
         $this->apiContext = $api_Context;
     }
