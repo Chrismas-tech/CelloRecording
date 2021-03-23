@@ -22,9 +22,8 @@ class MessageToAdmin extends Mailable
      *
      * @return void
      */
-    public function __construct($email_user, $user_name, $nb_notif,$url_redirection)
+    public function __construct($email_user, $user_name, $nb_notif, $url_redirection)
     {
-
         $this->user_name = $user_name;
         $this->nb_notif = $nb_notif;
         $this->email_user = $email_user;

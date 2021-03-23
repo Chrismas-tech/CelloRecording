@@ -95,7 +95,7 @@
                             <div class="flex items-center justify-end">
 
                                 <div>
-                                    <form action="{{ route('page_paypal_payment', ['quote_id' => $quote->id]) }}" method="post">
+                                    <form action="{{ route('paypal-payment', ['quote_id' => $quote->id]) }}" method="post">
                                         @csrf   
                                         <button type="submit"
                                         class="text-xs sm:text-md md:text-lg px-4 py-2 mr-5 text-white bg-green-500 rounded">Accept

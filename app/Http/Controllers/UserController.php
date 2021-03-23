@@ -363,7 +363,6 @@ class UserController extends Controller
         Notification::where('user_id', $user_id)->delete();
         User::destroy($user_id);
 
-
         return redirect('/');
     }
 
