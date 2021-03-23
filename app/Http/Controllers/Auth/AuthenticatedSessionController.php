@@ -20,7 +20,8 @@ class AuthenticatedSessionController extends Controller
      */
     public function create()
     {
-        $name_route = Route::getFacadeRoot()->current()->uri();
+        $name_route = Route::current()->uri();
+        //dd($name_route);
         SEOController::metaTag($name_route);
         return view('auth.login');
     }
@@ -33,7 +34,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
-       
+
         $request->authenticate();
         $request->session()->regenerate();
 

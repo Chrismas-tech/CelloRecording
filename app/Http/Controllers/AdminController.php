@@ -22,7 +22,7 @@ class AdminController extends Controller
     public function __construct()
     {
         $this->middleware('admin', ['except' => 'page_admin']);
-        $name_route = Route::getFacadeRoot()->current()->uri();
+        $name_route = Route::current()->uri();
         //dd($name_route);
         SEOController::metaTag($name_route);
     }
