@@ -8,7 +8,7 @@ class SEOController extends Controller
 {
     public static function metaTag($name_route)
     {
-        SEOMeta::setCanonical('https://cellorecording.com/' . $name_route);
+        SEOMeta::setCanonical('https://www.cellorecording.com/' . $name_route);
 
         switch ($name_route) {
                 /* ROUTE LOGIN */
