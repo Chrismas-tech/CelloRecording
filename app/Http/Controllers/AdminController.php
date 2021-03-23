@@ -107,6 +107,7 @@ class AdminController extends Controller
 
     public function page_list_conversation_admin(Request $request)
     {
+
         $admin_id = Admin::find(1)->id;
         $notifs_all_user = Notification::where('direction_send', 0)->where('nb_notif', '!=', 0)->get();
 

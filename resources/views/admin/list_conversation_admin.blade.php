@@ -79,7 +79,7 @@
                         <div class="inline-flex px-4 py-3 overflow-hidden text-white bg-green-400 shadow-sm sm:rounded-lg">
 
                             <div>
-                                <a href="{{ route('conversation_with_user', ['user_id' => $notif->user_id]) }}"><span
+                                <a href="{{ route('conversation-with-user', ['user_id' => $notif->user_id]) }}"><span
                                         class="font-bold text-gray-500">{{ $notif->user->name }}</span>
                                     sent you a new message ! Click here and read it now ! <div>
                                     </div></a>
