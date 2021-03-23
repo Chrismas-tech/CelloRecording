@@ -58,7 +58,7 @@ class PaypalController extends Controller
 
     public function create_order_paypal(Request $request)
     {
-        dd('yolo');
+       
         /* On récupère la variable de Session qui contient l'id du devis, donc son prix initial */
         $quote_id = $request->session()->get('quote_ready_payment');
         $quote = Quote::where('id', $quote_id)->first();
@@ -105,6 +105,7 @@ class PaypalController extends Controller
             ->setRedirectUrls($redirectUrls)
             ->setTransactions(array($transaction));
 
+             dd('yolo');
         $payment->create($this->apiContext);
 
         return redirect($payment->getApprovalLink());
