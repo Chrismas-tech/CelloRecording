@@ -703,7 +703,7 @@
 
                         setTimeout(() => {
                             window.location.replace(
-                                "http://cellorecording.com/orders_admin");
+                                "https://www.cellorecording.com//orders_admin");
                         }, 1000);
 
                     } else {
