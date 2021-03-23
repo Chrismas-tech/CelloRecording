@@ -36,6 +36,12 @@ class PaypalController extends Controller
         );
         */
 
+
+
+    }
+
+    public function create_order_paypal(Request $request)
+    {
         /* LIVE */
         $api_Context = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(
@@ -44,21 +50,6 @@ class PaypalController extends Controller
             )
         );
 
-        $api_Context->setConfig(
-            array(
-                'log.LogEnabled' => true,
-                'log.FileName' => 'PayPal.log',
-                'log.LogLevel' => 'DEBUG',
-                'mode' => env('PAYPAL_MODE')
-            )
-        );
-
-        $this->apiContext = $api_Context;
-    }
-
-    public function create_order_paypal(Request $request)
-    {
-       
         /* On récupère la variable de Session qui contient l'id du devis, donc son prix initial */
         $quote_id = $request->session()->get('quote_ready_payment');
         $quote = Quote::where('id', $quote_id)->first();
