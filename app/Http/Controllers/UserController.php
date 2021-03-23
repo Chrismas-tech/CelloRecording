@@ -31,7 +31,7 @@ class UserController extends Controller
     {
         $this->middleware('auth', ['except' => array('page_welcome', 'page_contact', 'page_send_contact_email')]);
 
-        $name_route = Route::currentRouteName();
+        $name_route = Route::current()->uri();
         //dd($name_route);
         SEOController::metaTag($name_route);
     }
