@@ -1,9 +1,8 @@
 @component('mail::message')
 
-<h1>Dear {{$user_name}} !</h1>
 <h1>{{$message}}</h1>
 
-@component('mail::button', ['url' => 'https://www.cellorecording.com//orders'])
+@component('mail::button', ['url' => 'https://www.cellorecording.com/orders-admin'])
 Click here to check your order now !
 @endcomponent
 

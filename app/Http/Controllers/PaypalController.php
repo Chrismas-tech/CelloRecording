@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MessageToAdmin;
 use App\Mail\Order as MailOrder;
 use App\Models\Order;
 use App\Models\Quote;
@@ -26,14 +27,13 @@ class PaypalController extends Controller
     public function __construct()
     {
         /* SANDBOX */
-        
+
         $api_Context = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(
                 env('SANDBOX_CLIENT_ID'),   // ClientID
                 env('SANDBOX_SECRET')      // ClientSecret
             )
         );
-
 
         /*
         $api_Context = new \PayPal\Rest\ApiContext(
@@ -102,8 +102,8 @@ class PaypalController extends Controller
             ->setInvoiceNumber(uniqid());
 
         $redirectUrls = new RedirectUrls();
-        $redirectUrls->setReturnUrl("https://www.cellorecording.com/execute_payment")
-            ->setCancelUrl("https://www.cellorecording.com/page-error");
+        $redirectUrls->setReturnUrl("https://www.cellorecording.test/execute_payment")
+            ->setCancelUrl("https://www.cellorecording.test/page-error");
 
         $payment = new Payment();
         $payment->setIntent("sale")
@@ -188,13 +188,16 @@ class PaypalController extends Controller
         /* On supprime la custom offer puisqu'elle est acceptée */
         Quote::destroy($quote->id);
 
-        /*On envoie un mail à l'utilisateur*/
+        /*On envoie un mail à l'admin */
         $user = User::find($quote->user_id);
         $email_user = $user->email;
         $user_name = $user->name;
 
-        $message = "Your order has been confirmed !";
-        Mail::to($email_user)->send(new MailOrder($message, $user_name));
+        $email_admin = env('MAIL_USERNAME');
+        $url_redirection = 'https://www.cellorecording.com/orders-admin';
+
+        $message = $user_name.' has placed an order on your website !';
+        Mail::to($email_admin)->send(new MailOrder($message, $user_name, $email_user, $url_redirection));
 
         return;
     }
