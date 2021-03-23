@@ -123,7 +123,7 @@ class PaypalController extends Controller
         $quote = Quote::where('id', $quote_id)->first();
         $price = $quote->price / 100;
 
-        /* PHP PAYPAL SDK SAMPLE CODE https://paypal.github.io/PayPal-PHP-SDK/sample/doc/payments/ExecutePayment.html*/
+        /* PHP PAYPAL SDK SAMPLE CODE https://paypal.github.io/PayPal-PHP-SDK/sample/doc/payments/ExecutePayment.html */
 
         $paymentId = $request['paymentId'];
         $payment = Payment::get($paymentId, $this->apiContext);
