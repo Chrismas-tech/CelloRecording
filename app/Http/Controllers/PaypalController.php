@@ -48,7 +48,7 @@ class PaypalController extends Controller
             array(
                 'log.LogEnabled' => true,
                 'log.FileName' => 'PayPal.log',
-                'log.LogLevel' => 'DEBUG',
+                'log.LogLevel' => 'FINE',
                 'mode' => env('PAYPAL_MODE')
             )
         );
@@ -104,8 +104,7 @@ class PaypalController extends Controller
             ->setPayer($payer)
             ->setRedirectUrls($redirectUrls)
             ->setTransactions(array($transaction));
-
-        dd($payment->create($this->apiContext));
+            
         $payment->create($this->apiContext);
 
         return redirect($payment->getApprovalLink());
