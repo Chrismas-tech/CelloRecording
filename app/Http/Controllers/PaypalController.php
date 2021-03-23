@@ -102,8 +102,8 @@ class PaypalController extends Controller
             ->setInvoiceNumber(uniqid());
 
         $redirectUrls = new RedirectUrls();
-        $redirectUrls->setReturnUrl("https://www.cellorecording.test/execute_payment")
-            ->setCancelUrl("https://www.cellorecording.test/page-error");
+        $redirectUrls->setReturnUrl("https://www.cellorecording.com/execute_payment")
+            ->setCancelUrl("https://www.cellorecording.com/page-error");
 
         $payment = new Payment();
         $payment->setIntent("sale")
