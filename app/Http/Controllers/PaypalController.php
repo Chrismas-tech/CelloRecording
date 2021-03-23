@@ -49,7 +49,7 @@ class PaypalController extends Controller
                 'log.LogEnabled' => true,
                 'log.FileName' => 'PayPal.log',
                 'log.LogLevel' => 'DEBUG',
-                'mode' => 'live'
+                'mode' => env('PAYPAL_MODE')
             )
         );
 
