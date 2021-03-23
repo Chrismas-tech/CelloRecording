@@ -239,15 +239,6 @@ class AdminController extends Controller
         $deliveries_order = Delivery::where('order_id', $order_id)->get();
         $order = Order::where('id', $order_id)->first();
 
-        /*
-        $url = url('/private-storage/deliveries/1/Delivery-File n°1 - the-voice-of-poland-dorota-osinska-calling-you (mp3cut.net) (1).mp3');
-        dd($url);
-
-        if(file_exists($url)) {
-         dd('yolo');
-        }
-       */
-
         /* On calcule le temps du minuteur en jours, heures, minutes, secondes*/
         $date_created_at = $order->created_at;
         $nb_days = $order->nb_days;
