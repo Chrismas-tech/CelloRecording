@@ -28,15 +28,19 @@ class PaypalController extends Controller
     {
         /* SANDBOX */
 
+
+        /*
         $api_Context = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(
                 env('SANDBOX_CLIENT_ID'),   // ClientID
                 env('SANDBOX_SECRET')      // ClientSecret
             )
         );
-        
+        */
+
+
         /* LIVE */
-        /*
+        
         $api_Context = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(
                 env('PAYPAL_CLIENT_ID'),   // ClientID
@@ -47,12 +51,10 @@ class PaypalController extends Controller
         $api_Context->setConfig(
             array(
                 'log.LogEnabled' => true,
-                'log.FileName' => 'PayPal.log',
-                'log.LogLevel' => 'DEBUG',
                 'mode' => env('PAYPAL_MODE')
             )
         );
-        */
+        
 
         $this->apiContext = $api_Context;
     }
@@ -190,7 +192,7 @@ class PaypalController extends Controller
         $email_admin = env('MAIL_USERNAME');
         $url_redirection = 'https://www.cellorecording.com/orders-admin';
 
-        $message = $user_name.' has placed an order on your website !';
+        $message = $user_name . ' has placed an order on your website !';
         Mail::to($email_admin)->send(new MailOrder($message, $user_name, $email_user, $url_redirection));
 
         return;
