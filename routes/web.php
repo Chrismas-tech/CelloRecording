@@ -84,7 +84,7 @@ Route::post('/upload_delivery', [UploadfileController::class, 'upload_delivery']
 /*ADMIN*/
 /*ADMIN*/
 
-/* CONNECTION ADMIN*/
+/* CONNECTION ADMIN */
 
 Route::get('/admin', [AdminController::class, 'page_admin'])->name('admin');
 Route::get('/admin_logout', [AdminController::class, 'page_admin_logout'])->name('admin_logout');
