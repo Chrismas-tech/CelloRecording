@@ -79,6 +79,11 @@ Route::post('/upload_music_user', [UploadfileController::class, 'upload_music_us
 Route::post('/upload_music_admin/{user_id}', [UploadfileController::class, 'upload_music_admin'])->name('upload_music_admin');
 Route::post('/upload_delivery', [UploadfileController::class, 'upload_delivery'])->name('upload_delivery');
 
+/* PAGE ERROR */
+Route::get('/page-error', function() {
+return view('page_error');
+});
+
 /*ADMIN*/
 /*ADMIN*/
 /*ADMIN*/

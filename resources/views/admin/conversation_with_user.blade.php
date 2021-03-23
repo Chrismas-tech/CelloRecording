@@ -62,7 +62,7 @@
                         <!-- PROGRESS BAR -->
 
                         <div class="flex w-full items-center mt-5 ">
-                            <div id="progress_bar_visible" class="relative mr-5 w-11/12 hidden">
+                            <div id="progress_bar_visible" class="relative w-full hidden">
                                 <div class="flex mb-2 items-center justify-between">
                                     <div>
                                         <span

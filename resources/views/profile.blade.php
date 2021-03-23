@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
+ 
     <div class="lg:p-12">
         <div class="container mx-auto sm:max-w-xl md:max-w-2xl lg:max-w-7xl">
 
@@ -253,7 +253,7 @@
                     $('#error').addClass("hidden");
 
                     setTimeout(() => {
-                        window.location.replace("http://cellorecording.ml/profile");
+                        window.location.replace("https://www.cellorecording.com/profile");
                     }, 1000);
 
                 } else {

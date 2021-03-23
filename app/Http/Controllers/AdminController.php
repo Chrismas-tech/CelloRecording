@@ -107,6 +107,7 @@ class AdminController extends Controller
 
     public function page_list_conversation_admin(Request $request)
     {
+
         $admin_id = Admin::find(1)->id;
         $notifs_all_user = Notification::where('direction_send', 0)->where('nb_notif', '!=', 0)->get();
 
@@ -179,7 +180,7 @@ class AdminController extends Controller
         /*Pour le mail*/
         $email_user = User::find($user_id)->email;
         $admin_name = Admin::find(1)->name;
-        $url_redirection = "https://cellorecording.com/conversation";
+        $url_redirection = "https://www.cellorecording.com/conversation";
 
         /*On envoie un mail à l'utilisateur*/
         Mail::to($email_user)->send(new Messages($admin_name, $notifications->nb_notif, $url_redirection));
@@ -207,7 +208,7 @@ class AdminController extends Controller
         $user_name = User::find($request->user_id)->name;
         $admin_name = Admin::find(1)->name;
 
-        $url_redirection = "https://cellorecording.com/quotes-received";
+        $url_redirection = "https://www.cellorecording.com/quotes-received";
 
         /*On envoie un mail à l'utilisateur*/
         Mail::to($email_user)->send(new MailQuote($admin_name, $user_name, $datas, $url_redirection));
@@ -237,15 +238,6 @@ class AdminController extends Controller
     {
         $deliveries_order = Delivery::where('order_id', $order_id)->get();
         $order = Order::where('id', $order_id)->first();
-
-        /*
-        $url = url('/private-storage/deliveries/1/Delivery-File n°1 - the-voice-of-poland-dorota-osinska-calling-you (mp3cut.net) (1).mp3');
-        dd($url);
-
-        if(file_exists($url)) {
-         dd('yolo');
-        }
-       */
 
         /* On calcule le temps du minuteur en jours, heures, minutes, secondes*/
         $date_created_at = $order->created_at;

@@ -112,7 +112,7 @@ class UserController extends Controller
 
         $email_user = User::find($user_id)->email;
         $user_name = User::find($user_id)->name;
-        $url_redirection = 'http://cellorecording.ml/conversation_with_user/' . $user_id;
+        $url_redirection = 'https://www.cellorecording.com/conversation-with-user/' . $user_id;
 
         /*On envoie un mail à l'admin*/
 
@@ -285,7 +285,7 @@ class UserController extends Controller
 
                 $email_user = User::find($user_id)->email;
                 $user_name = User::find($user_id)->name;
-                $url_redirection = 'http://cellorecording.ml/orders_admin';
+                $url_redirection = 'https://www.cellorecording.com/orders-admin';
 
                 /*On envoie un mail à l'admin*/
 
@@ -327,39 +327,9 @@ class UserController extends Controller
 
     public function update_profile(Request $request)
     {
-
-        /*Si on change de nom d'utilisateur, le nom doit être changé sur les tables Notifications et Messages sinon cela créé des erreurs*/
-
-        $old_user_name = $request->old_user_name;
-
-        $messages_user = Message::where('user_id', auth()->user()->id)->get();
-        $notifications_user = Notification::where('user_id', auth()->user()->id)->get();
-
-        foreach ($messages_user as $message) {
-
-            if ($message->from == $old_user_name) {
-                $message->from = $request->name;
-                $message->save();
-            } elseif ($message->to == $old_user_name) {
-                $message->to = $request->name;
-                $message->save();
-            }
-        }
-
-        foreach ($notifications_user as $notification) {
-
-            if ($notification->from == $old_user_name) {
-                $notification->from = $request->name;
-                $notification->save();
-            } elseif ($notification->to == $old_user_name) {
-                $notification->to = $request->name;
-                $notification->save();
-            }
-        }
-
         $request->validate([
-            'name' => 'required',
-            'email' => 'required',
+            'name' => 'required|string|max:50',
+            'email' => 'required|max:255',
         ]);
 
         User::find(auth()->user()->id)->update(
@@ -370,9 +340,6 @@ class UserController extends Controller
         );
 
         /*Update Name sur les messages et notifications*/
-
-
-
         return redirect('profile')->with('success_update', 'Username and email has been successfully updated !');;
     }
 
@@ -395,7 +362,6 @@ class UserController extends Controller
         NumberFiles::where('user_id', $user_id)->delete();
         Notification::where('user_id', $user_id)->delete();
         User::destroy($user_id);
-
 
         return redirect('/');
     }

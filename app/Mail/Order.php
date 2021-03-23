@@ -14,16 +14,20 @@ class Order extends Mailable
 
     public $message;
     public $user_name;
+    public $email_user;
+    public $url_redirection;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($message, $user_name)
+    public function __construct($message, $user_name, $email_user, $url_redirection)
     {
         $this->message = $message;
         $this->user_name = $user_name;
+        $this->email_user = $email_user;
+        $this->url_redirection = $url_redirection;
     }
 
     /**
