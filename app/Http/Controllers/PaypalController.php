@@ -109,15 +109,7 @@ class PaypalController extends Controller
             ->setRedirectUrls($redirectUrls)
             ->setTransactions(array($transaction));
 
-        try {
-            $payment->create($this->$apiContext);
-        } catch (Exception $ex) {
-
-            ResultPrinter::printError("Created Payment Using PayPal. Please visit the URL to Approve.", "Payment", null, $request, $ex);
-            exit(1);
-        }
-
-        dd($payment->create());
+        dd($payment);
         $payment->create($this->apiContext);
 
         return redirect($payment->getApprovalLink());
