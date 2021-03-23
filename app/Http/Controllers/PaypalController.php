@@ -49,11 +49,9 @@ class PaypalController extends Controller
                 'log.LogEnabled' => true,
                 'log.FileName' => 'PayPal.log',
                 'log.LogLevel' => 'DEBUG',
-                'mode' => env('PAYPAL_MODE')
+                'mode' => 'live'
             )
         );
-
-        dd($api_Context);
 
         $this->apiContext = $api_Context;
     }
