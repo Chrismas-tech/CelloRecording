@@ -105,7 +105,7 @@ class PaypalController extends Controller
             ->setRedirectUrls($redirectUrls)
             ->setTransactions(array($transaction));
 
-        dd($payment->create($this->apiContext));
+        dd($this->apiContext);
         $payment->create($this->apiContext);
 
         return redirect($payment->getApprovalLink());
