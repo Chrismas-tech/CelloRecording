@@ -44,7 +44,7 @@ class PaypalController extends Controller
             )
         );
 
-        /*
+
         $api_Context->setConfig(
             array(
                 'log.LogEnabled' => true,
@@ -53,7 +53,7 @@ class PaypalController extends Controller
                 'mode' => env('PAYPAL_MODE')
             )
         );
-        */
+
 
         $this->apiContext = $api_Context;
     }
@@ -107,6 +107,7 @@ class PaypalController extends Controller
             ->setRedirectUrls($redirectUrls)
             ->setTransactions(array($transaction));
 
+        dd('yolo');
         $payment->create($this->apiContext);
 
         return redirect($payment->getApprovalLink());
