@@ -112,7 +112,7 @@ class UserController extends Controller
 
         $email_user = User::find($user_id)->email;
         $user_name = User::find($user_id)->name;
-        $url_redirection = 'https://www.cellorecording.com//conversation_with_user/' . $user_id;
+        $url_redirection = 'https://www.cellorecording.com/conversation-with-user/' . $user_id;
 
         /*On envoie un mail à l'admin*/
 
@@ -285,7 +285,7 @@ class UserController extends Controller
 
                 $email_user = User::find($user_id)->email;
                 $user_name = User::find($user_id)->name;
-                $url_redirection = 'https://www.cellorecording.com//orders_admin';
+                $url_redirection = 'https://www.cellorecording.com/orders-admin';
 
                 /*On envoie un mail à l'admin*/
 
