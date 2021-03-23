@@ -446,6 +446,4 @@ class UserController extends Controller
             return view('paypal_payment', compact('quote'));
         }
     }
-
-
 }

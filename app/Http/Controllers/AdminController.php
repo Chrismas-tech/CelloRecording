@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Mail\Messages;
 use App\Mail\Quote as MailQuote;
 use App\Models\Admin;
