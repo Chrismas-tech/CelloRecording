@@ -23,7 +23,7 @@ class AdminController extends Controller
     {
         $this->middleware('admin', ['except' => 'page_admin']);
         
-        $name_route = Route::current()->uri();
+        $name_route = Route::currentRouteName();
         //dd($name_route);
         SEOController::metaTag($name_route);
     }

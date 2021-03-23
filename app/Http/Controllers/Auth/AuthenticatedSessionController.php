@@ -20,7 +20,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create()
     {
-        $name_route = Route::current()->uri();
+        $name_route = Route::currentRouteName();
         //dd($name_route);
         SEOController::metaTag($name_route);
         
