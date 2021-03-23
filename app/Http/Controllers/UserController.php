@@ -329,7 +329,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:50',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|max:255',
         ]);
 
         User::find(auth()->user()->id)->update(
