@@ -2,7 +2,7 @@
 
 <h1>{{$message}}</h1>
 
-@component('mail::button', ['url' => 'https://www.cellorecording.com/orders-admin'])
+@component('mail::button', ['url' => $url_redirection])
 Click here to check your order now !
 @endcomponent
 

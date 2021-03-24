@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\Quote;
 use App\Models\User;
 use Artesaos\SEOTools\Facades\SEOMeta;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use PayPal\Api\Amount;
@@ -19,6 +20,7 @@ use PayPal\Api\Payment;
 use PayPal\Api\PaymentExecution;
 use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
+use PHPUnit\TextUI\ResultPrinter;
 
 class PaypalController extends Controller
 {
@@ -27,15 +29,16 @@ class PaypalController extends Controller
     public function __construct()
     {
         /* SANDBOX */
-
+        /*
         $api_Context = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(
                 env('SANDBOX_CLIENT_ID'),   // ClientID
                 env('SANDBOX_SECRET')      // ClientSecret
             )
         );
+        */
 
-        /*
+        /* LIVE */
         $api_Context = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(
                 env('PAYPAL_CLIENT_ID'),   // ClientID
@@ -43,23 +46,15 @@ class PaypalController extends Controller
             )
         );
 
- 
+
         $api_Context->setConfig(
             array(
-                'log.LogEnabled' => true,
-                'log.FileName' => 'PayPal.log',
-                'log.LogLevel' => 'DEBUG',
                 'mode' => env('PAYPAL_MODE')
             )
         );
-        */
+
 
         $this->apiContext = $api_Context;
-    }
-
-    public function page_new_paypal_payment()
-    {
-        return view('page_new_paypal_payment');
     }
 
     public function create_order_paypal(Request $request)
@@ -70,7 +65,7 @@ class PaypalController extends Controller
         $quote = Quote::where('id', $quote_id)->first();
         $price = $quote->price / 100;
 
-        /* PHP PAYPAL SDK SAMPLE CODE https://paypal.github.io/PayPal-PHP-SDK/sample/doc/payments/CreatePaymentUsingPayPal.html*/
+        /* PHP PAYPAL SDK SAMPLE CODE https://paypal.github.io/PayPal-PHP-SDK/sample/doc/payments/CreatePaymentUsingPayPal.html */
 
         $payer = new Payer();
         $payer->setPaymentMethod("paypal");
@@ -123,7 +118,7 @@ class PaypalController extends Controller
         $quote = Quote::where('id', $quote_id)->first();
         $price = $quote->price / 100;
 
-        /* PHP PAYPAL SDK SAMPLE CODE https://paypal.github.io/PayPal-PHP-SDK/sample/doc/payments/ExecutePayment.html*/
+        /* PHP PAYPAL SDK SAMPLE CODE https://paypal.github.io/PayPal-PHP-SDK/sample/doc/payments/ExecutePayment.html */
 
         $paymentId = $request['paymentId'];
         $payment = Payment::get($paymentId, $this->apiContext);
@@ -196,7 +191,7 @@ class PaypalController extends Controller
         $email_admin = env('MAIL_USERNAME');
         $url_redirection = 'https://www.cellorecording.com/orders-admin';
 
-        $message = $user_name.' has placed an order on your website !';
+        $message = $user_name . ' has placed an order on your website !';
         Mail::to($email_admin)->send(new MailOrder($message, $user_name, $email_user, $url_redirection));
 
         return;

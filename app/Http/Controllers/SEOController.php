@@ -116,7 +116,7 @@ class SEOController extends Controller
                 SEOMeta::addKeyword(['Quotes', 'cellorecording.com', 'Your Quotes list', 'Quotes page']);
                 break;
 
-            case $name_route == 'paypal-payment/{quote_id}':
+            case $name_route == 'paypal-payment':
                 SEOMeta::setTitle('Paypal Payment');
                 SEOMeta::setDescription('Order your custom-made cello recording safely via Paypal');
                 SEOMeta::addKeyword(['Paypal Payment', 'cellorecording.com', 'Proceed for payment via Paypal', 'Payment page']);

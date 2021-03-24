@@ -390,8 +390,6 @@ class UserController extends Controller
         return redirect('contact')->with('send_success', 'Your email has been successfully sent !');
     }
 
-
-
     public function page_paypal_payment(Request $request, $quote_id)
     {
         $user_id = auth()->user()->id;
