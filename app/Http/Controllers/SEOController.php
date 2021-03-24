@@ -9,7 +9,7 @@ class SEOController extends Controller
     public static function metaTag($name_route)
     {
         SEOMeta::setCanonical('https://www.cellorecording.com/' . $name_route);
-        dd($name_route);
+        
         switch ($name_route) {
                 /* ROUTE LOGIN */
             case $name_route == 'login':
@@ -35,57 +35,6 @@ class SEOController extends Controller
                 break;
 
                 /* ROUTES USER */
-            case $name_route == 'generated::9rCLgvK5YW0p1gyA':
-                SEOMeta::setTitle('Professional Cello Recording Services Online | 7/7 days');
-                SEOMeta::setDescription('In need of a Professional Cellist for your next musical project ? On Cellorecording.com, get a quote and order your professional cello recording today !');
-                SEOMeta::addKeyword([
-                    'Cello - Hire an online session cellist for recordings',
-                    'Studio Recording Session Cellist',
-                    'Online Session Cello',
-                    'Session Notes',
-                    'Online session cellist',
-                    'Cello soundbetter',
-                    'Online Remote Session Cello Recording',
-                    'Hire Violinists, Cellists & Viola Players',
-                    'Cello, Violin and Double Bass Recording Sessions',
-                    'Best Cello Services To Buy Online',
-                    'Record professional real cello for your project',
-                    'cello recording',
-                    'cellorecording.com',
-                    'cello recording studio',
-                    'cello recording online',
-                    'cello recording app',
-                    'cello recordings best',
-                    'cello recording techniques',
-                    'recording cello at home',
-                    'cello audio recording',
-                    'cello recording studios los angeles',
-                    'recording a cello',
-                    'best cello recording',
-                    'recording for cello',
-                    'cello home recording',
-                    'cello in recording ',
-                    'remote cello recording',
-                    'recording cello solo',
-                    'recording setup cello',
-                    'how to record cello at home',
-                    'how to recording cello sound',
-                    'cello customer service',
-                    'cello wrapping services',
-                    'cello customer service number',
-                    'cello customer care',
-                    'cello tv customer service',
-                    'cello connection',
-                    '2 cello',
-                    '2cellos',
-                    'recording cello',
-                    'cello session player',
-                    'remote cello recording online',
-                    'cello session online',
-                    'cello session online service',
-                    'cello service',
-                ]);
-                break;
 
             case $name_route == 'contact':
                 SEOMeta::setTitle('Contact page');
@@ -193,6 +142,58 @@ class SEOController extends Controller
                 SEOMeta::setTitle('Admin - View current order');
                 SEOMeta::setDescription('Here is a page dedicated to the upload delivery, reserved to the administrator');
                 SEOMeta::addKeyword(['Admin', 'cellorecording.com', 'Admin - View current order']);
+                break;
+
+            default:
+                SEOMeta::setTitle('Professional Cello Recording Services Online | 7/7 days');
+                SEOMeta::setDescription('In need of a Professional Cellist for your next musical project ? On Cellorecording.com, get a quote and order your professional cello recording today !');
+                SEOMeta::addKeyword([
+                    'Cello - Hire an online session cellist for recordings',
+                    'Studio Recording Session Cellist',
+                    'Online Session Cello',
+                    'Session Notes',
+                    'Online session cellist',
+                    'Cello soundbetter',
+                    'Online Remote Session Cello Recording',
+                    'Hire Violinists, Cellists & Viola Players',
+                    'Cello, Violin and Double Bass Recording Sessions',
+                    'Best Cello Services To Buy Online',
+                    'Record professional real cello for your project',
+                    'cello recording',
+                    'cellorecording.com',
+                    'cello recording studio',
+                    'cello recording online',
+                    'cello recording app',
+                    'cello recordings best',
+                    'cello recording techniques',
+                    'recording cello at home',
+                    'cello audio recording',
+                    'cello recording studios los angeles',
+                    'recording a cello',
+                    'best cello recording',
+                    'recording for cello',
+                    'cello home recording',
+                    'cello in recording ',
+                    'remote cello recording',
+                    'recording cello solo',
+                    'recording setup cello',
+                    'how to record cello at home',
+                    'how to recording cello sound',
+                    'cello customer service',
+                    'cello wrapping services',
+                    'cello customer service number',
+                    'cello customer care',
+                    'cello tv customer service',
+                    'cello connection',
+                    '2 cello',
+                    '2cellos',
+                    'recording cello',
+                    'cello session player',
+                    'remote cello recording online',
+                    'cello session online',
+                    'cello session online service',
+                    'cello service',
+                ]);
                 break;
         }
     }
