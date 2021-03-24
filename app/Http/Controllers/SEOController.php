@@ -9,7 +9,7 @@ class SEOController extends Controller
     public static function metaTag($name_route)
     {
         SEOMeta::setCanonical('https://www.cellorecording.com/' . $name_route);
-
+        dd($name_route);
         switch ($name_route) {
                 /* ROUTE LOGIN */
             case $name_route == 'login':
@@ -45,7 +45,7 @@ class SEOController extends Controller
                     'Session Notes',
                     'Online session cellist',
                     'Cello soundbetter',
-                    'Online Remote Session Cello Recording', 
+                    'Online Remote Session Cello Recording',
                     'Hire Violinists, Cellists & Viola Players',
                     'Cello, Violin and Double Bass Recording Sessions',
                     'Best Cello Services To Buy Online',
