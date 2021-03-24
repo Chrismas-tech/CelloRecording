@@ -49,9 +49,6 @@ class PaypalController extends Controller
 
         $api_Context->setConfig(
             array(
-                'log.LogEnabled' => true,
-                'log.FileName' => 'PayPal.log',
-                'log.LogLevel' => 'FINE',
                 'mode' => env('PAYPAL_MODE')
             )
         );
