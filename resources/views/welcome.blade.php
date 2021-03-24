@@ -139,9 +139,9 @@
                             My name is Christophe. I'm a professional cellist, pianist,
                             and composer born in 1990 in France (Nizza).<br><br>
 
-                            I studied the violoncello in Paris where i graduated from the Bachelor of Music at the
+                            I studied the violoncello in Paris where I graduated from the Bachelor of Music at the
                             <strong>Pôle
-                                Supérieur Paris Boulogne-Billancourt</strong>, then i continued my education by going to
+                                Supérieur Paris Boulogne-Billancourt</strong>, then I continued my education by going to
                             the
                             <strong>University of Music and Performing Arts Graz</strong>, for my Master Degree.
 
@@ -149,11 +149,11 @@
                             I worked many years with the top orchestra of World renown : <strong>ORF Vienna Radio
                                 Symphony
                                 Orchestra</strong>
-                            with which i performed in the world's most famous concert halls.
+                            with which I performed in the world's most famous concert halls.
 
                             <br><br>
 
-                            Since more than 4 years now, i'm working for music films, radios, and international
+                            Since more than 4 years now, I'm working for music films, radios, and international
                             composers
                             through famous online musical platforms like <strong>Airgigs and Soundbetter</strong>.
                             <br><br>
@@ -176,15 +176,15 @@
                             Create your own account and begin a conversation with me today !<br>
                             We will discuss about your musical project, your requirements and aesthetic wishes you
                             have and
-                            i
+                            I
                             will give my opinion as expert.
                         </p>
                         <br>
                         <p>
-                            As every project is different, i'm making custom quotes for each musical projects.
+                            As every project is different, I'm making custom quotes for each musical projects.
                         </p>
                         <p>
-                            Once we have common agreements, i will send you a quote that you can accept or decline
+                            Once we have common agreements, I will send you a quote that you can accept or decline
                             throught
                             your
                             personal space.
@@ -223,7 +223,7 @@
 
                                     I rarely use my <strong>electric-cello</strong>, essentially for modern projects
                                     or
-                                    when i have
+                                    when I have
                                     to make a video-clip outside.
                                 </h2>
                             </div>
@@ -240,16 +240,16 @@
                             </div>
                             <div class="mt-5 mq_recording_environment">
                                 <h2>
-                                    Notice that i'm working only for <strong>CD quality</strong> album in
+                                    Notice that I'm working only for <strong>CD quality</strong> album in
                                     <strong>Professional Studio</strong>.<br><br>
 
-                                    In order to record the cello melodies in the best conditions, i'm using a famous
-                                    music software with which i have a huge experience as sound producer too :
+                                    In order to record the cello melodies in the best conditions, I'm using a famous
+                                    music software with which I have a huge experience as sound producer too :
                                     <strong>Ableton Suite 10</strong>.
 
                                     <br><br>
 
-                                    Once your work is achieved, i deliver you one or multiples audio files in the
+                                    Once your work is achieved, I deliver you one or multiples audio files in the
                                     format
                                     of your choice :
 

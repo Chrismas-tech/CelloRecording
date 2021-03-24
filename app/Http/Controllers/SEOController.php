@@ -9,9 +9,9 @@ class SEOController extends Controller
     public static function metaTag($name_route)
     {
         SEOMeta::setCanonical('https://www.cellorecording.com/' . $name_route);
-        
+
         switch ($name_route) {
-                /* ROUTE LOGIN */
+            /* ROUTE LOGIN */
             case $name_route == 'login':
                 SEOMeta::setTitle('Login into your account');
                 SEOMeta::setDescription('Login into your account on Cellorecording.com, fill the following formular');
