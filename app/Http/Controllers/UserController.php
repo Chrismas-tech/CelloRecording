@@ -32,7 +32,15 @@ class UserController extends Controller
         $this->middleware('auth', ['except' => array('page_welcome', 'page_contact', 'page_send_contact_email')]);
 
         $name_route = Route::currentRouteName();
-        //dd($name_route);
+
+        /*
+        $string_to_search = strpos($name_route, 'generated::');
+
+        if ($string_to_search !== false) {
+            $name_route = '/';
+        }
+        */
+
         SEOController::metaTag($name_route);
     }
 

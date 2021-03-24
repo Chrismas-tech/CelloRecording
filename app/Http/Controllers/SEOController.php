@@ -35,7 +35,7 @@ class SEOController extends Controller
                 break;
 
                 /* ROUTES USER */
-            case $name_route == '/':
+            case $name_route == 'generated::9rCLgvK5YW0p1gyA':
                 SEOMeta::setTitle('Professional Cello Recording Services Online | 7/7 days');
                 SEOMeta::setDescription('In need of a Professional Cellist for your next musical project ? On Cellorecording.com, get a quote and order your professional cello recording today !');
                 SEOMeta::addKeyword([
