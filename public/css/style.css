@@ -407,7 +407,7 @@ input[type="file"] {
 
 @media (max-width: 393px) {
     .mq_jumbo_btn a {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         padding: 6px;
         margin-right: 0;
     }
