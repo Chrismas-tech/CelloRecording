@@ -1,6 +1,6 @@
 <nav class="bg-white border border-gray-200">
 
-    <div id="menu_desktop" class="flex items-center justify-between mx-auto xl:container">
+    <div id="menu_desktop" class="flex items-center justify-between mx-auto lg:container">
 
         <div>
             <x-navlink></x-navlink>
@@ -9,12 +9,12 @@
         <div x-data="{open:false}" x-cloak class="flex items-center justify-center relative">
             <button @click="open = true" class="flex items-center md:mr-3 focus:outline-none">
                 @auth
-                    <h1 class="mr-5 text-3xl dancing_font capitalize mq_username_fs">{{ Auth::User()->name }}</h1>
+                    <h1 class="mr-5 text-lg dancing_font capitalize mq_username_fs">{{ Auth::User()->name }}</h1>
                     @if (Auth::user()->avatar)
                         <img src="{{route('profile_image', Auth::user()->id)}}" class="mr-5 border border-gray-300 rounded-full w-16 h-16 circle mq_img_profile">
                     @else
                         <img src="{{ asset('img/noname_avatar.png') }}"
-                            class="mr-5 border border-gray-400 rounded-full w-16 h-16 circle mq_img_profile" alt="avatar">
+                            class="mr-1 border border-gray-400 rounded-full w-16 h-16 circle mq_img_profile" alt="avatar">
                     @endif
                     <img src="{{ asset('img/select_icon.png') }}" class="w-6 h-6 " alt="">
                 </button>

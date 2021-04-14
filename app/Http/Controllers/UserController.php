@@ -327,7 +327,7 @@ class UserController extends Controller
     public function update_profile(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:50',
+            'name' => 'required|string|max:20',
             'email' => 'required|max:255',
         ]);
 

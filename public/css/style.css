@@ -154,7 +154,7 @@ input[type="file"] {
 
 /* MEDIA QUERIES INTERFACE USER AND ADMIN*/
 
-@media (min-width: 870px) {
+@media (min-width: 911px) {
     #menu_responsive_user {
         display: none;
     }
@@ -169,12 +169,17 @@ input[type="file"] {
     }
 }
 
+@media (max-width: 1279px) {
+    .mq_username_fs {
+        display: none;
+    }
+}
+
 @media (max-width: 1222px) {
     .mq_li_fs {
         font-size: 14px;
     }
     .mq_icon_size {
-        width: 24px;
         height: auto;
     }
 }
@@ -185,7 +190,9 @@ input[type="file"] {
     }
 }
 
-@media (max-width: 870px) {
+@media (max-width: 1022px) {}
+
+@media (max-width: 910px) {
     #menu_desktop {
         display: none;
     }
