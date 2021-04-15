@@ -99,7 +99,7 @@ $not_active_admin = 'border-green-200';
         @else
             <a href="{{ route('dashboard-admin') }}" class="hover:text-green-600">
                 <li
-                    class="mq_li_fs relative p-6 md:mr-8  border-b-2 hover:border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'dashboard-admin' ? $active_admin : $not_active_admin }}">
+                    class="mq_li_fs relative p-2 py-6 md:mr-8  border-b-2 hover:border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'dashboard-admin' ? $active_admin : $not_active_admin }}">
                     Admin Dashboard
                     <div class="absolute bottom-0 right-0 flex items-center">
                         <img src="{{ asset('img/home_icon.png') }}" alt="home icon" class="w-7 mq_icon_size">
@@ -109,7 +109,7 @@ $not_active_admin = 'border-green-200';
             </a>
             <a href="{{ route('list-conversation-admin') }}" class="hover:text-green-600">
                 <li
-                    class="mq_li_fs relative p-6 md:mr-8  border-b-2 hover:border-green-500  {{ Route::currentRouteName() == 'list-conversation-admin' ? $active_admin : $not_active_admin }}">
+                    class="mq_li_fs relative p-2 py-6 md:mr-8  border-b-2 hover:border-green-500  {{ Route::currentRouteName() == 'list-conversation-admin' ? $active_admin : $not_active_admin }}">
                     Conversations with Clients
                     <div class="absolute bottom-0 right-0 flex items-center">
                         <img src="{{ asset('img/messages_icon.png') }}" alt="" class="w-7 mq_icon_size">
@@ -125,7 +125,7 @@ $not_active_admin = 'border-green-200';
             </a>
             <a href="{{ route('quotes-sent') }}" class="hover:text-green-600">
                 <li
-                    class="mq_li_fs relative p-6 md:mr-8  border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'quotes-sent' ? $active_admin : $not_active_admin }}">
+                    class="mq_li_fs relative p-2 py-6 md:mr-8  border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'quotes-sent' ? $active_admin : $not_active_admin }}">
                     Your Quotes
 
                     <div class="absolute bottom-0 right-0 flex items-center">
@@ -143,7 +143,7 @@ $not_active_admin = 'border-green-200';
 
             <a href="{{ route('orders-admin') }}" class="hover:text-green-600">
                 <li
-                    class="mq_li_fs relative p-6 md:mr-8  border-b-2 hover:border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'orders-admin' ? $active_admin : $not_active_admin }}">
+                    class="mq_li_fs relative p-2 py-6 md:mr-8  border-b-2 hover:border-b-2 hover:border-green-500 {{ Route::currentRouteName() == 'orders-admin' ? $active_admin : $not_active_admin }}">
                     My Orders
 
                     <div class="absolute bottom-0 right-0 flex items-center">
@@ -161,7 +161,7 @@ $not_active_admin = 'border-green-200';
 
             <a href="{{ route('admin_logout') }}" class="hover:text-green-600">
                 @csrf
-                <li class="relative p-6 md:mr-8 border-green-200 border-b-2 hover:border-b-2 hover:border-green-500">
+                <li class="relative p-2 py-6 md:mr-8 border-green-200 border-b-2 hover:border-b-2 hover:border-green-500">
                     <button type="submit" class="mq_li_fs text-sm focus:outline-none">Logout</button>
                     <div class="absolute bottom-0 right-0 flex items-center">
                         <img src="{{ asset('img/shutdown.png') }}" alt="" class="w-7 mq_icon_size">
