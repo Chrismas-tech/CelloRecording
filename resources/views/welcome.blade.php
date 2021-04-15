@@ -114,7 +114,7 @@
                     class="px-2 py-3 mr-3 text-2xl text-white bg-gray-700 rounded hover:text-green-400 nav_button_font border border-gray-800"
                     href="#pricing">Pricing</a></li>
             <li class="mt-3 mb-3"><a
-                    class="px-2 py-3 mr-3 text-2xl text-white bg-gray-700 rounded hover:text-green-400 nav_button_font border border-gray-800"
+                    class="px-2 py-3 text-2xl text-white bg-gray-700 rounded hover:text-green-400 nav_button_font border border-gray-800"
                     href="#social_media">Social Medias</a></li>
         </ul>
     </menu>
