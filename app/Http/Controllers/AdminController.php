@@ -112,7 +112,6 @@ class AdminController extends Controller
         $notifs_all_user = Notification::where('direction_send', 0)->where('nb_notif', '!=', 0)->get();
 
         /* On compte le nombre d'utilisateur */
-
         $nb_users = User::all();
         $nb_notifications = Notification::where('admin_id',  $admin_id)->sum('nb_notif');
 
