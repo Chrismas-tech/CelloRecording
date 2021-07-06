@@ -338,7 +338,7 @@ class UserController extends Controller
             ]
         );
 
-        /*Update Name sur les messages et notifications*/
+        /* Update Name sur les messages et notifications */
         return redirect('profile')->with('success_update', 'Username and email has been successfully updated !');;
     }
 

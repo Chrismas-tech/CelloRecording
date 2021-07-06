@@ -114,7 +114,7 @@ class AdminController extends Controller
         /* On compte le nombre d'utilisateur */
 
         $nb_users = User::all();
-        $nb_notifications = Notification::where('admin_id',  $admin_id)->sum('nb_notif');
+        $nb_notifications = Notification::where('admin_id',  $admin_id)->where('direction_send', 0)->sum('nb_notif');
 
         return view('admin.list_conversation_admin', compact('nb_notifications', 'nb_users', 'notifs_all_user'));
     }
@@ -171,7 +171,7 @@ class AdminController extends Controller
         /*Création du nouveau message*/
         Message::create($datas_messages);
 
-        /*On incrémente de 1 la relation Admin->User dans la table Notification*/
+        /* On incrémente de 1 la relation Admin->User dans la table Notification */
         $notifications = Notification::where('admin_id', $admin_id)->where('user_id', $user_id)->where('direction_send', 1)->first();
 
         $notifications->nb_notif += 1;

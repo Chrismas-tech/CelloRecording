@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\MessageToAdmin;
+
 use App\Mail\Order as MailOrder;
 use App\Models\Order;
 use App\Models\Quote;
 use App\Models\User;
 use Artesaos\SEOTools\Facades\SEOMeta;
-use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use PayPal\Api\Amount;
@@ -52,7 +51,6 @@ class PaypalController extends Controller
                 'mode' => env('PAYPAL_MODE')
             )
         );
-
 
         $this->apiContext = $api_Context;
     }
